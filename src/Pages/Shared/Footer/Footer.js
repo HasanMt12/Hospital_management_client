@@ -1,3 +1,4 @@
+import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { Button, Grid, Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -7,6 +8,7 @@ const Footer = () => {
       <Box p={10} bgcolor="black" color="white">
         <Grid align="center" container maxWidth="lg" spacing={1}>
           <Grid align="center" item xs="12" md="3">
+            <MedicationLiquidIcon fontSize="large" color="secondary" />
             <Typography variant="h4">Doctors Planet</Typography>
             <Typography variant="subtitle2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
