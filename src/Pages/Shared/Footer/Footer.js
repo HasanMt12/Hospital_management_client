@@ -5,7 +5,16 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <Box p={10} bgcolor="black" color="white">
+      <Box p={
+          10
+      }
+      sx={
+          {
+              bgcolor: '#6BBAEA'
+          }
+      }
+      
+      color = "white" >
         <Grid align="center" container maxWidth="lg" spacing={2}>
           <Grid align="center" item xs="12" md="3">
             <MedicationLiquidIcon fontSize="large" color="secondary" />
