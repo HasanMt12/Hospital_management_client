@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <Box p={10} bgcolor="black" color="white">
-        <Grid align="center" container maxWidth="lg" spacing={1}>
+        <Grid align="center" container maxWidth="lg" spacing={2}>
           <Grid align="center" item xs="12" md="3">
             <MedicationLiquidIcon fontSize="large" color="secondary" />
             <Typography variant="h4">Doctors Planet</Typography>
@@ -67,9 +67,11 @@ const Footer = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
               soluta?
             </Typography>
-            <Button variant="contained" color="secondary">
-              See Time Table
-            </Button>
+            <Box mt={2}>
+              <Button variant="contained" color="secondary" size="small">
+                See Time Table
+              </Button>
+            </Box>
           </Grid>
         </Grid>
       </Box>
