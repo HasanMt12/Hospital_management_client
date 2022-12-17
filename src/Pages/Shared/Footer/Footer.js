@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <Box p={10} bgcolor="grey" color="white">
+      <Box p={10} bgcolor="black" color="white">
         <Grid align="center" container maxWidth="lg" spacing={1}>
           <Grid align="center" item xs="12" md="3">
             <Typography variant="h4">Doctors Planet</Typography>
@@ -18,32 +18,44 @@ const Footer = () => {
               Our Services
             </Typography>
             <Box color="white">
-              <Link to="/">Cencer Screening</Link>
+              <Link underline="hover" href="/" color="inherit">
+                Cencer Screening
+              </Link>
             </Box>
 
             <Box>
-              <Link to="/">Cardiac Surgery</Link>
+              <Link underline="hover" href="/" color="inherit">
+                Cardiac Surgery
+              </Link>
             </Box>
             <Box>
-              <Link to="/">Pathology</Link>
+              <Link underline="hover" href="/" color="inherit">
+                Pathology
+              </Link>
             </Box>
 
             <Box>
-              <Link to="/">Neurology</Link>
+              <Link underline="hover" href="/" color="inherit">
+                Neurology
+              </Link>
             </Box>
           </Grid>
           <Grid item xs="12" md="3">
             <Typography borderBottom={1} variant="h5">
               Openning Time
             </Typography>
-            <Typography variant="subtitle2">Mon-Wed - 9:00AM-7:00PM</Typography>
-            <Typography variant="subtitle2">
-              Mon - Wed - 9:00 AM - 7:00 PM
+            <Typography underline="hover" variant="subtitle2">
+              Mon-Wed - 9:00AM-7:00PM
             </Typography>
-            <Typography variant="subtitle2">
-              Mon - Wed - 9:00 AM - 7:00 PM
+            <Typography underline="hover" variant="subtitle2">
+              Mon-Wed - 9:00AM-7:00PM
             </Typography>
-            <Typography variant="subtitle2">Sat - Sun - Closed</Typography>
+            <Typography underline="hover" variant="subtitle2">
+              Mon-Wed - 9:00AM-7:00PM
+            </Typography>
+            <Typography underline="hover" variant="subtitle2">
+              Sat - Sun - Closed
+            </Typography>
           </Grid>
           <Grid item xs="12" md="3">
             <Typography borderBottom={1} variant="h5">
@@ -53,7 +65,9 @@ const Footer = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
               soluta?
             </Typography>
-            <Button variant="contained">See Time Table</Button>
+            <Button variant="contained" color="secondary">
+              See Time Table
+            </Button>
           </Grid>
         </Grid>
       </Box>
@@ -62,4 +76,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
