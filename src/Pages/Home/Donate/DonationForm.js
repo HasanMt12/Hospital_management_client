@@ -42,13 +42,13 @@ const DonationForm = () => {
 
   return (
     <div className="my-16 w-11/12 mx-auto h-2/5">
-      <h1 className="text-3xl font-bold text-center mt-5 text-red-400">
+      <h1 className="text-4xl font-bold text-center mt-5 text-red-500 font-sans">
         Donate Blood
       </h1>
       <h1 className="text-2xl font-bold text-center my-1 text-slate-700 font-sans">
         Save a Life
       </h1>
-      <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500">
+      <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
         Please Fill the form below
       </p>
       <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
@@ -87,7 +87,6 @@ const DonationForm = () => {
                 variant="outlined"
                 fullWidth
                 className={classes.inputField}
-                //   address="address"
                 {...register("address", {
                   required: "address is Required",
                 })}
@@ -106,7 +105,6 @@ const DonationForm = () => {
                 variant="outlined"
                 fullWidth
                 className={classes.inputField}
-                //   phone="phone"
                 {...register("phone", {
                   required: "phone number is Required",
                 })}
@@ -123,7 +121,6 @@ const DonationForm = () => {
                 variant="outlined"
                 fullWidth
                 className={classes.inputField}
-                //   phone="phone"
                 {...register("age", {
                   required: "age  is Required",
                 })}
@@ -136,11 +133,9 @@ const DonationForm = () => {
               <p className="text-gray-500">Date of Birth</p>
               <TextField
                 type="date"
-                // variant="inline"
                 fullWidth
                 className={classes.inputField}
                 defaultValue={null}
-                // date="date"
                 {...register("date", {
                   required: "date of birth is Required",
                 })}
@@ -156,11 +151,8 @@ const DonationForm = () => {
                 required
                 defaultValue="Hello World"
                 type="date"
-                // variant="outlined"
                 fullWidth
-                // control={control}
                 className={classes.inputField}
-                // defaultValue=""
                 {...register("last donate date", {
                   required: "last donate date is Required",
                 })}

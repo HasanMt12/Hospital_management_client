@@ -28,7 +28,7 @@ const Carousel = () => {
         pagination={{
           type: "progressbar",
         }}
-        // keyboard={true}
+        
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
