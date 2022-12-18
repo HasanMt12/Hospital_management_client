@@ -17,6 +17,7 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
+
     <div  className="mt-6">
       <Swiper 
         cssMode={true}
@@ -57,6 +58,7 @@ const Carousel = () => {
           <img src={slider[7].img} alt="" />
         </SwiperSlide> */}
       </Swiper>
+
     </div>
   );
 };
