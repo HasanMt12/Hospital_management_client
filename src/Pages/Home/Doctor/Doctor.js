@@ -4,7 +4,7 @@ const Doctor = () => {
     return (
         <div>
             <h1>This is Doctor home Section </h1>
-            
+
         </div>
     );
 };
