@@ -11,17 +11,6 @@ import DonationForm from './Donate/DonationForm';
 
 const Home = () => {
     return (
-<<<<<<< HEAD
-      <div>
-        {/* <h1>this is home</h1> */}
-
-
-        <Carousel></Carousel>
-        <Services></Services>
-        <DonationForm></DonationForm>
-        {/* <CssBaseline /> */}
-      </div>
-=======
         <div>
   
             <Carousel></Carousel>
@@ -34,7 +23,7 @@ const Home = () => {
             {/* <CssBaseline /> */}
 
         </div>
->>>>>>> main
+
     );
 };
 
