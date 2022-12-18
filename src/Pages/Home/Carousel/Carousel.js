@@ -17,8 +17,12 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
-    <>
-      <Swiper
+
+
+    <div  className="my-6">
+
+      <Swiper 
+
         cssMode={true}
         navigation={true}
         keyboard={{
@@ -58,7 +62,10 @@ const Carousel = () => {
           <img src={slider[7].img} alt="" />
         </SwiperSlide> */}
       </Swiper>
-    </>
+
+
+    </div>
+
   );
 };
 
