@@ -18,7 +18,8 @@ import "./Carousel.css";
 const Carousel = () => {
   return (
 
-    <div  className="mt-6">
+    <div  className="my-6">
+
       <Swiper 
         cssMode={true}
         navigation={true}
@@ -29,7 +30,7 @@ const Carousel = () => {
         pagination={{
           type: "progressbar",
         }}
-        // keyboard={true}
+        
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
