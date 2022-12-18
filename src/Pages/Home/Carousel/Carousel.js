@@ -58,7 +58,7 @@ const Carousel = () => {
           <img src={slider[7].img} alt="" />
         </SwiperSlide> */}
       </Swiper>
->>>>>>> main
+
     </div>
   );
 };
