@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-
+// import TextField from '@mui/material/TextField';
 import Box from "@mui/material/Box";
-
+import "./Donate.css";
 import hero from "../../../assets/882096_1029.jpg";
 
 import {
@@ -17,11 +17,10 @@ import {
   Switch,
   Select,
   MenuItem,
-  Input
 } from "@material-ui/core";
-
+import "./Donate.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
   inputField: {
@@ -54,37 +53,24 @@ const DonationForm = () => {
       </p>
       <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
         <div className="box-primary">
-          <img src={hero} className="lg:h-[700px] h-[350px] w-full" alt="" />
+          <img
+            src={hero}
+            className="lg:h-[550px]  h-[450px] w-[500px]"
+            alt=""
+          />
         </div>
         <div className="box-secondary">
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* 1) TextField */}
             <div className="form-control">
               <TextField
-                placeholder="Enter Your First Name"
-                label="First Name"
+                placeholder="Enter Your  Name"
+                label=" Name"
                 variant="outlined"
                 fullWidth
                 className={classes.inputField}
-                name="firstName"
-                {...register("firstName", {
-                  required: "Name is Required",
-                })}
-              />
-              {errors.name && (
-                <p className="text-red-500">{errors.name.message}</p>
-              )}
-            </div>
-            {/* 2) TextField */}
-            <div className="form-control">
-              <TextField
-                placeholder="Enter Your Last Name"
-                label="Last Name"
-                variant="outlined"
-                fullWidth
-                className={classes.inputField}
-                name="lastName"
-                {...register("lastName", {
+                name="Name"
+                {...register("Name", {
                   required: "Name is Required",
                 })}
               />
@@ -147,11 +133,9 @@ const DonationForm = () => {
               )}
             </div>
             <div className="form-control">
-    
+              <p className="text-gray-500">Date of Birth</p>
               <TextField
-                label="Date of Birth"
                 type="date"
-                
                 // variant="inline"
                 fullWidth
                 className={classes.inputField}
@@ -166,15 +150,19 @@ const DonationForm = () => {
               )}
             </div>
             <div className="form-control">
+              <p className="text-gray-500">Last Donate Date</p>
               <TextField
                 margin="normal"
-                label="Last Donate Date"
+                required
+                
+               
+                defaultValue="Hello World"
                 type="date"
                 // variant="outlined"
                 fullWidth
                 // control={control}
                 className={classes.inputField}
-                defaultValue=""
+                // defaultValue=""
                 {...register("last donate date", {
                   required: "last donate date is Required",
                 })}
