@@ -41,21 +41,21 @@ const DonationForm = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="my-16 w-11/12 mx-auto">
+    <div className="my-16 w-11/12 mx-auto h-2/5">
       <h1 className="text-3xl font-bold text-center mt-5 text-red-400">
         Donate Blood
       </h1>
       <h1 className="text-2xl font-bold text-center my-1 text-slate-700 font-sans">
         Save a Life
       </h1>
-      <p className="text-sm font-bold text-center my-1 mb-10 text-gray-500">
+      <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500">
         Please Fill the form below
       </p>
       <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
         <div className="box-primary">
           <img
             src={hero}
-            className="lg:h-[550px]  h-[450px] w-[500px]"
+            className="lg:h-[470px]  h-[300px] lg:w-[450px] w-[280px]"
             alt=""
           />
         </div>

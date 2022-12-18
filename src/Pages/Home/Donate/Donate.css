@@ -17,7 +17,7 @@
   
   @media screen and (max-width: 768px) {
     .box-primary {
-      display: none;
+      /* display: none; */
     }
     .box {
       grid-template-columns: 100%;
