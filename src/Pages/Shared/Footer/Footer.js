@@ -15,7 +15,7 @@ const Footer = () => {
       }
       
       color = "white" >
-        <Grid align="center" container maxWidth="lg" spacing={2}>
+        <Grid align="center" container maxWidth="xl" spacing={2}>
           <Grid align="center" item xs="12" md="3">
             <MedicationLiquidIcon fontSize="large" color="secondary" />
             <Typography variant="h4">Doctors Planet</Typography>
