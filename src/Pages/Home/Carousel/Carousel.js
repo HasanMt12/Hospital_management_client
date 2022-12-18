@@ -17,6 +17,7 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
+<<<<<<< HEAD
     <div className="h-screen">
       <div className="h-5/6">
         <Swiper
@@ -123,6 +124,48 @@ const Carousel = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+=======
+    <div  className="mt-6">
+      <Swiper 
+        cssMode={true}
+        navigation={true}
+        keyboard={{
+          enabled: true,
+        }}
+        mousewheel={true}
+        pagination={{
+          type: "progressbar",
+        }}
+        // keyboard={true}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={slider[0].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img  src={slider[1].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider[2].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider[3].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider[4].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider[5].img} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider[6].img} alt="" />
+        </SwiperSlide>
+        {/* <SwiperSlide>
+          <img src={slider[7].img} alt="" />
+        </SwiperSlide> */}
+      </Swiper>
+>>>>>>> main
     </div>
   );
 };
