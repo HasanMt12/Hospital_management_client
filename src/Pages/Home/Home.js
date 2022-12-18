@@ -1,6 +1,7 @@
 import React from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Services from './Services/Services';
+import DoctorInHome from './Doctor/DoctorInHome';
 
 // import { CssBaseline } from "@material-ui/core";
 import Carousel from './Carousel/Carousel';
@@ -15,8 +16,13 @@ const Home = () => {
               
             <Carousel></Carousel>
             <Services></Services>
+
+             <DoctorInHome></DoctorInHome>
+
             <DonationForm></DonationForm>
+           
             {/* <CssBaseline /> */}
+
         </div>
     );
 };
