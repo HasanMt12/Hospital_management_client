@@ -53,11 +53,15 @@ const DonationForm = () => {
       </p>
       <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
         <div className="box-primary">
+<<<<<<< HEAD
+          <img src={hero} className=" lg:h-[700px] h-[350px] w-full" alt="" />
+=======
           <img
             src={hero}
             className="lg:h-[470px]  h-[300px] lg:w-[450px] w-[280px]"
             alt=""
           />
+>>>>>>> main
         </div>
         <div className="box-secondary">
           <form onSubmit={handleSubmit(onSubmit)}>

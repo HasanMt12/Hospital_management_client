@@ -36,7 +36,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed mb-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
