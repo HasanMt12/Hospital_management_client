@@ -1,0 +1,40 @@
+.box {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 70vh;
+}
+.box-secondary {
+  padding: 20px;
+  /* overflow: auto; */
+  overflow-y: scroll;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(249, 221, 221);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(243, 207, 207);
+}
+.box-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .box-primary {
+    /* display: none; */
+  }
+  .box {
+    grid-template-columns: 100%;
+  }
+}

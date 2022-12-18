@@ -6,7 +6,11 @@ import Service from './Service';
 
 export const Services = () => {
 
-
+    const text = [
+        'amr sonar bangla',
+        'https://i.ibb.co/r0gHkvM/color-palette-1.png',
+        'https://i.ibb.co/CvQwzKC/coding-1.png',
+    ];
     const doctorservices = [
 
         {

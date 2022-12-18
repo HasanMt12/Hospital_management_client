@@ -1,5 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
+import "swiper/css/bundle";
+import { Toaster } from 'react-hot-toast';
 import { RouterProvider } from 'react-router-dom';
 import router from './Routes/Routes';
 

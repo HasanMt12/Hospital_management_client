@@ -1,0 +1,222 @@
+[
+   {
+      "doctorName":"Dr. Amanda Smith",
+      "workingDays":"Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+      "appointNumber":"01688888",
+      "about":"",
+      "title":"Pedodontics  – Pediatric Dentist",
+      "department":"Dental",
+      "img":"",
+      "degree":"Doctor of Medical Science (DMSc)"
+   },
+   {
+     "doctorName": "Dr. Smith",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Endodontist – The Tooth Root Doctor",
+     "department": "Dental",
+     "img": "",
+     "degree": "Doctor of Dental Science (DDSc)"
+   },
+   {
+     "doctorName": "Dr. Jack",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Orthodontist – The Alignment Dentist",
+     "department": "Dental",
+     "img": "",
+     "degree": "Master of Dental Science (MDentSci)"
+   },
+   {
+     "doctorName": "Dr. Mohammad",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Periodontist – The Gum Specialist",
+     "department": "Dental",
+     "img": "",
+     "degree": "Doctor of Dentistry (DDent)"
+   },
+   {
+     "doctorName": "Dr. Ajad",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Prosthodontist – The Restoration Dentist",
+     "department": "Dental",
+     "img": "",
+     "degree": "Master of Dental Science (MDentSci)"
+   },
+   {
+     "doctorName": "Dr. Shahana",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Oral and maxillofacial surgery",
+     "department": "Dental",
+     "img": "",
+     "degree": "Doctor of Philosophy in Dentistry (PhD)"
+   },
+   {
+     "doctorName": "PROF. DR. MD. WAHIDUZZAMAN BHUIYAN",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Oral and maxillofacial surgery",
+     "department": "Dental",
+     "img": "",
+     "degree": "BDS, MS (MAXILLO-FACIAL SURGERY)"
+   },
+   {
+     "doctorName": "DR. MAHMUD CHOWDHURY KHAN",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Allergy Skin-VD, Sexual Medicine Specialist & Laser Dermatosurgeon",
+     "department": "DERMATOLOGY",
+     "img": "",
+     "degree": "MBBS, DDV, MCPS, FCPS"
+   },
+   {
+     "doctorName": "PROF. DR. MD. ROKON UDDIN RAHMANIA",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Allergy Skin-VD, Sexual Medicine Specialist & Laser Dermatosurgeon",
+     "department": "DERMATOLOGY",
+     "img": "",
+     "degree": "MBBS (DMC), DDV (BSMMU)"
+   },
+   {
+     "doctorName": "DR. FARJANA KHANOM",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Sexual Medicine Specialist & Laser Dermatosurgeon",
+     "department": "DERMATOLOGY",
+     "img": "",
+     "degree": "MBBS, DDV"
+   },
+   {
+     "doctorName": "PROF. DR. RIAZ",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Skin, Sex, Allergy & Leprosy Specialist",
+     "department": "",
+     "img": "",
+     "degree": "DERMATOLOGY"
+   },
+   {
+     "doctorName": "Prof. Dr. Md. Sayed",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Coordinator & Senior Consultant",
+     "department": "Ophthalmologists",
+     "img": "",
+     "degree": "MBBS, DO, FCPS, MCPS"
+   },
+   {
+     "doctorName": "Prof. Dr. Nazmun",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "Senior Consultant",
+     "department": "Ophthalmologists",
+     "img": "",
+     "degree": "MBBS, DO, FCPS (Ophthalmology), FRCS (Glasgow), FRCS (Edinburgh)"
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   },
+   {
+     "doctorName": "",
+     "workingDays": "Monday – 8am – 7pm , Tuesday – 8am – 7pm, Thursday – 8am – 6:30pm, Saturday – 8am – 2pm",
+     "appointNumber": "01688888",
+     "about": "",
+     "title": "",
+     "department": "",
+     "img": "",
+     "degree": ""
+   }
+]
