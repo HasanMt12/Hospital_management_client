@@ -147,9 +147,9 @@ const DonationForm = () => {
               )}
             </div>
             <div className="form-control">
-    
+                <p>Date of Birth</p>
               <TextField
-                label="Date of Birth"
+               
                 type="date"
                 
                 // variant="inline"
@@ -166,9 +166,10 @@ const DonationForm = () => {
               )}
             </div>
             <div className="form-control">
+              <p>Last Donate Date</p>
               <TextField
                 margin="normal"
-                label="Last Donate Date"
+             
                 type="date"
                 // variant="outlined"
                 fullWidth
