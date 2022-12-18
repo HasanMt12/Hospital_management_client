@@ -16,12 +16,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(231, 18, 18);
+  background: rgb(249, 221, 221);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(231, 18, 18);
+  background: rgb(243, 207, 207);
 }
 .box-primary {
   display: flex;

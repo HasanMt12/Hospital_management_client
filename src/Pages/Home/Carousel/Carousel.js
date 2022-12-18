@@ -17,8 +17,8 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
-    <div  className="my-6">
-      <Swiper 
+    <>
+      <Swiper
         cssMode={true}
         navigation={true}
         keyboard={{
@@ -28,7 +28,8 @@ const Carousel = () => {
         pagination={{
           type: "progressbar",
         }}
-        
+       
+        // keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
@@ -36,7 +37,7 @@ const Carousel = () => {
           <img src={slider[0].img} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img  src={slider[1].img} alt="" />
+          <img src={slider[1].img} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider[2].img} alt="" />
@@ -57,7 +58,7 @@ const Carousel = () => {
           <img src={slider[7].img} alt="" />
         </SwiperSlide> */}
       </Swiper>
-    </div>
+    </>
   );
 };
 

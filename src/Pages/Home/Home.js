@@ -8,8 +8,10 @@ import Carousel from './Carousel/Carousel';
 import DonationForm from './Donate/DonationForm';
 
 
+
 const Home = () => {
     return (
+
         <div>
   
             <Carousel></Carousel>
@@ -22,6 +24,7 @@ const Home = () => {
             {/* <CssBaseline /> */}
 
         </div>
+
     );
 };
 
