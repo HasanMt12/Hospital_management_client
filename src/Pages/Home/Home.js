@@ -11,6 +11,7 @@ import DonationForm from './Donate/DonationForm';
 
 const Home = () => {
     return (
+
         <div>
   
             <Carousel></Carousel>
