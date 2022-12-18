@@ -154,8 +154,6 @@ const DonationForm = () => {
               <TextField
                 margin="normal"
                 required
-                
-               
                 defaultValue="Hello World"
                 type="date"
                 // variant="outlined"
@@ -201,8 +199,6 @@ const DonationForm = () => {
                 <InputLabel id="demo-simple-select-label">
                   Blood Group
                 </InputLabel>
-
-                {/* <FormControlLabel></FormControlLabel> */}
 
                 <Select
                   labelId="demo-simple-select-label"
@@ -255,18 +251,3 @@ const DonationForm = () => {
 };
 
 export default DonationForm;
-/* 
-
-<Select value={props.value} onChange={props.onChange}>
-                    <MenuItem value="">Your Blood Group</MenuItem>
-                    <MenuItem value="A+">A+</MenuItem>
-                    <MenuItem value="A-">A-</MenuItem>
-                    <MenuItem value="B+">B+</MenuItem>
-                    <MenuItem value="B-">B-</MenuItem>
-                    <MenuItem value="O+">O+</MenuItem>
-                    <MenuItem value="O-">O-</MenuItem>
-                    <MenuItem value="AB+">AB+</MenuItem>
-                    <MenuItem value="AB-">AB-</MenuItem>
-                  </Select>;
-
-*/
