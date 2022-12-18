@@ -3,7 +3,7 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import slider from "../../../Helper/slider.json";
+import slider from "../../../helper/slider.json";
 
 // Import Swiper styles
 import "swiper/css";
