@@ -3,7 +3,7 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import slider from "../../../helper/slider.json";
+import slider from "../../../Helper/slider.json";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,8 +17,8 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
-    <>
-      <Swiper
+    <div  className="mt-6">
+      <Swiper 
         cssMode={true}
         navigation={true}
         keyboard={{
@@ -36,7 +36,7 @@ const Carousel = () => {
           <img src={slider[0].img} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slider[1].img} alt="" />
+          <img  src={slider[1].img} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider[2].img} alt="" />
@@ -53,11 +53,11 @@ const Carousel = () => {
         <SwiperSlide>
           <img src={slider[6].img} alt="" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src={slider[7].img} alt="" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
-    </>
+    </div>
   );
 };
 

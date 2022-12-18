@@ -14,8 +14,8 @@ body {
   padding: 0;
 }
 
-.swiper {
-  margin-top: 20px;
+.Swiper {
+  margin-top: 40px;
   width: 90%;
   height: 80%;
 }
@@ -40,9 +40,9 @@ body {
   align-items: center;
 }
 
-.swiper-slide img {
+.swiperSlide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
 }

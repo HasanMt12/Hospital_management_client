@@ -19,7 +19,7 @@ const Services = () => {
 
   return (
     <div>
-      <h1> amr sonar bangla</h1>
+      
     </div>
   );
 };
