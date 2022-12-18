@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@mui/material/Button";
-// import TextField from '@mui/material/TextField';
 import Box from "@mui/material/Box";
 import "./Donate.css";
 import hero from "../../../assets/882096_1029.jpg";
@@ -53,13 +52,11 @@ const DonationForm = () => {
       </p>
       <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
         <div className="box-primary">
-
           <img
             src={hero}
-            className="lg:h-[470px]  h-[300px] lg:w-[450px] w-[280px]"
+            className="lg:h-[390px]  h-[300px] lg:w-[380px] w-[280px]"
             alt=""
           />
-
         </div>
         <div className="box-secondary">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -215,17 +212,18 @@ const DonationForm = () => {
             {/*  Switch */}
             <FormControlLabel
               className={classes.inputField}
+             
               control={
-                <Switch {...register("notification")} name="notification" />
+                <Switch  style={{color:"red"}} {...register("notification")} name="notification" />
               }
               label="Send me regular updates"
             />
 
             {/* Checkbox */}
-            <FormControlLabel
-              style={{ display: "block", marginBottom: 15 }}
-              control={<Checkbox name="tnc" {...register("checkbox")} />}
-              label="I aggree all terms and conditions"
+            <FormControlLabel 
+              style={{ display: "block", marginBottom: 15 ,  }}
+              control={<Checkbox  name="tnc" {...register("checkbox")} />}
+              label="I agree all terms and conditions"
             />
 
             <Button
