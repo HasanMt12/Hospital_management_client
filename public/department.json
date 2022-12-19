@@ -1,0 +1,86 @@
+[
+   {
+      "icon":"https://i.ibb.co/S0WcbjJ/istockphoto-187750192-612x612.jpg",
+      "name":"Dental",
+      "cat_id":1,
+      "details":"General dentists prevent, evaluate, diagnose, and treat diseases of the oral cavity, as well as maintain the function and appearance of the teeth. Many oral diseases and abnormalities can indicate other diseases. A general dentist may refer patients to their physician or a specialist for further evaluation, or vice versa for treatment."
+   },
+   {
+     "icon": "https://i.ibb.co/GCwdFmJ/png-clipart-miliaria-graphy-skin-rash-skin-rash-child-face.png",
+     "name": "Dermatology",
+     "cat_id": 2,
+     "details": "The Department of Dermatology provides medical, cosmetic, pediatric, and surgical dermatology services for all types of skin, hair and nail problems, as well as sexually transmitted diseases. Consultations, as well as diagnostic and clinical services, are provided by our department for the maintenance and treatment of these conditions. We provide advanced treatments for hundreds of dermatological & venereal conditions including the following"
+   },
+   {
+     "icon": "",
+     "name": "Ophthalmologists",
+     "cat_id": 3,
+     "details": "Ophthalmologists specialize in eye and vision care. They treat diseases and conditions of the eyes and can perform eye surgery.Ophthalmologists treat people with complex eye conditions and may also see people for routine eye care, including prescribing glasses and performing checkups."
+   },
+   {
+     "icon": "",
+     "name": "Optometrist",
+     "cat_id": 4,
+     "details": "To perform eye exams and vision tests, fit eyeglasses and contact lenses, monitor medically related eye conditions related to diseases like diabetes Manage and treat conditions like Dry Eye and glaucoma Provide low-vision aids and vision therapy"
+   },
+   {
+     "icon": "",
+     "name": "Gynecology",
+     "cat_id": 5,
+     "details": "An obstetrician-gynecologist, or OB-GYN, is a healthcare professional that specializes in female reproductive health.Many women will see an OB/GYN regularly throughout pregnancy and for labor and delivery. They may also visit them for yearly checkups and tests, such as breast exams and Pap tests"
+   },
+   {
+     "icon": "",
+     "name": "Cardiology",
+     "cat_id": 6,
+     "details": "Cardiologist takes care of your high blood pressure, high cholesterol, heart attack and stroke,heart rhythm problems,congestive heart failure"
+   },
+   {
+     "icon": "",
+     "name": "Endocrinology",
+     "cat_id": 7,
+     "details": "Endocrinologists treat hormone-related conditions such as:diabetes, thyroid conditions, hormone imbalances,infertility,growth problems in children, adrenal gland conditions"
+   },
+   {
+     "icon": "",
+     "name": "Gastroenterology",
+     "cat_id": 8,
+     "details": "Gastroenterologists focus on the digestive system. This includes the esophagus, pancreas, stomach, liver, small intestine, colon, and gallbladder.Gastroenterologists also perform procedures such as endoscopy, sigmoidoscopy, and colonoscopy."
+   },
+   {
+     "icon": "",
+     "name": "Nephrology",
+     "cat_id": 9,
+     "details": "A nephrologist focuses on kidney care and conditions that affect the kidneys. Conditions they can treat include:kidney disease,renal (kidney) failure, diabetes, kidney stones, lupus,hypertension"
+   },
+   {
+     "icon": "",
+     "name": "Otolaryngology",
+     "cat_id": 10,
+     "details": "An ENT doctor treat problems with the sinuses, throat, tonsils, ears, mouth, head, and neck. Some ENT doctors undergo additional training to focus on one specific area, such as pediatrics or rhinology, which refers to the nose and sinuses."
+   },
+   {
+     "icon": "https://i.ibb.co/3pvGQcr/human-brain.jpg",
+     "name": "Neurology",
+     "cat_id": 11,
+     "details": "A neurologist treats conditions of the nerves, spine, and brain. People may see a neurologist for:epilepsy, Alzheimer’s disease, Parkinson’s disease,multiple sclerosis, neuropathy, stroke,migraine"
+   },
+   {
+     "icon": "",
+     "name": "Oncology",
+     "cat_id": 12,
+     "details": "Oncologists treat cancer and its symptoms. During treatment for cancer, a person may have several types of healthcare professional in their care team."
+   },
+   {
+     "icon": "",
+     "name": "Radiology",
+     "cat_id": 13,
+     "details": "A radiologist specializes in diagnosing and treating conditions using medical imaging tests. They may read and interpret scans such as X-rays, MRIs, mammograms, ultrasound, and CT scans."
+   },
+   {
+     "icon": "",
+     "name": "Orthopedic",
+     "cat_id": 14,
+     "details": "An orthopedic surgeon specializes in diseases and conditions of the bones, muscles, ligaments, tendons, and joints. "
+   }
+]
