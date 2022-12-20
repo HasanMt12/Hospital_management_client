@@ -31,7 +31,7 @@ const SignUp = () => {
   const { createUser, signInWithGoogle } =
     useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
-  const [createdUserEmail, setCreatedUser] = useState("");
+  // const [createdUserEmail, setCreatedUser] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -68,7 +68,7 @@ const SignUp = () => {
     signInWithGoogle(data.email, data.password)
       .then((result) => {
         console.log(result.user);
-        setCreatedUser(data.email);
+        // setCreatedUser(data.email);
 
         navigate(from, { replace: true });
       })
@@ -194,6 +194,7 @@ const SignUp = () => {
             <Button type="submit" variant="contained" fullWidth color="primary" className="bg-green-500 my-1">
               Sign up
             </Button>
+            {signUpError && <p className="text-red-600">{signUpError}</p>}
             <Typography>
               {" "}
               Do you have already an account ?<Link href="/login">Login</Link>

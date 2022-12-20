@@ -33,7 +33,7 @@ const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   const [loginError, setLoginError] = useState("");
   const location = useLocation();
-  const [loginUserEmail, setLoginUserEmail] = useState("");
+  // const [loginUserEmail, setLoginUserEmail] = useState("");
 
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setLoginUserEmail(data.email);
+        // setLoginUserEmail(data.email);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -60,7 +60,7 @@ const Login = () => {
     signInWithGoogle(data.email, data.password)
       .then((result) => {
         console.log(result.user);
-        setLoginUserEmail(data.email);
+        // setLoginUserEmail(data.email);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -101,8 +101,7 @@ const Login = () => {
                 required: "Password is required",
                 minLength: {
                   value: 6,
-                  message:
-                    "Password must be 6 characters or longer",
+                  message: "Password must be 6 characters or longer",
                 },
               })}
             />
@@ -130,12 +129,14 @@ const Login = () => {
             >
               Sign in
             </Button>
+            {loginError && <p className="text-red-600">{loginError}</p>}
             <Typography>
               <Link href="#">Forgot password ?</Link>
             </Typography>
             <Typography class>
               {" "}
-              <span className="text-center">Do you have an account ?</span><Link href="/signup">Sign Up</Link>
+              <span className="text-center">Do you have an account ?</span>
+              <Link href="/signup">Sign Up</Link>
             </Typography>
             <div className="text-center my-1 font-medium">OR</div>
 
