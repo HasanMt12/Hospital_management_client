@@ -19,7 +19,7 @@ const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,9 +43,10 @@ const NavBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            // component="Link"
             href="/"
             sx={{
+              // border:"2px solid black",
               flexGrow: 1,
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -98,7 +99,7 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
+            // component="a"
             href=""
             sx={{
               mr: 2,
@@ -128,9 +129,10 @@ const NavBar = () => {
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
-                Login
+                <Link to="/login">Login</Link>
               </Button>
             )}
+
             {/* {user ? (
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -163,6 +165,11 @@ const NavBar = () => {
                Log In
               </Link>
              </Button> */}
+
+
+
+
+
           </Box>
           {user && (
             <Box sx={{ m: 2 }}>

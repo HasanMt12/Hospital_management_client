@@ -33,9 +33,6 @@ const DoctorHomeCard = ({doctor}) => {
         <Typography variant="body2" color="text.secondary">
           {qualification}
         </Typography>
-        {/* <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography> */}
         <Typography variant="body2" color="text.secondary">
           Speciality:  {category}
         </Typography>
