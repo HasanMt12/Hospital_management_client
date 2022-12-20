@@ -6,6 +6,8 @@ import DoctorInHome from './Doctor/DoctorInHome';
 // import { CssBaseline } from "@material-ui/core";
 import Carousel from './Carousel/Carousel';
 import DonationForm from './Donate/DonationForm';
+import Login from '../Register/Login/Login';
+import SignUp from '../Register/SignUp/SignUp';
 
 
 
@@ -15,7 +17,9 @@ const Home = () => {
             <Carousel></Carousel>
             <Services></Services>
              <DoctorInHome></DoctorInHome>
+           
             <DonationForm></DonationForm>
+            
             {/* <CssBaseline /> */}
         </div>
 
