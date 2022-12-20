@@ -6,7 +6,7 @@ import {
   Typography,
   TextField,
   Button,
-  Link,
+
 } from "@material-ui/core";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import Radio from "@material-ui/core/Radio";
@@ -16,7 +16,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate,Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -197,7 +197,7 @@ const SignUp = () => {
             {signUpError && <p className="text-red-600">{signUpError}</p>}
             <Typography>
               {" "}
-              Do you have already an account ?<Link href="/login">Login</Link>
+              Do you have already an account ?<Link to="/login" className="text-green-600 font-bold">Login</Link>
             </Typography>
             <div className="text-center my-1 font-medium">OR</div>
 
