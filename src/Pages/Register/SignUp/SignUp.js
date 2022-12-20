@@ -37,7 +37,7 @@ const SignUp = () => {
   const from = location.state?.from?.pathname || "/";
   const paperStyle = {
     padding: "40px 20px",
-    width: 360,
+    width: 380,
     margin: "20px auto",
     border: "rounded",
   };

@@ -147,7 +147,7 @@ const NavBar = () => {
               </Button>
             )} */}
             {/* Added by nafisa */}
-         {/*     <Button>
+          {/*    <Button>
              <Link to="/signup"
                 sx={{ my: 2,mx:2, color: "white", display: "block" }}
                 variant="contained"
