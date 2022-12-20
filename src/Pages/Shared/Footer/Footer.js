@@ -10,7 +10,8 @@ const Footer = () => {
       }
       sx={
           {
-              flexGrow: 1
+              flexGrow: 1,
+              // alignItems:"center"
           }
       }
       bgcolor = "skyblue"
