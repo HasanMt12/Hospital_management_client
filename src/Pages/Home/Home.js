@@ -6,6 +6,7 @@ import DoctorInHome from './Doctor/DoctorInHome';
 import Carousel from './Carousel/Carousel';
 import DonationForm from './Donate/DonationForm';
 import Services from './Services/Services';
+// import Departments from './Department/Departments';
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
             <DoctorInHome></DoctorInHome>
             <DonationForm></DonationForm>
             {/* <CssBaseline /> */}
+            {/* <Departments/> */}
         </div>
 
     );

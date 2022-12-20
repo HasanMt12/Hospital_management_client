@@ -17,7 +17,7 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
-    <div className="h-screen border mt-16">
+    <div className="h-screen mt-20">
       <div className="h-5/6">
         <Swiper
           cssMode={true}
