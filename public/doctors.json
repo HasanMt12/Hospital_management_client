@@ -8,7 +8,8 @@
       "department":"Dental",
       "img":"",
       "degree":"Doctor of Medical Science (DMSc)",
-      "doctorCode":1
+      "doctorCode":1,
+      "isFeatured":true
    },
    {
      "doctorName": "Dr. Smith",
@@ -85,7 +86,8 @@
      "department": "DERMATOLOGY",
      "img": "",
      "degree": "MBBS, DDV, MCPS, FCPS",
-     "doctorCode": 8
+     "doctorCode": 8,
+     "isFeatured": true
    },
    {
      "doctorName": "PROF. DR. MD. ROKON UDDIN RAHMANIA",
@@ -115,7 +117,7 @@
      "appointNumber": "01688888",
      "about": "",
      "title": "Skin, Sex, Allergy & Leprosy Specialist",
-     "department": "",
+     "department": "DERMATOLOGY",
      "img": "",
      "degree": "MBBS, DDV",
      "doctorCode": 11
@@ -129,7 +131,8 @@
      "department": "Ophthalmologists",
      "img": "",
      "degree": "MBBS, DO, FCPS, MCPS",
-     "doctorCode": 12
+     "doctorCode": 12,
+     "isFeatured": true
    },
    {
      "doctorName": "Prof. Dr. Nazmun",
@@ -151,7 +154,8 @@
      "department": "Gynecology",
      "img": "",
      "degree": "MBBS, FCPS",
-     "doctorCode": 14
+     "doctorCode": 14,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. HALIMA",
@@ -206,7 +210,8 @@
      "department": "Cardiology",
      "img": "",
      "degree": "MBBS, D.CARD, MD (CARD), FACC, FRCP, FESC",
-     "doctorCode": 19
+     "doctorCode": 19,
+     "isFeatured": true
    },
    {
      "doctorName": "PROF. DR. MIR",
@@ -250,7 +255,8 @@
      "department": "Endocrinology",
      "img": "",
      "degree": "MBBS (DMC), FCPC (Medicine) MD (Endocrinology), MACE (USA) Fellow, American College of Endocrinology, Trained in Advance Endocrinology",
-     "doctorCode": 23
+     "doctorCode": 23,
+     "isFeatured": true
    },
    {
      "doctorName": "Dr. Shahjada",
@@ -283,7 +289,8 @@
      "department": "Gastroenterology",
      "img": "",
      "degree": "MBBS, FCPS (MEDICINE)",
-     "doctorCode": 26
+     "doctorCode": 26,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. MD. MASUDUR",
@@ -316,7 +323,8 @@
      "department": "Gastroenterology",
      "img": "",
      "degree": "MBBS, BCS (HEALTH), MD (HEPATOLOG)",
-     "doctorCode": 29
+     "doctorCode": 29,
+     "isFeatured": true
    },
    {
      "doctorName": "PROF. BRIG GEN MAMUN",
@@ -327,7 +335,8 @@
      "department": "Nephrology",
      "img": "",
      "degree": "MBBS, MACP (USA), MRACP(AUSTRALIA), FCPS (MED), FRCP (I)",
-     "doctorCode": 30
+     "doctorCode": 30,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. SALINA AKTER",
@@ -360,7 +369,8 @@
      "department": "Otolaryngology",
      "img": "",
      "degree": "MBBS (DMC), DLO (London), FRCS (England), FRCS (Edinburgh), FRCS (Glasgow), FACS (USA) Trained in UK, Ireland, USA , Hongkong , Netherland &Singapore",
-     "doctorCode": 33
+     "doctorCode": 33,
+     "isFeatured": true
    },
    {
      "doctorName": "Prof. Dr. Pran",
@@ -393,7 +403,8 @@
      "department": "Neurology",
      "img": "",
      "degree": "MBBS(DMC), FCPS (BD), FRCP (GLASG), FACP (USA), DCN (LONDON)",
-     "doctorCode": 36
+     "doctorCode": 36,
+     "isFeatured": true
    },
    {
      "doctorName": "PROF. DR. NARAYAN",
@@ -459,7 +470,8 @@
      "department": "Oncology",
      "img": "",
      "degree": "MBBS, FCPS",
-     "doctorCode": 42
+     "doctorCode": 42,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. SABERA TARAFDAR",
@@ -470,7 +482,8 @@
      "department": "Radiology",
      "img": "",
      "degree": "MBBS, M.PHIL (RADIOLOGY & IMAGING)",
-     "doctorCode": 43
+     "doctorCode": 43,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. MOHAMMAD MAHBUB",
@@ -514,7 +527,8 @@
      "department": "Orthopedic",
      "img": "",
      "degree": "MBBS, MS (Orthopedics)",
-     "doctorCode": 47
+     "doctorCode": 47,
+     "isFeatured": true
    },
    {
      "doctorName": "DR. A.M. FASIUL",
@@ -547,6 +561,7 @@
      "department": "Orthopedic",
      "img": "",
      "degree": "MBBS, D.Orth, MS (Orth), FACS",
-     "doctorCode": 50
+     "doctorCode": 50,
+     "isFeatured": true
    }
 ]
