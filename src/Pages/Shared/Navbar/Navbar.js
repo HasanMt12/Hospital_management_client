@@ -9,7 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Avatar, Tooltip } from "@mui/material";
+import { Avatar,  Tooltip } from "@mui/material";
+import {Link} from 'react-router-dom'
 
 const pages = ["Home", "Services", "Doctors"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -131,6 +132,7 @@ const NavBar = () => {
                 Login
               </Button>
             )}
+
           </Box>
           {user && (
             <Box sx={{ m: 2 }}>
