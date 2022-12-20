@@ -12,15 +12,15 @@ import DonationForm from './Donate/DonationForm';
 
 const Home = () => {
     return (
-        <div>
-            <Carousel></Carousel>
-            <Services></Services>
-             <DoctorInHome></DoctorInHome>
-            <DonationForm></DonationForm>
-            {/* <CssBaseline /> */}
-            {/* <Departments/> */}
-        </div>
+      <div>
+        <Carousel></Carousel>
+        <Services></Services>
+        <DoctorInHome></DoctorInHome>
+        <DonationForm></DonationForm>
 
+        {/* <CssBaseline /> */}
+        {/* <Departments/> */}
+      </div>
     );
 };
 
