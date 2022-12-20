@@ -1,90 +1,182 @@
-import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
-import { Button, Grid, Link, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+
 import React from "react";
+import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+import { Link } from "react-router-dom";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import AttachmentIcon from "@mui/icons-material/Attachment";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
+import AddLocationIcon from "@mui/icons-material/AddLocation";
+import { Typography } from "@mui/material";
+
+
 const Footer = () => {
+  const footerInfos = [
+    {
+      name: "Our Offerings",
+      offers: [
+        "Classes and Events",
+        "COVID-19 Info",
+        "Virtual Care",
+        "Doctor Directory",
+        "Location Directory",
+        "Specialties Directory",
+        "MyBSWHealth Mobile App",
+      ],
+    },
+    {
+      name: "Tools and Resources",
+      offers: [
+        "Pay Your Bill",
+        "Medical Records",
+        "Insurance Accepted",
+        "Financial Assistance",
+        "Advance Directives",
+        "Surgery Pre-Registration",
+        "Contact Us",
+      ],
+    },
+    {
+      name: "About Us",
+      offers: [
+        "Mission Vision and Values",
+        "Leadership",
+        "Achievements",
+        "Community Impact",
+        "Provider Partner",
+        "Quality Alliance",
+        "Newsroom",
+        "Blog",
+      ],
+    },
+    {
+      name: "Get Involved",
+      offers: ["Volunteer", "Donate", "Give Blood"],
+    },
+    {
+      name: "Our Offerings",
+      offers: [
+        "Classes and Events",
+        "COVID-19 Info",
+        "Virtual Care",
+        "Doctor Directory",
+        "Location Directory",
+        "Specialties Directory",
+        "MyBSWHealth Mobile App",
+      ],
+    },
+    {
+      name: "For Medical Professional",
+      offers: [
+        "Refer a Patient",
+        "Careers",
+        "Graduate Medical Education",
+        "Undergraduate Education",
+        "Allied Health Education",
+        "Nursing Education",
+        "Research Areas",
+        "Clinical Trials",
+      ],
+    },
+  ];
   return (
-    <footer>
-      <Box p={
-          10
-      }
-      sx={
-          {
-              flexGrow: 1,
-              // alignItems:"center"
-          }
-      }
-      bgcolor = "skyblue"
-      color = "white" >
-        <Grid align="center" container maxWidth="xl" spacing={2}>
-          <Grid align="center" item xs="12" md="3">
-            <MedicationLiquidIcon fontSize="large" color="secondary" />
-            <Typography variant="h4">Doctors Planet</Typography>
-            <Typography variant="subtitle2">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
-              soluta?
-            </Typography>
-          </Grid>
-          <Grid item xs="12" md="3">
-            <Typography borderBottom={1} variant="h5">
-              Our Services
-            </Typography>
-            <Box color="white">
-              <Link underline="hover" href="/" color="inherit">
-                Cencer Screening
-              </Link>
-            </Box>
 
-            <Box>
-              <Link underline="hover" href="/" color="inherit">
-                Cardiac Surgery
-              </Link>
-            </Box>
-            <Box>
-              <Link underline="hover" href="/" color="inherit">
-                Pathology
-              </Link>
-            </Box>
+    <footer className="bg-gray-900 text-white">
+      <div className="container p-6 mx-auto">
+        <div className="lg:flex gap-10">
+          <div className="w-full text-white lg:w-1/5">
+            <div className="px-6">
+              <div>
+                <Link className="text-2xl font-bold ">
+                  <MedicationLiquidIcon />
+                  <Typography variant="subtitle-2 ml-2">
+                    Doctors Planet
+                  </Typography>
+                </Link>
+              </div>
 
-            <Box>
-              <Link underline="hover" href="/" color="inherit">
-                Neurology
+              <p className="max-w-sm mt-2">
+                Join 31,000+ other and never miss out on new tips, tutorials,
+                and more.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 lg:mt-0 lg:flex-1">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+              {footerInfos.map((footer) => (
+                <div>
+                  <h3 className="uppercase ">{footer?.name}</h3>
+                  {footer.offers.map((offer) => (
+                    <Link
+                      href="#"
+                      className="block mt-2 text-sm hover:underline"
+                    >
+                      {offer}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between mt-24 ">
+          <p>Stay Connected With us</p>
+          <div>
+            <FacebookIcon />
+            <LinkedInIcon />
+            <WhatsAppIcon />
+          </div>
+        </div>
+
+        <hr className="h-px my-6 bg-gray-200 border-none" />
+
+        <div className="flex justify-between items-center lg:flex-col xl:flex-row">
+          <p className="text-center text-gray-500 ">
+            © Brand 2020 - All rights reserved
+          </p>
+          <div className="">
+            <div className="container flex items-center px-6 py-4 mx-auto overflow-x-auto whitespace-nowrap sm:flex-col xl:flex-row">
+              <Link href="#" className="text-gray-600 ">
+                <AttachmentIcon />
+                <span className="mx-2">Terms of Use</span>
               </Link>
-            </Box>
-          </Grid>
-          <Grid item xs="12" md="3">
-            <Typography borderBottom={1} variant="h5">
-              Openning Time
-            </Typography>
-            <Typography underline="hover" variant="subtitle2">
-              Mon-Wed - 9:00AM-7:00PM
-            </Typography>
-            <Typography underline="hover" variant="subtitle2">
-              Mon-Wed - 9:00AM-7:00PM
-            </Typography>
-            <Typography underline="hover" variant="subtitle2">
-              Mon-Wed - 9:00AM-7:00PM
-            </Typography>
-            <Typography underline="hover" variant="subtitle2">
-              Sat - Sun - Closed
-            </Typography>
-          </Grid>
-          <Grid item xs="12" md="3">
-            <Typography borderBottom={1} variant="h5">
-              Doctors Time Table
-            </Typography>
-            <Typography variant="subtitle2">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint,
-              soluta?
-            </Typography>
-            <Box mt={2}>
-              <Button variant="contained" color="secondary" size="small">
-                See Time Table
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
+
+              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+                <NavigateNextIcon />
+              </span>
+              <Link href="#" className="text-gray-600 ">
+                <CalendarMonthIcon />
+                <span className="mx-2">Notice of Non-Discrimination</span>
+              </Link>
+
+              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+                <NavigateNextIcon />
+              </span>
+              <Link href="#" className="text-gray-600 ">
+                <PrivacyTipIcon />
+                <span className="mx-2">Privacy and Patient Rights</span>
+              </Link>
+
+              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+                <NavigateNextIcon />
+              </span>
+              <Link href="#" className="text-gray-600 ">
+                <AddLocationIcon />
+                <span className="mx-2">Mohammdpur Dhaka</span>
+              </Link>
+
+              <span className="mx-5 text-gray-500 rtl:-scale-x-100">
+                <NavigateNextIcon />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
