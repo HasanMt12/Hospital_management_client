@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { ProSidebarProvider } from "react-pro-sidebar";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./contexts/AuthProvider";
@@ -15,7 +16,10 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         {" "}
-        <App />
+        <ProSidebarProvider>
+          <App />
+        </ProSidebarProvider>
+        ;
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>
