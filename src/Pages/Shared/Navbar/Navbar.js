@@ -142,20 +142,23 @@ const NavBar = () => {
               >
                 LogOut
               </Button>
-              <Button
+
+              
+             </> : <>
+
+             <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
                 <Link to="/dashboard">Dashboard</Link>
               </Button>
-             </> : (
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
                  <Link to="/login">Login</Link>
               </Button>
-            )} 
+            </>} 
 
             {/* Added by nafisa */}
               {/* <Button>
