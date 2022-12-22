@@ -84,7 +84,7 @@ const Footer = () => {
   ];
   return (
 
-    <footer className="bg-gray-900 text-white">
+    <footer footer className = "bg-gradient-to-r from-slate-700 via-slate-800 to-slate-800 shadow-lg rounded-2 text-white" >
       <div className="container p-6 mx-auto">
         <div className="lg:flex gap-10">
           <div className="w-full text-white lg:w-1/5">
