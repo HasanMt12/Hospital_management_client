@@ -202,11 +202,11 @@ const SignUp = () => {
             <div className="text-center my-1 font-medium">OR</div>
 
             <div className="flex items-center ">
-              <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-              <p className="px-3 text-lg dark:text-gray-400 my-1">
+              <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
+              <p className="px-3 text-lg text-gray-400 my-1">
                 Signup with social account
               </p>
-              <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+              <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
             </div>
             <div className="flex justify-center ">
               <Button
