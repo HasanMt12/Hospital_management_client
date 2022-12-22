@@ -129,9 +129,44 @@ const NavBar = () => {
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
-                Login
+                <Link to="/login">Login</Link>
               </Button>
             )}
+
+            {/* {user ? (
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                LogOut
+              </Button>
+            ) : (
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                Login
+              </Button>
+            )} */}
+            {/* Added by nafisa */}
+        {/*      <Button>
+             <Link to="/signup"
+                sx={{ my: 2,mx:2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                Sign Up
+              </Link>
+             </Button>
+             <Button>
+             <Link to="/login"
+                sx={{ my: 2,mx:2, color: "white", display: "block" }}
+                variant="contained"
+              >
+               Log In
+              </Link>
+             </Button> */}
+
+
 
 
 
