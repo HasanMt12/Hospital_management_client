@@ -3,13 +3,36 @@ import React from 'react';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
-import Services from '../Pages/Home/Services/Services';
-import About from '../Pages/Home/About';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { Outlet } from 'react-router-dom';
+function createData(name, Designation, Slot, Number) {
+  return { name, Designation, Slot, Number };
+}
+
+const rows = [
+  createData('Dr. Nafisa', "Heart Specialist", "2 slot available", "0160000000"),
+  createData('Dr salma', "Heart Specialist", "4 slot available", "0160000000"),
+  createData('Dr Masum', "Heart Specialist", "5 slot available", "0160000000"),
+  createData('Dr rakib', "Heart Specialist", "10 slot available", "0160000000"),
+  createData('Dr muctasina', "Heart Specialist", "4 slot available", "0160000000"),
+];
+
+
 const DashboardLayout = () => {
+    
+
+
     const drawerWidth = 240;
 
     return (
         <div>
+            
             <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
@@ -26,11 +49,11 @@ const DashboardLayout = () => {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {[ 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {[ 'Doctors', 'Service', 'Reports'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
@@ -39,11 +62,11 @@ const DashboardLayout = () => {
           </List>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            {['Appointment', 'My Appointment'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
@@ -53,38 +76,49 @@ const DashboardLayout = () => {
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
-        <Services></Services>
         
-        {/* <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography> */}
+         
+           <Toolbar
+           
+           
+           >
+           <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">designation</TableCell>
+            <TableCell align="right">slot&nbsp;(g)</TableCell>
+            <TableCell align="right">Number&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.Designation}</TableCell>
+              <TableCell align="right">{row.Slot}</TableCell>
+              <TableCell align="right">{row.Number}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <Outlet></Outlet>
+        </Toolbar >
+       
+      
+        
+     
       </Box>
     </Box>
+   
         </div>
     );
 };
