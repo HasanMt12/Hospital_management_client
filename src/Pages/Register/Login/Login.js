@@ -6,14 +6,14 @@ import {
   TextField,
   Button,
   Typography,
-  Link,
+
 } from "@material-ui/core";
 import LockOutlinedIcon from "@mui/icons-material//LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 const Login = () => {
   const paperStyle = {
@@ -135,14 +135,14 @@ const Login = () => {
             </Typography>
             <Typography class>
               {" "}
-              <span className="text-center">Do you have an account ?</span>
-              <Link href="/signup">Sign Up</Link>
+              <span className="text-center">Create a new account ?</span>
+              <Link to="/signup" className="text-green-600 font-medium">Sign Up</Link>
             </Typography>
             <div className="text-center my-1 font-medium">OR</div>
 
             <div className="flex items-center  space-x-1">
-              <div className="flex-1  sm:w-16 dark:bg-gray-700"></div>
-              <p className="px-3 text-lg dark:text-gray-400 my-1">
+              <div className="flex-1   dark:bg-gray-700"></div>
+              <p className="text-lg dark:text-gray-400 my-1">
                 Signup with social account
               </p>
               <div className="flex-1  sm:w-16 dark:bg-gray-700"></div>

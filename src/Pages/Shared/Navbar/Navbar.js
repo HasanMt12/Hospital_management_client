@@ -37,7 +37,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar className="fixed">
+    <AppBar className="fixed ">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -114,6 +114,7 @@ const NavBar = () => {
           >
             LOGO
           </Typography>
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -124,18 +125,63 @@ const NavBar = () => {
                 {page}
               </Button>
             ))}
-            {!user && (
+
+            {/* {!user && (
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
-                Login
+                <Link to="/login">Login</Link>
               </Button>
-            )}
+            )} */}
+
+             {user?.uid ?  <>
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                LogOut
+              </Button>
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+             </> : (
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                 <Link to="/login">Login</Link>
+              </Button>
+            )} 
+
+            {/* Added by nafisa */}
+              {/* <Button>
+             <Link to="/signup"
+                sx={{ my: 2,mx:2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                Sign Up
+              </Link>
+             </Button>
+             <Button>
+             <Link to="/login"
+                sx={{ my: 2,mx:2, color: "white", display: "block" }}
+                variant="contained"
+              >
+               Log In
+              </Link>
+             </Button>  */}
+
+
 
 
 
           </Box>
+
+          
           {user && (
             <Box sx={{ m: 2 }}>
               <Tooltip title="Open settings">
