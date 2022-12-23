@@ -1,8 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
+
+
+
 import DashboardLayout from "../Layout/DashboardLayout";
 
 import Dashform from "../Dashform";
+
 
 import Main from "../Layout/Main";
 import Tables from "../Layout/Tables";
@@ -16,8 +20,7 @@ import ErrorPage from "../Pages/Shared/ErrorPage";
 const router = createBrowserRouter([
 
 
-
-    {
+   {
         path:'/',
         element:<Main></Main>,
         errorElement: <ErrorPage></ErrorPage>,
@@ -39,23 +42,24 @@ const router = createBrowserRouter([
                 element: <Dashform/>
             } ,
              {
+
         path: "/doctor/:id",
-        loader: () => fetch("featuredDoctors.json"),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/doctor/${params.id}`),
         element: <DoctorDetails />,
       },
-        ]
-    },
-    {
-        path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
-        children:[
-            {
-                path: 'table',
-                element: <Tables></Tables>
-            }
-        ]
-    }
-])
-export default router; 
 
-
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "table",
+        element: <Tables></Tables>,
+      },
+    ],
+  },
+]);
+export default router;

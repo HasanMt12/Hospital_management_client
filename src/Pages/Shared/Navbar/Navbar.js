@@ -13,19 +13,23 @@ import { Avatar, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
+
+import './navbar.css'
+
 import Popup from "../Popup";
 import Login from "../../Register/Login/Login";
 
 
-const pages = ["Home", "Services", "Doctors"];
+
+
 
 // const pages = ["Home", "Services", "Doctors"];
 
-/* const pages = [
+ const pages = [
   { name: "Home", link: "/" },
   { name: "Services", link: "/" },
   { name: "Doctors", link: "/" },
-]; */
+]; 
 
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -63,37 +67,35 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar
-      AppBar
-      className="fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2"
-    >
+    <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <MedicationLiquidIcon />
 
           <Typography
-            variant="h6"
+            variant="h1"
             noWrap
-            // component="Link"
-            href="/"
             sx={{
-              // border:"2px solid black",
               flexGrow: 1,
-              mr: 2,
-              ml: 2,
-              display: { xs: "none", md: "flex" },
+
+              display: {
+                xs: "none",
+                md: "flex",
+                alignItems: "center",
+                gap: "5px",
+              },
+
               fontFamily: "monospace",
               fontWeight: 700,
               cursor: "pointer",
-              color: "inherit",
-              textDecoration: "none",
             }}
           >
 
+            <MedicationLiquidIcon className="name text-3xl" />
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
 
-         
-
-            <Link to="/">Doctors Planet</Link>
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -127,7 +129,11 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+
+                  <Link className="name" to={page.link}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
+
                 </MenuItem>
               ))}
             </Menu>
@@ -138,42 +144,26 @@ const NavBar = () => {
             // component="a"
             href=""
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              color: "white",
+              // textDecoration: "none",
             }}
           >
-            LOGO
+
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
+
           </Typography>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
 
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+              <Link className="name" to={page.link}>
 
-            {/* {!user && (
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                <Link to="/login">Login</Link>
-              </Button>
-            )} */}
-
-
-              {/* <Link to={page.link}>
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
@@ -182,7 +172,7 @@ const NavBar = () => {
                   {page.name}
                 </Button>
               </Link>
-            ))} */}
+            ))} 
 
 
             {user?.uid ? (
