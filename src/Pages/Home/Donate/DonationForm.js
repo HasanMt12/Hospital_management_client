@@ -52,7 +52,7 @@ const DonationForm = () => {
       <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
         Please Fill the form below
       </p>
-      <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3  shadow-lg">
+      <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3  ">
         <div className="box-primary">
           <img
             src={hero}
