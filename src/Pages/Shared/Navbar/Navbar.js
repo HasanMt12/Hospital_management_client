@@ -11,6 +11,10 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Avatar,  Tooltip } from "@mui/material";
 import {Link} from 'react-router-dom'
+import DashboardLayout from "../../../Layout/DashboardLayout";
+
+
+
 
 const pages = ["Home", "Services", "Doctors"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -37,7 +41,8 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar className="fixed">
+    <AppBar className="fixed ">
+      
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -57,8 +62,15 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+           
+               
+        Login
+      
+     
           </Typography>
+  
+   <DashboardLayout></DashboardLayout>
+   
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -114,6 +126,8 @@ const NavBar = () => {
           >
             LOGO
           </Typography>
+     
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -124,32 +138,43 @@ const NavBar = () => {
                 {page}
               </Button>
             ))}
-            {!user && (
+
+            {/* {!user && (
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
                 <Link to="/login">Login</Link>
               </Button>
-            )}
+            )} */}
 
-            {/* {user ? (
+             {user?.uid ?  <>
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
                 LogOut
               </Button>
-            ) : (
+
+              
+             </> : <>
+
+             <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="contained"
               >
-                Login
+                 <Link to="/login">Login</Link>
               </Button>
-            )} */}
+            </>} 
+
             {/* Added by nafisa */}
-        {/*      <Button>
+              {/* <Button>
              <Link to="/signup"
                 sx={{ my: 2,mx:2, color: "white", display: "block" }}
                 variant="contained"
@@ -164,13 +189,15 @@ const NavBar = () => {
               >
                Log In
               </Link>
-             </Button> */}
+             </Button>  */}
 
 
 
 
 
           </Box>
+
+          
           {user && (
             <Box sx={{ m: 2 }}>
               <Tooltip title="Open settings">
