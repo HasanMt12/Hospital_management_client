@@ -19,7 +19,7 @@ const DoctorHomeCard = ({doctor}) => {
         '&:hover': {
             transform: 'scale(1.05)',
             // backgroundColor: 'red'
-        }}}  >
+        }}} >
       <CardMedia
         component="img"
         height="140"
