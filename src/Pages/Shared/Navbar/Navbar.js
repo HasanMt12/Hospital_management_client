@@ -17,7 +17,14 @@ import Popup from "../Popup";
 import Login from "../../Register/Login/Login";
 
 
-const pages = ["Home", "Services", "Doctors"];
+// const pages = ["Home", "Services", "Doctors"];
+
+const pages = [
+  { name: "Home", link: "/" },
+  { name: "Services", link: "/" },
+  { name: "Doctors", link: "/" },
+];
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
@@ -49,13 +56,13 @@ const [openPopup, setOpenPopup] = useState(false)
   };
 
   return (
-    <AppBar AppBar className = "fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2">
+    <AppBar
+      AppBar
+      className="fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-<MedicationLiquidIcon />
-
           <Typography
-
             variant="h6"
             noWrap
             // component="Link"
@@ -65,7 +72,7 @@ const [openPopup, setOpenPopup] = useState(false)
               flexGrow: 1,
               mr: 2,
               ml: 2,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", md: "flex", gap: "5px" },
               fontFamily: "monospace",
               fontWeight: 700,
               cursor: "pointer",
@@ -73,8 +80,10 @@ const [openPopup, setOpenPopup] = useState(false)
               textDecoration: "none",
             }}
           >
+
+            <MedicationLiquidIcon />
             <Link to="/">Doctors Planet</Link>
-            
+
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -108,7 +117,9 @@ const [openPopup, setOpenPopup] = useState(false)
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={page.link}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -129,11 +140,21 @@ const [openPopup, setOpenPopup] = useState(false)
               textDecoration: "none",
             }}
           >
-            LOGO
+            Doctors Planet
           </Typography>
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                md: "flex",
+                justifyContent: "space-between",
+                gap: "16px",
+              },
+            }}
+          >
             {pages.map((page) => (
+
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -190,11 +211,51 @@ const [openPopup, setOpenPopup] = useState(false)
 
 
 
+              <Link to={page.link}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
+            ))}
 
+
+            {user?.uid ? (
+              <>
+                <Button
+                  onClick={() => handleLogOut()}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant="outlined"
+                >
+                  LogOut
+                </Button>
+                <Link to="/dashboard">
+                  <Button
+                    sx={{ my: 2, color: "white", display: "block", mr: 1 }}
+                    variant="outlined"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    variant="outlined"
+                  >
+                    Login
+                  </Button>
+                </Link>
+              </>
+            )}
           </Box>
 
-          
-          {user && (
+          {user?.uid && (
             <Box sx={{ m: 2 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
