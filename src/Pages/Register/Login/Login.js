@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <div className="my-32">
       <Grid>
-        <Paper elevation={1} style={paperStyle}>
+        <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -160,7 +160,7 @@ const Login = () => {
                 Create a new account ?
               </span>
               <Link
-                // onClick={() => setOpenPopup(true)}
+                onClick={() => setOpenPopup(true)}
                 to="/signup"
                 className="text-green-600 font-medium"
                 style={{
@@ -229,7 +229,7 @@ const Login = () => {
         </Paper>
       </Grid>
       <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
-        {/* <SignUp></SignUp> */}
+        <SignUp></SignUp>
       </Popup>
     </div>
   );
