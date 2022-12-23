@@ -231,7 +231,7 @@ const Login = () => {
           </form>
         </Paper>
       </Grid>
-      <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+      <Popup  title="SignUp Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <SignUp></SignUp>
       </Popup>
     </div>
