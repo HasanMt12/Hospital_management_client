@@ -68,7 +68,8 @@ const {user , logOut} = useContext(AuthContext);
               color: "inherit",
               textDecoration: "none",
             }}
-          ><Link to="/">Doctors Planet</Link>
+          >
+            <Link to="/">Doctors Planet</Link>
             
           </Typography>
 
@@ -151,19 +152,23 @@ const {user , logOut} = useContext(AuthContext);
               <Button
                 sx={{ my: 2, color: "white", display: "block"}}
                 variant="outlined"
+                onClick={handleLogOut}
               >
+
+
                 LogOut
               </Button>
 
-              
-             </> : <>
-
-             <Button
-                sx={{ my: 2, color: "white", display: "block" , mr: 1 }}
+                <Button
+                sx={{ my: 2, color: "white", display: "block" , ml: 1 }}
                 variant="outlined"
               >
                 <Link to="/dashboard">Dashboard</Link>
               </Button>
+             </> 
+             : <>
+
+           
 
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -224,7 +229,9 @@ const {user , logOut} = useContext(AuthContext);
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting}</Typography>
+
                   </MenuItem>
+                  
                 ))}
               </Menu>
             </Box>

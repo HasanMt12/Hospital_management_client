@@ -36,7 +36,9 @@ const DashboardLayout = () => {
             <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+
         <Navbar></Navbar>
+
       </AppBar>
       <Drawer
         variant="permanent"
@@ -110,7 +112,11 @@ const DashboardLayout = () => {
         </TableBody>
       </Table>
     </TableContainer>
-    <Outlet></Outlet>
+
+    
+
+<Outlet></Outlet>
+
         </Toolbar >
        
       
