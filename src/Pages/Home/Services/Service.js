@@ -3,17 +3,16 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import './service.css'
 
 const Service = ({ serv }) => {
   const { img, title, details } = serv;
   console.log(serv);
   return (
-    <Card
+    <Card className="card"
       sx={{
         maxWidth: 345,
-        // boxShadow: 'none',
-        boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.1)",
-        bgcolor: "",
+        boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px white",
         marginTop: "20px",
         pt: 2,
         mx: "auto",

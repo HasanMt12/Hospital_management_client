@@ -63,7 +63,7 @@ const Services = () => {
         <ServiceTitle
           title="Service We Offer"
           colored="Services"
-          sx={{ mb: 8 }}
+          sx={{ mb: 8 ,color:"green" }}
         />
 
         <Grid sx={{ mb: 8 }} container spacing={2}>

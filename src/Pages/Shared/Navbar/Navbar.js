@@ -13,6 +13,7 @@ import { Avatar,  Tooltip } from "@mui/material";
 import {Link} from 'react-router-dom'
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import './navbar.css'
 
 // const pages = ["Home", "Services", "Doctors"];
 
@@ -52,32 +53,29 @@ const {user , logOut} = useContext(AuthContext);
   };
 
   return (
-    <AppBar
-      AppBar
-      className="fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2"
-    >
+    <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h1"
             noWrap
-            // component="Link"
-            href="/"
             sx={{
-              // border:"2px solid black",
               flexGrow: 1,
-              mr: 2,
-              ml: 2,
-              display: { xs: "none", md: "flex", gap: "5px" },
+              display: {
+                xs: "none",
+                md: "flex",
+                alignItems: "center",
+                gap: "5px",
+              },
               fontFamily: "monospace",
               fontWeight: 700,
               cursor: "pointer",
-              color: "inherit",
-              textDecoration: "none",
             }}
           >
-            <MedicationLiquidIcon />
-            <Link to="/">Doctors Planet</Link>
+            <MedicationLiquidIcon className="name text-3xl" />
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -111,7 +109,7 @@ const {user , logOut} = useContext(AuthContext);
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link to={page.link}>
+                  <Link className="name" to={page.link}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </Link>
                 </MenuItem>
@@ -124,17 +122,17 @@ const {user , logOut} = useContext(AuthContext);
             // component="a"
             href=""
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              color: "white",
+              // textDecoration: "none",
             }}
           >
-            Doctors Planet
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
           </Typography>
 
           <Box
@@ -148,7 +146,7 @@ const {user , logOut} = useContext(AuthContext);
             }}
           >
             {pages.map((page) => (
-              <Link to={page.link}>
+              <Link className="name" to={page.link}>
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
