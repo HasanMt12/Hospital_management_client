@@ -5,6 +5,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Dashform from "../Dashform";
 
 import Main from "../Layout/Main";
+import Tables from "../Layout/Tables";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
 import SignUp from "../Pages/Register/SignUp/SignUp";
@@ -12,43 +13,42 @@ import ErrorPage from "../Pages/Shared/ErrorPage";
 
 
 const router = createBrowserRouter([
+
   {
-    path: "/",
-    element: <Main></Main>,
+    path:'/',
+    element:<Main></Main>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-      {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
-        path: "/signup",
-        element: <SignUp></SignUp>,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/dash",
-        element: <Dashform />,
-      },
-    ],
-  },
-  {
-    path: "/dashboard",
-    errorElement: <ErrorPage></ErrorPage>,
-    element: (
-      <DashboardLayout></DashboardLayout>
-      /*   <PrivateRoutes>
-          </PrivateRoutes> */
-    ),
-    children: [
-      /* {
-            path: "/dashboard/myOrders",
-            element: ,
-          }, */
-    ],
-  },
-]);
-export default router;
+        {
+            path: '/',
+            element: <Home></Home>
+        },
+         {
+            path: '/signup',
+            element: <SignUp></SignUp>
+        },
+        {
+            path: '/login',
+            element: <Login></Login>
+        } ,
+        {
+            path: '/dash',
+            element: <Dashform/>
+        } 
+    ]
+},
+{
+    path: '/dashboard',
+    element: <DashboardLayout></DashboardLayout>,
+    children:[
+        {
+            path: 'table',
+            element: <Tables></Tables>
+        }
+    ]
+}
+])
+export default router; 
+
+
+   
