@@ -1,27 +1,13 @@
 import { LocalHospital } from "@mui/icons-material";
-import React, { useState } from "react";
+import React from "react";
 import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const DoctorDetails = () => {
   const data = useLoaderData();
-  const [slot, setSlot] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+
   const navigate = useNavigate();
 
-  const bookingInfo = {
-    slot,
-    name,
-    email,
-    phone,
-    address,
-  };
-  // const handleChange = (event) => {
-  //   setSlot(event.target.value);
-  // };
   const handleSubmit = (event) => {
     event.preventDefault();
     toast.success("Successfully Make Appointment");
@@ -143,65 +129,6 @@ const DoctorDetails = () => {
                 Make an Appointment
               </button>
             </div>
-            {/* <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "100%" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Slot</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={slot}
-                  label="Age"
-                  margin="dense"
-                  onChange={(e) => setSlot(e.target.value)}
-                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-                <TextField
-                  margin="dense"
-                  id="outlined-basic"
-                  label="Full Name"
-                  onBlur={(e) => setName(e.target.value)}
-                  variant="outlined"
-                />
-                <TextField
-                  margin="dense"
-                  id="outlined-basic"
-                  label="Email"
-                  onBlur={(e) => setEmail(e.target.value)}
-                  variant="outlined"
-                />
-                <TextField
-                  margin="dense"
-                  id="outlined-basic"
-                  label="Contact Number"
-                  onBlur={(e) => setPhone(e.target.value)}
-                  variant="outlined"
-                />
-                <TextField
-                  margin="dense"
-                  id="outlined-basic"
-                  label="Address"
-                  onBlur={(e) => setAddress(e.target.value)}
-                  variant="outlined"
-                />
-                <Button
-                  variant="contained"
-                  onClick={handleSubmit}
-                  endIcon={<SendIcon />}
-                >
-                  Booking Now
-                </Button>
-              </FormControl>
-            </Box> */}
           </form>
         </div>
       </div>
