@@ -4,36 +4,38 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
 import SignUp from "../Pages/Register/SignUp/SignUp";
+import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
 
 const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<Main></Main>,
-        errorElement: <ErrorPage></ErrorPage>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-             {
-                path: '/signup',
-                element: <SignUp></SignUp>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            } 
-        ]
-    },
-    {
-        path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
-        children:[
-            {
-                
-            }
-        ]
-    }
-])
-export default router; 
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/doctor/:id",
+        loader: () => fetch("featuredDoctors.json"),
+        element: <DoctorDetails />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [{}],
+  },
+]);
+export default router;

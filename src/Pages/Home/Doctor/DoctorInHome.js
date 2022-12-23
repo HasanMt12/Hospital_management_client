@@ -1,26 +1,27 @@
 import React from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
+import DetailsIcon from "@mui/icons-material/Details";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useQuery } from "@tanstack/react-query";
-import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
-import DetailsIcon from "@mui/icons-material/Details";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import "./styles.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
-import ServiceTitile from "../Services/ServiceTitle";
 import { IconButton, Tooltip } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Navigation, Pagination } from "swiper";
+import ServiceTitile from "../Services/ServiceTitle";
 
 const DoctorInHome = () => {
   const {
@@ -104,10 +105,13 @@ const DoctorInHome = () => {
                     <AddCircleSharpIcon />
                   </IconButton>
                 </Tooltip>
+
                 <Tooltip title="See Details">
-                  <IconButton>
-                    <DetailsIcon />
-                  </IconButton>
+                  <Link to={`doctor/${doctor?.id}`}>
+                    <IconButton>
+                      <DetailsIcon />
+                    </IconButton>
+                  </Link>
                 </Tooltip>
               </CardActions>
             </Card>
