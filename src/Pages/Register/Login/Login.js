@@ -28,7 +28,7 @@ const Login = () => {
   const btnStyle = {
     margin: "8px 2px",
     backgroundColor: "#1bbd7e",
-    color: "#1bbd7e",
+   
   };
   const btn1Style = {
    
