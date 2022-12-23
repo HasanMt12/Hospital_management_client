@@ -13,8 +13,17 @@ import { Avatar,  Tooltip } from "@mui/material";
 import {Link} from 'react-router-dom'
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import Popup from "../Popup";
+import Login from "../../Register/Login/Login";
 
-const pages = ["Home", "Services", "Doctors"];
+// const pages = ["Home", "Services", "Doctors"];
+
+const pages = [
+  { name: "Home", link: "/" },
+  { name: "Services", link: "/" },
+  { name: "Doctors", link: "/" },
+];
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
@@ -22,6 +31,7 @@ const NavBar = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
 const {user , logOut} = useContext(AuthContext);
 
+  const [openPopup, setOpenPopup] = useState(false);
      const handleLogOut = () => {
         logOut()
         .then( ()=> {} )
@@ -45,13 +55,13 @@ const {user , logOut} = useContext(AuthContext);
   };
 
   return (
-    <AppBar AppBar className = "fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2">
+    <AppBar
+      AppBar
+      className="fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-<MedicationLiquidIcon />
-
           <Typography
-
             variant="h6"
             noWrap
             // component="Link"
@@ -61,7 +71,7 @@ const {user , logOut} = useContext(AuthContext);
               flexGrow: 1,
               mr: 2,
               ml: 2,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", md: "flex", gap: "5px" },
               fontFamily: "monospace",
               fontWeight: 700,
               cursor: "pointer",
@@ -69,8 +79,8 @@ const {user , logOut} = useContext(AuthContext);
               textDecoration: "none",
             }}
           >
+            <MedicationLiquidIcon />
             <Link to="/">Doctors Planet</Link>
-            
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -104,7 +114,9 @@ const {user , logOut} = useContext(AuthContext);
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={page.link}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -125,85 +137,63 @@ const {user , logOut} = useContext(AuthContext);
               textDecoration: "none",
             }}
           >
-            LOGO
+            Doctors Planet
           </Typography>
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                md: "flex",
+                justifyContent: "space-between",
+                gap: "16px",
+              },
+            }}
+          >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link to={page.link}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
 
-            {/* {!user && (
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                <Link to="/login">Login</Link>
-              </Button>
-            )} */}
-
-             {user?.uid ?  <>
-              <Button
-                sx={{ my: 2, color: "white", display: "block"}}
-                variant="outlined"
-                onClick={handleLogOut}
-              >
-
-
-                LogOut
-              </Button>
-
+            {user?.uid ? (
+              <>
                 <Button
-                sx={{ my: 2, color: "white", display: "block" , ml: 1 }}
-                variant="outlined"
-              >
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
-             </> 
-             : <>
-
-           
-
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="outlined"
-              >
-                 <Link to="/login">Login</Link>
-              </Button>
-            </>} 
-
-            {/* Added by nafisa */}
-              {/* <Button>
-             <Link to="/signup"
-                sx={{ my: 2,mx:2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                Sign Up
-              </Link>
-             </Button>
-             <Button>
-             <Link to="/login"
-                sx={{ my: 2,mx:2, color: "white", display: "block" }}
-                variant="contained"
-              >
-               Log In
-              </Link>
-             </Button>  */}
-
-
-
-
-
+                  onClick={() => handleLogOut()}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant="outlined"
+                >
+                  LogOut
+                </Button>
+                <Link to="/dashboard">
+                  <Button
+                    sx={{ my: 2, color: "white", display: "block", mr: 1 }}
+                    variant="outlined"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Button
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant="outlined"
+                  onClick={() => setOpenPopup(true)}
+                >
+                  Login
+                </Button>
+              </>
+            )}
           </Box>
 
-          
-          {user && (
+          {user?.uid && (
             <Box sx={{ m: 2 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -229,15 +219,14 @@ const {user , logOut} = useContext(AuthContext);
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting}</Typography>
-
                   </MenuItem>
-                  
                 ))}
               </Menu>
             </Box>
           )}
         </Toolbar>
       </Container>
+      <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
     </AppBar>
   );
 };
