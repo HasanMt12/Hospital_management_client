@@ -1,3 +1,5 @@
+
+
 import { AppBar, Box, CssBaseline, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -36,7 +38,9 @@ const DashboardLayout = () => {
             <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+
         <Navbar></Navbar>
+
       </AppBar>
       <Drawer
         variant="permanent"
@@ -110,7 +114,11 @@ const DashboardLayout = () => {
         </TableBody>
       </Table>
     </TableContainer>
-    <Outlet></Outlet>
+
+    
+
+<Outlet></Outlet>
+
         </Toolbar >
        
       
@@ -124,3 +132,4 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
+

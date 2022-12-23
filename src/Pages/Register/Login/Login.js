@@ -6,7 +6,6 @@ import {
   TextField,
   Button,
   Typography,
-
 } from "@material-ui/core";
 import LockOutlinedIcon from "@mui/icons-material//LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -15,6 +14,9 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import Popup from "../../Shared/Popup";
+import { color } from "@mui/system";
+import SignUp from "../SignUp/SignUp";
 const Login = () => {
   const paperStyle = {
     padding: "50px 30px",
@@ -23,7 +25,17 @@ const Login = () => {
     margin: "40px auto",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const btnStyle = { margin: "8px 0" };
+  const btnStyle = {
+    margin: "8px 2px",
+    backgroundColor: "#1bbd7e",
+   
+  };
+  const btn1Style = {
+   
+    width: "23px", height: "23px" ,
+    color: "#1bbd7e",
+  };
+
   const {
     register,
     handleSubmit,
@@ -33,6 +45,7 @@ const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   const [loginError, setLoginError] = useState("");
   const location = useLocation();
+  const [openPopup, setOpenPopup] = useState(false);
   // const [loginUserEmail, setLoginUserEmail] = useState("");
 
   const navigate = useNavigate();
@@ -71,7 +84,7 @@ const Login = () => {
   return (
     <div className="my-32">
       <Grid>
-        <Paper elevation={20} style={paperStyle}>
+        <Paper elevation={1} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -89,7 +102,7 @@ const Login = () => {
               })}
             />
             {errors.email && (
-              <p className="text-red-500">{errors.email.message}</p>
+              <p style={{ color: "red" }}>{errors.email.message}</p>
             )}
             <TextField
               label="Password"
@@ -106,7 +119,7 @@ const Login = () => {
               })}
             />
             {errors.password && (
-              <p className="text-red-500">{errors.password.message}</p>
+              <p style={{ color: "red" }}>{errors.password.message}</p>
             )}
             <FormControlLabel
               control={
@@ -129,25 +142,63 @@ const Login = () => {
             >
               Sign in
             </Button>
-            {loginError && <p className="text-red-600">{loginError}</p>}
+            {loginError && <p style={{ color: "red" }}>{loginError}</p>}
             <Typography>
               <Link href="#">Forgot password ?</Link>
             </Typography>
             <Typography class>
               {" "}
-              <span className="text-center">Create a new account ?</span>
-              <Link to="/signup" className="text-green-600 font-medium">Sign Up</Link>
+              <span
+                className="text-center"
+                style={{
+                  fontStyle: "font-medium",
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  fontSize: "17px",
+                }}
+              >
+                Create a new account ?
+              </span>
+              <Link
+                // onClick={() => setOpenPopup(true)}
+                to="/signup"
+                className="text-green-600 font-medium"
+                style={{
+                  color: "green",
+                  fontWeight: "font-medium",
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                }}
+              >
+                Sign Up
+              </Link>
             </Typography>
-            <div className="text-center my-1 font-medium">OR</div>
+            <div
+              className="text-center my-1 font-medium"
+              dividers
+              style={{ textAlign: "center" }}
+            >
+              OR
+            </div>
 
             <div className="flex items-center  space-x-1">
-              <div className="flex-1   dark:bg-gray-700"></div>
-              <p className="text-lg dark:text-gray-400 my-1">
+              <div className="   bg-gray-700"></div>
+              <p
+                className="text-lg text-gray-400 my-1"
+                style={{
+                  fontStyle: "font-medium",
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  fontSize: "18px",
+                }}
+              >
                 Signup with social account
               </p>
-              <div className="flex-1  sm:w-16 dark:bg-gray-700"></div>
             </div>
-            <div className="flex justify-center space-x-4">
+            <div
+              className="flex justify-center "
+              style={{ display: "flex justify-center" }}
+            >
               <Button
                 variant="contained"
                 fullWidth
@@ -155,11 +206,20 @@ const Login = () => {
                 onClick={handleGoogleSignIn}
                 aria-label="Log in with Google"
                 className="p-3 rounded-sm text-xl "
+                style={{
+                  padding: "7px",
+                  border: "rounded",
+                  fontSize: "20px",
+                  color: "#1bbd7e",
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
-                  className="w-5 h-5 fill-current btn text-green-500"
+                  // className="w-5 h-5 fill-current btn text-green-500"
+
+                  // style={{ width: "23px", height: "23px" }}
+                  style={btn1Style}
                 >
                   <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
                 </svg>
@@ -168,6 +228,9 @@ const Login = () => {
           </form>
         </Paper>
       </Grid>
+      <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+        {/* <SignUp></SignUp> */}
+      </Popup>
     </div>
   );
 };
