@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <div className="my-32">
       <Grid>
-        <Paper elevation={0} style={paperStyle}>
+        <Paper elevation={1} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />

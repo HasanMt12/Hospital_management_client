@@ -16,7 +16,18 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import Popup from "../Popup";
 import Login from "../../Register/Login/Login";
 
+
 const pages = ["Home", "Services", "Doctors"];
+
+// const pages = ["Home", "Services", "Doctors"];
+
+/* const pages = [
+  { name: "Home", link: "/" },
+  { name: "Services", link: "/" },
+  { name: "Doctors", link: "/" },
+]; */
+
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
@@ -25,11 +36,16 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
 
+
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
   };
+
+ 
+  
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -73,6 +89,10 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
+
+
+         
+
             <Link to="/">Doctors Planet</Link>
           </Typography>
 
@@ -133,6 +153,7 @@ const NavBar = () => {
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
+
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -150,6 +171,19 @@ const NavBar = () => {
                 <Link to="/login">Login</Link>
               </Button>
             )} */}
+
+
+              {/* <Link to={page.link}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
+            ))} */}
+
 
             {user?.uid ? (
               <>
@@ -233,7 +267,7 @@ export default NavBar;
 const [openPopup, setOpenPopup] = useState(false)
 
   <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
-  
+
    <Button
                 sx={{ my: 2, color: "white", display: "block" }}
                 variant="outlined"
