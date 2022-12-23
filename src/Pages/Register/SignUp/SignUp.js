@@ -201,16 +201,22 @@ const SignUp = () => {
             {signUpError && <p className="text-red-600">{signUpError}</p>}
             <Typography>
               {" "}
-              Do you have already an account ?<Link onClick={() => setOpenPopup(true)}  className="text-green-600 font-bold">Login</Link>
+              Do you have already an account ?<Link onClick={() => setOpenPopup(true)}  className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}>Login</Link>
             </Typography>
-            <div className="text-center my-1 font-medium" Dividers>OR</div>
+            <div className="text-center my-1 font-medium" Dividers  style={{ textAlign: "center" }}>OR</div>
 
             <div className="flex items-center ">
-              <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
-              <p className="px-3 text-lg text-gray-400 my-1">
+        
+              <p className="px-3 text-lg text-gray-400 my-1" style={{
+                  fontStyle: "font-medium",
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  fontSize: "18px",
+                  textAlign:'center'
+                }}>
                 Signup with social account
               </p>
-              <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
+              
             </div>
             <div className="flex justify-center " style={{display:'flex justify-center', }}>
               <Button
