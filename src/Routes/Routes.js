@@ -1,11 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
-
-import Dashform from "../Dashform";
-
-
 import DashboardLayout from "../Layout/DashboardLayout";
 
+import Dashform from "../Dashform";
 
 import Main from "../Layout/Main";
 import Tables from "../Layout/Tables";
@@ -15,7 +12,9 @@ import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
 
+
 const router = createBrowserRouter([
+
 
 
     {
@@ -58,4 +57,5 @@ const router = createBrowserRouter([
     }
 ])
 export default router; 
+
 

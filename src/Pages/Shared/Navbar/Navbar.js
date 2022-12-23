@@ -13,6 +13,9 @@ import { Avatar,  Tooltip } from "@mui/material";
 import {Link} from 'react-router-dom'
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import Popup from "../Popup";
+import Login from "../../Register/Login/Login";
+
 
 // const pages = ["Home", "Services", "Doctors"];
 
@@ -29,6 +32,7 @@ const NavBar = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
 const {user , logOut} = useContext(AuthContext);
 
+const [openPopup, setOpenPopup] = useState(false)
      const handleLogOut = () => {
         logOut()
         .then( ()=> {} )
@@ -76,8 +80,10 @@ const {user , logOut} = useContext(AuthContext);
               textDecoration: "none",
             }}
           >
+
             <MedicationLiquidIcon />
             <Link to="/">Doctors Planet</Link>
+
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -148,6 +154,63 @@ const {user , logOut} = useContext(AuthContext);
             }}
           >
             {pages.map((page) => (
+
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {page}
+              </Button>
+            ))}
+
+            {/* {!user && (
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="contained"
+              >
+                <Link to="/login">Login</Link>
+              </Button>
+            )} */}
+
+             {user?.uid ?  <>
+              <Button
+                sx={{ my: 2, color: "white", display: "block"}}
+                variant="outlined"
+                onClick={handleLogOut}
+              >
+
+
+                LogOut
+              </Button>
+
+                <Button
+                sx={{ my: 2, color: "white", display: "block" , ml: 1 }}
+                variant="outlined"
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+             </> 
+             : <>
+
+           
+
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="outlined"
+                onClick={()=>setOpenPopup(true)}
+                
+              >
+                Login
+                 {/* <Link to="/login">Login</Link> */}
+                 
+              </Button>
+            </>} 
+
+            
+
+
+
               <Link to={page.link}>
                 <Button
                   key={page}
@@ -158,6 +221,7 @@ const {user , logOut} = useContext(AuthContext);
                 </Button>
               </Link>
             ))}
+
 
             {user?.uid ? (
               <>
@@ -217,14 +281,18 @@ const {user , logOut} = useContext(AuthContext);
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting}</Typography>
+
                   </MenuItem>
+                  
                 ))}
               </Menu>
             </Box>
           )}
         </Toolbar>
       </Container>
+      <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
     </AppBar>
+
   );
 };
 export default NavBar;
