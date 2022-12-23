@@ -12,9 +12,12 @@ import Tables from "../Layout/Tables";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
 import SignUp from "../Pages/Register/SignUp/SignUp";
+import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
 
 const router = createBrowserRouter([
+
+
     {
         path:'/',
         element:<Main></Main>,
@@ -35,7 +38,12 @@ const router = createBrowserRouter([
             {
                 path: '/dash',
                 element: <Dashform/>
-            } 
+            } ,
+             {
+        path: "/doctor/:id",
+        loader: () => fetch("featuredDoctors.json"),
+        element: <DoctorDetails />,
+      },
         ]
     },
     {
@@ -50,3 +58,4 @@ const router = createBrowserRouter([
     }
 ])
 export default router; 
+
