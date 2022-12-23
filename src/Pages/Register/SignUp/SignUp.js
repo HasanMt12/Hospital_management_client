@@ -201,7 +201,7 @@ const SignUp = () => {
             {signUpError && <p className="text-red-600">{signUpError}</p>}
             <Typography>
               {" "}
-              Do you have already an account ?<Link onClick={() => setOpenPopup(true)}  className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}>Login</Link>
+              Do you have already an account ?<Button onClick={() => setOpenPopup(true)}  className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}>Login</Button>
             </Typography>
             <div className="text-center my-1 font-medium" Dividers  style={{ textAlign: "center" }}>OR</div>
 

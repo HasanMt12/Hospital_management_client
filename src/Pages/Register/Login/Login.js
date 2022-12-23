@@ -21,7 +21,7 @@ const Login = () => {
   const paperStyle = {
     padding: "50px 30px",
     height: 520,
-    width: 350,
+    width: 360,
     margin: "40px auto",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
@@ -160,9 +160,9 @@ const Login = () => {
               >
                 Create a new account ?
               </span>
-              <Link
+              <Button
                 onClick={() => setOpenPopup(true)}
-                to="/signup"
+                
                 className="text-green-600 font-medium"
                 style={{
                   color: "green",
@@ -173,7 +173,7 @@ const Login = () => {
                 }}
               >
                 Sign Up
-              </Link>
+              </Button>
             </Typography>
             <div
               className="text-center my-1 font-medium "
