@@ -1,5 +1,6 @@
 import { LocalHospital } from "@mui/icons-material";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const DoctorDetails = () => {
@@ -18,12 +19,13 @@ const DoctorDetails = () => {
     phone,
     address,
   };
-  const handleChange = (event) => {
-    setSlot(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setSlot(event.target.value);
+  // };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Clicked");
+    toast.success("Successfully Make Appointment");
+    navigate("/");
   };
 
   return (
@@ -55,7 +57,7 @@ const DoctorDetails = () => {
         </div>
         <div className="w-full p-3">
           <h3 className="text-center text-xl font-bold mb-6">
-            Please Fillup with correct Inforamtions
+            Please Fillup with Carefully
           </h3>
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-2">
             <label
@@ -66,11 +68,11 @@ const DoctorDetails = () => {
                 id="bookingSlot"
                 class="h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
               >
-                <option>Hello</option>
-                <option>Hello</option>
-                <option>Hello</option>
-                <option>Hello</option>
-                <option>Hello</option>
+                <option>Slot_1</option>
+                <option>Slot_2</option>
+                <option>Slot_3</option>
+                <option>Slot_4</option>
+                <option>Slot_5</option>
               </select>
             </label>
             <label
