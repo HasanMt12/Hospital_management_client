@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <div className="my-32">
       <Grid>
-        <Paper elevation={1} style={paperStyle}>
+        <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -143,24 +143,25 @@ const Login = () => {
               Sign in
             </Button>
             {loginError && <p style={{ color: "red" }}>{loginError}</p>}
-            <Typography>
+            {/* <Typography>
               <Link href="#">Forgot password ?</Link>
-            </Typography>
-            <Typography class>
+            </Typography> */}
+            <Typography style={{textAlign:'center'}}>
               {" "}
               <span
-                className="text-center"
+                // className="text-center"
                 style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
                   fontSize: "17px",
+                  textAlign:'center'
                 }}
               >
                 Create a new account ?
               </span>
               <Link
-                // onClick={() => setOpenPopup(true)}
+                onClick={() => setOpenPopup(true)}
                 to="/signup"
                 className="text-green-600 font-medium"
                 style={{
@@ -168,13 +169,14 @@ const Login = () => {
                   fontWeight: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
+                  textAlign:'center'
                 }}
               >
                 Sign Up
               </Link>
             </Typography>
             <div
-              className="text-center my-1 font-medium"
+              className="text-center my-1 font-medium "
               dividers
               style={{ textAlign: "center" }}
             >
@@ -182,14 +184,15 @@ const Login = () => {
             </div>
 
             <div className="flex items-center  space-x-1">
-              <div className="   bg-gray-700"></div>
+            
               <p
                 className="text-lg text-gray-400 my-1"
                 style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
-                  fontSize: "18px",
+                  fontSize: "17px",
+                  textAlign:'center'
                 }}
               >
                 Signup with social account
@@ -228,8 +231,8 @@ const Login = () => {
           </form>
         </Paper>
       </Grid>
-      <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
-        {/* <SignUp></SignUp> */}
+      <Popup  title="SignUp Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
+        <SignUp></SignUp>
       </Popup>
     </div>
   );
