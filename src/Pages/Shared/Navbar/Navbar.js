@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,6 +11,8 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Avatar,  Tooltip } from "@mui/material";
 import {Link} from 'react-router-dom'
+import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const pages = ["Home", "Services", "Doctors"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -18,8 +20,14 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+const {user , logOut} = useContext(AuthContext);
 
-  const [user, setUser] = useState(false);
+     const handleLogOut = () => {
+        logOut()
+        .then( ()=> {} )
+        .catch(error => console.log(error));
+    }
+  
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,10 +45,13 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar className="fixed ">
+    <AppBar AppBar className = "fixed bg-gradient-to-r from-sky-300 via-sky-200 to-sky-300 shadow-lg rounded-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+<MedicationLiquidIcon />
+
           <Typography
+
             variant="h6"
             noWrap
             // component="Link"
@@ -49,15 +60,16 @@ const NavBar = () => {
               // border:"2px solid black",
               flexGrow: 1,
               mr: 2,
+              ml: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              cursor: "pointer",
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
+          ><Link to="/">Doctors Planet</Link>
+            
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -137,25 +149,29 @@ const NavBar = () => {
 
              {user?.uid ?  <>
               <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
+                sx={{ my: 2, color: "white", display: "block"}}
+                variant="outlined"
               >
                 LogOut
               </Button>
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
+
+              
+             </> : <>
+
+             <Button
+                sx={{ my: 2, color: "white", display: "block" , mr: 1 }}
+                variant="outlined"
               >
                 <Link to="/dashboard">Dashboard</Link>
               </Button>
-             </> : (
+
               <Button
                 sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
+                variant="outlined"
               >
                  <Link to="/login">Login</Link>
               </Button>
-            )} 
+            </>} 
 
             {/* Added by nafisa */}
               {/* <Button>

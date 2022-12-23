@@ -14,10 +14,11 @@ function App() {
     AOS.refresh();
   }, []);
   return (
-    <div className='w-11/12 mx-auto '>
+    <div className='bg-gradient-to-r from-slate-50 via-slate-50 to-slate-50 shadow-lg rounded-2'>
+    <div className='w-11/12 mx-auto ' >
     <RouterProvider router={router}></RouterProvider>
     <Toaster position="top-center" reverseOrder={false}></Toaster>
-  </div>
+  </div></div>
   );
 }
 
