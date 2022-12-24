@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../src/contexts/AuthProvider';
 
-const PrivateRouts = ({children}) => {
+const PrivateRoutes = ({children}) => {
     const { user , loading} = useContext(AuthContext);
     const location = useLocation();
     if(loading) {
@@ -15,4 +15,4 @@ const PrivateRouts = ({children}) => {
 
 };
 
-export default PrivateRouts;
+export default PrivateRoutes;

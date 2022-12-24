@@ -18,7 +18,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 // import required modules
-import { IconButton, Tooltip } from "@mui/material";
+import { Button, CardActionArea, IconButton, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper";
 import ServiceTitile from "../Services/ServiceTitle";
@@ -31,7 +31,7 @@ const DoctorInHome = () => {
   } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
-      const res = await fetch("featuredDoctors.json");
+      const res = await fetch("http://localhost:5000/featureddoctors");
       const data = await res.json();
       return data;
     },
@@ -40,6 +40,7 @@ const DoctorInHome = () => {
     return <h1>Loading</h1>;
   }
   refetch();
+  console.log(doctors)
 
   return (
     <>
@@ -87,16 +88,17 @@ const DoctorInHome = () => {
                 component="img"
                 alt="green iguana"
                 image={doctor?.img}
+                style={{height:200}}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {doctor?.name}
+                  {doctor?.doctorName}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {doctor?.qualification}
+                  {doctor?.degree}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {doctor?.category}
+                  {doctor?.department}
                 </Typography>
               </CardContent>
               <CardActions>
@@ -107,7 +109,7 @@ const DoctorInHome = () => {
                 </Tooltip>
 
                 <Tooltip title="See Details">
-                  <Link to={`doctor/${doctor?.id}`}>
+                  <Link to={`doctor/${doctor?._id}`}>
                     <IconButton>
                       <DetailsIcon />
                     </IconButton>

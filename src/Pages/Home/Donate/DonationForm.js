@@ -1,11 +1,13 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+
+// import Box from "@mui/material/Box";
 import "./Donate.css";
 import hero from "../../../assets/882096_1029.jpg";
 
 import {
   TextField,
+  Button,
+  Box,
   FormControlLabel,
   Checkbox,
   FormLabel,
@@ -50,11 +52,11 @@ const DonationForm = () => {
       <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
         Please Fill the form below
       </p>
-      <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3">
+      <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3  ">
         <div className="box-primary">
           <img
             src={hero}
-            className="lg:h-[390px]  h-[300px] lg:w-[380px] w-[280px]"
+            className="lg:h-[300px]  h-[320px] lg:w-[300px] w-[280px]"
             alt=""
           />
         </div>
@@ -212,26 +214,29 @@ const DonationForm = () => {
             {/*  Switch */}
             <FormControlLabel
               className={classes.inputField}
-             
               control={
-                <Switch  style={{color:"red"}} {...register("notification")} name="notification" />
+                <Switch
+                  style={{ color: "red" }}
+                  {...register("notification")}
+                  name="notification"
+                />
               }
               label="Send me regular updates"
             />
 
             {/* Checkbox */}
-            <FormControlLabel 
-              style={{ display: "block", marginBottom: 15 ,  }}
-              control={<Checkbox  name="tnc" {...register("checkbox")} />}
+            <FormControlLabel
+              style={{ display: "block", marginBottom: 15 }}
+              control={<Checkbox name="tnc" {...register("checkbox")} />}
               label="I agree all terms and conditions"
             />
 
             <Button
               variant="contained"
-              color="error"
+              
               type="submit"
               size="large"
-              className="w-3/5 lg:w-auto"
+              className="w-3/5 lg:w-auto bg-red-500 text-white"
             >
               Submit
             </Button>
