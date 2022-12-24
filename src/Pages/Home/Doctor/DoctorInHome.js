@@ -1,26 +1,27 @@
 import React from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
+import DetailsIcon from "@mui/icons-material/Details";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useQuery } from "@tanstack/react-query";
-import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
-import DetailsIcon from "@mui/icons-material/Details";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import "./styles.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Button, CardActionArea, IconButton, Tooltip } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Navigation, Pagination } from "swiper";
 import ServiceTitile from "../Services/ServiceTitle";
-import { IconButton, Tooltip } from "@mui/material";
 
 const DoctorInHome = () => {
   const {
@@ -30,7 +31,7 @@ const DoctorInHome = () => {
   } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
-      const res = await fetch("featuredDoctors.json");
+      const res = await fetch("http://localhost:5000/featureddoctors");
       const data = await res.json();
       return data;
     },
@@ -39,6 +40,7 @@ const DoctorInHome = () => {
     return <h1>Loading</h1>;
   }
   refetch();
+  console.log(doctors)
 
   return (
     <>
@@ -86,16 +88,17 @@ const DoctorInHome = () => {
                 component="img"
                 alt="green iguana"
                 image={doctor?.img}
+                style={{height:200}}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {doctor?.name}
+                  {doctor?.doctorName}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {doctor?.qualification}
+                  {doctor?.degree}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {doctor?.category}
+                  {doctor?.department}
                 </Typography>
               </CardContent>
               <CardActions>
@@ -104,10 +107,13 @@ const DoctorInHome = () => {
                     <AddCircleSharpIcon />
                   </IconButton>
                 </Tooltip>
+
                 <Tooltip title="See Details">
-                  <IconButton>
-                    <DetailsIcon />
-                  </IconButton>
+                  <Link to={`doctor/${doctor?._id}`}>
+                    <IconButton>
+                      <DetailsIcon />
+                    </IconButton>
+                  </Link>
                 </Tooltip>
               </CardActions>
             </Card>

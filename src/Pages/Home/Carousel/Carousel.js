@@ -45,10 +45,10 @@ const Carousel = () => {
           // cssMode={true}
           effect={"fade"}
           navigation={true}
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 4500,
+          //   disableOnInteraction: false,
+          // }}
           loop={true}
           keyboard={{
             enabled: true,
@@ -69,11 +69,11 @@ const Carousel = () => {
         >
           {sliders.map((slider) => (
             <SwiperSlide>
-              <div className="absolute inset-x-0 bottom-52 h-16 z-20">
-                <p className="text-2xl font-bold">
-                  Caring for our community like family
+              <div className="absolute inset-x-0 bottom-62 h-16 z-20">
+                <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-green-900 title">
+                  {slider.title}
                 </p>
-                <button className="btn bg-blue-700 text-white px-6 py-4 rounded-md mt-5 ">
+                <button className="btn button bg-green-800 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">
                   Make an Appointment
                 </button>
               </div>

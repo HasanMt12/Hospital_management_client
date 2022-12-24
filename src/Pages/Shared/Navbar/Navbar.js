@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,17 +9,47 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Avatar,  Tooltip } from "@mui/material";
-import {Link} from 'react-router-dom'
+import { Avatar, Tooltip } from "@mui/material";
+import { Link } from "react-router-dom";
+import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
-const pages = ["Home", "Services", "Doctors"];
+import './navbar.css'
+
+import Popup from "../Popup";
+import Login from "../../Register/Login/Login";
+
+
+
+
+
+// const pages = ["Home", "Services", "Doctors"];
+
+ const pages = [
+  { name: "Home", link: "/" },
+  { name: "Services", link: "/" },
+  { name: "Doctors", link: "/" },
+]; 
+
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const { user, logOut } = useContext(AuthContext);
+  const [openPopup, setOpenPopup] = useState(false);
 
-  const [user, setUser] = useState(false);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
+ 
+  
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,27 +67,35 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar className="fixed ">
+    <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <MedicationLiquidIcon />
+
           <Typography
-            variant="h6"
+            variant="h1"
             noWrap
-            // component="Link"
-            href="/"
             sx={{
-              // border:"2px solid black",
               flexGrow: 1,
-              mr: 2,
-              display: { xs: "none", md: "flex" },
+
+              display: {
+                xs: "none",
+                md: "flex",
+                alignItems: "center",
+                gap: "5px",
+              },
+
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              cursor: "pointer",
             }}
           >
-            LOGO
+
+            <MedicationLiquidIcon className="name text-3xl" />
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
+
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -91,7 +129,11 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+
+                  <Link className="name" to={page.link}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
+
                 </MenuItem>
               ))}
             </Menu>
@@ -102,86 +144,69 @@ const NavBar = () => {
             // component="a"
             href=""
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              color: "white",
+              // textDecoration: "none",
             }}
           >
-            LOGO
+
+            <Link className="text-bold text-3xl name" to="/">
+              Doctors Planet
+            </Link>
+
           </Typography>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
 
-            {/* {!user && (
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                <Link to="/login">Login</Link>
-              </Button>
-            )} */}
+              <Link className="name" to={page.link}>
 
-             {user?.uid ?  <>
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                LogOut
-              </Button>
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
-             </> : (
-              <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                 <Link to="/login">Login</Link>
-              </Button>
-            )} 
-
-            {/* Added by nafisa */}
-              {/* <Button>
-             <Link to="/signup"
-                sx={{ my: 2,mx:2, color: "white", display: "block" }}
-                variant="contained"
-              >
-                Sign Up
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
               </Link>
-             </Button>
-             <Button>
-             <Link to="/login"
-                sx={{ my: 2,mx:2, color: "white", display: "block" }}
-                variant="contained"
-              >
-               Log In
-              </Link>
-             </Button>  */}
+            ))} 
 
 
+            {user?.uid ? (
+              <>
+                <Button
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant="outlined"
+                  onClick={handleLogOut}
+                >
+                  LogOut
+                </Button>
 
+                <Button
+                  sx={{ my: 2, color: "white", display: "block", ml: 1 }}
+                  variant="outlined"
+                >
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant="outlined"
+                  onClick={() => setOpenPopup(true)}
+                >
+                  Login
+                </Button>
+              </>
+            )}
 
-
+            
           </Box>
 
-          
           {user && (
             <Box sx={{ m: 2 }}>
               <Tooltip title="Open settings">
@@ -215,7 +240,33 @@ const NavBar = () => {
           )}
         </Toolbar>
       </Container>
+      <Popup
+        title="Login Form"
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+      >
+        <Login></Login>
+      </Popup>
     </AppBar>
   );
 };
 export default NavBar;
+/* 
+
+
+const [openPopup, setOpenPopup] = useState(false)
+
+  <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
+
+   <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="outlined"
+                onClick={()=>setOpenPopup(true)}
+                
+              >
+                Login
+               
+                 
+                 </Button>
+
+*/

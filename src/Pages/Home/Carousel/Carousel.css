@@ -5,6 +5,11 @@
 
   height: 90%;
 }
+.swiper-button-prev , .swiper-button-next{
+  color: #0BB288;
+  font-weight: 900;
+  border: 2px solid balck;
+}
 
 .swiper-slide {
   width: 100%;
@@ -33,4 +38,17 @@
 object-fit: cover;
   height: 100%;
 
+}
+
+.button {
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+
+
+
+.title{
+    -webkit-text-stroke: 1px #a59999;
+  text-shadow: 0px 4px 4px #282828ad;
 }
