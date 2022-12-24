@@ -10,6 +10,7 @@ import Main from "../Layout/Main";
 import Tables from "../Layout/Tables";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
+import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
-            } ,
+            },
+            {
+               path: '/services',
+               element: <ServicesPage></ServicesPage>
+            },
             {
                 path: '/dash',
                 element: <Dashform/>
