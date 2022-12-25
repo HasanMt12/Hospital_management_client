@@ -38,7 +38,7 @@ const DashbordLayoutes = () => {
               <div className="mt-5 font-bold ">DASHBOARD</div>
             </div>
             <ul className="mt-12">
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
                   <FaUsers className=""></FaUsers>
                   <Link to="/dashboard/users">
@@ -47,7 +47,7 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaUserMd></FaUserMd>
                   <Link to="/dashboard/addDoctors">
@@ -55,7 +55,7 @@ const DashbordLayoutes = () => {
                   </Link>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -64,28 +64,28 @@ const DashbordLayoutes = () => {
                   </Link>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaMoneyCheckAlt />
                   <span className="text-sm font-bold ml-2"> INSURENCE </span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaHome></FaHome>
-                  <span className="text-sm font-bold ml-2"> EXTRAA</span>
+                  <span className="text-sm font-bold ml-2"> EXTRA</span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center p-2">
                   <FaBook />
                   <span className="text-sm font-bold ml-2">INSURENCE</span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaHome></FaHome>
-                  <span className="text-sm font-bold ml-2">EXTRAA?</span>
+                  <span className="text-sm font-bold ml-2">EXTRA?</span>
                 </div>
               </li>
             </ul>
@@ -125,7 +125,7 @@ const DashbordLayoutes = () => {
               <li className="cursor-pointer text-black pt-5 pb-3">
                 <FaHome />
               </li>
-          
+
               <li className="cursor-pointer text-black pt-5 pb-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ const DashbordLayoutes = () => {
 
           <div className="container mx-auto hidden lg:block ">
             <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow     transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 duration-300 ...            ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300   ">
                 <div className="text-sm font-medium text-gray-500 truncate    ">
                   Total users
                 </div>
@@ -164,7 +164,7 @@ const DashbordLayoutes = () => {
                   12,00
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+              <div className="w-full px-4 py-5 bg-white rounded-lg  shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Profit
                 </div>
@@ -172,7 +172,7 @@ const DashbordLayoutes = () => {
                   $ 450k
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Orders
                 </div>
