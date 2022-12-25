@@ -16,8 +16,6 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-
-
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#fff",
@@ -72,25 +70,21 @@ function Blogs() {
 
   return (
     <div className="App">
-        
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <Typography variant="h6" color="primary">
             Blog
           </Typography>
         </Toolbar>
-        
-      
       </AppBar>
-      
+
       <Box className={classes.hero}>
         <Box>
-        <button className="btn  text-white font-serif shadow-md text-4xl bg-stone-500 font-bold px-6 py-4 rounded-lg mt-5 ">
-                  Doctor Planet
-                </button>
+          <button className="btn  text-white font-serif shadow-md text-4xl bg-stone-500 font-bold px-6 py-4 rounded-lg mt-5 ">
+            Doctor Planet
+          </button>
         </Box>
       </Box>
-     
 
       {/* Feature section */}
       <Grid container spacing={3} style={{ marginTop: "20px" }}>
@@ -132,11 +126,15 @@ function Blogs() {
                 <Typography component="h2" variant="h5" color="primary">
                   Thermometer Temperature
                 </Typography>
-                <Typography variant="subtitle1"  className="text-gray-500">
+                <Typography variant="subtitle1" className="text-gray-500">
                   Dec 25
                 </Typography>
                 <Typography variant="subtitle1" paragraph>
-                Normal body temperature is about 98.6 degrees Fahrenheit (°F) or 37 degrees Celsius (°C). Normal temperature often varies from 1° to 2°F (½° to 1°C). A normal temperature is usually lower in the morning and increases during the day. It reaches its high in the late afternoon or evening.
+                  Normal body temperature is about 98.6 degrees Fahrenheit (°F)
+                  or 37 degrees Celsius (°C). Normal temperature often varies
+                  from 1° to 2°F (½° to 1°C). A normal temperature is usually
+                  lower in the morning and increases during the day. It reaches
+                  its high in the late afternoon or evening.
                 </Typography>
                 <Typography variant="subtitle1" color="primary">
                   Continue reading...
@@ -183,10 +181,13 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                  <Avatar
+                    src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style={{ marginRight: "8px" }}
+                  />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Rakibul Islam
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -228,10 +229,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Hasan Mahmud
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -273,10 +274,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                     Nafisa Akter
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -318,10 +319,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                  <Avatar src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                     Suhana Salma
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -363,10 +364,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Masum Billah
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -408,10 +409,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Muctasina Golam Rawfoon
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -453,10 +454,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                     Nafisa Akter
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -498,10 +499,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Suhana Salma
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -543,10 +544,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Hasan Mahmud
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -588,10 +589,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                     Rakibul Islam
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -633,10 +634,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" />
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Guy Clemons
+                      Masum Billah
                     </Typography>
                     <Typography
                       variant="subtitle2"
