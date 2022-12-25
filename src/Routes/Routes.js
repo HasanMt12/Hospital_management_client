@@ -2,18 +2,18 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Dashform from "../Dashform";
 
-import DashboardLayout from "../Layout/DashboardLayout";
 
 import Main from "../Layout/Main";
-import Tables from "../Layout/Tables";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
 import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
-import Blog from "../Pages/Blog/Blog";
 import Blogs from "../Pages/Blogs/Blogs";
+import DashbordLayoutes from "../Layout/DashbordLayoutes/DashbordLayoutes";
+import Users from "../Dashboard/DashboardPage/Users";
+import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 
 const router = createBrowserRouter([
   {
@@ -41,10 +41,10 @@ const router = createBrowserRouter([
         path: "/dash",
         element: <Dashform />,
       },
-    
+
       {
         path: "/blogs",
-        element: <Blogs/>,
+        element: <Blogs />,
       },
       {
         path: "/doctor/:id",
@@ -54,15 +54,22 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <DashbordLayoutes />,
     children: [
       {
-        path: "table",
-        element: <Tables></Tables>,
+        path: "/dashboard/users",
+        element: <Users />
       },
-    ],
-  },
+      {
+        path: "/dashboard/addDoctors",
+        element: <AddDoctor />
+      },
+    ]
+  }
+
 ]);
 export default router;
