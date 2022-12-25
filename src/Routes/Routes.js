@@ -12,7 +12,7 @@ import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
-import Blog from "../Pages/Blog/Blog";
+
 import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
@@ -41,10 +41,10 @@ const router = createBrowserRouter([
         path: "/dash",
         element: <Dashform />,
       },
-    
+
       {
         path: "/blogs",
-        element: <Blogs/>,
+        element: <Blogs />,
       },
       {
         path: "/doctor/:id",
