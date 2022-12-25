@@ -13,7 +13,7 @@ import {
   Autoplay,
   Navigation,
   Pagination,
-  Mousewheel,
+ 
   Keyboard,
   EffectFade,
 } from "swiper";
@@ -53,7 +53,7 @@ const Carousel = () => {
           keyboard={{
             enabled: true,
           }}
-          mousewheel={true}
+        
           pagination={{
             type: "progressbar",
           }}
@@ -62,7 +62,7 @@ const Carousel = () => {
             Autoplay,
             Navigation,
             Pagination,
-            Mousewheel,
+        
             Keyboard,
           ]}
           className="mySwiper"
@@ -70,7 +70,7 @@ const Carousel = () => {
           {sliders.map((slider) => (
             <SwiperSlide>
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
-                <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-green-900 title">
+                <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}
                 </p>
                 <button className="btn button bg-green-800 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">

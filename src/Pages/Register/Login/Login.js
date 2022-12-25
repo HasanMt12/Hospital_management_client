@@ -21,7 +21,7 @@ const Login = () => {
   const paperStyle = {
     padding: "50px 30px",
     height: 520,
-    width: 360,
+    width: 380,
     margin: "40px auto",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };

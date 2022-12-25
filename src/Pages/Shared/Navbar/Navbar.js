@@ -15,27 +15,42 @@ import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import "./navbar.css";
  
+
+import "./navbar.css";
+
+import Popup from "../Popup";
+import Login from "../../Register/Login/Login";
+
+
 // const pages = ["Home", "Services", "Doctors"];
  
+
+
 const pages = [
   { name: "Home", link: "/" },
   { name: "Services", link: "/" },
   { name: "Doctors", link: "/" },
 ];
+
  
+
+
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
  
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { user, logOut } = useContext(AuthContext);
- 
+  const [openPopup, setOpenPopup] = useState(false);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
   };
  
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -155,7 +170,11 @@ const NavBar = () => {
                 </Button>
               </Link>
             ))}
- 
+            <Link to="/blogs">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Blogs
+              </Button>
+            </Link>
             {user?.uid ? (
               <>
                 <Button
