@@ -5,7 +5,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 const DoctorDetails = () => {
   const data = useLoaderData();
-
+console.log(data)
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {

@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-
 import Dashform from "../Dashform";
-
 
 import DashboardLayout from "../Layout/DashboardLayout";
 
@@ -14,44 +12,46 @@ import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
-
+import Blog from "../Pages/Blog/Blog";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
-
-   {
-        path:'/',
-        element:<Main></Main>,
-        errorElement: <ErrorPage></ErrorPage>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-             {
-                path: '/signup',
-                element: <SignUp></SignUp>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-               path: '/services',
-               element: <ServicesPage></ServicesPage>
-            },
-            {
-                path: '/dash',
-                element: <Dashform/>
-            } ,
-             {
-
-
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/services",
+        element: <ServicesPage></ServicesPage>,
+      },
+      {
+        path: "/dash",
+        element: <Dashform />,
+      },
+    
+      {
+        path: "/blogs",
+        element: <Blogs/>,
+      },
+      {
         path: "/doctor/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:5000/doctor/${params.id}`),
         element: <DoctorDetails />,
       },
-
     ],
   },
   {

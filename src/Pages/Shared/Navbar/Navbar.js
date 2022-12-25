@@ -14,23 +14,19 @@ import { Link } from "react-router-dom";
 import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
-import './navbar.css'
+import "./navbar.css";
 
 import Popup from "../Popup";
 import Login from "../../Register/Login/Login";
 
 
-
-
-
 // const pages = ["Home", "Services", "Doctors"];
 
- const pages = [
+const pages = [
   { name: "Home", link: "/" },
   { name: "Services", link: "/" },
   { name: "Doctors", link: "/" },
-]; 
-
+];
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -40,16 +36,11 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
 
-
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
   };
-
- 
-  
-
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -70,8 +61,6 @@ const NavBar = () => {
     <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <MedicationLiquidIcon />
-
           <Typography
             variant="h1"
             noWrap
@@ -90,12 +79,10 @@ const NavBar = () => {
               cursor: "pointer",
             }}
           >
-
             <MedicationLiquidIcon className="name text-3xl" />
             <Link className="text-bold text-3xl name" to="/">
               Doctors Planet
             </Link>
-
           </Typography>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -129,11 +116,9 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-
                   <Link className="name" to={page.link}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </Link>
-
                 </MenuItem>
               ))}
             </Menu>
@@ -152,18 +137,14 @@ const NavBar = () => {
               // textDecoration: "none",
             }}
           >
-
             <Link className="text-bold text-3xl name" to="/">
               Doctors Planet
             </Link>
-
           </Typography>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-
               <Link className="name" to={page.link}>
-
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
@@ -172,9 +153,12 @@ const NavBar = () => {
                   {page.name}
                 </Button>
               </Link>
-            ))} 
-
-
+            ))}
+            <Link to="/blogs">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Blogs
+              </Button>
+            </Link>
             {user?.uid ? (
               <>
                 <Button
@@ -203,8 +187,6 @@ const NavBar = () => {
                 </Button>
               </>
             )}
-
-            
           </Box>
 
           {user && (
@@ -251,22 +233,3 @@ const NavBar = () => {
   );
 };
 export default NavBar;
-/* 
-
-
-const [openPopup, setOpenPopup] = useState(false)
-
-  <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
-
-   <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="outlined"
-                onClick={()=>setOpenPopup(true)}
-                
-              >
-                Login
-               
-                 
-                 </Button>
-
-*/
