@@ -41,10 +41,7 @@ const router = createBrowserRouter([
         path: "/dash",
         element: <Dashform />,
       },
-      {
-        path: "/blog/:id",
-        element: <Blog/>,
-      },
+    
       {
         path: "/blogs",
         element: <Blogs/>,
