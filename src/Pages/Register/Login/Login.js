@@ -12,10 +12,9 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import Popup from "../../Shared/Popup";
-import { color } from "@mui/system";
 import SignUp from "../SignUp/SignUp";
 const Login = () => {
   const paperStyle = {
