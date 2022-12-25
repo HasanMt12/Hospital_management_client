@@ -84,7 +84,11 @@ function Blogs() {
       </AppBar>
       
       <Box className={classes.hero}>
-        <Box>Blog</Box>
+        <Box>
+        <button className="btn  text-white font-serif shadow-md text-4xl bg-stone-500 font-bold px-6 py-4 rounded-lg mt-5 ">
+                  Doctor Planet
+                </button>
+        </Box>
       </Box>
      
 

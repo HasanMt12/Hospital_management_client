@@ -18,7 +18,7 @@ import "./navbar.css";
 
 import Popup from "../Popup";
 import Login from "../../Register/Login/Login";
-import Blogs from "../../Blog/Blog";
+
 
 // const pages = ["Home", "Services", "Doctors"];
 
