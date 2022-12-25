@@ -10,6 +10,10 @@ import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
+
+
+
+
 import Blogs from "../Pages/Blogs/Blogs";
 import DashbordLayoutes from "../Layout/DashbordLayoutes/DashbordLayoutes";
 import Users from "../Dashboard/DashboardPage/Users";

@@ -39,7 +39,7 @@ const Carousel = () => {
     }
     refetch();
   return (
-    <div className="h-screen mt-20">
+    <div className="h-screen mt-28">
       <div className="h-5/6">
         <Swiper
           // cssMode={true}
@@ -73,7 +73,7 @@ const Carousel = () => {
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}
                 </p>
-                <button className="btn button bg-green-800 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">
+                <button className="btn button bg-teal-700 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">
                   Make an Appointment
                 </button>
               </div>
