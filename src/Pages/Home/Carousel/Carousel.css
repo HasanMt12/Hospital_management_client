@@ -1,20 +1,26 @@
 
 .carSwipper {
   margin-top: 20px;
-  /* width: 90%; */
+  margin-bottom: 20px;
+  width: 100%;
 
-  height: 90%;
+  height: 100vh;
 }
+
+
 
 .swiper-button-prev,
 .swiper-button-next {
   color: #0bb288;
-  font-weight: 900;
   border: 2px solid balck;
+
+  font-weight: 900;
+  
 }
 
 .carSwiperSlide {
   width: 100%;
+  height: 100vh;
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -37,20 +43,21 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-object-fit: cover;
-  height: 100%;
-
+  object-fit: cover;
+  height: 100vh;
+  filter: brightness(60%);
+  vertical-align: middle;
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
 
 .button {
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
--webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-
-
-.title{
-    -webkit-text-stroke: 1px #a59999;
+.title {
+  -webkit-text-stroke: 1px #a59999;
   text-shadow: 0px 4px 4px #282828ad;
 }

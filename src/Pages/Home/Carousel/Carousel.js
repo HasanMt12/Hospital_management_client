@@ -13,7 +13,7 @@ import {
   Autoplay,
   Navigation,
   Pagination,
-  Mousewheel,
+ 
   Keyboard,
   EffectFade,
 } from "swiper";
@@ -39,7 +39,8 @@ const Carousel = () => {
     }
     refetch();
   return (
-    <div className="h-screen">
+
+    <div className="h-screen mt-28">
       <div className="h-5/6">
         <Swiper
           // cssMode={true}
@@ -53,19 +54,34 @@ const Carousel = () => {
           keyboard={{
             enabled: true,
           }}
+
           pagination={{
             type: "progressbar",
           }}
           modules={[EffectFade, Autoplay, Navigation, Pagination, Keyboard]}
           className="mySwiper carSwipper"
+
+        
+          pagination={{
+            type: "progressbar",
+          }}
+          modules={[
+            EffectFade,
+            Autoplay,
+            Navigation,
+            Pagination,
+        
+            Keyboard,
+          ]}
+          className="mySwiper carSwipper"
         >
           {sliders.map((slider) => (
             <SwiperSlide className="carSwiperSlide">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
-                <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-green-900 title">
+                <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}
                 </p>
-                <button className="btn button bg-green-800 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">
+                <button className="btn button bg-teal-700 text-white text-xl font-bold px-6 py-4 rounded-md mt-5 ">
                   Make an Appointment
                 </button>
               </div>

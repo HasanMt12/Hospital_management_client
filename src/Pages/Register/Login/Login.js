@@ -12,16 +12,15 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import Popup from "../../Shared/Popup";
-import { color } from "@mui/system";
 import SignUp from "../SignUp/SignUp";
 const Login = () => {
   const paperStyle = {
     padding: "50px 30px",
     height: 520,
-    width: 350,
+    width: 380,
     margin: "40px auto",
   };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
@@ -84,7 +83,7 @@ const Login = () => {
   return (
     <div className="my-32">
       <Grid>
-        <Paper elevation={1} style={paperStyle}>
+        <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -143,38 +142,40 @@ const Login = () => {
               Sign in
             </Button>
             {loginError && <p style={{ color: "red" }}>{loginError}</p>}
-            <Typography>
+            {/* <Typography>
               <Link href="#">Forgot password ?</Link>
-            </Typography>
-            <Typography class>
+            </Typography> */}
+            <Typography style={{textAlign:'center'}}>
               {" "}
               <span
-                className="text-center"
+                // className="text-center"
                 style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
                   fontSize: "17px",
+                  textAlign:'center'
                 }}
               >
                 Create a new account ?
               </span>
-              <Link
-                // onClick={() => setOpenPopup(true)}
-                to="/signup"
+              <Button
+                onClick={() => setOpenPopup(true)}
+                
                 className="text-green-600 font-medium"
                 style={{
                   color: "green",
                   fontWeight: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
+                  textAlign:'center'
                 }}
               >
                 Sign Up
-              </Link>
+              </Button>
             </Typography>
             <div
-              className="text-center my-1 font-medium"
+              className="text-center my-1 font-medium "
               dividers
               style={{ textAlign: "center" }}
             >
@@ -182,14 +183,15 @@ const Login = () => {
             </div>
 
             <div className="flex items-center  space-x-1">
-              <div className="   bg-gray-700"></div>
+            
               <p
                 className="text-lg text-gray-400 my-1"
                 style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
-                  fontSize: "18px",
+                  fontSize: "17px",
+                  textAlign:'center'
                 }}
               >
                 Signup with social account
@@ -228,8 +230,8 @@ const Login = () => {
           </form>
         </Paper>
       </Grid>
-      <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
-        {/* <SignUp></SignUp> */}
+      <Popup  title="SignUp Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
+        <SignUp></SignUp>
       </Popup>
     </div>
   );
