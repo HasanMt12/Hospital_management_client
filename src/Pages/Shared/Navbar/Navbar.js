@@ -175,6 +175,11 @@ const NavBar = () => {
                 Blogs
               </Button>
             </Link>
+            <Link to="/contact">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Contacts
+              </Button>
+            </Link>
             {user?.uid ? (
               <>
                 <Button
