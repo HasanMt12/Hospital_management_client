@@ -1,5 +1,5 @@
 .card {
-  --color: #459b0f; /* the border color */
+  --color: #2d8330; /* the border color */
   --border: 10px;   /* the border thickness*/
   --offset:10px;   /* control the offset*/
   --gap: 5px;       /* the gap on hover */

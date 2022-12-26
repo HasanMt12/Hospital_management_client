@@ -1,42 +1,251 @@
+// import React, { useContext, useState } from "react";
+// import AppBar from "@mui/material/AppBar";
+// import Box from "@mui/material/Box";
+// import Toolbar from "@mui/material/Toolbar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import Menu from "@mui/material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import Container from "@mui/material/Container";
+// import Button from "@mui/material/Button";
+// import MenuItem from "@mui/material/MenuItem";
+// import { Avatar, Tooltip } from "@mui/material";
+// import { Link } from "react-router-dom";
+// import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+// import { AuthContext } from "../../../contexts/AuthProvider";
+
+// import "./navbar.css";
+
+// import Popup from "../Popup";
+// import Login from "../../Register/Login/Login";
+
+
+// // const pages = ["Home", "Services", "Doctors"];
+
+// const pages = [
+//   { name: "Home", link: "/" },
+//   { name: "Services", link: "/" },
+//   { name: "Doctors", link: "/" },
+// ];
+
+// const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+// const NavBar = () => {
+//   const [anchorElNav, setAnchorElNav] = useState(null);
+//   const [anchorElUser, setAnchorElUser] = useState(null);
+//   const { user, logOut } = useContext(AuthContext);
+//   const [openPopup, setOpenPopup] = useState(false);
+
+//   const handleLogOut = () => {
+//     logOut()
+//       .then(() => {})
+//       .catch((error) => console.log(error));
+//   };
+
+//   const handleOpenNavMenu = (event) => {
+//     setAnchorElNav(event.currentTarget);
+//   };
+//   const handleCloseNavMenu = () => {
+//     setAnchorElNav(null);
+//   };
+
+//   const handleOpenUserMenu = (event) => {
+//     setAnchorElUser(event.currentTarget);
+//   };
+
+//   const handleCloseUserMenu = () => {
+//     setAnchorElUser(null);
+//   };
+
+//   return (
+//     <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
+//       <Container maxWidth="xl">
+//         <Toolbar disableGutters>
+//           <Typography
+//             variant="h1"
+//             noWrap
+//             sx={{
+//               flexGrow: 1,
+
+//               display: {
+//                 xs: "none",
+//                 md: "flex",
+//                 alignItems: "center",
+//                 gap: "5px",
+//               },
+
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               cursor: "pointer",
+//             }}
+//           >
+//             <MedicationLiquidIcon className="name text-3xl" />
+//             <Link className="text-bold text-3xl name" to="/">
+//               Doctors Planet
+//             </Link>
+//           </Typography>
+
+//           <Box sx={{ display: { xs: "flex", md: "none" } }}>
+//             <IconButton
+//               size="large"
+//               aria-label="account of current user"
+//               aria-controls="menu-appbar"
+//               aria-haspopup="true"
+//               onClick={handleOpenNavMenu}
+//               color="inherit"
+//             >
+//               <MenuIcon />
+//             </IconButton>
+//             <Menu
+//               id="menu-appbar"
+//               anchorEl={anchorElNav}
+//               anchorOrigin={{
+//                 vertical: "bottom",
+//                 horizontal: "left",
+//               }}
+//               keepMounted
+//               transformOrigin={{
+//                 vertical: "top",
+//                 horizontal: "left",
+//               }}
+//               open={Boolean(anchorElNav)}
+//               onClose={handleCloseNavMenu}
+//               sx={{
+//                 display: { xs: "block", md: "none" },
+//               }}
+//             >
+//               {pages.map((page) => (
+//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+//                   <Link className="name" to={page.link}>
+//                     <Typography textAlign="center">{page.name}</Typography>
+//                   </Link>
+//                 </MenuItem>
+//               ))}
+//             </Menu>
+//           </Box>
+//           <Typography
+//             variant="h5"
+//             noWrap
+//             // component="a"
+//             href=""
+//             sx={{
+//               display: { xs: "flex", md: "none" },
+//               flexGrow: 1,
+//               fontFamily: "monospace",
+//               fontWeight: 700,
+//               color: "white",
+//               // textDecoration: "none",
+//             }}
+//           >
+//             <Link className="text-bold text-3xl name" to="/">
+//               Doctors Planet
+//             </Link>
+//           </Typography>
+
+//           <Box sx={{ display: { xs: "none", md: "flex" } }}>
+//             {pages.map((page) => (
+//               <Link className="name" to={page.link}>
+//                 <Button
+//                   key={page}
+//                   onClick={handleCloseNavMenu}
+//                   sx={{ my: 2, color: "white", display: "block" }}
+//                 >
+//                   {page.name}
+//                 </Button>
+//               </Link>
+//             ))}
+//             <Link to="/blogs">
+//               <Button sx={{ my: 2, color: "white", display: "block" }}>
+//                 Blogs
+//               </Button>
+//             </Link>
+//             {user?.uid ? (
+//               <>
+//                 <Button
+//                   sx={{ my: 2, color: "white", display: "block" }}
+//                   variant="outlined"
+//                   onClick={handleLogOut}
+//                 >
+//                   LogOut
+//                 </Button>
+
+//                 <Button
+//                   sx={{ my: 2, color: "white", display: "block", ml: 1 }}
+//                   variant="outlined"
+//                 >
+//                   <Link to="/dashboard">Dashboard</Link>
+//                 </Button>
+//               </>
+//             ) : (
+//               <>
+//                 <Button
+//                   sx={{ my: 2, color: "white", display: "block" }}
+//                   variant="outlined"
+//                   onClick={() => setOpenPopup(true)}
+//                 >
+//                   Login
+//                 </Button>
+//               </>
+//             )}
+//           </Box>
+
+//           {user && (
+//             <Box sx={{ m: 2 }}>
+//               <Tooltip title="Open settings">
+//                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+//                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+//                 </IconButton>
+//               </Tooltip>
+//               <Menu
+//                 sx={{ mt: "45px" }}
+//                 id="menu-appbar"
+//                 anchorEl={anchorElUser}
+//                 anchorOrigin={{
+//                   vertical: "top",
+//                   horizontal: "right",
+//                 }}
+//                 keepMounted
+//                 transformOrigin={{
+//                   vertical: "top",
+//                   horizontal: "right",
+//                 }}
+//                 open={Boolean(anchorElUser)}
+//                 onClose={handleCloseUserMenu}
+//               >
+//                 {settings.map((setting) => (
+//                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
+//                     <Typography textAlign="center">{setting}</Typography>
+//                   </MenuItem>
+//                 ))}
+//               </Menu>
+//             </Box>
+//           )}
+//         </Toolbar>
+//       </Container>
+//       <Popup
+//         title="Login Form"
+//         openPopup={openPopup}
+//         setOpenPopup={setOpenPopup}
+//       >
+//         <Login></Login>
+//       </Popup>
+//     </AppBar>
+//   );
+// };
+// export default NavBar;
+
 import React, { useContext, useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Avatar, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
-import MedicationLiquidIcon from "@mui/icons-material/MedicationLiquid";
+import { Button, InputGroup } from "reactstrap";
 import { AuthContext } from "../../../contexts/AuthProvider";
-
-import './navbar.css'
-
-import Popup from "../Popup";
+import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import Login from "../../Register/Login/Login";
+import Popup from "../Popup";
+import "./navbar.css";
 
-
-
-
-
-// const pages = ["Home", "Services", "Doctors"];
-
- const pages = [
-  { name: "Home", link: "/" },
-  { name: "Services", link: "/" },
-  { name: "Doctors", link: "/" },
-]; 
-
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
+const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
 
@@ -46,227 +255,162 @@ const NavBar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
+  const menuItems = (
+    <>
+      {/* <li>
+        <InputGroup className="lg:block hidden ">
+          <ThemeContext.Consumer>
+            {({ changeTheme }) => (
+              <Button
+                className="bg-slate-400 hover:bg-slate-400"
+                onClick={() => {
+                  setDarkMode(!darkMode);
+                  changeTheme(darkMode ? themes.light : themes.dark);
+                }}
+              >
+                <i className={darkMode ? "fas fa-sun" : "fas fa-moon"}></i>
+                <span className="d-lg-none d-md-block">
+                  <div className="form-control">
+                    <label className="label cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="toggle toggle-primary"
+                      />
+                    </label>
+                  </div>
+                </span>
+              </Button>
+            )}
+          </ThemeContext.Consumer>
+        </InputGroup>
+      </li> */}
+      <li className="name">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="name">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="name">
+        <Link to="/doctors">Doctors</Link>
+      </li>
+      <li className="name">
+        <Link to="/blogs">Blogs</Link>
+      </li>
 
- 
-  
-
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+      {user?.uid ? (
+        <>
+          <li className="name">
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li className="name">
+            <Link onClick={handleLogOut}>log out</Link>
+          </li>
+        </>
+      ) : (
+        <li onClick={() => setOpenPopup(true)} className="name">
+          <Link >Login</Link>
+        </li>
+      )}
+    </>
+  );
 
   return (
-    <AppBar className="fixed bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900 shadow-lg rounded-2">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <MedicationLiquidIcon />
-
-          <Typography
-            variant="h1"
-            noWrap
-            sx={{
-              flexGrow: 1,
-
-              display: {
-                xs: "none",
-                md: "flex",
-                alignItems: "center",
-                gap: "5px",
-              },
-
-              fontFamily: "monospace",
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
-
-            <MedicationLiquidIcon className="name text-3xl" />
-            <Link className="text-bold text-3xl name" to="/">
-              Doctors Planet
-            </Link>
-
-          </Typography>
-
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+    <div>
+      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+          <div className="relative flex items-center justify-between">
+            <a
+              href="/"
+              aria-label="Company"
+              title="Company"
+              className="inline-flex items-center"
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              <span className="ml-2 text-xl font-bold tracking-wide text-zinc-50  uppercase name">
+                Doctor's Planet
+              </span>
+            </a>
+            <ul className="flex items-center hidden text-zinc-50  space-x-8 lg:flex">
+              {menuItems}
+            </ul>
 
-                  <Link className="name" to={page.link}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </Link>
-
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            // component="a"
-            href=""
-            sx={{
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              color: "white",
-              // textDecoration: "none",
-            }}
-          >
-
-            <Link className="text-bold text-3xl name" to="/">
-              Doctors Planet
-            </Link>
-
-          </Typography>
-
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-
-              <Link className="name" to={page.link}>
-
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page.name}
-                </Button>
-              </Link>
-            ))} 
-
-
-            {user?.uid ? (
-              <>
-                <Button
-                  sx={{ my: 2, color: "white", display: "block" }}
-                  variant="outlined"
-                  onClick={handleLogOut}
-                >
-                  LogOut
-                </Button>
-
-                <Button
-                  sx={{ my: 2, color: "white", display: "block", ml: 1 }}
-                  variant="outlined"
-                >
-                  <Link to="/dashboard">Dashboard</Link>
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  sx={{ my: 2, color: "white", display: "block" }}
-                  variant="outlined"
-                  onClick={() => setOpenPopup(true)}
-                >
-                  Login
-                </Button>
-              </>
-            )}
-
-            
-          </Box>
-
-          {user && (
-            <Box sx={{ m: 2 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
+            <div className="lg:hidden">
+              <button
+                aria-label="Open Menu"
+                title="Open Menu"
+                className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
+                onClick={() => setIsMenuOpen(true)}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          )}
-        </Toolbar>
-      </Container>
+                <svg className="w-5 text-zinc-50" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+                  />
+                </svg>
+              </button>
+              {isMenuOpen && (
+                <div className="absolute z-10 top-0 left-0 w-full">
+                  <div className="p-5 bg-gray-900 border rounded shadow-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <a
+                          href="/"
+                          aria-label="Company"
+                          title="Company"
+                          className="inline-flex items-center"
+                        >
+                          <span className="ml-2 text-xl font-bold tracking-wide text-zinc-50 uppercase">
+                            Doctor's Planet
+                          </span>
+                        </a>
+                      </div>
+                      <div>
+                        <button
+                          aria-label="Close Menu"
+                          title="Close Menu"
+                          className="p-2 -mt-2   -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          <svg
+                            className="w-5 text-gray-600"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <nav>
+                      <ul className="space-y-4 text-gray-100 font-bold bg-gray-800 ">
+                        {menuItems}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
       <Popup
-        title="Login Form"
-        openPopup={openPopup}
-        setOpenPopup={setOpenPopup}
-      >
-        <Login></Login>
-      </Popup>
-    </AppBar>
+         title="Login Form"
+         openPopup={openPopup}
+       setOpenPopup={setOpenPopup}
+       >
+         <Login></Login>
+       </Popup>
+    </div>
   );
 };
-export default NavBar;
-/* 
 
-
-const [openPopup, setOpenPopup] = useState(false)
-
-  <Popup title='Login Form' openPopup = {openPopup} setOpenPopup={setOpenPopup}><Login></Login></Popup>
-
-   <Button
-                sx={{ my: 2, color: "white", display: "block" }}
-                variant="outlined"
-                onClick={()=>setOpenPopup(true)}
-                
-              >
-                Login
-               
-                 
-                 </Button>
-
-*/
+export default Navbar;

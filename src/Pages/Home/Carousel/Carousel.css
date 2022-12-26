@@ -1,17 +1,19 @@
 
-.swiper {
+.carSwipper {
   margin-top: 20px;
   /* width: 90%; */
 
   height: 90%;
 }
-.swiper-button-prev , .swiper-button-next{
-  color: #0BB288;
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #0bb288;
   font-weight: 900;
   border: 2px solid balck;
 }
 
-.swiper-slide {
+.carSwiperSlide {
   width: 100%;
   text-align: center;
   font-size: 18px;
