@@ -5,14 +5,15 @@ const ServiceTitile = ({ title, sx }) => {
   return (
     <div>
       <Typography
-        sx={{
-          fontSize: "34px",
+        style={{
+          fontSize: "32px",
           fontWeight: "bold",
           textAlign: "center",
+          marginBottom:"10px",
           ...sx,
         }}
       >
-        {title}{" "}
+        {title}
       </Typography>
     </div>
   );

@@ -18,7 +18,7 @@ import {
   EffectFade,
 } from "swiper";
 
-import "./Carousel.css";
+import './Carousel.css'
 import { useQuery } from "@tanstack/react-query";
 
 const Carousel = () => {
@@ -39,6 +39,7 @@ const Carousel = () => {
     }
     refetch();
   return (
+
     <div className="h-screen mt-28">
       <div className="h-5/6">
         <Swiper
@@ -53,6 +54,13 @@ const Carousel = () => {
           keyboard={{
             enabled: true,
           }}
+
+          pagination={{
+            type: "progressbar",
+          }}
+          modules={[EffectFade, Autoplay, Navigation, Pagination, Keyboard]}
+          className="mySwiper carSwipper"
+
         
           pagination={{
             type: "progressbar",
@@ -65,10 +73,10 @@ const Carousel = () => {
         
             Keyboard,
           ]}
-          className="mySwiper"
+          className="mySwiper carSwipper"
         >
           {sliders.map((slider) => (
-            <SwiperSlide>
+            <SwiperSlide className="carSwiperSlide">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}

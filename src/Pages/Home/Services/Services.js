@@ -58,11 +58,11 @@ const Services = () => {
   ];
 
   return (
-    <Container>
+    <Container className=" my-32">
       <Box>
         <ServiceTitle
-          title="Service We Offer"
-          colored="Services"
+          title="Services We Offer"
+          // colored="Services"
           sx={{ mb: 8 ,color:"green" }}
         />
 

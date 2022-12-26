@@ -1,4 +1,6 @@
 .card {
+  --color: #2d8330; /* the border color */
+  --border: 10px;   /* the border thickness*/
   --color: #97f8ace8; /* the border color */
   --border: 6px;   /* the border thickness*/
   --offset:10px;   /* control the offset*/
