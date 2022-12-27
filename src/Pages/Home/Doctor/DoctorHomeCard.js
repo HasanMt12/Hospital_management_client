@@ -26,7 +26,7 @@ const DoctorHomeCard = ({ doctor }) => {
       >
         <CardMedia
           component="img"
-          height="140"
+          // height="140"
           image={img}
           alt="green iguana"
         />

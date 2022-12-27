@@ -9,13 +9,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useQuery } from "@tanstack/react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
+
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "./styles.css";
+// import "./styles.css";
+// import './styles.css'
+import './doctor.css'
 
 // import required modules
 import { Button, CardActionArea, IconButton, Tooltip } from "@mui/material";
@@ -47,7 +51,7 @@ const DoctorInHome = () => {
       <ServiceTitile
         title="Featured Doctors"
         colored="Services"
-        sx={{ mb: 8 }}
+        sx={{ mb: 10,color:"green" }}
       />
       <Swiper
         //   slidesPerView={3}
@@ -79,44 +83,45 @@ const DoctorInHome = () => {
         }}
         //   navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper swipers mb-52"
+        className="mySwiper swipers"
       >
         {doctors.map((doctor) => (
           <SwiperSlide className="swipersSlider mb-10">
-            <Card sx={{}}>
-              <CardMedia
-                component="img"
-                alt="green iguana"
-                image={doctor?.img}
-                style={{height:200}}
+            <div class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-700 w-full h-full relative">
+              <img
+                class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
+                src={doctor.img}
+                alt=""
               />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {doctor?.doctorName}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {doctor?.degree}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {doctor?.department}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Tooltip title="Book Appointment">
-                  <IconButton>
-                    <AddCircleSharpIcon />
-                  </IconButton>
-                </Tooltip>
 
-                <Tooltip title="See Details">
-                  <Link to={`doctor/${doctor?._id}`}>
+              <h1 class="mt-4 text-lg font-semibold text-gray-700 capitalize group-hover:text-white">
+                {doctor.doctorName}
+              </h1>
+
+              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white ">
+                {doctor.degree}
+              </p>
+              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white font-bold">
+                {doctor.department}
+              </p>
+
+              <div class="flex  mt-3 -mx-2 absolute bottom-10">
+                <Link to={`doctor/${doctor?._id}`}>
+                  <Tooltip title="Details">
                     <IconButton>
-                      <DetailsIcon />
+                      <RiArrowRightCircleFill className="group-hover:text-white text-green-700 text-4xl" />
                     </IconButton>
-                  </Link>
-                </Tooltip>
-              </CardActions>
-            </Card>
+                  </Tooltip>
+                </Link>
+                <Link>
+                  <Tooltip title="Book Appointment">
+                    <IconButton>
+                      <RiAddCircleFill className="group-hover:text-white text-green-700 text-4xl" />
+                    </IconButton>
+                  </Tooltip>
+                </Link>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

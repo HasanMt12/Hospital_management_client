@@ -1,11 +1,14 @@
 import { LocalHospital } from "@mui/icons-material";
-import React from "react";
+import { Link } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import React, { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
 
 const DoctorDetails = () => {
-  const data = useLoaderData();
-console.log(data)
+  const doctor = useLoaderData();
+  console.log(doctor);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -14,130 +17,101 @@ console.log(data)
     navigate("/");
   };
 
+  const {
+    data: services = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const res = await fetch(
+        `http://localhost:5000/doctors/${doctor.doctorCode}`
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
+  if (isLoading) {
+    return <h1>Loading</h1>;
+  }
+  refetch();
+
   return (
-    <div className="min-h-screen mt-24">
+    <article className="my-20">
+      <section class="bg-white w-5/6 mx-auto p-4 shadow-lg rounded-md">
+        <div class="container px-6 py-10 mx-auto">
+          <div class="mt-8 lg:-mx-6 lg:flex justify-between ">
+            <img class="object-cover w-96 h-3/6" src={doctor.img} alt="" />
 
-      <div class="flex flex-col md:flex-row w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <div className="w-full">
-          <img class=" w-full h-56" src={data[0]?.img} alt="avatar" />
+            <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+              <p class="block mb-4 text-2xl font-semibold text-gray-800 hover:underline  md:text-3xl">
+                {doctor?.doctorName}
+              </p>
+              <hr className="my-5" />
+              <p className="text-xl font-bold mb-5">Specialties</p>
+              <p class="text-sm text-green-600 uppercase">
+                {doctor?.department}
+              </p>
 
-          <div class="flex items-center px-6 py-3 bg-gray-900">
-            <LocalHospital color="primary" />
+              <hr className="my-5" />
 
-            <h1 class="mx-3 text-lg font-semibold text-white">
-              {data[0]?.category}
-            </h1>
-          </div>
+              <p className="text-xl font-bold mb-5">Qualities</p>
+              <p class="text-sm text-green-600 uppercase">{doctor?.title}</p>
+              <p class="text-sm text-green-600 uppercase my-5">
+                {doctor?.degree}
+              </p>
+              <hr className="my-5" />
+              <div className="my-20">
+                <p class="block mb-4 text-2xl font-semibold text-green-700 hover:underline  md:text-3xl">
+                  Services available
+                </p>
+                {services.map((service) => (
+                  <>
+                    <div class="flex flex-col items-center transition-colors duration-300 transform border-green-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-700 w-72 ">
+                      <img
+                        class="object-cover  w-full h-52 rounded-xl  p-2"
+                        src={service.picture}
+                        alt=""
+                      />
 
+                      <h1 class="mt-4 text-lg font-semibold text-gray-700 capitalize group-hover:text-white">
+                        {service.name}
+                      </h1>
 
-          <div class="px-6 py-4">
-            <h1 class="text-xl font-semibold text-gray-800 dark:text-white">
-              {data[0]?.name}
-            </h1>
-            <h1 class="text-sm font-medium text-gray-800 dark:text-white">
-              {data[0]?.qualification}
-            </h1>
+                      <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white ">
+                        Visit {service.balance} Tk
+                      </p>
+                      <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white font-bold">
+                        {doctor.department}
+                      </p>
 
-            <p class="py-2 text-gray-700 dark:text-gray-400">
-              {data[0]?.description}
-            </p>
-          </div>
+                      <div class="flex  mt-3 -mx-2 p-2">
+                        <Link>
+                          <RiAddCircleFill className="group-hover:text-white text-green-700 text-4xl" />
+                        </Link>
+                      </div>
+                    </div>
+                    ;
+                  </>
+                ))}
+              </div>
+              <hr className="my-5" />
+              <div>
+                <p class="block mb-4 text-2xl font-semibold text-green-700 hover:underline  md:text-3xl">
+                  Schedual for Monday to Sunday
+                </p>
 
-        </div>
-        <div className="w-full p-3">
-          <h3 className="text-center text-xl font-bold mb-6">
-            Please Fillup with Carefully
-          </h3>
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-2">
-            <label
-              for="bookingSlot"
-              class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-            >
-              <select
-                id="bookingSlot"
-                class="h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-              >
-                <option>Slot_1</option>
-                <option>Slot_2</option>
-                <option>Slot_3</option>
-                <option>Slot_4</option>
-                <option>Slot_5</option>
-              </select>
-            </label>
-            <label
-              for="fullName"
-              class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-            >
-              <input
-                type="text"
-                id="fullName"
-                placeholder="Full Name"
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-              />
-
-
-              <span class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
-                Full Name
-              </span>
-            </label>
-            <label
-              for="UserEmail"
-              class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-
-            >
-              <input
-                type="email"
-                id="UserEmail"
-                placeholder="Email"
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-              />
-
-              <span class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
-                Email
-              </span>
-            </label>
-            <label
-              for="contactNumber"
-              class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-            >
-              <input
-                type="text"
-                id="contactNumber"
-                placeholder="Contact Number"
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-              />
-
-              <span class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
-                Contact Number
-              </span>
-            </label>
-            <label
-              for="patientAddress"
-              class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-            >
-              <textarea
-                id="UserEmail"
-                placeholder="Address"
-                class="peer  w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-              />
-
-              <span class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
-                Address
-              </span>
-            </label>
-            <div class="flex items-center justify-center text-gray-700 dark:text-gray-200">
-              <button
-                type="submit"
-                class="inline-block w-full text-center rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                to="/"
-              >
-                Make an Appointment
-              </button>
+                {doctor?.workingDays.map((time) => (
+                  <>
+                    <li>{time}</li>
+                  </>
+                ))}
+              </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 
