@@ -21,16 +21,16 @@ li {
 
 
 
-a {
+/* a {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
     padding: 5px 5px;
     position: relative;
-}
+} */
 
-a:after {
+/* a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -46,4 +46,4 @@ a:after {
 a:hover:after {
     width: 100%;
     left: 0;
-}
+} */

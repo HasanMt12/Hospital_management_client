@@ -1,7 +1,7 @@
-.name {
+ .name {
     -webkit-text-stroke: 1px #efe8e8;
     text-shadow: 0px 2px 2px #282828ad;
-}
+} 
 
 ul {
 
@@ -29,7 +29,7 @@ a {
      font-family:  Garamond, serif;
 }
 
-a:after {
+/* a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -108,4 +108,4 @@ a:hover:after {
 
 .toggle:focus~.list .list-item {
     transform: translateX(0);
-}
+}  */

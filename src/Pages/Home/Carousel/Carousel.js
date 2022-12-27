@@ -40,7 +40,7 @@ const Carousel = () => {
     refetch();
   return (
 
-    <div className="h-screen mt-4">
+    <div className="h-screen mt-4 -mb-32">
       <div className="h-5/6">
         <Swiper
           // cssMode={true}

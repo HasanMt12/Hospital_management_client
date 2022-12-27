@@ -10,7 +10,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
-import { Typography } from "@mui/material";
+import logo from '../../../assets/logo.png'
 
 
 const Footer = () => {
@@ -91,10 +91,7 @@ const Footer = () => {
             <div className="px-6">
               <div>
                 <Link className="text-2xl font-bold ">
-                  <MedicationLiquidIcon />
-                  <Typography variant="subtitle-2 ml-2">
-                    Doctors Planet
-                  </Typography>
+                  <img src={logo} alt=""></img>
                 </Link>
               </div>
 

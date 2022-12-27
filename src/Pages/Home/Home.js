@@ -18,7 +18,7 @@ const Home = () => {
     return (
 
       <div className='w-11/12 mx-auto '>
-           <div className=" flex text-slate-900 items-center justify-end">Call: +88 0166666666</div>
+        
         <Carousel></Carousel>
         <Services></Services>
         <DoctorInHome></DoctorInHome>

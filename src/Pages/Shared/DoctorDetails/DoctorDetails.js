@@ -67,7 +67,7 @@ const DoctorDetails = () => {
                 </p>
                 {services.map((service) => (
                   <>
-                    <div class="flex flex-col items-center transition-colors duration-300 transform border-green-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-700 w-72 ">
+                    <div class="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-72 ">
                       <img
                         class="object-cover  w-full h-52 rounded-xl  p-2"
                         src={service.picture}
@@ -87,7 +87,7 @@ const DoctorDetails = () => {
 
                       <div class="flex  mt-3 -mx-2 p-2">
                         <Link>
-                          <RiAddCircleFill className="group-hover:text-white text-green-700 text-4xl" />
+                          <RiAddCircleFill className="group-hover:text-white text-teal-700 text-4xl" />
                         </Link>
                       </div>
                     </div>

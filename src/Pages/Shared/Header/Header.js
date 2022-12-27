@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, InputGroup } from "reactstrap";
+
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { ThemeContext, themes } from "../../../contexts/ThemeContext";
+// import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 // import "./navbar.css";
 import "../Header/Header.css";
+import logo from '../../../assets/logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
   return (
     <div>
       {/* upper nav item */}
-      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900">
+      <div className="shadow-2xl bg-gradient-to-r from-teal-600 via-teal-600 to-teal-700 transparent">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div className="relative flex items-center justify-between">
             <Link
@@ -33,9 +34,7 @@ const Header = () => {
               title="Company"
               className="inline-flex items-center"
             >
-              <span className="ml-2 text-xl font-bold tracking-wide text-zinc-50  uppercase name">
-                Doctor's Planet
-              </span>
+              <img src={logo} alt=""></img>
             </Link>
             <div>
               <div class="relative mt-4 lg:mt-0 lg:mx-4 ">
@@ -103,14 +102,14 @@ const Header = () => {
               </nav>
               {logmenu && (
                 <div className="absolute z-10 right-10">
-                  <div className="p-5 bg-gray-900 border rounded shadow-lg">
+                  <div className="p-5 bg-teal-800 border rounded shadow-lg">
                     <nav>
-                      <ul className="space-y-4 w-32 text-gray-100 font-bold bg-gray-800 ">
+                      <ul className="space-y-4 w-32 text-gray-100 font-bold bg-teal-600 ">
                         {user?.uid ? (
                           <>
                             <>
                               <li class="w-full px-4 py-2 text-sm font-medium">
-                                <Link>Account</Link>
+                                <Link to="/dashboard">Dashboard</Link>
                               </li>
                               <li class="w-full px-4 py-2 text-sm font-medium">
                                 <Link onClick={handleLogOut}>log out</Link>
@@ -165,8 +164,10 @@ const Header = () => {
                   />
                 </svg>
               </button>
+
+
               {isMenuOpen && (
-                <div className="absolute z-10 top-0 left-0 w-full bg-green-700">
+                <div className="absolute z-10 top-0 left-0 w-full bg-teal-600">
                   <div className="p-5  border rounded shadow-lg">
                     <div className="flex items-center justify-between mb-4">
                       <div>
@@ -176,9 +177,7 @@ const Header = () => {
                           title="Company"
                           className="inline-flex items-center"
                         >
-                          <span className="ml-2 text-xl font-bold tracking-wide text-zinc-50 uppercase">
-                            Doctor's Planet
-                          </span>
+                          <img src={logo} alt=""></img>
                         </Link>
                       </div>
                       <div>

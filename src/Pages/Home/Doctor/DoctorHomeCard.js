@@ -48,7 +48,7 @@ const DoctorHomeCard = ({ doctor }) => {
               margin: "auto",
               padding: "5px 20px",
               fontWeight: "bold",
-              backgroundColor: "#3098ff",
+              backgroundColor: "#0f8383",
               color: "white",
               "&:hover": {
                 backgroundColor: "#1976d2",

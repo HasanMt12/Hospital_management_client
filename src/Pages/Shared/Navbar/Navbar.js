@@ -96,7 +96,7 @@ const Navbar = () => {
               </button>
               {isMenuOpen && (
                 <div className="absolute z-10 top-0 left-0 w-full">
-                  <div className="p-5 bg-gray-900 border rounded shadow-lg">
+                  <div className="p-5 bg-teal-600 border rounded shadow-lg">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <a
@@ -130,19 +130,9 @@ const Navbar = () => {
                       </div>
                     </div>
                     <nav>
-                      <ul className="space-y-4 text-gray-100 font-bold bg-gray-800 ">
-                           <li className="name">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="name">
-        <Link to="/services">Services</Link>
-      </li>
-      <li className="name">
-        <Link to="/doctors">Doctors</Link>
-      </li>
-      <li className="name">
-        <Link to="/blogs">Blog</Link>
-      </li>
+                      <ul className="space-y-4 text-gray-100 font-bold  ">
+                         
+        
      <li className="name">
         <Link to="/">Home</Link>
       </li>
@@ -179,24 +169,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-          {/* <div className="flex justify-end "> <ul className="flex items-center hidden   space-x-8 lg:flex">
-                 <li className="name">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="name">
-        <Link to="/services">Services</Link>
-      </li>
-      <li className="name">
-        <Link to="/doctors">Doctors</Link>
-      </li>
-      <li className="name">
-        <Link to="/blogs">Blogs</Link> 
-      </li>
-      <li className="name">
-        <p >+88 0166666666</p> 
-        
-      </li>
-      </ul></div> */}
+       
          </div> 
         </div>
       </div>

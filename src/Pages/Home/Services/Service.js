@@ -34,7 +34,7 @@ const Service = ({ serv }) => {
           fontWeight: "bold",
         }}
       >
-        {serv.title}
+        {title}
 
         <Typography
           gutterBottom

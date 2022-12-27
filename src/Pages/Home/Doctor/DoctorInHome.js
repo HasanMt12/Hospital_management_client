@@ -51,7 +51,12 @@ const DoctorInHome = () => {
       <ServiceTitile
         title="Featured Doctors"
         colored="Services"
-        sx={{ mb: 10,color:"green" }}
+        sx = {
+          {
+            mb: 10,
+            color: "#0f8383"
+          }
+        }
       />
       <Swiper
         //   slidesPerView={3}
@@ -87,21 +92,21 @@ const DoctorInHome = () => {
       >
         {doctors.map((doctor) => (
           <SwiperSlide className="swipersSlider mb-10">
-            <div class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-700 w-full h-full relative">
+            <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" >
               <img
-                class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
+                className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
                 src={doctor.img}
                 alt=""
               />
 
-              <h1 class="mt-4 text-lg font-semibold text-gray-700 capitalize group-hover:text-white">
+              <h1 class="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
                 {doctor.doctorName}
               </h1>
 
-              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white ">
+              <p class="mt-2  capitalize text-gray-600 group-hover:text-white ">
                 {doctor.degree}
               </p>
-              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white font-bold">
+              <p class="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
                 {doctor.department}
               </p>
 
@@ -109,14 +114,14 @@ const DoctorInHome = () => {
                 <Link to={`doctor/${doctor?._id}`}>
                   <Tooltip title="Details">
                     <IconButton>
-                      <RiArrowRightCircleFill className="group-hover:text-white text-green-700 text-4xl" />
+                      <RiArrowRightCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
                     </IconButton>
                   </Tooltip>
                 </Link>
                 <Link>
                   <Tooltip title="Book Appointment">
                     <IconButton>
-                      <RiAddCircleFill className="group-hover:text-white text-green-700 text-4xl" />
+                      <RiAddCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
                     </IconButton>
                   </Tooltip>
                 </Link>
