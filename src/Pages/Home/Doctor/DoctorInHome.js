@@ -49,6 +49,8 @@ const DoctorInHome = () => {
   return (
     <>
       <ServiceTitile
+      data-aos="fade-up"
+      data-aos-duration="2500"
         title="Featured Doctors"
         colored="Services"
         sx = {
@@ -91,8 +93,11 @@ const DoctorInHome = () => {
         className="mySwiper swipers"
       >
         {doctors.map((doctor) => (
-          <SwiperSlide className="swipersSlider mb-10">
-            <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" >
+          <SwiperSlide className="swipersSlider mb-10" data-aos="fade-up"
+            data-aos-duration="2500">
+            <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" 
+            
+            >
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
                 src={doctor.img}

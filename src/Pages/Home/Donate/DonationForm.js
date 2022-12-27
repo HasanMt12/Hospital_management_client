@@ -44,9 +44,9 @@ const DonationForm = () => {
   return (
     <div className="my-16 w-11/12 mx-auto h-2/5">
       <h1 className="text-4xl font-bold text-center mt-5 text-red-500 font-sans">
-        Donate Blood
+        <span className="text-teal-600">Donate</span>  Blood
       </h1>
-      <h1 className="text-2xl font-bold text-center my-1 text-slate-700 font-sans">
+      <h1 className="text-2xl font-bold text-center my-1 text-teal-700 font-sans">
         Save a Life
       </h1>
       <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
@@ -56,7 +56,9 @@ const DonationForm = () => {
         <div className="box-primary">
           <img
             src={hero}
-            className="lg:h-[300px]  h-[320px] lg:w-[300px] w-[280px]"
+            className="lg:h-[300px] rounded-lg lg:ml-32 lg:mt-24 h-[320px] lg:w-[300px] w-[280px]"
+           data-aos="zoom-in-up"
+           data-aos-duration="2500"
             alt=""
           />
         </div>
@@ -98,8 +100,15 @@ const DonationForm = () => {
             </div>
 
             {/* 4) TextField */}
-            <div className="form-control">
-              <TextField
+            <div className="form-control ">
+              <TextField 
+               sx={
+                 {
+                   borderColor: 'teal',
+                    borderTop: 1,
+                     borderBottom: 1
+                 }
+               }
                 placeholder="Enter Your Phone Number"
                 label="Phone"
                 type="phone"

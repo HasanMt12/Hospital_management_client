@@ -2,7 +2,12 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 70vh;
-  background-color: white;
+  background-color: rgb(241, 245, 245);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .box-secondary {

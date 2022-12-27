@@ -52,7 +52,8 @@ const Services = () => {
   ];
 
   return (
-    <Container className="customService">
+    <Container className="customService"
+    data-aos="zoom-in-up" data-aos-duration="2500">
       <Box>
         <ServiceTitle
         className="textColor"
