@@ -40,7 +40,7 @@ const Carousel = () => {
     refetch();
   return (
 
-    <div className="h-screen mt-28">
+    <div className="h-screen mt-4">
       <div className="h-5/6">
         <Swiper
           // cssMode={true}
@@ -59,20 +59,6 @@ const Carousel = () => {
             type: "progressbar",
           }}
           modules={[EffectFade, Autoplay, Navigation, Pagination, Keyboard]}
-          className="mySwiper carSwipper"
-
-        
-          pagination={{
-            type: "progressbar",
-          }}
-          modules={[
-            EffectFade,
-            Autoplay,
-            Navigation,
-            Pagination,
-        
-            Keyboard,
-          ]}
           className="mySwiper carSwipper"
         >
           {sliders.map((slider) => (

@@ -4,7 +4,7 @@
   margin-bottom: 20px;
   width: 100%;
 
-  height: 100vh;
+  height: 80vh;
 }
 
 
@@ -20,7 +20,7 @@
 
 .carSwiperSlide {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -43,8 +43,8 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  object-fit: cover;
-  height: 100vh;
+
+  height: 80vh;
   filter: brightness(60%);
   vertical-align: middle;
   overflow-clip-margin: content-box;

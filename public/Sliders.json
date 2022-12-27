@@ -1,33 +1,33 @@
 [
-  {
+   {
     "id": "1",
+    "img": "https://i.ibb.co/dr93hSx/asian-female-physician-consulting-woman-office-1.jpg",
+    "title": "Meet Our World Class Specialists",
+    "department": "Endocrinologists"
+  },
+  {
+    "id": "2",
     "img": "https://i.ibb.co/VT4cZbM/smiling-asian-doctor-female-nurse-holding-clipboard-pen-wearing-uniform-with-gloves-writing-pati.jpg",
     "title": "Your Brain and nervous system control your action",
     "department": "Cardiologist"
   },
   {
-    "id": "2",
+    "id": "3",
     "img": "https://i.ibb.co/3Yc4b4s/portrait-hansome-young-male-doctor-man.jpg",
     "title": "Caring for our community like family",
     "department": "Neurologists"
   },
   {
-    "id": "3",
+    "id": "4",
     "img": "https://i.ibb.co/pXRSRW7/retired-person-using-wheelchair-talking-with-senior-doctor-appointment-while-being-helped-by-profess.jpg",
     "title": "Cornea Transplant center",
     "department": "Anesthesiologists"
   },
   {
-    "id": "4",
+    "id": "5",
     "img": "https://i.ibb.co/k38zcmG/excited-female-doctor-asian-physician-holding-clipboard-raising-pen-up-found-solution-idea-standing.jpg",
     "title": "Put and end to acid reflux,chronic bloating, chronic constipation",
     "department": "Cardiologist"
-  },
-  {
-    "id": "5",
-    "img": "https://i.ibb.co/dr93hSx/asian-female-physician-consulting-woman-office-1.jpg",
-    "title": "Meet Our World Class Specialists",
-    "department": "Endocrinologists"
   },
   {
     "id": "6",

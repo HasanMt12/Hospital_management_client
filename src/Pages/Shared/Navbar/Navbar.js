@@ -1,15 +1,14 @@
-
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, InputGroup } from "reactstrap";
+
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { ThemeContext, themes } from "../../../contexts/ThemeContext";
+
 import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 import "./navbar.css";
-
+import logo from '../../../assets/logo.png'
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
@@ -20,36 +19,27 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-  const menuItems = (
-    <>
-      {/* <li>
-        <InputGroup className="lg:block hidden ">
-          <ThemeContext.Consumer>
-            {({ changeTheme }) => (
-              <Button
-                className="bg-slate-400 hover:bg-slate-400"
-                onClick={() => {
-                  setDarkMode(!darkMode);
-                  changeTheme(darkMode ? themes.light : themes.dark);
-                }}
-              >
-                <i className={darkMode ? "fas fa-sun" : "fas fa-moon"}></i>
-                <span className="d-lg-none d-md-block">
-                  <div className="form-control">
-                    <label className="label cursor-pointer">
-                      <input
-                        type="checkbox"
-                        className="toggle toggle-primary"
-                      />
-                    </label>
-                  </div>
-                </span>
-              </Button>
-            )}
-          </ThemeContext.Consumer>
-        </InputGroup>
-      </li> */}
-      <li className="name">
+
+  return (
+    <div className="">
+
+      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-teal-500 to-teal-600 ">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+      <div>
+          <div className="relative flex items-center justify-between">
+            <a
+              href="/"
+              aria-label="Company"
+              title="Company"
+              className="inline-flex items-center"
+            >
+              <span className="ml-1 text-xl font-bold tracking-wide text-zinc-50  uppercase name">
+                <img src={logo} alt=""></img>
+              </span>
+            </a>
+        
+            <ul className="flex items-center hidden   space-x-8 lg:flex">
+                 <li className="name">
         <Link to="/">Home</Link>
       </li>
       <li className="name">
@@ -59,16 +49,19 @@ const Navbar = () => {
         <Link to="/doctors">Doctors</Link>
       </li>
       <li className="name">
-        <Link to="/blogs">Blogs</Link>
+        <Link to="/blogs">Blogs</Link> 
+        
       </li>
 
+     
+     
       {user?.uid ? (
         <>
           <li className="name">
             <Link to="/dashboard">Dashboard</Link>
           </li>
           <li className="name">
-            <Link onClick={handleLogOut}>log out</Link>
+            <Link onClick={handleLogOut}>logout</Link>
           </li>
         </>
       ) : (
@@ -76,27 +69,8 @@ const Navbar = () => {
           <Link >Login</Link>
         </li>
       )}
-    </>
-  );
-
-  return (
-    <div>
-      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-emerald-700 to-green-900">
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
-          <div className="relative flex items-center justify-between">
-            <a
-              href="/"
-              aria-label="Company"
-              title="Company"
-              className="inline-flex items-center"
-            >
-              <span className="ml-2 text-xl font-bold tracking-wide text-zinc-50  uppercase name">
-                Doctor's Planet
-              </span>
-            </a>
-            <ul className="flex items-center hidden text-zinc-50  space-x-8 lg:flex">
-              {menuItems}
             </ul>
+           
 
             <div className="lg:hidden">
               <button
@@ -157,16 +131,76 @@ const Navbar = () => {
                     </div>
                     <nav>
                       <ul className="space-y-4 text-gray-100 font-bold bg-gray-800 ">
-                        {menuItems}
+                           <li className="name">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="name">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="name">
+        <Link to="/doctors">Doctors</Link>
+      </li>
+      <li className="name">
+        <Link to="/blogs">Blog</Link>
+      </li>
+     <li className="name">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="name">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="name">
+        <Link to="/doctors">Doctors</Link>
+      </li>
+      <li className="name">
+        <Link to="/blogs">Blogs</Link> 
+        
+      </li>
+
+      {user?.uid ? (
+        <>
+          <li className="name">
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li className="name">
+            <Link onClick={handleLogOut}>log out</Link>
+          </li>
+        </>
+      ) : (
+        <li onClick={() => setOpenPopup(true)} className="name">
+          <Link >Login</Link>
+        </li>
+      )}
                       </ul>
+            
                     </nav>
                   </div>
                 </div>
               )}
             </div>
           </div>
+          {/* <div className="flex justify-end "> <ul className="flex items-center hidden   space-x-8 lg:flex">
+                 <li className="name">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="name">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="name">
+        <Link to="/doctors">Doctors</Link>
+      </li>
+      <li className="name">
+        <Link to="/blogs">Blogs</Link> 
+      </li>
+      <li className="name">
+        <p >+88 0166666666</p> 
+        
+      </li>
+      </ul></div> */}
+         </div> 
         </div>
       </div>
+     
       <Popup
          title="Login Form"
          openPopup={openPopup}
@@ -179,4 +213,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
