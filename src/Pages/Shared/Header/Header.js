@@ -165,7 +165,6 @@ const Header = () => {
                 </svg>
               </button>
 
-
               {isMenuOpen && (
                 <div className="absolute z-10 top-0 left-0 w-full bg-teal-600">
                   <div className="p-5  border rounded shadow-lg">
@@ -272,7 +271,10 @@ const Header = () => {
                                   Patient Services Overview
                                 </Link>
 
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="/acceptinsurance"
+                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Insurance We Accept
                                 </Link>
                                 <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
@@ -325,8 +327,7 @@ const Header = () => {
                             <details class="group [&_summary::-webkit-details-marker]:hidden">
                               <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span class="text-sm font-medium">
-                                  {" "}
-                                  Insurance{" "}
+                                  Insurance
                                 </span>
 
                                 <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
@@ -349,7 +350,10 @@ const Header = () => {
                                 aria-label="Account Nav"
                                 class="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="/acceptinsurance"
+                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Insurance We Accept
                                 </Link>
 
@@ -513,7 +517,10 @@ const Header = () => {
                       Patient Services Overview
                     </Link>
 
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/acceptinsurance"
+                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Insurance We Accept
                     </Link>
                     <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
@@ -584,7 +591,10 @@ const Header = () => {
                     aria-label="Account Nav"
                     class="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/acceptinsurance"
+                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Insurance We Accept
                     </Link>
 
