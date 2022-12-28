@@ -12,16 +12,17 @@ import {
   FaArrowAltCircleLeft,
   FaSign,
 } from "react-icons/fa";
-import NavBar from "../../Pages/Shared/Navbar/Navbar";
+import Header from "../../Pages/Shared/Header/Header";
 
 const DashbordLayoutes = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <div>
-      <NavBar />
+      
+      <Header></Header>
 
-      <div className="flex flex-no-wrap mt-20">
+      <div className="flex flex-no-wrap mt-2">
         {/* Sidebar starts */}
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
 

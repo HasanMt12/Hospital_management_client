@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Dashform from "../Dashform";
+
 
 
 import Main from "../Layout/Main";
@@ -12,7 +12,7 @@ import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
 
 
-
+import Dashform from "../Dashform";
 
 import Blogs from "../Pages/Blogs/Blogs";
 import DashbordLayoutes from "../Layout/DashbordLayoutes/DashbordLayoutes";
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dash",
-        element: <Dashform />,
+        element: <Dashform></Dashform>,
       },
 
       {
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
 
   {
     path: "/dashboard",
-    element: <DashbordLayoutes />,
+    element: <DashbordLayoutes></DashbordLayoutes>,
     children: [
       {
         path: "/dashboard/users",

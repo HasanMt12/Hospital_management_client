@@ -6,7 +6,7 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 // import "./navbar.css";
-import "../Header/Header.css";
+import "./Header.css";
 import logo from "../../../assets/logo.png";
 
 const Header = () => {
@@ -108,7 +108,9 @@ const Header = () => {
                           <>
                             <>
                               <li class="w-full px-4 py-2 text-sm font-medium">
-                                <Link to="/dashboard">Dashboard</Link>
+                                <Link to="/dashboard">
+                                  
+                                  Dashboard</Link>
                               </li>
                               <li class="w-full px-4 py-2 text-sm font-medium">
                                 <Link onClick={handleLogOut}>log out</Link>
