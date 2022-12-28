@@ -20,6 +20,7 @@ import Users from "../Dashboard/DashboardPage/Users";
 import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 import Contact from "../Pages/Contact/Contact";
 import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
+import About from "../Pages/Home/About/About";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/signup",
