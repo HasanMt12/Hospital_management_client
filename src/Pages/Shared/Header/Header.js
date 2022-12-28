@@ -203,17 +203,13 @@ const Header = () => {
                           className="flex flex-col space-y-1 text-white"
                         >
                           <div className="">
-<<<<<<< HEAD
+
                             <details class="group [&_summary::-webkit-details-marker]:hidden">
                               <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span class="text-sm font-medium">
                                <Link to='/about'> About Us</Link>
-=======
-                            <details className="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                                <span className="text-sm font-medium">
-                               <Link >   About Us</Link>
->>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
+
+                        
                                 </span>
 
                                 <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
@@ -236,13 +232,9 @@ const Header = () => {
                                 aria-label="Users Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-<<<<<<< HEAD
-                                <Link to="/about" class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+
                                 
-                                >
-=======
                                 <Link to='/about' className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
->>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
                                   About Us
                                 </Link>
 
@@ -470,15 +462,13 @@ const Header = () => {
               className="flex flex-col space-y-1 text-white"
             >
               <div className="flex  justify-between mb-5">
-<<<<<<< HEAD
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span  class="text-sm font-medium"> About Us </span>
-=======
+
+              
+
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                     <span className="text-sm font-medium"> <Link >About Us</Link> </span>
->>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
+
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -500,15 +490,10 @@ const Header = () => {
                     aria-label="Users Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-<<<<<<< HEAD
+
                     <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     to="/about"
-                    >
-=======
-                    <Link to="/about" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
->>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
-                      About Us
-                    </Link>
+                    > </Link>
 
                     <Link
                       to="/missionvission"
