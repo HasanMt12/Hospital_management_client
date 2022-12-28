@@ -16,9 +16,9 @@ const Home = () => {
       <Carousel></Carousel>
       <Services></Services>
       <DoctorInHome></DoctorInHome>
+      <WorkingFlow></WorkingFlow>
       <DonationForm></DonationForm>
 
-      <WorkingFlow></WorkingFlow>
       {/* <CssBaseline /> */}
       {/* <Departments/> */}
     </div>

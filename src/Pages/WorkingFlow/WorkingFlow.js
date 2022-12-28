@@ -15,9 +15,9 @@ import img9 from "../../assets/Workflow/patient.png";
 import img10 from "../../assets/Workflow/schedule.png";
 const WorkingFlow = () => {
   return (
-  <div>
+  <div className="w-11/12 mx-auto">
   <div className="my-5 text-center">
-  <h1 className="text-3xl my-2 font-bold font-sans">Working Flow of <span className="text-green-600">HMS Software</span></h1>
+  <h1 className="text-3xl my-2 font-bold font-sans">Working Flow of <span className="text-teal-600">HMS Software</span></h1>
 <Typography className="text-base" variant='body2' color="text.secondary">
 <p>The Hospital Management System is circulated between 10 processes.</p>
     <p>Now, we will discuss on the following section.</p>
@@ -50,7 +50,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md h-56 ">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-1
           </span>
           <div className="flex justify-center items-center py-5">
@@ -100,7 +100,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md h-56 ">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-2
           </span>
           <div className="flex justify-center items-center py-5">
@@ -150,7 +150,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md  h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-3
           </span>
           <div className="flex justify-center items-center py-5">
@@ -200,7 +200,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md h-56 ">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-4
           </span>
           <div className="flex justify-center items-center py-5">
@@ -251,7 +251,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md h-56 ">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-5
           </span>
           <div className="flex justify-center items-center py-5">
@@ -301,7 +301,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md  h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-6
           </span>
           <div className="flex justify-center items-center py-5">
@@ -350,7 +350,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md  h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-7
           </span>
           <div className="flex justify-center items-center py-5">
@@ -400,7 +400,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md  h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-8
           </span>
           <div className="flex justify-center items-center py-5">
@@ -450,7 +450,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md  h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-9
           </span>
           <div className="flex justify-center items-center py-5">
@@ -500,7 +500,7 @@ maxWidth: 270,
         }}
       >
         <div className="relative z-0 flex flex-col items-center p-8 border rounded-md h-56">
-          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-green-600 text-white">
+          <span className="absolute top-0 px-6 pt-1 pb-1 font-medium rounded-b-lg bg-teal-600 text-white">
             STEP-10
           </span>
           <div className="flex justify-center items-center py-5">
