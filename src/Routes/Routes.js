@@ -22,6 +22,11 @@ import Contact from "../Pages/Contact/Contact";
 import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
 import MissionVission from "../Pages/MissionVission/MissionVission";
 
+import About from "../Pages/Home/About/About";
+
+import MissionVission from "../Pages/MissionVission/MissionVission";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/signup",
