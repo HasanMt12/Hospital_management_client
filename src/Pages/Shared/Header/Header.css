@@ -1,23 +1,14 @@
+.name {
+  -webkit-text-stroke: 1px #efe8e8;
 
-
-.name{
-    -webkit-text-stroke: 1px #efe8e8;
   text-shadow: 0px 4px 4px #282828ad;
 }
 
 ul {
-
-    list-style: none;
-
+  list-style: none;
 
     /* text-align: center; */
 }
-
-/* .header_class>li {
-
-    position: relative;
-
-} */
 
 
 

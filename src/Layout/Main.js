@@ -7,16 +7,16 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 
 const Main = () => {
-    return (
-        <div>
-
-            {/* <Navbar></Navbar> */}
-            <Header></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      {/* <Navbar></Navbar> */}
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </div>
+  );
 };
+
 
 
 export default Main;

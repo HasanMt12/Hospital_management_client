@@ -18,7 +18,7 @@ import {
   EffectFade,
 } from "swiper";
 
-import './Carousel.css'
+import "./Carousel.css";
 import { useQuery } from "@tanstack/react-query";
 
 const Carousel = () => {
@@ -39,30 +39,36 @@ const Carousel = () => {
     }
     refetch();
   return (
-
-    <div className="h-screen mt-4 -mb-32">
-      <div className="h-5/6">
+    
+      <>
         <Swiper
-          // cssMode={true}
+          
           effect={"fade"}
           navigation={true}
-          // autoplay={{
-          //   delay: 4500,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           keyboard={{
             enabled: true,
           }}
-
+        
           pagination={{
             type: "progressbar",
           }}
-          modules={[EffectFade, Autoplay, Navigation, Pagination, Keyboard]}
-          className="mySwiper carSwipper"
+          modules={[
+            EffectFade,
+            Autoplay,
+            Navigation,
+            Pagination,
+        
+            Keyboard,
+          ]}
+          className="mySwiper"
         >
           {sliders.map((slider) => (
-            <SwiperSlide className="carSwiperSlide">
+            <SwiperSlide className="">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}
@@ -71,12 +77,12 @@ const Carousel = () => {
                   Make an Appointment
                 </button>
               </div>
-              <img className="relative" src={slider?.img} alt="" />
+              <img className="relative " src={slider?.img} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </div>
+      </>
+  
   );
 };
 
