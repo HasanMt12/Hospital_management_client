@@ -206,7 +206,7 @@ const Header = () => {
                             <details class="group [&_summary::-webkit-details-marker]:hidden">
                               <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span class="text-sm font-medium">
-                               <Link to='/about'>   About Us</Link>
+                               <Link to='/about'> About Us</Link>
                                 </span>
 
                                 <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
@@ -229,7 +229,9 @@ const Header = () => {
                                 aria-label="Users Nav"
                                 class="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link to="/about" class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                
+                                >
                                   About Us
                                 </Link>
 
@@ -459,7 +461,7 @@ const Header = () => {
               <div className="flex  justify-between mb-5">
                 <details class="group [&_summary::-webkit-details-marker]:hidden">
                   <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span class="text-sm font-medium"> About Us </span>
+                    <span  class="text-sm font-medium"> About Us </span>
 
                     <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -481,7 +483,9 @@ const Header = () => {
                     aria-label="Users Nav"
                     class="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    to="/about"
+                    >
                       About Us
                     </Link>
 

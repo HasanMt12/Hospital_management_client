@@ -1,12 +1,6 @@
 import React from "react";
 // Import Swiper React components
-import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
-import DetailsIcon from "@mui/icons-material/Details";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+
 import { useQuery } from "@tanstack/react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
@@ -22,7 +16,7 @@ import "swiper/css/pagination";
 import './doctor.css'
 
 // import required modules
-import { Button, CardActionArea, IconButton, Tooltip } from "@mui/material";
+import {  IconButton, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper";
 import ServiceTitile from "../Services/ServiceTitle";
@@ -35,7 +29,7 @@ const DoctorInHome = () => {
   } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/featureddoctors");
+      const res = await fetch("http://localhost:5000/doctor/featured");
       const data = await res.json();
       return data;
     },
@@ -93,8 +87,7 @@ const DoctorInHome = () => {
         className="mySwiper swipers"
       >
         {doctors.map((doctor) => (
-          <SwiperSlide className="swipersSlider mb-10" data-aos="fade-up"
-            data-aos-duration="2500">
+          <SwiperSlide className="swipersSlider customWidth mb-10" >
             <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" 
             
             >
@@ -108,14 +101,14 @@ const DoctorInHome = () => {
                 {doctor.doctorName}
               </h1>
 
-              <p class="mt-2  capitalize text-gray-600 group-hover:text-white ">
+              <p class="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
                 {doctor.degree}
               </p>
               <p class="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
                 {doctor.department}
               </p>
 
-              <div class="flex  mt-3 -mx-2 absolute bottom-10">
+              <div class="flex   -mx-2 absolute bottom-2">
                 <Link to={`doctor/${doctor?._id}`}>
                   <Tooltip title="Details">
                     <IconButton>

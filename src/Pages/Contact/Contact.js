@@ -21,7 +21,7 @@ const Contact = () => {
       <div   className="container px-6 py-10 mx-auto">
         <div   className="lg:flex lg:items-center lg:-mx-10 border-y-2 border-teal-300 border-t-2 py-10">
           <div   className="lg:w-1/2 lg:mx-10">
-            <h1   className="text-3xl font-medium text-teal-600 capitalize dark:text-white lg:text-4xl">
+            <h1   className="text-3xl font-medium text-teal-600 capitalize  lg:text-4xl">
               Let’s talk
             </h1>
 
@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
 
                 <div   className="flex-1 px-2 mt-4 md:mt-0">
-                  <label   className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label   className="block mb-2 text-sm text-gray-600 ">
                     Email address
                   </label>
                   <input
@@ -70,7 +70,7 @@ const Contact = () => {
               </div>
               <div   className="-mx-2 md:items-center md:flex">
                 <div   className="flex-1 px-2">
-                  <label   className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label   className="block mb-2 text-sm text-gray-600 ">
                     Contact
                   </label>
                   <input
