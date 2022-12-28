@@ -36,10 +36,10 @@ const Header = () => {
               <img src={logo} alt=""></img>
             </Link>
             <div>
-              <div class="relative mt-4 lg:mt-0 lg:mx-4 ">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <div className="relative mt-4 lg:mt-0 lg:mx-4 ">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
-                    class="w-4 h-4 sm:text-white lg:text-gray-600 dark:text-gray-300"
+                    className="w-4 h-4 sm:text-white lg:text-gray-600 dark:text-gray-300"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -55,21 +55,21 @@ const Header = () => {
 
                 <input
                   type="text"
-                  class="sm:hidden lg:block rounded-full w-full py-1 pl-10 pr-4 text-gray-700 placeholder-gray-600 bg-white border-b border-gray-600 lg:w-56 lg:border-transparent focus:outline-none focus:border-gray-600"
+                  className="sm:hidden lg:block rounded-full w-full py-1 pl-10 pr-4 text-gray-700 placeholder-gray-600 bg-white border-b border-gray-600 lg:w-56 lg:border-transparent focus:outline-none focus:border-gray-600"
                   placeholder="Search"
                 />
               </div>
             </div>
             <div>
-              <nav aria-label="Main Nav" class="flex flex-col space-y-1">
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
+              <nav aria-label="Main Nav" className="flex flex-col space-y-1">
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary
                     onClick={() => setLogmenu(!logmenu)}
-                    class="flex items-center px-4 py-2 text-white rounded-lg group "
+                    className="flex items-center px-4 py-2 text-white rounded-lg group "
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 "
+                      className="w-5 h-5 "
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -82,10 +82,10 @@ const Header = () => {
                       />
                     </svg>
 
-                    <span class="ml-auto shrink-0 ">
+                    <span className="ml-auto shrink-0 ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -107,12 +107,12 @@ const Header = () => {
                         {user?.uid ? (
                           <>
                             <>
-                              <li class="w-full px-4 py-2 text-sm font-medium">
+                              <li className="w-full px-4 py-2 text-sm font-medium">
                                 <Link to="/dashboard">
                                   
                                   Dashboard</Link>
                               </li>
-                              <li class="w-full px-4 py-2 text-sm font-medium">
+                              <li className="w-full px-4 py-2 text-sm font-medium">
                                 <Link onClick={handleLogOut}>log out</Link>
                               </li>
                             </>
@@ -122,13 +122,13 @@ const Header = () => {
                             <li>
                               <Link
                                 onClick={() => setOpenPopup(true)}
-                                class=" px-4 py-2 text-sm font-medium  rounded-l"
+                                className=" px-4 py-2 text-sm font-medium  rounded-l"
                               >
                                 Login
                               </Link>
                             </li>
                             <li>
-                              <Link class=" px-4 py-2 text-sm font-medium">
+                              <Link className=" px-4 py-2 text-sm font-medium">
                                 SignUp
                               </Link>
                             </li>
@@ -200,19 +200,26 @@ const Header = () => {
                       <div className=" text-sm ">
                         <nav
                           aria-label="Main Nav"
-                          class="flex flex-col space-y-1 text-white"
+                          className="flex flex-col space-y-1 text-white"
                         >
                           <div className="">
+<<<<<<< HEAD
                             <details class="group [&_summary::-webkit-details-marker]:hidden">
                               <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span class="text-sm font-medium">
                                <Link to='/about'> About Us</Link>
+=======
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                                <span className="text-sm font-medium">
+                               <Link >   About Us</Link>
+>>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
                                 </span>
 
-                                <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                                <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5"
+                                    className="w-5 h-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                   >
@@ -227,33 +234,37 @@ const Header = () => {
 
                               <nav
                                 aria-label="Users Nav"
-                                class="flex flex-col mt-2 ml-8 space-y-1"
+                                className="flex flex-col mt-2 ml-8 space-y-1"
                               >
+<<<<<<< HEAD
                                 <Link to="/about" class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                                 
                                 >
+=======
+                                <Link to='/about' className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+>>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
                                   About Us
                                 </Link>
 
                                 <Link
                                   to="/missionvission"
-                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                                 >
                                   Mission & Vission
                                 </Link>
                               </nav>
                             </details>
-                            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                                <span class="text-sm font-medium">
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                                <span className="text-sm font-medium">
                                   {" "}
                                   Patient Services{" "}
                                 </span>
 
-                                <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                                <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5"
+                                    className="w-5 h-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                   >
@@ -268,43 +279,43 @@ const Header = () => {
 
                               <nav
                                 aria-label="Account Nav"
-                                class="flex flex-col mt-2 ml-8 space-y-1"
+                                className="flex flex-col mt-2 ml-8 space-y-1"
                               >
                                 <Link
                                   to="/services"
-                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                                 >
                                   Patient Services Overview
                                 </Link>
 
                                 <Link
                                   to="/acceptinsurance"
-                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                                 >
                                   Insurance We Accept
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Payment Options
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Health Care to your home
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Tele Consultaionwith Doctor
                                 </Link>
                               </nav>
                             </details>
-                            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                                <span class="text-sm font-medium">
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                                <span className="text-sm font-medium">
                                   {" "}
                                   Medical Travel{" "}
                                 </span>
 
-                                <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                                <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5"
+                                    className="w-5 h-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                   >
@@ -319,27 +330,27 @@ const Header = () => {
 
                               <nav
                                 aria-label="Account Nav"
-                                class="flex flex-col mt-2 ml-8 space-y-1"
+                                className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Medical Travel Guides
                                 </Link>
 
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Medical Tourism
                                 </Link>
                               </nav>
                             </details>
-                            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                                <span class="text-sm font-medium">
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                                <span className="text-sm font-medium">
                                   Insurance
                                 </span>
 
-                                <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                                <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5"
+                                    className="w-5 h-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                   >
@@ -354,34 +365,34 @@ const Header = () => {
 
                               <nav
                                 aria-label="Account Nav"
-                                class="flex flex-col mt-2 ml-8 space-y-1"
+                                className="flex flex-col mt-2 ml-8 space-y-1"
                               >
                                 <Link
                                   to="/acceptinsurance"
-                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                                 >
                                   Insurance We Accept
                                 </Link>
 
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Insurance Good Vibes
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Insurance Packages
                                 </Link>
                               </nav>
                             </details>
-                            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                                <span class="text-sm font-medium">
+                            <details className="group [&_summary::-webkit-details-marker]:hidden">
+                              <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                                <span className="text-sm font-medium">
                                   {" "}
                                   Contact Us{" "}
                                 </span>
 
-                                <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                                <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="w-5 h-5"
+                                    className="w-5 h-5"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                   >
@@ -396,49 +407,49 @@ const Header = () => {
 
                               <nav
                                 aria-label="Account Nav"
-                                class="flex flex-col mt-2 ml-8 space-y-1"
+                                className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Hospital Contact Information
                                 </Link>
 
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Hopital Location
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Telemedicine
                                 </Link>
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Ambulance
                                 </Link>
                               </nav>
                             </details>
 
-                            <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               +880 15100000
                             </Link>
                           </div>
                           <div className="">
                             <Link
                               to="/doctors"
-                              class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                              className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
                               Doctors
                             </Link>
 
-                            <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Book Appointment
                             </Link>
                             <Link
                               to="/blogs"
-                              class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                              className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
                               Blogs
                             </Link>
-                            <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Clinic & Centers
                             </Link>
-                            <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Conditions & Terms
                             </Link>
                           </div>
@@ -456,17 +467,23 @@ const Header = () => {
           <div className=" text-sm sm:hidden xl:block">
             <nav
               aria-label="Main Nav"
-              class="flex flex-col space-y-1 text-white"
+              className="flex flex-col space-y-1 text-white"
             >
               <div className="flex  justify-between mb-5">
+<<<<<<< HEAD
                 <details class="group [&_summary::-webkit-details-marker]:hidden">
                   <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                     <span  class="text-sm font-medium"> About Us </span>
+=======
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                    <span className="text-sm font-medium"> <Link >About Us</Link> </span>
+>>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
 
-                    <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                    <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -481,30 +498,34 @@ const Header = () => {
 
                   <nav
                     aria-label="Users Nav"
-                    class="flex flex-col mt-2 ml-8 space-y-1"
+                    className="flex flex-col mt-2 ml-8 space-y-1"
                   >
+<<<<<<< HEAD
                     <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     to="/about"
                     >
+=======
+                    <Link to="/about" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+>>>>>>> 88fe69d373d0683dc3ee21a3cb9f7e262a67f380
                       About Us
                     </Link>
 
                     <Link
                       to="/missionvission"
-                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     >
                       Mission & Vission
                     </Link>
                   </nav>
                 </details>
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span class="text-sm font-medium"> Patient Services </span>
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                    <span className="text-sm font-medium"> Patient Services </span>
 
-                    <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                    <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -519,40 +540,40 @@ const Header = () => {
 
                   <nav
                     aria-label="Account Nav"
-                    class="flex flex-col mt-2 ml-8 space-y-1"
+                    className="flex flex-col mt-2 ml-8 space-y-1"
                   >
                     <Link
                       to="/services"
-                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     >
                       Patient Services Overview
                     </Link>
 
                     <Link
                       to="/acceptinsurance"
-                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     >
                       Insurance We Accept
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Payment Options
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Health Care to your home
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Tele Consultaionwith Doctor
                     </Link>
                   </nav>
                 </details>
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span class="text-sm font-medium"> Medical Travel </span>
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                    <span className="text-sm font-medium"> Medical Travel </span>
 
-                    <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                    <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -567,25 +588,25 @@ const Header = () => {
 
                   <nav
                     aria-label="Account Nav"
-                    class="flex flex-col mt-2 ml-8 space-y-1"
+                    className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Medical Travel Guides
                     </Link>
 
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Medical Tourism
                     </Link>
                   </nav>
                 </details>
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span class="text-sm font-medium"> Insurance </span>
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                    <span className="text-sm font-medium"> Insurance </span>
 
-                    <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                    <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -600,31 +621,31 @@ const Header = () => {
 
                   <nav
                     aria-label="Account Nav"
-                    class="flex flex-col mt-2 ml-8 space-y-1"
+                    className="flex flex-col mt-2 ml-8 space-y-1"
                   >
                     <Link
                       to="/acceptinsurance"
-                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     >
                       Insurance We Accept
                     </Link>
 
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Insurance Good Vibes
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Insurance Packages
                     </Link>
                   </nav>
                 </details>
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span class="text-sm font-medium"> Contact Us </span>
+                <details className="group [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                    <span className="text-sm font-medium"> Contact Us </span>
 
-                    <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+                    <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
+                        className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -639,25 +660,25 @@ const Header = () => {
 
                   <nav
                     aria-label="Account Nav"
-                    class="flex flex-col mt-2 ml-8 space-y-1"
+                    className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Hospital Contact Information
                     </Link>
 
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Hopital Location
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Telemedicine
                     </Link>
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Ambulance
                     </Link>
                   </nav>
                 </details>
 
-                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   +880 15100000
                 </Link>
               </div>
@@ -665,29 +686,29 @@ const Header = () => {
               <div className="flex justify-between mt-5">
                 <Link
                   to="/doctors"
-                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   Doctors
                 </Link>
 
-                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   Book Appointment
                 </Link>
                 <Link
                   to="/blogs"
-                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   Blogs
                 </Link>
-                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   Clinic & Centers
                 </Link>
-                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   Conditions & Terms
                 </Link>
                 {user?.uid && (
                   <Link
-                    class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     to="/dashboard"
                   >
                     Dashboard
