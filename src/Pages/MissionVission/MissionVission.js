@@ -8,21 +8,22 @@ import img3 from "../../assets/missionVission/5.jpg";
 import img4 from "../../assets/missionVission/3.jpg";
 import img5 from "../../assets/missionVission/7.jpg";
 import img6 from "../../assets/missionVission/4.jpg";
+import './MissionVission.css'
 
 
 
 const MissionVission = ()=>{
    return (
      <section>
-       <div className="relative">
-         <h1 className="absolute top-52 text-teal-600 left-1/4 z-10 text-6xl font-bold">
+       <div className="missionCover">
+         <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
            Mission Vission & Values
          </h1>
-         <img
+         {/* <img
            className=" h-96 w-full hover:grayscale-0  grayscale  object-cover"
            src={logo}
            alt=""
-         />
+         /> */}
        </div>
        <div className="w-5/6 mx-auto mt-20 mb-52 space-y-5 text-slate-500">
          <p className="text-xl font-medium text-teal-600">

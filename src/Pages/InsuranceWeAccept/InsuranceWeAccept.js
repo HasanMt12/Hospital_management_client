@@ -8,6 +8,7 @@ import img5 from '../../assets/insurance/company/5.jpg'
 import img6 from '../../assets/insurance/company/6.png'
 import img7 from '../../assets/insurance/company/7.png'
 import { Link } from 'react-router-dom';
+import './insuranceOffice.css'
 
 const InsuranceWeAccept = () => {
    const insuranceOffice = [
@@ -41,16 +42,11 @@ const InsuranceWeAccept = () => {
      },
    ];
    return (
-     <section className='mb-32'>
-       <div className="relative">
-         <h1 className="absolute top-52 text-teal-600 left-1/4 z-10 text-6xl font-bold hover:skew-y-12 hover:">
+     <section className="mb-32">
+       <div className=" cover">
+         <h1 className=" text-teal-600 flex justify-center items-center h-full  lg:text-6xl sm:text-4xl font-bold hover:skew-y-3 uppercase">
            Insurance
          </h1>
-         <img
-           className=" h-96 w-5/6 mx-auto grayscale hover:grayscale-0	 object-cover"
-           src={insurance}
-           alt=""
-         />
        </div>
        <div class="space-y-4 w-4/6 mx-auto">
          <details
@@ -274,7 +270,6 @@ const InsuranceWeAccept = () => {
              </p>
            </div>
          </details>
-
        </div>
      </section>
    );
