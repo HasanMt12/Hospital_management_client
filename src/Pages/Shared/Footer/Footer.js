@@ -83,8 +83,10 @@ const Footer = () => {
     },
   ];
   return (
-
-    <footer footer className = "bg-gradient-to-r from-slate-700 via-slate-600 to-slate-600 shadow-lg rounded-2 text-white" >
+    <footer
+      footer
+      className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-600 shadow-lg rounded-2 text-white"
+    >
       <div className="container p-6 mx-auto">
         <div className="lg:flex gap-10">
           <div className="w-full text-white lg:w-1/5">
@@ -133,12 +135,12 @@ const Footer = () => {
         <hr className="h-px my-6 bg-gray-200 border-none" />
 
         <div className="flex justify-between items-center lg:flex-col xl:flex-row">
-          <p className="text-center text-gray-500 ">
+          <p className="text-center text-gray-400 ">
             © Brand 2020 - All rights reserved
           </p>
           <div className="">
             <div className="container flex items-center px-6 py-4 mx-auto overflow-x-auto whitespace-nowrap sm:flex-col xl:flex-row">
-              <Link href="#" className="text-gray-600 ">
+              <Link href="#" className="text-gray-400 ">
                 <AttachmentIcon />
                 <span className="mx-2">Terms of Use</span>
               </Link>
@@ -146,28 +148,28 @@ const Footer = () => {
               <span className="mx-5 text-gray-500  rtl:-scale-x-100">
                 <NavigateNextIcon />
               </span>
-              <Link href="#" className="text-gray-600 ">
+              <Link href="#" className="text-gray-400 ">
                 <CalendarMonthIcon />
                 <span className="mx-2">Notice of Non-Discrimination</span>
               </Link>
 
-              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+              <span className="mx-5 text-gray-400  rtl:-scale-x-100">
                 <NavigateNextIcon />
               </span>
-              <Link href="#" className="text-gray-600 ">
+              <Link href="#" className="text-gray-400  ">
                 <PrivacyTipIcon />
                 <span className="mx-2">Privacy and Patient Rights</span>
               </Link>
 
-              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+              <span className="mx-5 text-gray-400  rtl:-scale-x-100">
                 <NavigateNextIcon />
               </span>
-              <Link href="#" className="text-gray-600 ">
+              <Link href="#" className="text-gray-400 ">
                 <AddLocationIcon />
                 <span className="mx-2">Mohammdpur Dhaka</span>
               </Link>
 
-              <span className="mx-5 text-gray-500 rtl:-scale-x-100">
+              <span className="mx-5 text-gray-400 rtl:-scale-x-100">
                 <NavigateNextIcon />
               </span>
             </div>
