@@ -7,7 +7,7 @@ import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 // import "./navbar.css";
 import "../Header/Header.css";
-import logo from '../../../assets/logo.png'
+import logo from "../../../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,6 @@ const Header = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-
 
   return (
     <div>
