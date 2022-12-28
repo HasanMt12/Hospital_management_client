@@ -85,9 +85,9 @@ const About = () => {
       </nav>
 
       <div
-        className="page-banner mt-20"
+        className="page-banner mt-20 hover:grayscale-0 grayscales  "
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/bWNVfJB/18038890-5926166.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url('https://i.ibb.co/bWNVfJB/18038890-5926166.jpg')`,
           height: "350px",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
