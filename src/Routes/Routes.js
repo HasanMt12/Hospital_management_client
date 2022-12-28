@@ -6,7 +6,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
-import ServicesPage from "../Pages/Home/Services/AllServices/ServicesPage";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
@@ -21,6 +20,12 @@ import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 import Contact from "../Pages/Contact/Contact";
 import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
 import MissionVission from "../Pages/MissionVission/MissionVission";
+import Departments from "../Pages/AllServices/Departments";
+
+import About from "../Pages/Home/About/About";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -33,6 +38,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
         path: "/signup",
         element: <SignUp></SignUp>,
       },
@@ -42,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <ServicesPage></ServicesPage>,
+        element:<Departments/>
       },
       {
         path: "/dash",

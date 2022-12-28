@@ -6,8 +6,10 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 
+
 import logo from '../../../assets/logo.png'
 const Navbar = () => {
+
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
