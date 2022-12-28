@@ -1,5 +1,7 @@
 .card {
-  --color: #97f8ace8; /* the border color */
+  --color: #2e947e; /* the border color */
+  --border: 10px;   /* the border thickness*/
+  --color: #2ca087e8; /* the border color */
   --border: 6px;   /* the border thickness*/
   --offset:10px;   /* control the offset*/
   --gap: 5px;       /* the gap on hover */
@@ -29,5 +31,9 @@
   transition: .2s ease-in-out all;
 }
 
+.textColor{
+  color: #0f8383; 
+
+}
 
 

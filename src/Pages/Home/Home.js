@@ -17,7 +17,8 @@ import DonationForm from './Donate/DonationForm';
 const Home = () => {
     return (
 
-      <div className=''>
+      <div className='w-11/12 mx-auto '>
+        
         <Carousel></Carousel>
         <Services></Services>
         <DoctorInHome></DoctorInHome>

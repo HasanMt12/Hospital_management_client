@@ -9,7 +9,7 @@ const Service = ({ serv }) => {
   const { img, title, details } = serv;
   console.log(serv);
   return (
-    <Card className="card"
+    <Card className="card mt-10"
       sx={{
         maxWidth: 345,
         boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px white",
@@ -34,7 +34,7 @@ const Service = ({ serv }) => {
           fontWeight: "bold",
         }}
       >
-        {serv.title}
+        {title}
 
         <Typography
           gutterBottom

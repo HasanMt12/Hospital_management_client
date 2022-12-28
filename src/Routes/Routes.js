@@ -19,6 +19,7 @@ import DashbordLayoutes from "../Layout/DashbordLayoutes/DashbordLayoutes";
 import Users from "../Dashboard/DashboardPage/Users";
 import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 import Contact from "../Pages/Contact/Contact";
+import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/acceptinsurance",
+        element: <InsuranceWeAccept />,
       },
       {
         path: "/doctor/:id",

@@ -26,7 +26,8 @@ const DashbordLayoutes = () => {
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
 
         <div
-          className={`w-66  sm:relative rounded-2xl border-t-8 border-green-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block    ${
+          className={`w-66  sm:relative rounded-2xl border-t-8 border-green-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
+             ${
             toggle ? "hidden" : ""
           } sidebar-container `}
         >
@@ -42,16 +43,16 @@ const DashbordLayoutes = () => {
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
                   <FaUsers className=""></FaUsers>
                   <Link to="/dashboard/users">
-                    <h2 className="text-sm font-bold  ml-2">ALL USERS</h2>
+                    <h2 className="text-sm font-bold text-gray-900  ml-2">ALL USERS</h2>
                   </Link>
                 </div>
               </li>
 
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
-                <div className="flex items-center text-2xl p-2  rounded-xl ">
+                <div className="flex items-center text-xl p-1  rounded-xl ">
                   <FaUserMd></FaUserMd>
                   <Link to="/dashboard/addDoctors">
-                    <span className="text-sm font-bold ml-2">ADD DOCTOR </span>
+                    <span className="text-sm font-bold text-gray-900 ml-1">ADD DOCTOR </span>
                   </Link>
                 </div>
               </li>
@@ -60,7 +61,7 @@ const DashbordLayoutes = () => {
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashbord/managedoctors">
-                    <span className="text-sm font-bold ml-2"> MANAGE DR.</span>
+                    <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
                   </Link>
                 </div>
               </li>
@@ -89,9 +90,9 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
             </ul>
-            <div className="flex justify-center mt-48 mb-4 w-full">
+            <div className="flex justify-center rounded border border-teal-600 mt-48 mb-4 w-full">
               <div className="relative ">
-                <div className="text-gray-500 absolute ml-4 inset-0 m-auto w-4 h-4">
+                <div className="text-gray-500  absolute ml-4 inset-0 m-auto w-4 h-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="icon icon-tabler icon-tabler-search"
@@ -184,7 +185,7 @@ const DashbordLayoutes = () => {
           </div>
 
           <div
-            className="absolute md:hidden block  left-24 top-12 w-10 h-10 bg-glass rounded-full cursor-pointer"
+            className="absolute md:hidden block  left-16 top-24 w-10 h-10 bg-glass rounded-full cursor-pointer"
             onClick={() => {
               setToggle(!toggle);
             }}

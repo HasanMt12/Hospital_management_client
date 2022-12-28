@@ -26,7 +26,7 @@ const DoctorHomeCard = ({ doctor }) => {
       >
         <CardMedia
           component="img"
-          height="140"
+          // height="140"
           image={img}
           alt="green iguana"
         />
@@ -48,7 +48,7 @@ const DoctorHomeCard = ({ doctor }) => {
               margin: "auto",
               padding: "5px 20px",
               fontWeight: "bold",
-              backgroundColor: "#3098ff",
+              backgroundColor: "#0f8383",
               color: "white",
               "&:hover": {
                 backgroundColor: "#1976d2",

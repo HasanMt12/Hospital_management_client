@@ -1,16 +1,10 @@
 import { Box, Container, Grid, Paper } from "@mui/material";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import servicePicture from "../../../assets/doctor.jpg";
 
 import ServiceTitle from "./ServiceTitle";
 import Service from "./Service";
+import "./service.css"
 
 const Services = () => {
   const doctorservices = [
@@ -58,12 +52,19 @@ const Services = () => {
   ];
 
   return (
-    <Container>
+    <Container className="customService"
+    data-aos="zoom-in-up" data-aos-duration="2500">
       <Box>
         <ServiceTitle
-          title="Service We Offer"
-          colored="Services"
-          sx={{ mb: 8 ,color:"green" }}
+        className="textColor"
+          title="Services We Offer"
+          // colored="Services"
+          sx = {
+              {
+                mb: 8,
+                color: "#0f8383"
+                }
+                }
         />
 
         <Grid sx={{ mb: 8 }} container spacing={2}>

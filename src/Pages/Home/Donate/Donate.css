@@ -2,7 +2,12 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 70vh;
-  background-color: white;
+  background-color: rgb(241, 245, 245);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .box-secondary {
@@ -12,19 +17,19 @@
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: rgb(249, 221, 221);
-}
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: rgb(243, 207, 207);
-}
+} */ */
 .box-primary {
   display: flex;
   justify-content: center;

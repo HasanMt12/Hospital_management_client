@@ -7,3 +7,4 @@ const useTitle = (title) => {
 };
 
 export default useTitle;
+

@@ -70,13 +70,13 @@ function Blogs() {
 
   return (
     <div className="App">
-      <AppBar className={classes.appBar} position="static">
+      {/* <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <Typography variant="h6" color="primary">
             Blog
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       <Box className={classes.hero}>
         <Box>
@@ -457,7 +457,7 @@ function Blogs() {
                   <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                     Nafisa Akter
+                     Jr Mark 
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -502,7 +502,7 @@ function Blogs() {
                   <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                      Suhana Salma
+                      Habib Ahmed
                     </Typography>
                     <Typography
                       variant="subtitle2"

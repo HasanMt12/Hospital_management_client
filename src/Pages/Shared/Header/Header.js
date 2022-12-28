@@ -7,7 +7,7 @@ import Login from "../../Register/Login/Login";
 import Popup from "../Popup";
 // import "./navbar.css";
 import "../Header/Header.css";
-// import logo from '../../../assets/logo.png'
+import logo from "../../../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,6 @@ const Header = () => {
       .catch((error) => console.log(error));
   };
 
-
   return (
     <div>
       {/* upper nav item */}
@@ -34,7 +33,7 @@ const Header = () => {
               title="Company"
               className="inline-flex items-center"
             >
-              {/* <img src={logo} alt=""></img> */}
+              <img src={logo} alt=""></img>
             </Link>
             <div>
               <div class="relative mt-4 lg:mt-0 lg:mx-4 ">
@@ -176,7 +175,7 @@ const Header = () => {
                           title="Company"
                           className="inline-flex items-center"
                         >
-                          {/* <img src={logo} alt=""></img> */}
+                          <img src={logo} alt=""></img>
                         </Link>
                       </div>
                       <div>
