@@ -20,6 +20,7 @@ import Users from "../Dashboard/DashboardPage/Users";
 import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 import Contact from "../Pages/Contact/Contact";
 import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
+import MissionVission from "../Pages/MissionVission/MissionVission";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/acceptinsurance",
         element: <InsuranceWeAccept />,
+      },
+      {
+        path: "/missionvission",
+        element: <MissionVission />,
       },
       {
         path: "/doctor/:id",

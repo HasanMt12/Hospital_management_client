@@ -10,14 +10,14 @@ ul {
     list-style: none;
 
 
-    text-align: center;
+    /* text-align: center; */
 }
 
-li {
+/* .header_class>li {
 
     position: relative;
 
-}
+} */
 
 
 
