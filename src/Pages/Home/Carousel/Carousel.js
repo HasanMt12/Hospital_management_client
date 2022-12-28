@@ -39,16 +39,16 @@ const Carousel = () => {
     }
     refetch();
   return (
-    <div className="h-screen mt-28">
-      <div className="h-5/6">
+    
+      <>
         <Swiper
-          // cssMode={true}
+          
           effect={"fade"}
           navigation={true}
-          // autoplay={{
-          //   delay: 4500,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           keyboard={{
             enabled: true,
@@ -68,7 +68,7 @@ const Carousel = () => {
           className="mySwiper"
         >
           {sliders.map((slider) => (
-            <SwiperSlide>
+            <SwiperSlide className="">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}
@@ -77,12 +77,12 @@ const Carousel = () => {
                   Make an Appointment
                 </button>
               </div>
-              <img className="relative" src={slider?.img} alt="" />
+              <img className="relative " src={slider?.img} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </div>
+      </>
+  
   );
 };
 

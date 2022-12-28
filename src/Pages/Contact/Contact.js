@@ -19,20 +19,20 @@ const Contact = () => {
   return (
     <section   className="min-h-screen   my-40">
       <div   className="container px-6 py-10 mx-auto">
-        <div   className="lg:flex lg:items-center lg:-mx-10 border-y-2 border-blue-300 border-t-2 py-10">
+        <div   className="lg:flex lg:items-center lg:-mx-10 border-y-2 border-teal-300 border-t-2 py-10">
           <div   className="lg:w-1/2 lg:mx-10">
-            <h1   className="text-3xl font-medium text-blue-600 capitalize dark:text-white lg:text-4xl">
+            <h1   className="text-3xl font-medium text-teal-600 capitalize dark:text-white lg:text-4xl">
               Let’s talk
             </h1>
 
-            <p   className="mt-4 text-gray-500 dark:text-gray-400">
+            <p   className="mt-4 text-gray-500 ">
               Ask us everything and we would love to hear from you
             </p>
 
             <form onSubmit={handleContactMsg}   className="mt-12">
               <div   className="-mx-2 md:items-center md:flex">
                 <div   className="flex-1 px-2">
-                  <label   className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label   className="block mb-2 text-sm text-gray-600 ">
                     Full Name
                   </label>
                   <input
@@ -41,7 +41,7 @@ const Contact = () => {
                     id="text"
                     name="text"
                     placeholder="John Doe"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md  dark:bg-gray-900 dark:text-gray-300 border-blue-500 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md   dark:text-gray-300 border-teal-500 focus:border-teal-400 dark:focus:border-teal-400 focus:ring-teal-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                   <ValidationError
                     prefix="name"
@@ -59,7 +59,7 @@ const Contact = () => {
                     name="email"
                     type="email"
                     placeholder="johndoe@example.com"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md  dark:bg-gray-900 dark:text-gray-300 border-blue-500 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md border-teal-500 focus:border-teal-400 dark:focus:border-teal-400 focus:ring-teal-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                   <ValidationError
                     prefix="Email"
@@ -78,7 +78,7 @@ const Contact = () => {
                     name="contact"
                     type="contact"
                     placeholder="018XXXXXXXX"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md  dark:bg-gray-900 dark:text-gray-300 border-blue-500 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md   border-teal-500 focus:border-teal-400 dark:focus:border-teal-400 focus:ring-teal-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                   <ValidationError
                     prefix="contact"
@@ -88,7 +88,7 @@ const Contact = () => {
                 </div>
 
                 <div   className="flex-1 px-2 mt-4 md:mt-0">
-                  <label   className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label   className="block mb-2 text-sm text-gray-600 ">
                     Location
                   </label>
                   <input
@@ -96,7 +96,7 @@ const Contact = () => {
                     name="location"
                     type="location"
                     placeholder="Bangladesh"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md  dark:bg-gray-900 dark:text-gray-300 border-blue-500 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md border-teal-500 focus:border-teal-400 dark:focus:border-teal-400 focus:ring-teal-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                   <ValidationError
                     prefix="location"
@@ -107,14 +107,14 @@ const Contact = () => {
               </div>
 
               <div   className="w-full mt-4">
-                <label   className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label   className="block mb-2 text-sm text-gray-600 ">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   type="message"
-                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md  dark:bg-gray-900 dark:text-gray-300 border-blue-500 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border  rounded-md   dark:text-gray-300 border-teal-500 focus:border-teal-400 dark:focus:border-teal-400 focus:ring-teal-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Message"
                 ></textarea>
                 <ValidationError
@@ -125,7 +125,7 @@ const Contact = () => {
               </div>
 
               <button
-                  className="w-full px-6 py-3 mt-4 text-lg font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 "
+                  className="w-full px-6 py-3 mt-4 text-lg font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-teal-500 rounded-md hover:bg-teal-400 focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-50 "
                 type="submit"
                 value="submit"
                 disabled={state.submitting}
@@ -137,7 +137,7 @@ const Contact = () => {
 
           <div   className="mt-12 lg:flex lg:mt-0 lg:flex-col  lg:items-center lg:w-1/2 lg:mx-10">
             <img
-                className="border-2 border-blue-400 object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96 flex-col "
+                className="border-2 border-teal-400 object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96 flex-col "
               src="https://i.ibb.co/7GpjXpK/doctor-standing-with-folder-stethoscope.jpg"
               alt=""
             />
@@ -146,7 +146,7 @@ const Contact = () => {
               <p   className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-blue-500 dark:text-blue-400"
+                    className="w-6 h-6 mx-2 text-teal-500 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -164,7 +164,7 @@ const Contact = () => {
                   />
                 </svg>
 
-                <span   className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                <span   className="mx-2 text-gray-700 truncate w-72 ">
                   Dhaka,Bangladesh
                 </span>
               </p>
@@ -172,7 +172,7 @@ const Contact = () => {
               <p   className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-blue-500 dark:text-blue-400"
+                    className="w-6 h-6 mx-2 text-teal-500 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -185,7 +185,7 @@ const Contact = () => {
                   />
                 </svg>
 
-                <span   className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                <span   className="mx-2 text-gray-700 truncate w-72 ">
                   01845368331
                 </span>
               </p>
@@ -193,7 +193,7 @@ const Contact = () => {
               <p   className="flex items-start -mx-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-2 text-blue-500 dark:text-blue-400"
+                    className="w-6 h-6 mx-2 text-teal-500 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -206,18 +206,18 @@ const Contact = () => {
                   />
                 </svg>
 
-                <span   className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
+                <span   className="mx-2 text-gray-700 truncate w-72 ">
                   wcracker22@gmail.com
                 </span>
               </p>
             </div>
 
             <div   className="mt-6 w-80 md:mt-8">
-              <h3   className="text-gray-600 dark:text-gray-300 font-semibold">Follow us</h3>
+              <h3   className="text-gray-600  font-semibold">Follow us</h3>
 
               <div   className="flex mt-4 -mx-1.5 ">
                 <Link
-                    className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5  text-gray-400 transition-colors duration-300 transform hover:text-teal-500"
                   href="#"
                 >
                   <svg
@@ -231,7 +231,7 @@ const Contact = () => {
                 </Link>
 
                 <Link
-                    className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5  text-gray-400 transition-colors duration-300 transform hover:text-teal-500"
                   href="#"
                 >
                   <svg
@@ -256,7 +256,7 @@ const Contact = () => {
                 </Link>
 
                 <Link
-                    className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5  text-gray-400 transition-colors duration-300 transform hover:text-teal-500"
                   href="#"
                 >
                   <svg
@@ -273,7 +273,7 @@ const Contact = () => {
                 </Link>
 
                 <Link
-                    className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                    className="mx-1.5  text-gray-400 transition-colors duration-300 transform hover:text-teal-500"
                   href="#"
                 >
                   <svg
