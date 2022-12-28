@@ -7,12 +7,10 @@
 ul {
   list-style: none;
 
-  text-align: center;
+    /* text-align: center; */
 }
 
-li {
-  position: relative;
-}
+
 
 /* a {
     color: #fff;

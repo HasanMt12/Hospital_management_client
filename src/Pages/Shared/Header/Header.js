@@ -103,7 +103,7 @@ const Header = () => {
                 <div className="absolute z-10 right-10">
                   <div className="p-5 bg-teal-800 border rounded shadow-lg">
                     <nav>
-                      <ul className="space-y-4 w-32 text-gray-100 font-bold bg-teal-600 ">
+                      <ul className="space-y-4 w-32 text-gray-100 font-bold bg-teal-600 header_class">
                         {user?.uid ? (
                           <>
                             <>
@@ -231,7 +231,10 @@ const Header = () => {
                                   About Us
                                 </Link>
 
-                                <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="/missionvission"
+                                  class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Mission & Vission
                                 </Link>
                               </nav>
@@ -480,7 +483,10 @@ const Header = () => {
                       About Us
                     </Link>
 
-                    <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/missionvission"
+                      class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Mission & Vission
                     </Link>
                   </nav>
