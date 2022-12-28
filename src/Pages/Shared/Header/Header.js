@@ -204,7 +204,7 @@ const Header = () => {
                             <details class="group [&_summary::-webkit-details-marker]:hidden">
                               <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span class="text-sm font-medium">
-                                  About Us
+                               <Link to='/about'>   About Us</Link>
                                 </span>
 
                                 <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
