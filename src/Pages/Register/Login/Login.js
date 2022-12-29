@@ -46,7 +46,9 @@ const Login = () => {
   const location = useLocation();
   const [openPopup, setOpenPopup] = useState(false);
   // const [loginUserEmail, setLoginUserEmail] = useState("");
-
+    const closeModal = () => {
+        setOpenPopup(false);
+    }
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
@@ -59,6 +61,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         // setLoginUserEmail(data.email);
+        closeModal()
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -81,8 +84,8 @@ const Login = () => {
   };
 
   return (
-    <div className="my-32">
-      <Grid>
+     <div className="my-32">
+     <Grid>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
@@ -132,7 +135,7 @@ const Login = () => {
               label="Remember me"
             />
             <Button
-              type="submit"
+          type="submit"
               color="primary"
               variant="contained"
               style={btnStyle}
@@ -229,7 +232,7 @@ const Login = () => {
             </div>
           </form>
         </Paper>
-      </Grid>
+      </Grid>:
       <Popup  title="SignUp Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <SignUp></SignUp>
       </Popup>

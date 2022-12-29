@@ -493,7 +493,7 @@ const Header = () => {
 
                     <Link class="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     to="/about"
-                    > </Link>
+                    > About Us </Link>
 
                     <Link
                       to="/missionvission"

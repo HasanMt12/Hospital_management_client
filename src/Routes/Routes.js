@@ -23,6 +23,8 @@ import MissionVission from "../Pages/MissionVission/MissionVission";
 import Departments from "../Pages/AllServices/Departments";
 
 import About from "../Pages/Home/About/About";
+import AdminRoutes from "./AdminRoute/AdminRoutes";
+import Appointment from "../Dashboard/DashboardPage/Appointment";
 
 
 
@@ -90,11 +92,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard/users",
-        element: <Users />
+        element:  <AdminRoutes><Users /></AdminRoutes>
       },
       {
         path: "/dashboard/addDoctors",
         element: <AddDoctor />
+      },
+       {
+        path: "/dashboard/appointments",
+        element: <Appointment></Appointment>
       },
     ]
   }
