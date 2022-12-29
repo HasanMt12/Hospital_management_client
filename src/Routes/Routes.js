@@ -1,16 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-
-
-
-
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Register/Login/Login";
 import SignUp from "../Pages/Register/SignUp/SignUp";
 import DoctorDetails from "../Pages/Shared/DoctorDetails/DoctorDetails";
 import ErrorPage from "../Pages/Shared/ErrorPage";
-
-
 import Dashform from "../Dashform";
 
 import Blogs from "../Pages/Blogs/Blogs";
@@ -20,12 +14,11 @@ import AddDoctor from "../Dashboard/DashboardPage/AddDoctor";
 import Contact from "../Pages/Contact/Contact";
 import InsuranceWeAccept from "../Pages/InsuranceWeAccept/InsuranceWeAccept";
 import MissionVission from "../Pages/MissionVission/MissionVission";
-import Departments from "../Pages/AllServices/Departments";
+// import Departments from "../Pages/AllServices/Departments";
 
 import About from "../Pages/Home/About/About";
-
-
-
+import ServiceByCategory from "../Pages/AllServices/Service/ServiceByCategory";
+import Departments from "../Pages/AllServices/Department/Departments";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +44,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element:<Departments/>
+        element: <Departments />,
+      },
+      {
+        path: "/departments/:treatment",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/departments/${params.treatment}`),
+        element: <ServiceByCategory />,
       },
       {
         path: "/dash",
@@ -83,21 +82,19 @@ const router = createBrowserRouter([
     ],
   },
 
-
   {
     path: "/dashboard",
     element: <DashbordLayoutes></DashbordLayoutes>,
     children: [
       {
         path: "/dashboard/users",
-        element: <Users />
+        element: <Users />,
       },
       {
         path: "/dashboard/addDoctors",
-        element: <AddDoctor />
+        element: <AddDoctor />,
       },
-    ]
-  }
-
+    ],
+  },
 ]);
 export default router;
