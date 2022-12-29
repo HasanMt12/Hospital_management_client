@@ -20,7 +20,7 @@ const Service = ({ serv }) => {
           boxShadow: "0 0 300px 0 rgba(0, 0, 0, 0.1)",
         },
       }}
-      
+
     >
       <CardMedia
         component="img"
@@ -45,9 +45,7 @@ const Service = ({ serv }) => {
           }}
         ></Typography>
         <Typography variant="body2" color="text.secondary">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, odio
-          incidunt, accusamus, quasi dolores earum pariatur ullam fuga aut
-          molestias dolor atque
+          {details}
         </Typography>
       </CardContent>
     </Card>
