@@ -19,7 +19,6 @@ const Home = () => {
       <WorkingFlow></WorkingFlow>
       <DonationForm></DonationForm>
 
-      
       {/* <CssBaseline /> */}
       {/* <Departments/> */}
     </div>

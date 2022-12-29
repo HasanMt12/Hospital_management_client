@@ -23,7 +23,7 @@ const WorkingFlow = () => {
     <p>Now, we will discuss on the following section.</p>
 </Typography>
   </div>
-     <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mb-20 mt-7 gap-x-5 gap-y-2">
+     <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mb-20 mt-7 gap-x-8 gap-y-2">
      <Card
       sx={{
 maxWidth: 270,
