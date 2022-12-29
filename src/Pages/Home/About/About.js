@@ -20,7 +20,7 @@ const About = () => {
       <nav aria-label="Breadcrumb my-10">
         <ol role="list" className="flex items-center gap-1 text-sm text-gray-600 ">
           <li>
-            <Link to="#" className="block transition hover:text-gray-700 hover:underline">
+            <Link to="/" className="block transition hover:text-gray-700 hover:underline">
               <span className="sr-only "> Home </span>
 
               <svg
@@ -77,7 +77,7 @@ const About = () => {
           </li>
 
           <li>
-            <Link to="/public" className="block transition text-base  hover:underline hover:text-green-600">
+            <Link to="/" className="block transition text-base  hover:underline hover:text-green-600">
              Doctor's Planet
             </Link>
           </li>
@@ -126,7 +126,7 @@ const About = () => {
                   alt="doctor"
                 />
               </div>
-              <div className="text-white">Send an Inquiry</div>
+              <Link to='/contact' className="text-white">Send an Inquiry</Link>
               <div className="mx-3">
                 <img className="w-3 h-5" src={right} alt="right" />
               </div>

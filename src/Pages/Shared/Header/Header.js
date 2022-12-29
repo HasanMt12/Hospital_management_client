@@ -108,8 +108,10 @@ const Header = () => {
                           <>
                             <>
                               <li className="w-full px-4 py-2 text-sm font-medium">
+
                                 <Link to="/dashboard">Dashboard</Link>
-                              </li>
+
+
                               <li className="w-full px-4 py-2 text-sm font-medium">
                                 <Link onClick={handleLogOut}>log out</Link>
                               </li>
@@ -205,6 +207,7 @@ const Header = () => {
                               <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span className="text-sm font-medium">
                                   <Link to="/about"> About Us</Link>
+
                                 </span>
 
                                 <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
@@ -227,7 +230,11 @@ const Header = () => {
                                 aria-label="Users Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+
+
+                                
+                                <Link to='/about' className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+
                                   About Us
                                 </Link>
 
@@ -410,10 +417,12 @@ const Header = () => {
                               </nav>
                             </details>
 
+
                             <a
                               href="tel:+880 15100000"
                               className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
+
                               +880 15100000
                             </a>
                           </div>
@@ -458,9 +467,14 @@ const Header = () => {
               className="flex flex-col space-y-1 text-white"
             >
               <div className="flex  justify-between mb-5">
+
+
+
+              
+
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span className="text-sm font-medium"> About Us </span>
+                    <span className="text-sm font-medium"> <Link >About Us</Link> </span>
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -482,9 +496,10 @@ const Header = () => {
                     aria-label="Users Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link to="/about" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       About Us
                     </Link>
+
 
                     <Link
                       to="/missionvission"
@@ -496,10 +511,9 @@ const Header = () => {
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span className="text-sm font-medium">
-                      {" "}
-                      Patient Services{" "}
-                    </span>
+
+                    <span className="text-sm font-medium"> Patient Services </span>
+
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -547,10 +561,9 @@ const Header = () => {
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span className="text-sm font-medium">
-                      {" "}
-                      Medical Travel{" "}
-                    </span>
+
+                    <span className="text-sm font-medium"> Medical Travel </span>
+
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -664,6 +677,7 @@ const Header = () => {
                   href="tel:+880 15100000"
                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
+
                   +880 15100000
                 </a>
               </div>
