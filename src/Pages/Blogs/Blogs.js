@@ -171,9 +171,7 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    A medical laboratory scientist (MLS), also known as a medical technologist or clinical laboratory scientist, works to analyze a variety of biological specimens. They are responsible for performing scientific testing on samples and reporting results to physicians.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -219,15 +217,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Radiologic technologists, also known as radiographers, perform x rays and other diagnostic imaging examinations on patients. MRI technologists operate magnetic resonance imaging (MRI) scanners to create diagnostic images
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Hasan Mahmud
@@ -264,18 +260,16 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Panoramic radiography, also called panoramic x-ray, is a two-dimensional (2-D) dental x-ray examination that captures the entire mouth in a single image, including the teeth, upper and lower jaws, surrounding structures and tissues.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                     Nafisa Akter
+                      Nafisa Akter
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -309,18 +303,16 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    A phlebotomist is a medical professional who's trained to perform blood draws. They collect blood for testing or donation and can also perform blood transfusions. Lab Appointments & Locations. COVID-19 Testing Info.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                     Suhana Salma
+                      Suhana Salma
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -354,15 +346,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Consultation is the act of seeking assistance from another physician(s) or health care professional(s) for diagnostic studies, therapeutic interventions, or other services that may benefit the patient.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Masum Billah
@@ -399,15 +389,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    he surgeon is responsible for the preoperative diagnosis of the patient, for performing the operation, and for providing the patient with postoperative surgical care and treatment.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Muctasina Golam Rawfoon
@@ -444,18 +432,16 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    An ophthalmologist is a medical or osteopathic doctor who specializes in eye and vision care. Ophthalmologists differ from optometrists and opticians in their levels of training and in what they can diagnose and treat.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                     Jr Mark 
+                      Jr Mark
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -489,15 +475,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    A medical laboratory scientist (MLS), also known as a medical technologist or clinical laboratory scientist, works to analyze a variety of biological specimens. They are responsible for performing scientific testing on samples and reporting results to physicians.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Habib Ahmed
@@ -534,15 +518,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    A clinical pharmaceutical scientist (or pharmacist-scientist) is a licensed, practicing pharmacist who also functions as an independent researcher in the pharmaceutical sciences. Clinical pharmaceutical scientists are a type of clinician scientist, analogous to physician-scientists.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Hasan Mahmud
@@ -587,10 +569,10 @@ function Blogs() {
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
-                     Rakibul Islam
+                      Rakibul Islam
                     </Typography>
                     <Typography
                       variant="subtitle2"
@@ -624,15 +606,13 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    The term injection is sometimes used synonymously with inoculation, but injection does not only refer to the act of inoculation. Injections generally administer a medication as a bolus (or one-time) dose, but can also be used for continuous drug administration.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.cardActions}>
                 <Box className={classes.author}>
-                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }}/>
+                  <Avatar src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80" style={{ marginRight: "8px" }} />
                   <Box ml={2}>
                     <Typography variant="subtitle2" component="p">
                       Masum Billah
