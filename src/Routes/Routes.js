@@ -17,8 +17,17 @@ import MissionVission from "../Pages/MissionVission/MissionVission";
 // import Departments from "../Pages/AllServices/Departments";
 
 import About from "../Pages/Home/About/About";
+
 import ServiceByCategory from "../Pages/AllServices/Service/ServiceByCategory";
 import Departments from "../Pages/AllServices/Department/Departments";
+
+
+import AdminRoutes from "./AdminRoute/AdminRoutes";
+import Appointment from "../Dashboard/DashboardPage/Appointment";
+
+import AddStuff from "../Dashboard/AddStuff/AddStuff";
+
+
 
 const router = createBrowserRouter([
   {
@@ -88,13 +97,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard/users",
-        element: <Users />,
+
+        element:  <AdminRoutes><Users /></AdminRoutes>
+
       },
       {
         path: "/dashboard/addDoctors",
         element: <AddDoctor />,
       },
-    ],
-  },
+
+
+       {
+        path: "/dashboard/appointments",
+        element: <Appointment></Appointment>
+       },
+      {
+        path: "/dashboard/addStuff",
+        element: <AddStuff />
+
+      },
+    ]
+  }
+
 ]);
 export default router;

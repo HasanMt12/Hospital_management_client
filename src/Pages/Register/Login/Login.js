@@ -6,17 +6,18 @@ import {
   TextField,
   Button,
   Typography,
+ 
 } from "@material-ui/core";
 import LockOutlinedIcon from "@mui/icons-material//LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Popup from "../../Shared/Popup";
 import SignUp from "../SignUp/SignUp";
-const Login = () => {
+const Login = ({ closePopup }) => {
   const paperStyle = {
     padding: "50px 30px",
     height: 520,
@@ -27,11 +28,10 @@ const Login = () => {
   const btnStyle = {
     margin: "8px 2px",
     backgroundColor: "#1bbd7e",
-   
   };
   const btn1Style = {
-   
-    width: "23px", height: "23px" ,
+    width: "23px",
+    height: "23px",
     color: "#1bbd7e",
   };
 
@@ -45,12 +45,13 @@ const Login = () => {
   const [loginError, setLoginError] = useState("");
   const location = useLocation();
   const [openPopup, setOpenPopup] = useState(false);
-  // const [loginUserEmail, setLoginUserEmail] = useState("");
 
+  // const [loginUserEmail, setLoginUserEmail] = useState("");
+   
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
-  // const onSubmit = (data) => console.log(data);
+
   const handleLogin = (data) => {
     console.log(data);
     setLoginError("");
@@ -59,6 +60,10 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         // setLoginUserEmail(data.email);
+        toast.success("successfully login");
+
+        closePopup(false)
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -81,8 +86,8 @@ const Login = () => {
   };
 
   return (
-    <div className="my-32">
-      <Grid>
+     <div className="my-32">
+     <Grid>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
@@ -132,7 +137,10 @@ const Login = () => {
               label="Remember me"
             />
             <Button
+
+              // onClick={() => closePopup(false)}
               type="submit"
+
               color="primary"
               variant="contained"
               style={btnStyle}
@@ -141,11 +149,12 @@ const Login = () => {
             >
               Sign in
             </Button>
+
             {loginError && <p style={{ color: "red" }}>{loginError}</p>}
             {/* <Typography>
               <Link href="#">Forgot password ?</Link>
             </Typography> */}
-            <Typography style={{textAlign:'center'}}>
+            <Typography style={{ textAlign: "center" }}>
               {" "}
               <span
                 // className="text-center"
@@ -154,24 +163,24 @@ const Login = () => {
                   marginTop: "10px",
                   marginBottom: "10px",
                   fontSize: "17px",
-                  textAlign:'center'
+                  textAlign: "center",
                 }}
               >
                 Create a new account ?
               </span>
               <Button
-                onClick={() => setOpenPopup(true)}
-                
+                 onClick={() => closePopup(false)}
+                close
                 className="text-green-600 font-medium"
                 style={{
                   color: "green",
                   fontWeight: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
-                  textAlign:'center'
+                  textAlign: "center",
                 }}
               >
-                Sign Up
+                <Link to='/signup' >Sign Up</Link>
               </Button>
             </Typography>
             <div
@@ -183,7 +192,6 @@ const Login = () => {
             </div>
 
             <div className="flex items-center  space-x-1">
-            
               <p
                 className="text-lg text-gray-400 my-1"
                 style={{
@@ -191,7 +199,7 @@ const Login = () => {
                   marginTop: "10px",
                   marginBottom: "10px",
                   fontSize: "17px",
-                  textAlign:'center'
+                  textAlign: "center",
                 }}
               >
                 Signup with social account
@@ -229,9 +237,17 @@ const Login = () => {
             </div>
           </form>
         </Paper>
-      </Grid>
-      <Popup  title="SignUp Form" openPopup={openPopup} setOpenPopup={setOpenPopup}>
-        <SignUp></SignUp>
+
+      </Grid>:
+     
+   
+      <Popup
+        title="SignUp Form"
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+      >
+        <SignUp closePopup={setOpenPopup}> </SignUp>
+
       </Popup>
     </div>
   );

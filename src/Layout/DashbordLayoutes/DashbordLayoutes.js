@@ -13,8 +13,15 @@ import {
   FaSign,
 } from "react-icons/fa";
 import Header from "../../Pages/Shared/Header/Header";
+import useAdmin from "../../hooks/useAdminSecurity";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
+import useDoctor from "../../hooks/useDoctorsSecurity";
 
 const DashbordLayoutes = () => {
+  const {user}= useContext(AuthContext);
+  const [isAdmin] = useAdmin(user?.email)
+  const [isDoctor] = useDoctor(user?.email)
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -27,20 +34,27 @@ const DashbordLayoutes = () => {
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
 
         <div
-          className={`w-66  sm:relative rounded-2xl border-t-8 border-green-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
+
+          className={`w-66 ml-1  sm:relative rounded-2xl border-t-8 border-teal-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
+
              ${
             toggle ? "hidden" : ""
           } sidebar-container `}
         >
           <div className="px-8 ">
-            <div className="flex   bg-white my-8 rounded-2xl px-1 gap-1 border-green-300 border-2 py-2 border- shadow-sm">
+            <div className="flex   bg-white my-8 rounded-2xl px-1 gap-1 border-teal-300 border-2 py-2 border- shadow-sm">
               <div className=" w-12 ">
                 <img src={logo} alt="" />
               </div>
               <div className="mt-5 font-bold ">DASHBOARD</div>
             </div>
             <ul className="mt-12">
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+
+
+              {isAdmin && <>
+
+
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
                   <FaUsers className=""></FaUsers>
                   <Link to="/dashboard/users">
@@ -49,15 +63,18 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+
                 <div className="flex items-center text-xl p-1  rounded-xl ">
                   <FaUserMd></FaUserMd>
-                  <Link to="/dashboard/addDoctors">
-                    <span className="text-sm font-bold text-gray-900 ml-1">ADD DOCTOR </span>
+                  <Link to="/dashboard/addStuff">
+                    <span className="text-sm font-bold text-gray-900 ml-1">ADD STUFFS </span>
                   </Link>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -66,25 +83,58 @@ const DashbordLayoutes = () => {
                   </Link>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+
+
+              </>
+              }
+              
+
+              {isDoctor && <>
+              
+               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashbord/managedoctors">
+                    <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
+                  </Link>
+                </div>
+              </li>
+
+               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashboard/appointments">
+                    <span className="text-sm font-bold text-gray-900 ml-2"> All Appointment.</span>
+                  </Link>
+                </div>
+              </li>
+              
+              </>
+              }
+
+             
+
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaMoneyCheckAlt />
                   <span className="text-sm font-bold ml-2"> INSURENCE </span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaHome></FaHome>
                   <span className="text-sm font-bold ml-2"> EXTRA</span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaBook />
                   <span className="text-sm font-bold ml-2">INSURENCE</span>
                 </div>
               </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-green-200">
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaHome></FaHome>
                   <span className="text-sm font-bold ml-2">EXTRA?</span>
@@ -153,33 +203,33 @@ const DashbordLayoutes = () => {
 
         {/* Sidebar ends */}
         {/* Remove class [ h-64 ] when adding a card block */}
-        <div className="container mx-auto py-10 h-96 md:w-4/5 w-11/12 px-6">
+        <div className="container mx-auto  py-10 h-96 md:w-4/5 w-11/12 px-6">
           {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
 
           <div className="container mx-auto hidden lg:block ">
             <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300   ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300   ">
                 <div className="text-sm font-medium text-gray-500 truncate    ">
-                  Total users
+                  Total Doctors
                 </div>
                 <div className="mt-1 text-3xl font-semibold text-gray-900">
-                  12,00
+                  450
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg  shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg  shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
-                  Total Profit
+                  Total Nurse
                 </div>
                 <div className="mt-1 text-3xl font-semibold text-gray-900">
-                  $ 450k
+                  1000
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-green-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
-                  Total Orders
+                  Total Stuff
                 </div>
                 <div className="mt-1 text-3xl font-semibold text-gray-900">
-                  20k
+                  320
                 </div>
               </div>
             </div>
@@ -195,11 +245,13 @@ const DashbordLayoutes = () => {
             <FaArrowAltCircleLeft
               className={`${
                 toggle ? "rotate-180" : ""
-              } text-3xl transition-all duration-300`}
+              } text-3xl  transition-all duration-300`}
             />
           </div>
           <div
-            className={`w-full h-full rounded border-dashed border-2 border-gray-300    `}
+
+            className={`w-full h-full rounded  `}
+
           >
             <Outlet></Outlet>
           </div>
