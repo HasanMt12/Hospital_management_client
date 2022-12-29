@@ -34,7 +34,9 @@ const DashbordLayoutes = () => {
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
 
         <div
+
           className={`w-66 ml-1  sm:relative rounded-2xl border-t-8 border-teal-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
+
              ${
             toggle ? "hidden" : ""
           } sidebar-container `}
@@ -48,7 +50,9 @@ const DashbordLayoutes = () => {
             </div>
             <ul className="mt-12">
 
+
               {isAdmin && <>
+
 
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
@@ -59,15 +63,17 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+
+              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+
                 <div className="flex items-center text-xl p-1  rounded-xl ">
                   <FaUserMd></FaUserMd>
-                  <Link to="/dashboard/addDoctors">
-                    <span className="text-sm font-bold text-gray-900 ml-1">ADD DOCTOR </span>
+                  <Link to="/dashboard/addStuff">
+                    <span className="text-sm font-bold text-gray-900 ml-1">ADD STUFFS </span>
                   </Link>
                 </div>
               </li>
-              
+
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
@@ -77,6 +83,7 @@ const DashbordLayoutes = () => {
                   </Link>
                 </div>
               </li>
+
 
               </>
               }
@@ -108,6 +115,7 @@ const DashbordLayoutes = () => {
               }
 
              
+
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl p-2  rounded-xl ">
                   <FaMoneyCheckAlt />
@@ -241,7 +249,9 @@ const DashbordLayoutes = () => {
             />
           </div>
           <div
+
             className={`w-full h-full rounded  `}
+
           >
             <Outlet></Outlet>
           </div>

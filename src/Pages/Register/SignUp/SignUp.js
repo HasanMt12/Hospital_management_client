@@ -23,7 +23,7 @@ import Login from "../Login/Login";
 import Popup from "../../Shared/Popup";
 
 
-const SignUp = () => {
+const SignUp = ({ closePopup }) => {
   const {
     register,
     handleSubmit,
@@ -59,6 +59,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         toast.success("User Created Successfully");
+        closePopup(false)
         navigate('/');
        
 
@@ -133,7 +134,7 @@ const SignUp = () => {
               })}
             />
             {errors.name && (
-              <p className="text-red-500">{errors.name.message}</p>
+              <p style={{ color: "red" }}>{errors.name.message}</p>
             )}
             <TextField
               fullWidth
@@ -144,7 +145,7 @@ const SignUp = () => {
               })}
             />
             {errors.email && (
-              <p className="text-red-500">{errors.email.message}</p>
+              <p style={{ color: "red" }}>{errors.email.message}</p>
             )}
             {/* <FormControl component="fieldset" style={marginTop}>
               <FormLabel component="legend">Gender</FormLabel>
@@ -179,8 +180,8 @@ const SignUp = () => {
               })}
             />
             {errors.phone && (
-              <p className="text-red-500">{errors.phone.message}</p>
-            )} */}
+              <p style={{ color: "red" }}>{errors.phone.message}</p>
+            )}
             <TextField
               fullWidth
               label="Password"
@@ -200,7 +201,7 @@ const SignUp = () => {
               })}
             />
             {errors.password && (
-              <p className="text-red-500">{errors.password.message}</p>
+              <p style={{ color: "red" }}>{errors.password.message}</p>
             )}
             {/*  <TextField
               fullWidth
@@ -212,7 +213,7 @@ const SignUp = () => {
               })}
             />
             {errors.confirm && (
-              <p className="text-red-500">{errors.confirm.message}</p>
+              <p style={{ color: "red" }}>{errors.confirm.message}</p>
             )} */}
             {/* <FormControlLabel
               control={
@@ -227,10 +228,13 @@ const SignUp = () => {
             <Button type="submit" variant="contained" fullWidth color="primary" className="bg-green-500 my-1" style={btnStyle}>
               Sign up
             </Button>
-            {signUpError && <p className="text-red-600">{signUpError}</p>}
+            {signUpError && <p style={{ color: "red" }}>{signUpError}</p>}
             <Typography>
               {" "}
-              Do you have already an account ?<Button onClick={() => setOpenPopup(true)}  className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}>Login</Button>
+              Do you have already an account ?<Button
+              //  onClick={() => setOpenPopup(true)} 
+              onClick={() => closePopup(false)}
+                className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}><Link to='/login'>Login</Link></Button>
             </Typography>
             <div className="text-center my-1 font-medium" Dividers  style={{ textAlign: "center" }}>OR</div>
 

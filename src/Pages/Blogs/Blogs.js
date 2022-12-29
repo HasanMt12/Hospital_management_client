@@ -79,13 +79,13 @@ function Blogs() {
       <Box className={classes.hero}>
         <Box>
           <button className="btn  text-white font-serif shadow-md text-4xl bg-stone-500 font-bold px-6 py-4 rounded-lg mt-5 ">
-            Doctor Planet
+            Doctor's Planet
           </button>
         </Box>
       </Box>
 
       {/* Feature section */}
-      <Grid container spacing={3} style={{ marginTop: "20px" }}>
+      <Grid container spacing={3} style={{ marginTop: "20px" }} className='md:mx-auto md:w-11/12'>
         {" "}
         <Grid item xs={12} md={6}>
           <CardActionArea component="a" href="#">
@@ -155,14 +155,14 @@ function Blogs() {
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/fdt63C0/lab-2815638-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Lab Analysis
                   </Typography>
@@ -171,7 +171,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    A medical laboratory scientist (MLS), also known as a medical technologist or clinical laboratory scientist, works to analyze a variety of biological specimens. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
+                    A medical laboratory scientist , also known as a clinical laboratory scientist. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -201,14 +203,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/RzGBkst/mri-2813908-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     MRI
                   </Typography>
@@ -217,7 +219,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Radiologic technologists, also known as radiographers, perform x rays and other diagnostic imaging examinations on patients. MRI technologists operate magnetic resonance imaging (MRI) scanners to create diagnostic images
+
+                    Radiologic technologists, also known as radiographers, perform x rays and other diagnostic imaging examinations on patients. MRI technologists operate magnetic resonance imaging scanners to create diagnostic images.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -244,7 +248,7 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -287,14 +291,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/sRWhhBW/syringe-1291129-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Blood Sample Lab
                   </Typography>
@@ -330,14 +334,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/G2M7zr6/doctor-5710150-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Patient Consultation
                   </Typography>
@@ -373,14 +377,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/MVzbQLX/operation-1807543-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Surgery Hospital
                   </Typography>
@@ -416,7 +420,7 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -459,14 +463,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/w7znByQ/chemistry-3533039-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Chemistry Lab
                   </Typography>
@@ -475,7 +479,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    A medical laboratory scientist (MLS), also known as a medical technologist or clinical laboratory scientist, works to analyze a variety of biological specimens. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
+                    A medical laboratory scientist, also known as a medical technologist. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -502,7 +508,7 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -518,7 +524,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    A clinical pharmaceutical scientist (or pharmacist-scientist) is a licensed, practicing pharmacist who also functions as an independent researcher in the pharmaceutical sciences. Clinical pharmaceutical scientists are a type of clinician scientist, analogous to physician-scientists.
+
+                    A clinical pharmaceutical scientist is a licensed, practicing pharmacist. Clinical pharmaceutical scientists are a type of clinician scientist, analogous to physician-scientists.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -545,14 +553,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/Qp312cp/treatment-of-skin-2416946-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Treatment of Skin
                   </Typography>
@@ -590,14 +598,14 @@ function Blogs() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
+            <Card className={classes.card}  style={{height:'480px'}}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image="https://i.ibb.co/47xYXpK/syringe-435809-640.jpg"
                   title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent style={{height:'170px'}}>
                   <Typography gutterBottom variant="h5" component="h2">
                     Syringe Injection Drug
                   </Typography>
@@ -606,7 +614,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    The term injection is sometimes used synonymously with inoculation, but injection does not only refer to the act of inoculation. Injections generally administer a medication as a bolus (or one-time) dose, but can also be used for continuous drug administration.
+
+                    The term injection is sometimes used synonymously with inoculation, but injection does not only refer to the act of inoculation. Injections generally administer a medication as a bolus dose, but can also be used for continuous drug administration.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
