@@ -62,7 +62,7 @@ const Login = ({ closePopup }) => {
         // setLoginUserEmail(data.email);
         toast.success("successfully login");
 
-        closePopup(false)
+        // closePopup(false)
 
         navigate(from, { replace: true });
       })
@@ -138,7 +138,7 @@ const Login = ({ closePopup }) => {
             />
             <Button
 
-              // onClick={() => closePopup(false)}
+              onClick={() => closePopup(false)}
               type="submit"
 
               color="primary"

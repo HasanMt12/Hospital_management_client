@@ -51,7 +51,7 @@ const DoctorInHome = () => {
           color: "#0f8383",
         }}
       />
-      <Swiper
+      <Swiper 
         //   slidesPerView={3}
         breakpoints={{
           300: {
@@ -81,11 +81,11 @@ const DoctorInHome = () => {
         }}
         //   navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper swipers"
+        className="mySwiper swiper "
       >
         {doctors.map((doctor) => (
 
-          <SwiperSlide className="swipersSlider customWidth mb-10" >
+          <SwiperSlide className="swipersSlider customWidth -mb-32" >
             <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" 
             
             >

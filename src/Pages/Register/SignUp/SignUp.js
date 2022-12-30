@@ -6,7 +6,6 @@ import {
   Typography,
   TextField,
   Button,
-
 } from "@material-ui/core";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import Radio from "@material-ui/core/Radio";
@@ -16,12 +15,11 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate,Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
 import Login from "../Login/Login";
 import Popup from "../../Shared/Popup";
-
 
 const SignUp = ({ closePopup }) => {
   const {
@@ -32,7 +30,7 @@ const SignUp = ({ closePopup }) => {
   } = useForm();
   const [openPopup, setOpenPopup] = useState(false);
 
-  const { createUser,updateUserProfile, signInWithGoogle } =
+  const { createUser, updateUserProfile, signInWithGoogle } =
     useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   // const [createdUserEmail, setCreatedUser] = useState("");
@@ -59,17 +57,16 @@ const SignUp = ({ closePopup }) => {
         const user = result.user;
         console.log(user);
         toast.success("User Created Successfully");
-        closePopup(false)
-        navigate('/');
-       
+        // closePopup(false)
+        navigate("/");
 
-         const userInfo = {
+        const userInfo = {
           displayName: data.name,
           photoURL: data.photo,
         };
         updateUserProfile(userInfo)
           .then(() => {
-            saveUser(data.name, data.email);
+            saveUser(data.name, data.email,data.phone,data.Gender);
           })
           .catch((err) => console.log(err));
       })
@@ -78,20 +75,20 @@ const SignUp = ({ closePopup }) => {
         setSignUPError(error.message);
       });
 
-    const saveUser = (name, email) => {
-      const user = { name, email };
+    const saveUser = (name, email,phone, Gender) => {
+      const user = { name, email, phone, Gender };
       console.log(user);
       fetch("http://localhost:5000/user", {
         method: "POST",
-      headers: {
-                    'content-type' : 'application/json'
-                },
+        headers: {
+          "content-type": "application/json",
+        },
         body: JSON.stringify(user),
       })
         .then((res) => res.json())
         .then((data) => {
           console.log("save user", data);
-         
+
           navigate("/");
         });
     };
@@ -126,7 +123,7 @@ const SignUp = ({ closePopup }) => {
           <form onSubmit={handleSubmit(handleSignUp)}>
             <TextField
               fullWidth
-              label="name"
+              label="Name"
               placeholder="Enter your name"
               name="name"
               {...register("name", {
@@ -147,7 +144,7 @@ const SignUp = ({ closePopup }) => {
             {errors.email && (
               <p style={{ color: "red" }}>{errors.email.message}</p>
             )}
-            {/* <FormControl component="fieldset" style={marginTop}>
+            <FormControl component="fieldset" style={marginTop}>
               <FormLabel component="legend">Gender</FormLabel>
               <RadioGroup
                 aria-label="gender"
@@ -170,8 +167,8 @@ const SignUp = ({ closePopup }) => {
                   label="Others"
                 />
               </RadioGroup>
-            </FormControl> */}
-            {/* <TextField
+            </FormControl>
+            <TextField
               fullWidth
               label="Phone Number"
               placeholder="Enter your phone number"
@@ -203,7 +200,7 @@ const SignUp = ({ closePopup }) => {
             {errors.password && (
               <p style={{ color: "red" }}>{errors.password.message}</p>
             )}
-            {/*  <TextField
+            {/*   <TextField
               fullWidth
               label="Confirm Password"
               type="password"
@@ -214,59 +211,83 @@ const SignUp = ({ closePopup }) => {
             />
             {errors.confirm && (
               <p style={{ color: "red" }}>{errors.confirm.message}</p>
-            )} */}
-            {/* <FormControlLabel
+            )}  */}
+           {/*  <FormControlLabel
               control={
                 <Checkbox
+                required
                   color="primary"
                   name="checked"
-                  {...register("checkbox")}
+                  {...register("checkbox",{
+                    required: "please,accept our terms & conditions",
+                  })}
                 />
               }
               label="I accept the terms and conditions."
             /> */}
-            <Button type="submit" variant="contained" fullWidth color="primary" className="bg-green-500 my-1" style={btnStyle}>
+            <Button
+              onClick={() => closePopup(false)}
+              type="submit"
+              variant="contained"
+              fullWidth
+              color="primary"
+              className="bg-green-500 my-1"
+              style={btnStyle}
+            >
               Sign up
             </Button>
             {signUpError && <p style={{ color: "red" }}>{signUpError}</p>}
             <Typography>
               {" "}
-              Do you have already an account ?<Button
-              //  onClick={() => setOpenPopup(true)} 
-              onClick={() => closePopup(false)}
-                className="text-green-600 font-bold" style={{color:'green', fontStyle:'medium'}}><Link to='/login'>Login</Link></Button>
+              Do you have already an account ?
+              <Button
+                //  onClick={() => setOpenPopup(true)}
+                onClick={() => closePopup(false)}
+                className="text-green-600 font-bold"
+                style={{ color: "green", fontStyle: "medium" }}
+              >
+                <Link to="/login">Login</Link>
+              </Button>
             </Typography>
-            <div className="text-center my-1 font-medium" Dividers  style={{ textAlign: "center" }}>OR</div>
+            <div
+              className="text-center my-1 font-medium"
+              Dividers
+              style={{ textAlign: "center" }}
+            >
+              OR
+            </div>
 
             <div className="flex items-center ">
-        
-              <p className="px-3 text-lg text-gray-400 my-1" style={{
+              <p
+                className="px-3 text-lg text-gray-400 my-1"
+                style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
                   marginBottom: "10px",
                   fontSize: "18px",
-                  textAlign:'center'
-                }}>
+                  textAlign: "center",
+                }}
+              >
                 Signup with social account
               </p>
-              
             </div>
-            <div className="flex justify-center " style={{display:'flex justify-center', }}>
+            <div
+              className="flex justify-center "
+              style={{ display: "flex justify-center" }}
+            >
               <Button
                 variant="contained"
                 fullWidth
                 color="success"
-                
                 onClick={handleGoogleSignIn}
                 aria-label="Log in with Google"
                 className="p-3 rounded-sm text-xl "
-                
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
                   className="w-5 h-5 fill-current btn text-green-500"
-                  style={{width:'23px', height:'23px'}}
+                  style={{ width: "23px", height: "23px" }}
                 >
                   <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
                 </svg>
@@ -274,10 +295,13 @@ const SignUp = ({ closePopup }) => {
             </div>
           </form>
         </Paper>
-        <Popup   title="Login Form"
-         openPopup={openPopup} setOpenPopup={setOpenPopup}>
-        <Login></Login>
-      </Popup>
+        <Popup
+          title="Login Form"
+          openPopup={openPopup}
+          setOpenPopup={setOpenPopup}
+        >
+          <Login></Login>
+        </Popup>
       </Grid>
     </div>
   );
