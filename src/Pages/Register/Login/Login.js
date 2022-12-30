@@ -46,6 +46,8 @@ const Login = ({ closePopup }) => {
   const location = useLocation();
   const [openPopup, setOpenPopup] = useState(false);
 
+  // const [loginUserEmail, setLoginUserEmail] = useState("");
+   
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
@@ -61,6 +63,7 @@ const Login = ({ closePopup }) => {
         toast.success("successfully login");
 
         closePopup(false)
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -83,8 +86,8 @@ const Login = ({ closePopup }) => {
   };
 
   return (
-    <div className="my-32">
-      <Grid>
+     <div className="my-32">
+     <Grid>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
@@ -134,8 +137,10 @@ const Login = ({ closePopup }) => {
               label="Remember me"
             />
             <Button
+
               // onClick={() => closePopup(false)}
               type="submit"
+
               color="primary"
               variant="contained"
               style={btnStyle}
@@ -232,13 +237,17 @@ const Login = ({ closePopup }) => {
             </div>
           </form>
         </Paper>
-      </Grid>
+
+      </Grid>:
+     
+   
       <Popup
         title="SignUp Form"
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
         <SignUp closePopup={setOpenPopup}> </SignUp>
+
       </Popup>
     </div>
   );

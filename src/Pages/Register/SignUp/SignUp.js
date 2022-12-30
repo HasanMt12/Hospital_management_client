@@ -32,7 +32,7 @@ const SignUp = ({ closePopup }) => {
   } = useForm();
   const [openPopup, setOpenPopup] = useState(false);
 
-  const { createUser, signInWithGoogle } =
+  const { createUser,updateUserProfile, signInWithGoogle } =
     useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   // const [createdUserEmail, setCreatedUser] = useState("");
@@ -61,11 +61,40 @@ const SignUp = ({ closePopup }) => {
         toast.success("User Created Successfully");
         closePopup(false)
         navigate('/');
+       
+
+         const userInfo = {
+          displayName: data.name,
+          photoURL: data.photo,
+        };
+        updateUserProfile(userInfo)
+          .then(() => {
+            saveUser(data.name, data.email);
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
         console.log(error);
         setSignUPError(error.message);
       });
+
+    const saveUser = (name, email) => {
+      const user = { name, email };
+      console.log(user);
+      fetch("http://localhost:5000/user", {
+        method: "POST",
+      headers: {
+                    'content-type' : 'application/json'
+                },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("save user", data);
+         
+          navigate("/");
+        });
+    };
   };
 
   // Google SignIn
@@ -97,10 +126,10 @@ const SignUp = ({ closePopup }) => {
           <form onSubmit={handleSubmit(handleSignUp)}>
             <TextField
               fullWidth
-              label="Name"
+              label="name"
               placeholder="Enter your name"
-              name="Name"
-              {...register("Name", {
+              name="name"
+              {...register("name", {
                 required: "Name is Required",
               })}
             />
@@ -118,7 +147,7 @@ const SignUp = ({ closePopup }) => {
             {errors.email && (
               <p style={{ color: "red" }}>{errors.email.message}</p>
             )}
-            <FormControl component="fieldset" style={marginTop}>
+            {/* <FormControl component="fieldset" style={marginTop}>
               <FormLabel component="legend">Gender</FormLabel>
               <RadioGroup
                 aria-label="gender"
@@ -141,8 +170,8 @@ const SignUp = ({ closePopup }) => {
                   label="Others"
                 />
               </RadioGroup>
-            </FormControl>
-            <TextField
+            </FormControl> */}
+            {/* <TextField
               fullWidth
               label="Phone Number"
               placeholder="Enter your phone number"
@@ -186,7 +215,7 @@ const SignUp = ({ closePopup }) => {
             {errors.confirm && (
               <p style={{ color: "red" }}>{errors.confirm.message}</p>
             )} */}
-            <FormControlLabel
+            {/* <FormControlLabel
               control={
                 <Checkbox
                   color="primary"
@@ -195,7 +224,7 @@ const SignUp = ({ closePopup }) => {
                 />
               }
               label="I accept the terms and conditions."
-            />
+            /> */}
             <Button type="submit" variant="contained" fullWidth color="primary" className="bg-green-500 my-1" style={btnStyle}>
               Sign up
             </Button>

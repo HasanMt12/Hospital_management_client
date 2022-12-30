@@ -3,21 +3,21 @@ import {
     useState
 } from "react"
 
-const useSeller = email => {
+const useDoctor = email => {
     const [isDoctor, setIsDoctor] = useState(false);
-    const [isSellerLoading, setIsSellerLoading] = useState(true);
+    const [isDoctorLoading, setIsDoctorLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/doctors/${email}`)
+            fetch(`http://localhost:5000/user/doctors/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    setIsDoctor(data.isSeller);
-                    setIsSellerLoading(false);
+                    setIsDoctor(data.isDoctor);
+                    setIsDoctorLoading(false);
                 })
         }
     }, [email])
-    return [isDoctor, isSellerLoading]
+    return [isDoctor, isDoctorLoading]
 }
 
-export default useSeller;
+export default useDoctor;

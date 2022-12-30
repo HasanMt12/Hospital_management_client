@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
 
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,7 +12,7 @@ import "swiper/css/pagination";
 
 // import "./styles.css";
 // import './styles.css'
-import './doctor.css'
+import "./doctor.css";
 
 // import required modules
 import {  IconButton, Tooltip } from "@mui/material";
@@ -38,21 +37,19 @@ const DoctorInHome = () => {
     return <h1>Loading</h1>;
   }
   refetch();
-  console.log(doctors)
+  console.log(doctors);
 
   return (
     <>
       <ServiceTitile
-      data-aos="fade-up"
-      data-aos-duration="2500"
+        data-aos="fade-up"
+        data-aos-duration="2500"
         title="Featured Doctors"
         colored="Services"
-        sx = {
-          {
-            mb: 10,
-            color: "#0f8383"
-          }
-        }
+        sx={{
+          mb: 10,
+          color: "#0f8383",
+        }}
       />
       <Swiper
         //   slidesPerView={3}
@@ -87,28 +84,34 @@ const DoctorInHome = () => {
         className="mySwiper swipers"
       >
         {doctors.map((doctor) => (
+
           <SwiperSlide className="swipersSlider customWidth mb-10" >
             <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" 
             
             >
+
               <img
                 className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
                 src={doctor.img}
                 alt=""
               />
 
-              <h1 class="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
+              <h1 className="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
                 {doctor.doctorName}
               </h1>
+
 
               <p class="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
                 {doctor.degree}
               </p>
-              <p class="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
+              <p className="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
                 {doctor.department}
               </p>
 
-              <div class="flex   -mx-2 absolute bottom-2">
+
+              <div className="flex  mt-3 -mx-2 absolute bottom-10">
+
+
                 <Link to={`doctor/${doctor?._id}`}>
                   <Tooltip title="Details">
                     <IconButton>

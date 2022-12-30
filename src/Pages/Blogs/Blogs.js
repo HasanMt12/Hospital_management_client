@@ -171,7 +171,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
+
                     A medical laboratory scientist , also known as a clinical laboratory scientist. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -217,7 +219,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
+
                     Radiologic technologists, also known as radiographers, perform x rays and other diagnostic imaging examinations on patients. MRI technologists operate magnetic resonance imaging scanners to create diagnostic images.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -475,7 +479,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
+
                     A medical laboratory scientist, also known as a medical technologist. They are responsible for performing scientific testing on samples and reporting results to physicians.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -518,7 +524,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
+
                     A clinical pharmaceutical scientist is a licensed, practicing pharmacist. Clinical pharmaceutical scientists are a type of clinician scientist, analogous to physician-scientists.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -561,9 +569,7 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Skin diseases are conditions that affect your skin. These diseases may cause rashes, inflammation . Some skin conditions may be genetic. Skin disease treatment may include medications, creams or ointments, or lifestyle changes.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -606,7 +612,9 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
+
                     The term injection is sometimes used synonymously with inoculation, but injection does not only refer to the act of inoculation. Injections generally administer a medication as a bolus dose, but can also be used for continuous drug administration.
+
                   </Typography>
                 </CardContent>
               </CardActionArea>
