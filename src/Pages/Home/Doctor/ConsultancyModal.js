@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/AuthProvider";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 // import { format } from "date-fns";
 // import { DayPicker } from "react-day-picker";
@@ -38,6 +38,23 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
   const { user } = useContext(AuthContext);
   //  console.log(user)
   // console.log(treatment);
+
+  const bookedAppointments = useSelector(
+    (state) => state.bookedAppointments.bookedAppointments
+  );
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
+  const day = ("0" + date.getDate()).slice(-2);
+  const formattedDate = `${year}-${month}-${day}`;
+
+  const remaningSlots = doctor?.workingDays?.filter(
+    (rem) =>
+      !bookedAppointments.some(
+        (booked) => booked.slot === rem && formattedDate === booked.bookedDate
+      )
+  );
+
   const { department, doctorCode, name } = doctor;
   const handleBooking = (data) => {
     // e.preventDefault()
@@ -132,7 +149,7 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
                   style={{ marginTop: 20, width: "100%", padding: 4 }}
                   name="slot"
                 >
-                  {doctor?.workingDays?.map((slot, i) => (
+                  {remaningSlots.map((slot, i) => (
                     <option value={slot} key={i}>
                       {slot}
                     </option>
