@@ -95,6 +95,16 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
 
+               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashboard/notice">
+                    <span className="text-sm font-bold text-gray-900 ml-2"> ADD Notice</span>
+                  </Link>
+                </div>
+              </li>
+
 
               </>
               }
