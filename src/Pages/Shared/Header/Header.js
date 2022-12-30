@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 // import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import Login from "../../Register/Login/Login";
-import Popup from "../Popup";
 import Modal from "../Modal";
+import Popup from "../Popup";
 // import "./navbar.css";
-import "./Header.css";
+
 import logo from "../../../assets/logo.png";
 import SignUp from "../../Register/SignUp/SignUp";
+import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,6 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
 
   const handleLogOut = () => {
     logOut()
@@ -112,11 +112,7 @@ const Header = () => {
                           <>
                             <>
                               <li className="w-full px-4 py-2 text-sm font-medium">
-
-
                                 <Link to="/dashboard">Dashboard</Link>
-
-
                               </li>
 
                               <li className="w-full px-4 py-2 text-sm font-medium">
@@ -135,8 +131,10 @@ const Header = () => {
                               </Link>
                             </li>
                             <li>
-                              <Link className=" px-4 py-2 text-sm font-medium"
-                              onClick={() => setOpenModal(true)}>
+                              <Link
+                                className=" px-4 py-2 text-sm font-medium"
+                                onClick={() => setOpenModal(true)}
+                              >
                                 SignUp
                               </Link>
                             </li>
@@ -211,13 +209,10 @@ const Header = () => {
                           className="flex flex-col space-y-1 text-white"
                         >
                           <div className="">
-
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
                               <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
                                 <span className="text-sm font-medium">
                                   <Link to="/about"> About Us</Link>
-
-
                                 </span>
 
                                 <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
@@ -240,13 +235,10 @@ const Header = () => {
                                 aria-label="Users Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-
-
-
-                                
-                                <Link to='/about' className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-
-
+                                <Link
+                                  to="/about"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   About Us
                                 </Link>
 
@@ -336,7 +328,10 @@ const Header = () => {
                                 aria-label="Account Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="/medicalGuide"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Medical Travel Guides
                                 </Link>
 
@@ -423,18 +418,19 @@ const Header = () => {
                                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Telemedicine
                                 </Link>
-                                <Link to="ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="ambulanceService"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Ambulance
                                 </Link>
                               </nav>
                             </details>
 
-
                             <a
                               href="tel:+880 15100000"
                               className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
-
                               +880 15100000
                             </a>
                           </div>
@@ -479,15 +475,12 @@ const Header = () => {
               className="flex flex-col space-y-1 text-white"
             >
               <div className="flex  justify-between mb-5">
-
-
-
-              
-
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                    <span className="text-sm font-medium"> <Link >About Us</Link> </span>
-
+                    <span className="text-sm font-medium">
+                      {" "}
+                      <Link>About Us</Link>{" "}
+                    </span>
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -509,11 +502,12 @@ const Header = () => {
                     aria-label="Users Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link to="/about" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/about"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       About Us
                     </Link>
-
-
 
                     <Link
                       to="/missionvission"
@@ -525,11 +519,10 @@ const Header = () => {
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-
-
-                    <span className="text-sm font-medium"> Patient Services </span>
-
-
+                    <span className="text-sm font-medium">
+                      {" "}
+                      Patient Services{" "}
+                    </span>
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -577,11 +570,10 @@ const Header = () => {
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-
-
-                    <span className="text-sm font-medium"> Medical Travel </span>
-
-
+                    <span className="text-sm font-medium">
+                      {" "}
+                      Medical Travel{" "}
+                    </span>
 
                     <span className="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
                       <svg
@@ -603,7 +595,10 @@ const Header = () => {
                     aria-label="Account Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/medicalGuide"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Medical Travel Guides
                     </Link>
 
@@ -675,8 +670,10 @@ const Header = () => {
                     aria-label="Account Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link to="/contact"
-                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/contact"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Hospital Contact Information
                     </Link>
 
@@ -686,7 +683,10 @@ const Header = () => {
                     <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Telemedicine
                     </Link>
-                    <Link to="ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="ambulanceService"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Ambulance
                     </Link>
                   </nav>
@@ -696,7 +696,6 @@ const Header = () => {
                   href="tel:+880 15100000"
                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
-
                   +880 15100000
                 </a>
               </div>
@@ -744,17 +743,14 @@ const Header = () => {
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
-       <Login closePopup={setOpenPopup}></Login>
-
-       
+        <Login closePopup={setOpenPopup}></Login>
       </Popup>
       <Modal
         title="SignUp Form"
         openModal={openModal}
         setOpenModal={setOpenModal}
       >
-      <SignUp closePopup={setOpenModal}></SignUp>
-       
+        <SignUp closePopup={setOpenModal}></SignUp>
       </Modal>
     </div>
   );
