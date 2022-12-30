@@ -11,7 +11,7 @@ const AddStuff = () => {
   } = useForm();
 
   const imageHostKey = process.env.REACT_APP_imgbb_key;
-    console.log(imageHostKey);
+    // console.log(imageHostKey);
   const navigate = useNavigate();
 
   const handleAddStuff = (data) => {
@@ -76,6 +76,7 @@ const AddStuff = () => {
               </label>
               <input
                 type="name"
+                placeholder="Name"
                 {...register("name", {
                   required: " Name is Required",
                 })}
@@ -94,7 +95,7 @@ const AddStuff = () => {
                 {...register("designation", {
                   required: true,
                 })}
-                className="select select-bordered    focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full py-1 rounded-md mt-1"
+                className="select select-bordered    focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full py-1 rounded-md "
               >
                 <option value="nurse" className="text-gray-900">
                   Nurse
@@ -115,7 +116,7 @@ const AddStuff = () => {
                 {...register("department", {
                   required: true,
                 })}
-                className="select select-bordered py-1   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full rounded-md mt-1"
+                className="select select-bordered py-1   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full rounded-md "
               >
                 <option value="dental" className="text-gray-900">
                   Dental
@@ -160,6 +161,7 @@ const AddStuff = () => {
               </label>
               <input
                 type="number"
+                placeholder="Salary"
                 min="0"
                 {...register("salary", {
                   required: true,
@@ -180,6 +182,7 @@ const AddStuff = () => {
               </label>
               <input
                 type="contact"
+                placeholder="Contact"
                 {...register("contact", {
                   required: true,
                 })}
@@ -195,6 +198,7 @@ const AddStuff = () => {
               </label>
               <input
                 type="text"
+                placeholder="Address"
                 {...register("Address", {
                   required: true,
                 })}
@@ -272,8 +276,8 @@ const AddStuff = () => {
             </div>
             <div className="col-span-full mx-auto w-1/2">
               <input
-                className="btn form-control p-3 text-white rounded-xl bg-gray-400 font-bold w-full max-w-xs mt-4 hover:bg-gray-500"
-                value="Add Product"
+                className="btn form-control p-3 text-white rounded-xl cursor-pointer bg-gray-400 font-bold w-full max-w-xs mt-4 hover:bg-gray-500"
+                value="Add STUFF"
                 type="submit"
               />
             </div>

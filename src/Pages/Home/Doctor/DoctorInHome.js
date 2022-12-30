@@ -56,7 +56,7 @@ const DoctorInHome = () => {
           color: "#0f8383",
         }}
       />
-      <Swiper
+      <Swiper 
         //   slidesPerView={3}
         breakpoints={{
           300: {
@@ -86,7 +86,7 @@ const DoctorInHome = () => {
         }}
         //   navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper swipers"
+        className="mySwiper swiper "
       >
         <>
           {doctors.map((doctor) => (
@@ -125,6 +125,7 @@ const DoctorInHome = () => {
                     </Tooltip>
                   </Link>
                 </div>
+
               </div>
             </SwiperSlide>
           ))}
