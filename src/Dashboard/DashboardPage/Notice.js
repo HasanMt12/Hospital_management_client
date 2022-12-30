@@ -64,7 +64,7 @@ const Notice = () => {
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
-              toast.success(`${data.name} is added successfully`);
+              toast.success(`${data.notice} is added successfully`);
               // setLoading(true)
               //   navigate("/dashboard/manageProducts");
             //   refetch()

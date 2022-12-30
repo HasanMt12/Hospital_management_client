@@ -39,15 +39,13 @@ const AddDoctor = () => {
 
     "3.30 PM - 4.00 PM",
 
-    "4.00 PM - 4.30 PM",
-
-    "4.30 PM - 5.00 PM",
+    "4.00 PM - 4.30 PM","4.30 PM - 5.00 PM",
   ];
   
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   // console.log(imageHostKey);
   const onSubmit = (data,e) => {
-    // const Times = e.target.time.value.split(",");
+    // const Times = e.target.time.split(",");
     const img = data.img[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -64,6 +62,7 @@ const AddDoctor = () => {
             title: data.title,
             department: data.department,
             workingDays: data.workingDays,
+            Times,
             degree: data.degree,
             doctorCode: data.doctorCode,
             age: data.age,
