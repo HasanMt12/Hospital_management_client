@@ -18,9 +18,15 @@ const About = () => {
   return (
     <div className="my-8 mx-10">
       <nav aria-label="Breadcrumb my-10">
-        <ol role="list" className="flex items-center gap-1 text-sm text-gray-600 ">
+        <ol
+          role="list"
+          className="flex items-center gap-1 text-sm text-gray-600 "
+        >
           <li>
-            <Link to="/" className="block transition hover:text-gray-700 hover:underline">
+            <Link
+              to="/"
+              className="block transition hover:text-gray-700 hover:underline"
+            >
               <span className="sr-only "> Home </span>
 
               <svg
@@ -31,9 +37,9 @@ const About = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                 />
               </svg>
@@ -48,16 +54,19 @@ const About = () => {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </li>
 
           <li>
-            <Link to="/about" className="block transition hover:underline text-base hover:text-green-600">
-             About Us
+            <Link
+              to="/about"
+              className="block transition hover:underline text-base hover:text-green-600"
+            >
+              About Us
             </Link>
           </li>
 
@@ -69,16 +78,19 @@ const About = () => {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </li>
 
           <li>
-            <Link to="/" className="block transition text-base  hover:underline hover:text-green-600">
-             Doctor's Planet
+            <Link
+              to="/"
+              className="block transition text-base  hover:underline hover:text-green-600"
+            >
+              Doctor's Planet
             </Link>
           </li>
         </ol>
@@ -106,12 +118,16 @@ const About = () => {
           {/* <p className="page-banner__headline">About</p> */}
         </div>
       </div>
-      <div className="quick-access mb-12">
+      <div className=" mb-12">
         <div className="">
           <div className=" sm:flex items-center justify-center sm:mx-auto ">
             <div className="flex items-center justify-between bg-emerald-500 w-64 h-20 ">
               <div className="mx-3">
-                <img className="md:w-7 md:h-9 w-5 h-7" src={doctor} alt="doctor" />
+                <img
+                  className="md:w-7 md:h-9 w-5 h-7"
+                  src={doctor}
+                  alt="doctor"
+                />
               </div>
               <div className="text-white">Find a Doctor</div>
               <div className="mx-3">
@@ -126,14 +142,20 @@ const About = () => {
                   alt="doctor"
                 />
               </div>
-              <Link to='/contact' className="text-white">Send an Inquiry</Link>
+              <Link to="/contact" className="text-white">
+                Send an Inquiry
+              </Link>
               <div className="mx-3">
                 <img className="w-3 h-5" src={right} alt="right" />
               </div>
             </div>
             <div className="flex items-center justify-between bg-amber-700 bg-opacity-60 w-64 h-20 ">
               <div className="mx-3">
-                <img className="md:w-7 md:h-9 w-5 h-7" src={book} alt="doctor" />
+                <img
+                  className="md:w-7 md:h-9 w-5 h-7"
+                  src={book}
+                  alt="doctor"
+                />
               </div>
               <div className="text-white">Book Appointment</div>
               <div className="mx-3">
@@ -162,16 +184,17 @@ const About = () => {
         <p className="text-2xl text-green-600 mx-6">World-class Care</p>
         <div>
           <p className="mx-6 my-2">
-            Founded in 1980, Doctor's Planet International Hospital has been a global
-            pioneer in providing world-class healthcare services and
+            Founded in 1980, Doctor's Planet International Hospital has been a
+            global pioneer in providing world-class healthcare services and
             international patient support for nearly four decades. Located in
             the heart of Bangkok, Thailand, a cosmopolitan megacity nicknamed
             “The City of Angels” and renowned for its culture of exceptional
-            hospitality and delicious cuisine. Doctor's Planet is an internationally
-            accredited, multi-specialty hospital listed on the Stock Exchange of
-            Thailand since 1989. One of the largest private hospitals in
-            Southeast Asia, Doctor's Planet International Hospital cares for over 1.1
-            million patients from more than 190 countries annually.
+            hospitality and delicious cuisine. Doctor's Planet is an
+            internationally accredited, multi-specialty hospital listed on the
+            Stock Exchange of Thailand since 1989. One of the largest private
+            hospitals in Southeast Asia, Doctor's Planet International Hospital
+            cares for over 1.1 million patients from more than 190 countries
+            annually.
           </p>
         </div>
       </div>
@@ -184,7 +207,8 @@ const About = () => {
           <li>Listed on the Stock Exchange of Thailand: 1989</li>
           <li>Replacement hospital building commissioned: January 1, 1997</li>
           <li>
-            Opening of the Doctor's Planet International Clinic Building: May 2008
+            Opening of the Doctor's Planet International Clinic Building: May
+            2008
           </li>
           <li>
             Joint Commission International accreditation: Since February 2002
@@ -212,20 +236,22 @@ const About = () => {
             Doctor's Planet International Hospital is the first hospital in Asia
             accredited by the US-based Joint Commission International (JCI),
             achieving accreditation five consecutive times since 2002. In 2017,
-            Doctor's Planet also became the first hospital in Asia to be DNV GL MIR
-            Certified for Infection Risk, and became the first non-US hospital
-            to earn Global Healthcare Accreditation with Excellence designation
-            from GHA, which signifies the highest international quality and
-            safety standards for overseas patients traveling to Bumrungrad
-            International Hospital for treatment and care. Through our
-            consistent clinical standards and many international accreditations,
-            Doctor's Planet has demonstrated some of the highest clinical success
-            rates and lowest infection rates in the region and world.
+            Doctor's Planet also became the first hospital in Asia to be DNV GL
+            MIR Certified for Infection Risk, and became the first non-US
+            hospital to earn Global Healthcare Accreditation with Excellence
+            designation from GHA, which signifies the highest international
+            quality and safety standards for overseas patients traveling to
+            Bumrungrad International Hospital for treatment and care. Through
+            our consistent clinical standards and many international
+            accreditations, Doctor's Planet has demonstrated some of the highest
+            clinical success rates and lowest infection rates in the region and
+            world.
           </p>
         </div>
         <div className=" my-12  flex justify-center items-center">
-          <img className="h-80 w-9/12 mx-auto"
-            src="https://i.ibb.co/TWVNVvV/25022786-kumpulan-2-14.jpg"
+          <img
+            className="mx-auto w-10/12"
+            src="https://img.freepik.com/free-vector/gradient-medical-instagram-stories_23-2149052323.jpg?w=1380&t=st=1672411264~exp=1672411864~hmac=6776c86416dc41267bede3ba0b6d50b1d852fa8b3b100601492c50374a053344"
             alt=""
             srcset=""
           />
@@ -239,13 +265,13 @@ const About = () => {
         </div>
         <div className="mx-6">
           <p>
-            Doctor's Planet International Hospital has set up multidisciplinary teams
-            of experienced medical doctors, nurses, pharmacists, physical
+            Doctor's Planet International Hospital has set up multidisciplinary
+            teams of experienced medical doctors, nurses, pharmacists, physical
             therapists, nutritionists, medical technologists and other
             professional staff to integrate quality treatment, making it a
             one-stop shop healthcare destination for all types of patients and
-            complex care needs. Doctor's Planet International Hospital employs over
-            1,300 medical doctors and over 4,800 support professionals. A
+            complex care needs. Doctor's Planet International Hospital employs
+            over 1,300 medical doctors and over 4,800 support professionals. A
             majority of the doctors have earned international board
             certifications from the United States, United Kingdom, Australia,
             Japan and other advanced economies well known for high medical and
@@ -270,25 +296,25 @@ const About = () => {
         </div>
         <div className="mx-6">
           <p>
-            Doctor's Planet International Hospital is a leader in medical technology
-            and innovative patient services. Among the most recent advancements,
-            Doctor's Planet has expanded the Precision Medicine department which
-            offers personalized cancer treatments and the latest breakthrough
-            therapies mostly from the United States and Europe. Another
-            cutting-edge technology we use is CardioInsight, a completely
-            non-invasive diagnostics technology for diagnosing heart arrhythmias
-            and the only active center in the Asia Pacific. In order to remain a
-            leader in cutting-edge technology, Doctor's Planet was the first IBM
-            Watson for Oncology site in the world. IBM Watson, a
+            Doctor's Planet International Hospital is a leader in medical
+            technology and innovative patient services. Among the most recent
+            advancements, Doctor's Planet has expanded the Precision Medicine
+            department which offers personalized cancer treatments and the
+            latest breakthrough therapies mostly from the United States and
+            Europe. Another cutting-edge technology we use is CardioInsight, a
+            completely non-invasive diagnostics technology for diagnosing heart
+            arrhythmias and the only active center in the Asia Pacific. In order
+            to remain a leader in cutting-edge technology, Doctor's Planet was
+            the first IBM Watson for Oncology site in the world. IBM Watson, a
             machine-learning AI, assists physicians by analyzing patient data
             against thousands of historical cases, hundreds of medical journals
             and textbooks, the latest clinical trials, and more than 12 million
             pages of text. This innovation in technology allows doctors and
             specialists to compare their findings against big data and provide
             the most accurate treatments possible. What began as a surgical
-            treatment for prostate cancer has now become the Doctor's Planet Robotic
-            Surgery Center. It utilizes state-of-the-art technologies for
-            robotic-assisted surgery such as MAKOplasty©, Mazor X and the da
+            treatment for prostate cancer has now become the Doctor's Planet
+            Robotic Surgery Center. It utilizes state-of-the-art technologies
+            for robotic-assisted surgery such as MAKOplasty©, Mazor X and the da
             Vinci System to allow for more consistency, accuracy and faster
             recovery times with less invasiveness for joint, spine and cancer
             patients.
@@ -308,29 +334,29 @@ const About = () => {
         </div>
         <div className="mx-6">
           <p>
-            Compassionate caring is one of Doctor's Planet International’s principle
-            values. It has been featured by Newsweek, International Herald
-            Tribune, Reader’s Digest, CBS 60 Minutes, The Financial Times and
-            Inside Man on CNN. The reportage covers Bumrungrad’s quality
+            Compassionate caring is one of Doctor's Planet International’s
+            principle values. It has been featured by Newsweek, International
+            Herald Tribune, Reader’s Digest, CBS 60 Minutes, The Financial Times
+            and Inside Man on CNN. The reportage covers Bumrungrad’s quality
             treatment and medical care abroad, placing it high on the list of
-            medical tourism hospital destinations. Nearly all Doctor's Planet doctors
-            speak English, and the hospital employs more than 200 interpreters
-            to cover the language needs of patients from nearly any country. The
-            patients and their families can receive end-to-end service from
-            pick-up and drop-off logistics as well as hotel reservations on
-            arrival through our Doctor's Planet International Airport Representative
-            Office at Suvarnabhumi Airport. Convenience plays another vital role
-            at Doctor's Planet and the hospital’s one-stop medical campus is able to
-            provide diagnostic tests, specialty referrals, and treatment within
-            days, not weeks, so international patients can get the care they
-            need and return home sooner. Doctor's Planet International Hospital also
-            practices a one-price-policy for all patients, meaning there is no
-            difference in costs for local or international patients of any
-            nationality. Through compassion, comfort, convenience and
-            coordination, Doctor's Planet goes the extra mile to ensure that every
-            patient is treated equal and with care, no matter where they are
-            from. That’s why the Thai name Doctor's Planet means “care for the
-            people.”
+            medical tourism hospital destinations. Nearly all Doctor's Planet
+            doctors speak English, and the hospital employs more than 200
+            interpreters to cover the language needs of patients from nearly any
+            country. The patients and their families can receive end-to-end
+            service from pick-up and drop-off logistics as well as hotel
+            reservations on arrival through our Doctor's Planet International
+            Airport Representative Office at Suvarnabhumi Airport. Convenience
+            plays another vital role at Doctor's Planet and the hospital’s
+            one-stop medical campus is able to provide diagnostic tests,
+            specialty referrals, and treatment within days, not weeks, so
+            international patients can get the care they need and return home
+            sooner. Doctor's Planet International Hospital also practices a
+            one-price-policy for all patients, meaning there is no difference in
+            costs for local or international patients of any nationality.
+            Through compassion, comfort, convenience and coordination, Doctor's
+            Planet goes the extra mile to ensure that every patient is treated
+            equal and with care, no matter where they are from. That’s why the
+            Thai name Doctor's Planet means “care for the people.”
           </p>
         </div>
         <div className=" my-12 flex justify-center items-center">
