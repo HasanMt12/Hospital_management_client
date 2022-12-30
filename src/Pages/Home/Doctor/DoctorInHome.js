@@ -101,7 +101,7 @@ const DoctorInHome = () => {
               </h1>
 
 
-              <p class="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
+              <p className="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
                 {doctor.degree}
               </p>
               <p className="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">

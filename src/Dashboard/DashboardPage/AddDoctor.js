@@ -10,44 +10,29 @@ const AddDoctor = () => {
     formState: { errors },
   } = useForm();
 
-  const Times = [
+  const workingDays= [
     "08.00 AM - 08.30 AM",
-
     "08.30 AM - 09.00 AM",
-
     "09.00 AM - 9.30 AM",
-
     "09.30 AM - 10.00 AM",
-
     "10.00 AM - 10.30 AM",
-
     "10.30 AM - 11.00 AM",
-
     "11.00 AM - 11.30 AM",
-
     "11.30 AM - 12.00 AM",
-
     "1.00 PM - 1.30 PM",
-
     "1.30 PM - 2.00 PM",
-
     "2.00 PM - 2.30 PM",
-
     "2.30 PM - 3.00 PM",
-
     "3.00 PM - 3.30 PM",
-
     "3.30 PM - 4.00 PM",
-
     "4.00 PM - 4.30 PM",
-
     "4.30 PM - 5.00 PM",
-  ];
+  ]
   
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   // console.log(imageHostKey);
   const onSubmit = (data,e) => {
-    // const Times = e.target.time.value.split(",");
+    // const workingDays= e.target.workingDays.value.split(",");
     const img = data.img[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -71,6 +56,7 @@ const AddDoctor = () => {
             address: data.address,
             img: imgData.data.url,
           };
+          
 
           fetch("http://localhost:5000/doctor", {
             method: "POST",
@@ -190,7 +176,7 @@ const AddDoctor = () => {
                   })}
                   className="select select-bordered    focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full py-1 rounded-md "
                 >
-                  {Times.map((time) => (
+                  {workingDays.map((time) => (
                     <option className="text-gray-900" key={time} value={time}>
                       {time}
                     </option>
