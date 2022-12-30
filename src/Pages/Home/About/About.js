@@ -223,9 +223,9 @@ const About = () => {
             rates and lowest infection rates in the region and world.
           </p>
         </div>
-        <div className=" my-12 flex justify-center items-center">
-          <img
-            src="https://www.bumrungrad.com/getattachment/bbaeeb32-4a6c-465f-9681-7fb7e1047d8a/Bumrungrad_Award.jpg"
+        <div className=" my-12  flex justify-center items-center">
+          <img className="h-80 w-9/12 mx-auto"
+            src="https://i.ibb.co/TWVNVvV/25022786-kumpulan-2-14.jpg"
             alt=""
             srcset=""
           />

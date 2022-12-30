@@ -26,6 +26,7 @@ import AdminRoutes from "./AdminRoute/AdminRoutes";
 import Appointment from "../Dashboard/DashboardPage/Appointment";
 
 import AddStuff from "../Dashboard/AddStuff/AddStuff";
+import AmbulanceService from "../Pages/Contact/AmbulanceService";
 
 
 
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/doctor/${params.id}`),
         element: <DoctorDetails />,
+      },
+       {
+        path: "/ambulanceService",
+        element: <AmbulanceService></AmbulanceService>
       },
     ],
   },

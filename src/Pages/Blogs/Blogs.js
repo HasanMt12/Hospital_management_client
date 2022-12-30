@@ -569,9 +569,7 @@ function Blogs() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Skin diseases are conditions that affect your skin. These diseases may cause rashes, inflammation . Some skin conditions may be genetic. Skin disease treatment may include medications, creams or ointments, or lifestyle changes.
                   </Typography>
                 </CardContent>
               </CardActionArea>
