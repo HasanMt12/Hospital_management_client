@@ -336,7 +336,7 @@ const Header = () => {
                                 aria-label="Account Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Medical Travel Guides
                                 </Link>
 
@@ -603,7 +603,7 @@ const Header = () => {
                     aria-label="Account Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Medical Travel Guides
                     </Link>
 

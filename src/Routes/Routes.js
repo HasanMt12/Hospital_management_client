@@ -29,6 +29,7 @@ import AddStuff from "../Dashboard/AddStuff/AddStuff";
 import AmbulanceService from "../Pages/Contact/AmbulanceService";
 import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
 import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
+import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
 
 
 
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
        {
         path: "/ambulanceService",
         element: <AmbulanceService></AmbulanceService>
+      },
+       {
+        path: "/medicalGuide",
+        element: <MedicalTravel></MedicalTravel>
       },
     ],
   },
