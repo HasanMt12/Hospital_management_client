@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { IoNotifications } from "react-icons/io5";
 import { AuthContext } from "../../../contexts/AuthProvider";
 // import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import Login from "../../Register/Login/Login";
@@ -63,8 +63,16 @@ const Header = () => {
                 />
               </div>
             </div>
-            <div>
+            
+            {user?.uid ? ( <li className=" text-gray-50">
+              <Link to="/noticeShow"><IoNotifications></IoNotifications> </Link>
+              </li>):""}
+         
+         
+
+            <div> 
               <nav aria-label="Main Nav" className="flex flex-col space-y-1">
+                
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary
                     onClick={() => setLogmenu(!logmenu)}
@@ -327,7 +335,7 @@ const Header = () => {
                                 aria-label="Account Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Medical Travel Guides
                                 </Link>
 
@@ -416,10 +424,9 @@ const Header = () => {
                                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                                   Telemedicine
                                 </Link>
-                                <Link
-                                  to="ambulanceService"
-                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                                >
+
+                                <Link to="/ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+
                                   Ambulance
                                 </Link>
                               </nav>
@@ -593,7 +600,7 @@ const Header = () => {
                     aria-label="Account Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Medical Travel Guides
                     </Link>
 
@@ -678,10 +685,9 @@ const Header = () => {
                     <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Telemedicine
                     </Link>
-                    <Link
-                      to="ambulanceService"
-                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                    >
+
+                    <Link to="/ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+
                       Ambulance
                     </Link>
                   </nav>
