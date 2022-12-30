@@ -27,6 +27,8 @@ import Appointment from "../Dashboard/DashboardPage/Appointment";
 
 import AddStuff from "../Dashboard/AddStuff/AddStuff";
 import AmbulanceService from "../Pages/Contact/AmbulanceService";
+import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
+import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
 
 
 
@@ -121,6 +123,17 @@ const router = createBrowserRouter([
         element: <AddStuff />
 
       },
+      {
+        path: "/dashboard/workingSchedule",
+        element: <WorkingSchedule></WorkingSchedule>
+
+      },
+      {
+        path: "/dashboard/manageDoctors",
+        element: <ManageDoctor></ManageDoctor>
+
+      },
+     
     ]
   }
 

@@ -17,10 +17,12 @@ import useAdmin from "../../hooks/useAdminSecurity";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import useDoctor from "../../hooks/useDoctorsSecurity";
+import useNurse from "../../hooks/userNurseSecurity";
 
 const DashbordLayoutes = () => {
   const {user}= useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
+  const [isNurse] = useNurse(user?.email)
   const [isDoctor] = useDoctor(user?.email)
   const [toggle, setToggle] = useState(false);
 
@@ -63,13 +65,22 @@ const DashbordLayoutes = () => {
                 </div>
               </li>
 
+               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center text-2xl  p-2  rounded-xl  ">
+                  <FaUsers className=""></FaUsers>
+                  <Link to="/dashboard/addDoctors">
+                    <h2 className="text-sm font-bold text-gray-900  ml-2">ADD DOCTOR</h2>
+                  </Link>
+                </div>
+              </li>
+
 
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
 
-                <div className="flex items-center text-xl p-1  rounded-xl ">
+                <div className="flex items-center text-xl p-2  rounded-xl ">
                   <FaUserMd></FaUserMd>
                   <Link to="/dashboard/addStuff">
-                    <span className="text-sm font-bold text-gray-900 ml-1">ADD STUFFS </span>
+                    <span className="text-sm font-bold text-gray-900 ml-2">ADD STUFFS </span>
                   </Link>
                 </div>
               </li>
@@ -78,7 +89,7 @@ const DashbordLayoutes = () => {
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
-                  <Link to="/dashbord/managedoctors">
+                  <Link to="/dashboard/manageDoctors">
                     <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
                   </Link>
                 </div>
@@ -95,7 +106,7 @@ const DashbordLayoutes = () => {
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
-                  <Link to="/dashbord/managedoctors">
+                  <Link to="/dashboard/manageDoctors">
                     <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
                   </Link>
                 </div>
@@ -114,6 +125,18 @@ const DashbordLayoutes = () => {
               </>
               }
 
+              { isNurse && <>
+              
+               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashboard/workingSchedule">
+                    <span className="text-sm font-bold text-gray-900 ml-2"> Working Schedule</span>
+                  </Link>
+                </div>
+              </li>
+              </>}
              
 
               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
