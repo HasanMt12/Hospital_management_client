@@ -456,26 +456,26 @@ Medication Tour to Buy Authentic, Safe & Affordable <br />
 Plan Your Trip
 <hr className="font-bold mb-2 mt-3  border-y-2 border-gray-300 w-72 text-center mx-auto"/>
             </h2>
-	<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 mx-auto py-12">
-		<div className="w-40 h-40">
+	<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mx-auto py-12">
+		<div className="w-40 h-64">
 			<img src="https://img.freepik.com/free-icon/hotel_318-848015.jpg?size=338&ext=jpg&uid=R88124030&ga=GA1.1.1112733996.1656679358&semt=sph" alt="" />
 		<div className="text-center">
-		<p className="pt-4 text-teal-400">DAY-1</p>
-			<p className="pt-2 ">Arrival in Bangladesh</p>
+		<p className="lg:pt-4 text-teal-400">DAY-1</p>
+			<p className="lg:pt-2 ">Arrival in Bangladesh</p>
 		</div>
 		</div>
-		<div className="w-40 h-40 ">
+		<div className="w-40 h-64 ">
 			<img src="https://img.freepik.com/free-icon/doctor_318-342604.jpg?size=338&ext=jpg&uid=R88124030&ga=GA1.1.1112733996.1656679358&semt=ais" alt="" />
 			<div className="text-center">
-		<p className="pt-4 text-teal-400">DAY-2</p>
-			<p className="pt-2 ">Consult Doctor</p>
+		<p className="lg:pt-4 text-teal-400">DAY-2</p>
+			<p className="lg:pt-2 ">Consult Doctor</p>
 		</div>
 		</div>
-		<div className="w-40 h-40">
+		<div className="w-40 h-64">
 			<img src="https://cdn-icons-png.flaticon.com/512/822/822147.png?w=740&t=st=1672410366~exp=1672410966~hmac=edf72307e68eb0d92e479b3cb44399aab16b063aab71b5ef3d142f696ec22a1a" alt="" />
 			<div className="text-center">
-		<p className="pt-4 text-teal-400">DAY-3</p>
-			<p className="pt-2 ">Receive Medication & Depart</p>
+		<p className="lg:pt-4 text-teal-400">DAY-3</p>
+			<p className="lg:pt-2 ">Receive Medication & Depart</p>
 		</div>
 		</div>
 		
