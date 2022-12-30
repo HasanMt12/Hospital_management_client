@@ -125,7 +125,6 @@ const DoctorInHome = () => {
                     </Tooltip>
                   </Link>
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
