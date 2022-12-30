@@ -94,7 +94,7 @@ const AddStuff = () => {
                 {...register("designation", {
                   required: true,
                 })}
-                className="select select-bordered    focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full py-1 rounded-md mt-1"
+                className="select select-bordered    focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full py-1 rounded-md "
               >
                 <option value="nurse" className="text-gray-900">
                   Nurse
@@ -115,7 +115,7 @@ const AddStuff = () => {
                 {...register("department", {
                   required: true,
                 })}
-                className="select select-bordered py-1   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full rounded-md mt-1"
+                className="select select-bordered py-1   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900 w-full rounded-md "
               >
                 <option value="dental" className="text-gray-900">
                   Dental
