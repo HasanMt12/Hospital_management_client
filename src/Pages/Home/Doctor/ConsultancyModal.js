@@ -26,7 +26,7 @@ const style = {
   p: 4,
 };
 
-const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
+const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
   const {
     register,
     handleSubmit,
@@ -38,20 +38,20 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
   const { user } = useContext(AuthContext);
   //  console.log(user)
   // console.log(treatment);
-  const { department, doctorCode, name } = treatment;
+  const { department, doctorCode, name } = doctor;
   const handleBooking = (data) => {
     // e.preventDefault()
     const bookedService = {
       department,
-      doctorCode:parseInt(doctorCode),
-      serviceName: name,
+      doctorCode: parseInt(doctorCode),
+      serviceName: "Consultancy",
       patientName: data.patientName,
       bookedDate: data.date,
       patientEmail: data.patientEmail,
       patientPhone: data.patientPhone,
       slot: data.slot,
-      fee: data.fee,
-      bookingDate: new Date().toISOString().split('T')[0],
+      fee: parseInt(data.fee),
+      bookingDate: new Date().toISOString().split("T")[0],
     };
     fetch("http://localhost:5000/appointment", {
       method: "POST",
@@ -60,11 +60,11 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
       },
       body: JSON.stringify(bookedService),
     })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-      alert('posted')
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("posted");
+      });
 
     console.log(bookedService);
     setOpen(false);
@@ -97,7 +97,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
               component="h2"
               sx={{ color: "#0E877D" }}
             >
-              {name}
+              Consultancy
             </Typography>
 
             <form onSubmit={handleSubmit(handleBooking)} action="">
@@ -117,6 +117,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
                 Date: {format(selectedDate, "PP")}
               </p> */}
               <input
+                required
                 {...register("date")}
                 min={new Date().toISOString().split("T")[0]}
                 type="date"
@@ -125,13 +126,13 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
                 // value={new Date()}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
               />
-              {treatment?.timeSlot ? (
+              {doctor?.workingDays ? (
                 <select
                   {...register("slot")}
                   style={{ marginTop: 20, width: "100%", padding: 4 }}
                   name="slot"
                 >
-                  {treatment?.timeSlot?.map((slot, i) => (
+                  {doctor?.workingDays?.map((slot, i) => (
                     <option value={slot} key={i}>
                       {slot}
                     </option>
@@ -147,7 +148,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
                 name="price"
                 type="number"
-                defaultValue={treatment?.balance}
+                defaultValue="500"
                 readOnly
                 required
                 placeholder="Price"
@@ -202,4 +203,4 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
   );
 };
 
-export default BookAppointmentModal;
+export default ConsultancyModal;

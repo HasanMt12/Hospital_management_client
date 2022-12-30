@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
+import ServiceCard from "../../AllServices/Service/ServiceCard";
 
 const DoctorDetails = () => {
   const doctor = useLoaderData();
@@ -64,37 +65,38 @@ const DoctorDetails = () => {
               </p>
               <hr className="my-5" />
               <div className="my-20">
-                <p className="block mb-4 text-2xl font-semibold text-green-700 hover:underline  md:text-3xl">
+                <p className="block mb-10 text-2xl font-semibold text-green-700 hover:underline text-center  md:text-3xl">
                   Services available
                 </p>
-                {services.map((service) => (
-                  <>
-                    <div className="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-72 ">
-                      <img
-                        className="object-cover  w-full h-52 rounded-xl  p-2"
-                        src={service.picture}
-                        alt=""
-                      />
+                {services.map((treatment) => (
+                  <ServiceCard treatment={treatment}></ServiceCard>
+                  // <>
+                  //   <div className="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-72 ">
+                  //     <img
+                  //       className="object-cover  w-full h-52 rounded-xl  p-2"
+                  //       src={service.picture}
+                  //       alt=""
+                  //     />
 
-                      <h1 className="mt-4 text-lg font-semibold text-gray-700 capitalize group-hover:text-white">
-                        {service.name}
-                      </h1>
+                  //     <h1 className="mt-4 text-lg font-semibold text-gray-700 capitalize group-hover:text-white">
+                  //       {service.name}
+                  //     </h1>
 
-                      <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white ">
-                        Visit {service.balance} Tk
-                      </p>
-                      <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white font-bold">
-                        {doctor.department}
-                      </p>
+                  //     <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white ">
+                  //       Visit {service.balance} Tk
+                  //     </p>
+                  //     <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-white font-bold">
+                  //       {doctor.department}
+                  //     </p>
 
-                      <div className="flex  mt-3 -mx-2 p-2">
-                        <Link>
-                          <RiAddCircleFill className="group-hover:text-white text-teal-700 text-4xl" />
-                        </Link>
-                      </div>
-                    </div>
-                    ;
-                  </>
+                  //     <div className="flex  mt-3 -mx-2 p-2">
+                  //       <Link>
+                  //         <RiAddCircleFill className="group-hover:text-white text-teal-700 text-4xl" />
+                  //       </Link>
+                  //     </div>
+                  //   </div>
+                  //   ;
+                  // </>
                 ))}
               </div>
               <hr className="my-5" />
