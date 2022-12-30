@@ -31,6 +31,7 @@ import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
 import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
 import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
 import Notice from "../Dashboard/DashboardPage/Notice";
+import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
 
 
 
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
        {
         path: "/medicalGuide",
         element: <MedicalTravel></MedicalTravel>
+      },
+       {
+        path: "/noticeShow",
+        element: <NoticeShow></NoticeShow>
       },
     ],
   },
