@@ -44,6 +44,8 @@ import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
 import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
+import AppointById from "../Dashboard/DashboardPage/AppointById";
+import StuffDashboard from "../Dashboard/DashboardPage/StuffDashboard";
 
 
 
@@ -191,6 +193,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allAppointment",
         element: <AllAppointment></AllAppointment>
+      },
+      {
+        path: "/dashboard/appointmentById",
+        element: <AppointById></AppointById>
+      },
+      {
+        path: "/dashboard/stuffInfo",
+        element: <StuffDashboard></StuffDashboard>
       },
      
     ]

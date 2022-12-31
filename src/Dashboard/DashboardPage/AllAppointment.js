@@ -22,11 +22,7 @@ const AllAppointment = () => {
 
     return 0;
   };
-    // useEffect(()=>{
-    //     fetch('data.json')
-    //     .then((res)=>res.json())
-    //     .then((data) => setTables(data))
-    // },[])
+  
 
     const customStyles = {
     rows: {
@@ -72,17 +68,17 @@ const AllAppointment = () => {
 
 
     
-    //    const handleDeleteUser = (id) =>{
-    //   fetch(`http://localhost:5000/user/${id}`, {
-    //     method: 'DELETE', 
-    //   })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     setReload(!reload)
-    //          toast.success('deleted successfully')
+       const handleDeleteUser = (id) =>{
+      fetch(`http://localhost:5000/user/${id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        setReload(!reload)
+             toast.success('deleted successfully')
         
-    //   })
-    // }
+      })
+    }
     const columns = [
         {
             name: "id",
