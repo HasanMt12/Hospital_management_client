@@ -63,7 +63,7 @@ const ManageStuff = () => {
 };
     const getStuffData = async ()=> {
         try{
-            const response = await axios.get('http://localhost:5000/user');
+            const response = await axios.get('http://localhost:5000/addStuff');
             setStuffData(response.data)
         }catch(error){
                 console.log(error);
@@ -76,100 +76,76 @@ const ManageStuff = () => {
             selector: (row,i) => (i+1),
             
         },
-        // {
-        //     name: "Image",
-        //     selector: (row)=>  <div >
-        //          <PhotoProvider>
-        //                         <PhotoView src={row.img}>
-        //                      <img className='h-20 w-16 cursor-pointer'  src={row.img} alt=''></img> 
-        //                         </PhotoView>
-        //                     </PhotoProvider> <div className='-mt-8 cursor-pointer '><BiZoomIn></BiZoomIn> </div>
-        //         </div> ,
+        {
+            name: "Image",
+            selector: (row)=>  <div >
+                 <PhotoProvider>
+                                <PhotoView src={row.img}>
+                             <img className='h-20 w-16 cursor-pointer'  src={row.img} alt=''></img> 
+                                </PhotoView>
+                            </PhotoProvider> <div className='-mt-8 cursor-pointer '><BiZoomIn></BiZoomIn> </div>
+                </div> ,
                 
-        //     sortable: true
-        // },
+            sortable: true
+        },
         {
             name: "Stuff Name",
             selector: (row) => row.name,
             sortable: true
         },
-        
-        
-          {
-            name: "Email",
-            selector: (row) => row.email,
-            sortable: true
-          },
-        
-        {
-             name: "Role",
-             selector: (row) => row.role,
+         {
+             name: "designation",
+             selector: (row) => row.designation,
              sortable: true,
 
               	conditionalCellStyles: [
 			{
-				when: row => row.role === "nurse",
+				when: row => row.designation === "nurse",
 				style: {
 					backgroundColor: 'rgb(111, 169, 224)',
 					
 				},
 			},
 			{
-				when: row => row.role === "stuff",
+				when: row => row.designation === "stuff",
 				style: {
 					backgroundColor: 'rgba(96, 219, 172, 0.712)',
 					
 				},
 			},
-      	{
-				when: row => row.role === "doctor",
-				style: {
-					backgroundColor: 'rgb(101, 143, 165)',
-					
-				},
-			},
-      {
-        when: row => row.role === "admin",
-        style: {
-          backgroundColor: 'rgb(201, 128, 153)',
-
-        },
-      },
-       {
-        when: row => row.role === "",
-        style: {
-          backgroundColor: 'white',
-
-        },
-      },
 			
 		],
 	
            },
-      
-        //  {
-        //      name: "schedule",
-        //      selector: (row) => row.schedule,
-        //      sortable: true
-        //  },
-        //  {
-        //      name: "shift",
-        //      selector: (row) => row.shift,
-        //      sortable: true
-        //  },
+          
+          {
+              name: "department",
+              selector: (row) => row.department,
+              sortable: true
+          },
+         {
+             name: "schedule",
+             selector: (row) => row.schedule,
+             sortable: true
+         },
+         {
+             name: "shift",
+             selector: (row) => row.shift,
+             sortable: true
+         },
 
         
-        //  {
-        //      name: "Salary",
-        //      selector: (row) => row.salary,
-        //      sortable: true
-        //  },
+         {
+             name: "Salary",
+             selector: (row) => row.salary,
+             sortable: true
+         },
 
-        //   {
-        //      name: "Address",
-        //      selector: (row) => row.Address,
-        //      sortable: true
-        //  },
+          {
+             name: "Address",
+             selector: (row) => row.Address,
+             sortable: true
+         },
        
     ]
     
@@ -180,7 +156,7 @@ const ManageStuff = () => {
     return (
         
            <div className='w-full'>
-            <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Total Login user</span>  {stuffData.length}</h2>
+            <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Total Stuff</span>  {stuffData.length}</h2>
             
             <DataTable
           

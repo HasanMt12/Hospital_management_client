@@ -451,7 +451,7 @@ Medication Tour to Buy Authentic, Safe & Affordable <br />
 
 </section>
 {/* Plan Your Trip */}
-<section className="mx-auto w-7/12 my-16">
+<section className="mx-auto w-10/12 my-16">
 <h2 className="text-4xl font-semibold text-teal-700 text-center mb-8">
 Plan Your Trip
 <hr className="font-bold mb-2 mt-3  border-y-2 border-gray-300 w-72 text-center mx-auto"/>
