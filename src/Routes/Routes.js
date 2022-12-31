@@ -35,6 +35,7 @@ import MedicalTourism from "../Pages/MedicalTourism/MedicalTourism";
 import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
 import Notice from "../Dashboard/DashboardPage/Notice";
 import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
+import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 
 
 
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
         path: "/noticeShow",
         element: <NoticeShow></NoticeShow>
       },
+      {
+        path: "/manageStuff",
+        element: <ManageStuff></ManageStuff>
+      },
     ],
   },
 
@@ -157,6 +162,10 @@ const router = createBrowserRouter([
         path: "/dashboard/notice",
         element: <Notice></Notice>
 
+      },
+      {
+        path: "/dashboard/manageStuff",
+        element: <ManageStuff></ManageStuff>
       },
      
     ]
