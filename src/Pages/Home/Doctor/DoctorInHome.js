@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // Import Swiper React components
 
 import { useQuery } from "@tanstack/react-query";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,7 +15,8 @@ import "swiper/css/pagination";
 import "./doctor.css";
 
 // import required modules
-import {  IconButton, Tooltip } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper";
 import ServiceTitile from "../Services/ServiceTitle";
@@ -25,7 +26,11 @@ const DoctorInHome = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [doctor ,setDoctor] = useState('')
+  const [doctor, setDoctor] = useState("");
+  const bookedData = useSelector(
+    (state) => state.bookedAppointments.bookedAppointments
+  );
+  console.log(bookedData);
   const {
     data: doctors = [],
     isLoading,
@@ -56,7 +61,7 @@ const DoctorInHome = () => {
           color: "#0f8383",
         }}
       />
-      <Swiper 
+      <Swiper
         //   slidesPerView={3}
         breakpoints={{
           300: {
@@ -131,7 +136,7 @@ const DoctorInHome = () => {
         </>
       </Swiper>
       <ConsultancyModal
-      doctor={doctor}
+        doctor={doctor}
         // treatment={treatment}
         open={open}
         handleClose={handleClose}

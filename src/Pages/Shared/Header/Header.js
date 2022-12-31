@@ -4,12 +4,13 @@ import { IoNotifications } from "react-icons/io5";
 import { AuthContext } from "../../../contexts/AuthProvider";
 // import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import Login from "../../Register/Login/Login";
-import Popup from "../Popup";
 import Modal from "../Modal";
+import Popup from "../Popup";
 // import "./navbar.css";
-import "./Header.css";
+
 import logo from "../../../assets/logo.png";
 import SignUp from "../../Register/SignUp/SignUp";
+import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -335,7 +336,10 @@ const Header = () => {
                                 aria-label="Account Nav"
                                 className="flex flex-col mt-2 ml-8 space-y-1"
                               >
-                                <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                                <Link
+                                  to="/medicalGuide"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Medical Travel Guides
                                 </Link>
 
@@ -425,8 +429,10 @@ const Header = () => {
                                   Telemedicine
                                 </Link>
 
-                                <Link to="/ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-
+                                <Link
+                                  to="ambulanceService"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
                                   Ambulance
                                 </Link>
                               </nav>
@@ -600,7 +606,10 @@ const Header = () => {
                     aria-label="Account Nav"
                     className="flex flex-col mt-2 ml-8 space-y-1"
                   >
-                    <Link to="/medicalGuide" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/medicalGuide"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Medical Travel Guides
                     </Link>
 
@@ -685,9 +694,10 @@ const Header = () => {
                     <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                       Telemedicine
                     </Link>
-
-                    <Link to="/ambulanceService" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-
+                    <Link
+                      to="ambulanceService"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Ambulance
                     </Link>
                   </nav>
