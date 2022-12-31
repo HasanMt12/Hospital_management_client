@@ -67,7 +67,7 @@ function Blogs() {
   const classes = useStyles();
 
   return (
-    <div className="App">
+    <div className="">
       {/* <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <Typography variant="h6" color="primary">

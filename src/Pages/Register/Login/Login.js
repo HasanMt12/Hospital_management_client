@@ -6,7 +6,6 @@ import {
   TextField,
   Button,
   Typography,
- 
 } from "@material-ui/core";
 import LockOutlinedIcon from "@mui/icons-material//LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -20,19 +19,19 @@ import SignUp from "../SignUp/SignUp";
 const Login = ({ closePopup }) => {
   const paperStyle = {
     padding: "50px 30px",
-    height: 520,
-    width: 380,
+    height: 530,
+    width: 390,
     margin: "40px auto",
   };
-  const avatarStyle = { backgroundColor: "#1bbd7e" };
+  const avatarStyle = { backgroundColor: "teal" };
   const btnStyle = {
     margin: "8px 2px",
-    backgroundColor: "#1bbd7e",
+    backgroundColor: "teal",
   };
   const btn1Style = {
     width: "23px",
     height: "23px",
-    color: "#1bbd7e",
+    color: "teal",
   };
 
   const {
@@ -47,7 +46,7 @@ const Login = ({ closePopup }) => {
   const [openPopup, setOpenPopup] = useState(false);
 
   // const [loginUserEmail, setLoginUserEmail] = useState("");
-   
+
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
@@ -86,8 +85,8 @@ const Login = ({ closePopup }) => {
   };
 
   return (
-     <div className="my-32">
-     <Grid>
+    <div className="my-32">
+      <Grid>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
@@ -137,15 +136,13 @@ const Login = ({ closePopup }) => {
               label="Remember me"
             />
             <Button
-
               onClick={() => closePopup(false)}
               type="submit"
-
               color="primary"
               variant="contained"
               style={btnStyle}
               fullWidth
-              className="bg-green-500 my-1"
+              className="bg-teal-500 my-1"
             >
               Sign in
             </Button>
@@ -169,18 +166,20 @@ const Login = ({ closePopup }) => {
                 Create a new account ?
               </span>
               <Button
-                 onClick={() => closePopup(false)}
+                onClick={() => closePopup(false)}
                 close
-                className="text-green-600 font-medium"
+                className="text-teal-600 font-medium"
                 style={{
-                  color: "green",
-                  fontWeight: "font-medium",
+                  color: "teal",
+                  fontWeight: "medium",
+                 
                   marginTop: "10px",
                   marginBottom: "10px",
                   textAlign: "center",
+                  
                 }}
               >
-                <Link to='/signup' >Sign Up</Link>
+                <Link to="/signup">Sign Up</Link>
               </Button>
             </Typography>
             <div
@@ -193,13 +192,14 @@ const Login = ({ closePopup }) => {
 
             <div className="flex items-center  space-x-1">
               <p
-                className="text-lg text-gray-400 my-1"
-                style={{
+                // className="text-lg text-gray-400 my-1"
+                  style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
-                  marginBottom: "10px",
+                  paddingBottom: "10px",
                   fontSize: "17px",
-                  textAlign: "center",
+                 color:'teal',
+                  margin:'auto'
                 }}
               >
                 Signup with social account
@@ -220,13 +220,13 @@ const Login = ({ closePopup }) => {
                   padding: "7px",
                   border: "rounded",
                   fontSize: "20px",
-                  color: "#1bbd7e",
+                  color: "teal",
                 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
-                  // className="w-5 h-5 fill-current btn text-green-500"
+                  className="w-5 h-5 fill-current btn text-teal-500"
 
                   // style={{ width: "23px", height: "23px" }}
                   style={btn1Style}
@@ -237,17 +237,14 @@ const Login = ({ closePopup }) => {
             </div>
           </form>
         </Paper>
-
-      </Grid>:
-     
-   
+      </Grid>
+      :
       <Popup
         title="SignUp Form"
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
         <SignUp closePopup={setOpenPopup}> </SignUp>
-
       </Popup>
     </div>
   );

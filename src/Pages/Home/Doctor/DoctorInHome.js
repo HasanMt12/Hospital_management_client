@@ -94,7 +94,7 @@ const DoctorInHome = () => {
         className="mySwiper swiper "
       >
         <>
-          {doctors.map((doctor) => (
+          {doctors?.map((doctor) => (
             <SwiperSlide className="swipersSlider customWidth mb-10">
               <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative">
                 <img

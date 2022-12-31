@@ -1,5 +1,5 @@
 import {
-  Button,
+
   Dialog,
   DialogContent,
   DialogTitle,
@@ -32,12 +32,13 @@ export default function Popup(props) {
       classes={{ paper: classes.dialogWrapper }}
     >
       <DialogTitle className={classes.dialogTitle}>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex" }}  >
           <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
             {title}
           </Typography>
           <Controls.Button
-            color="secondary"
+            
+            style={{backgroundColor:'teal'}}
             text='X'
             onClick={() => {
               setOpenPopup(false);

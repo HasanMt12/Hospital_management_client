@@ -753,8 +753,8 @@ const Header = () => {
                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   Blood Doners
                 </Link>
-                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                  Conditions & Terms
+                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700" to='/chat'>
+                  Chat
                 </Link>
                 {user?.uid && (
                   <Link

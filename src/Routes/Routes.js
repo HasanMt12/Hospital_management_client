@@ -43,9 +43,15 @@ import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
+
+
+import JoinChatRoom from "../Pages/JoinChatRoom/JoinChatRoom";
+import Payment from "../Dashboard/Payment/Payment";
+
 import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
 import AppointById from "../Dashboard/DashboardPage/AppointById";
 import BloodDonar from "../Pages/Home/BloodDonar/BloodDonar";
+
 
 
 
@@ -73,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/chat",
+        element: <JoinChatRoom></JoinChatRoom>,
       },
       {
         path: "/services",
@@ -196,6 +206,18 @@ const router = createBrowserRouter([
         element: <ManageStuff></ManageStuff>
       },
       {
+
+        path: "/dashboard/payment/:id",
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/appointment/${params.id}`
+          ),
+        element: (
+          
+            <Payment></Payment>
+          
+        ),
+
         path: "/dashboard/allAppointment",
         element: <AllAppointment></AllAppointment>
       },
@@ -203,7 +225,8 @@ const router = createBrowserRouter([
         path: "/dashboard/appointmentById",
         element: <AppointById></AppointById>
       },
-      
+
+  
      
     ]
   }

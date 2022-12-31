@@ -39,14 +39,14 @@ const SignUp = ({ closePopup }) => {
   const from = location.state?.from?.pathname || "/";
   const paperStyle = {
     padding: "40px 20px",
-    width: 380,
+    width: 430,
     margin: "20px auto",
     border: "rounded",
   };
   const headerStyle = { margin: 0 };
-  const avatarStyle = { backgroundColor: "#1bbd7e" };
+  const avatarStyle = { backgroundColor: "teal" };
   const marginTop = { marginTop: 5 };
-  const btnStyle = { margin: "8px 2px", backgroundColor: "#1bbd7e" };
+  const btnStyle = { margin: "8px 2px", backgroundColor: "teal" };
   // const onSubmit = (data) => console.log(data);
 
   const handleSignUp = (data) => {
@@ -231,7 +231,7 @@ const SignUp = ({ closePopup }) => {
               variant="contained"
               fullWidth
               color="primary"
-              className="bg-green-500 my-1"
+              className="bg-teal-500 my-1"
               style={btnStyle}
             >
               Sign up
@@ -243,8 +243,8 @@ const SignUp = ({ closePopup }) => {
               <Button
                 //  onClick={() => setOpenPopup(true)}
                 onClick={() => closePopup(false)}
-                className="text-green-600 font-bold"
-                style={{ color: "green", fontStyle: "medium" }}
+                // className="text-teal-600 font-medium"
+                style={{ color: "teal",   fontWeight: "medium", }}
               >
                 <Link to="/login">Login</Link>
               </Button>
@@ -259,13 +259,14 @@ const SignUp = ({ closePopup }) => {
 
             <div className="flex items-center ">
               <p
-                className="px-3 text-lg text-gray-400 my-1"
+                className="px-3 text-lg text-teal-800 my-1"
                 style={{
                   fontStyle: "font-medium",
                   marginTop: "10px",
-                  marginBottom: "10px",
+                  paddingBottom: "10px",
                   fontSize: "18px",
                   textAlign: "center",
+                  margin:'auto'
                 }}
               >
                 Signup with social account
@@ -286,7 +287,7 @@ const SignUp = ({ closePopup }) => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
-                  className="w-5 h-5 fill-current btn text-green-500"
+                  className="w-5 h-5 fill-current btn text-teal-500"
                   style={{ width: "23px", height: "23px" }}
                 >
                   <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
