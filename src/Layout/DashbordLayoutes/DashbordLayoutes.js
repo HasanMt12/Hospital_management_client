@@ -12,20 +12,23 @@ import {
   FaArrowAltCircleLeft,
   FaSign,
 } from "react-icons/fa";
+import { FcManager } from "react-icons/fc";
+import { MdOutlineNotificationsActive } from "react-icons/md";
+import { FcBusinessman } from "react-icons/fc";
 import Header from "../../Pages/Shared/Header/Header";
 import useAdmin from "../../hooks/useAdminSecurity";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import useDoctor from "../../hooks/useDoctorsSecurity";
 import useNurse from "../../hooks/userNurseSecurity";
-
+import { MdPeopleAlt } from "react-icons/md";
 const DashbordLayoutes = () => {
   const {user}= useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
   const [isNurse] = useNurse(user?.email)
   const [isDoctor] = useDoctor(user?.email)
   const [toggle, setToggle] = useState(false);
-
+console.log(user);
   return (
     <div>
       
@@ -46,9 +49,31 @@ const DashbordLayoutes = () => {
           <div className="px-8 ">
             <div className="flex   bg-white my-8 rounded-2xl px-1 gap-1 border-teal-300 border-2 py-2 border- shadow-sm">
               <div className=" w-12 ">
-                <img src={logo} alt="" />
+              {user?.uid ? (
+                      <img 
+                      className="w-10 h-10 rounded-full object-cover"
+                        src="https://i.ibb.co/vDSqbpj/img2.jpg"
+                        alt=""
+                      />
+                    ) : (
+                     
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 "
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                    )}
               </div>
-              <div className="mt-5 font-bold ">DASHBOARD</div>
+              <div className="mt-2  font-bold ">{user?.displayName}</div>
             </div>
             <ul className="mt-12">
 
@@ -56,60 +81,70 @@ const DashbordLayoutes = () => {
               {isAdmin && <>
 
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
-                  <FaUsers className=""></FaUsers>
+                  <MdPeopleAlt className=""></MdPeopleAlt>
                   <Link to="/dashboard/users">
-                    <h2 className="text-sm font-bold text-gray-900  ml-2">ALL USERS</h2>
+                    <h2 className="text-sm font-bold text-teal-900  ml-2">ALL USERS</h2>
                   </Link>
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
-                  <FaUsers className=""></FaUsers>
+                  <FcBusinessman className=""></FcBusinessman>
                   <Link to="/dashboard/addDoctors">
-                    <h2 className="text-sm font-bold text-gray-900  ml-2">ADD DOCTOR</h2>
+                    <h2 className="text-sm font-bold text-teal-900  ml-2">ADD DOCTOR</h2>
                   </Link>
                 </div>
               </li>
 
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
 
                 <div className="flex items-center text-xl p-2  rounded-xl ">
-                  <FaUserMd></FaUserMd>
+                  <MdOutlineNotificationsActive></MdOutlineNotificationsActive>
                   <Link to="/dashboard/addStuff">
-                    <span className="text-sm font-bold text-gray-900 ml-2">ADD STUFFS </span>
+                    <span className="text-sm font-bold text-teal-900 ml-2">ADD STUFFS </span>
                   </Link>
                 </div>
               </li>
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
-                  <FaAmericanSignLanguageInterpreting />
+                  <FcManager />
 
                   <Link to="/dashboard/manageDoctors">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
+                    <span className="text-sm font-bold text-teal-900 ml-2"> MANAGE DR.</span>
                   </Link>
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
-                  <FaAmericanSignLanguageInterpreting />
+                  <MdOutlineNotificationsActive />
 
                   <Link to="/dashboard/notice">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> ADD Notice</span>
+                    <span className="text-sm font-bold text-teal-900 ml-2"> ADD Notice</span>
                   </Link>
                 </div>
               </li>
-                <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/manageStuff">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> Manage Stuff</span>
+                    <span className="text-sm font-bold text-teal-900 ml-2"> Manage Stuff</span>
+                  </Link>
+                </div>
+              </li>
+              
+                <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashboard/manageStuff">
+                    <span className="text-sm font-bold text-teal-900 ml-2"> Manage Stuff</span>
                   </Link>
                 </div>
               </li>
@@ -121,67 +156,54 @@ const DashbordLayoutes = () => {
 
               {isDoctor && <>
               
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/manageDoctors">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE DR.</span>
+                    <span className="text-sm font-bold text-teal-900 ml-2"> MANAGE DR.</span>
                   </Link>
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
-                  <Link to="/dashboard/appointments">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> All Appointment.</span>
+                  <Link to="/dashboard/allAppointment">
+                    <span className="text-sm font-bold text-teal-900 ml-2"> All Appointment.</span>
                   </Link>
                 </div>
               </li>
+
               
               </>
               }
 
               { isNurse && <>
               
-               <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/workingSchedule">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> Working Schedule</span>
+                    <span className="text-sm font-bold text-teal-900 ml-2"> Working Schedule</span>
                   </Link>
                 </div>
               </li>
               </>}
+
+              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <div className="flex items-center p-2">
+                  <FaAmericanSignLanguageInterpreting />
+
+                  <Link to="/dashboard/appointmentById">
+                    <span className="text-sm font-bold text-teal-900 ml-2">Your Appointment.</span>
+                  </Link>
+                </div>
+              </li>
              
 
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
-                <div className="flex items-center text-2xl p-2  rounded-xl ">
-                  <FaMoneyCheckAlt />
-                  <span className="text-sm font-bold ml-2"> INSURENCE </span>
-                </div>
-              </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
-                <div className="flex items-center text-2xl p-2  rounded-xl ">
-                  <FaHome></FaHome>
-                  <span className="text-sm font-bold ml-2"> EXTRA</span>
-                </div>
-              </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
-                <div className="flex items-center p-2">
-                  <FaBook />
-                  <span className="text-sm font-bold ml-2">INSURENCE</span>
-                </div>
-              </li>
-              <li className="flex w-full justify-between text-black  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
-                <div className="flex items-center text-2xl p-2  rounded-xl ">
-                  <FaHome></FaHome>
-                  <span className="text-sm font-bold ml-2">EXTRA?</span>
-                </div>
-              </li>
             </ul>
             <div className="flex justify-center rounded border border-teal-600 mt-48 mb-4 w-full">
               <div className="relative ">
@@ -204,7 +226,7 @@ const DashbordLayoutes = () => {
                   </svg>
                 </div>
                 <input
-                  className=" focus:outline-none rounded w-full text-sm text-gray-900 bg-gray-100 pl-10 py-2"
+                  className=" focus:outline-none rounded w-full text-sm text-teal-900 bg-gray-100 pl-10 py-2"
                   type="text"
                   placeholder="Search"
                 />
@@ -213,14 +235,14 @@ const DashbordLayoutes = () => {
           </div>
           <div className="px-8 border-t border-gray-700">
             <ul className="w-full flex items-center justify-between ">
-              <li className="cursor-pointer text-black pt-5 pb-3">
+              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
                 <FaSign />
               </li>
-              <li className="cursor-pointer text-black pt-5 pb-3">
+              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
                 <FaHome />
               </li>
 
-              <li className="cursor-pointer text-black pt-5 pb-3">
+              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-archive"
@@ -254,7 +276,7 @@ const DashbordLayoutes = () => {
                 <div className="text-sm font-medium text-gray-500 truncate    ">
                   Total Doctors
                 </div>
-                <div className="mt-1 text-3xl font-semibold text-gray-900">
+                <div className="mt-1 text-3xl font-semibold text-teal-900">
                   450
                 </div>
               </div>
@@ -262,7 +284,7 @@ const DashbordLayoutes = () => {
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Nurse
                 </div>
-                <div className="mt-1 text-3xl font-semibold text-gray-900">
+                <div className="mt-1 text-3xl font-semibold text-teal-900">
                   1000
                 </div>
               </div>
@@ -270,7 +292,7 @@ const DashbordLayoutes = () => {
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Stuff
                 </div>
-                <div className="mt-1 text-3xl font-semibold text-gray-900">
+                <div className="mt-1 text-3xl font-semibold text-teal-900">
                   320
                 </div>
               </div>

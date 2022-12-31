@@ -7,12 +7,14 @@ import VaccinesIcon from "@mui/icons-material/Vaccines";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { useState } from "react";
 import BookAppointmentModal from "../Shared/BookAppointmentModal";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ treatment }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { picture, balance, name, doctorName } = treatment;
+  const { picture, balance, name, doctorName,_id } = treatment;
+  console.log(treatment)
   return (
     <div>
       <div className="block rounded-lg p-4 shadow-xl shadow-teal-100 md:max-w-[350px] mx-auto">
@@ -47,13 +49,15 @@ const ServiceCard = ({ treatment }) => {
                 <p className="font-medium">{doctorName}</p>
               </div>
             </div>
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center hover:shadow-lg p-2 rounded-md">
-              <RemoveRedEyeIcon className="text-sm text-teal-700" />
+            <Link to={`/departments/treatments/${_id}`}>
+              <div className="sm:inline-flex sm:shrink-0 sm:items-center hover:shadow-lg p-2 rounded-md">
+                <RemoveRedEyeIcon className="text-base text-teal-700" />
 
-              <div className="mt-1.5 sm:ml-3 sm:mt-0">
-                <p className="text-gray-500">See More</p>
+                <div className="mt-1.5 sm:ml-3 sm:mt-0">
+                  <p className="text-black name text-base">See More</p>
+                </div>
               </div>
-            </div>
+            </Link>
 
             <div className="sm:inline-flex sm:shrink-0 sm:items-center ">
               <Tooltip title="Book Appointment">

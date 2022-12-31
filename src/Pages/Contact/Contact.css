@@ -22,7 +22,6 @@ a {
 
 a:hover {
   color: #0078ff;
-  background: rgba(96, 219, 172, 0.712);
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }

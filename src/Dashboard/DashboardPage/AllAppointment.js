@@ -1,13 +1,10 @@
 import axios from 'axios';
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { toast } from 'react-hot-toast';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { BiZoomIn } from "react-icons/bi";
-import { useState } from 'react';
-const WorkingSchedule = () => {
-     const [stuffData, setStuffData] = useState([]);
+
+const AllAppointment = () => {
+      const [stuffData, setStuffData] = useState([]);
       const [reload, setReload] = useState(true)
   const [perPage, setPage] = useState(10);
 
@@ -71,46 +68,56 @@ const WorkingSchedule = () => {
 
 
     
-      
+       const handleDeleteUser = (id) =>{
+      fetch(`http://localhost:5000/user/${id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        setReload(!reload)
+             toast.success('deleted successfully')
+        
+      })
+    }
     const columns = [
         {
             name: "id",
             selector: (row,i) => (i+1),
             
         },
-        {
-            name: "Image",
-            selector: (row)=>  <div >
-                 <PhotoProvider>
-                                <PhotoView src={row.img}>
-                             <img className='h-20 w-16 cursor-pointer'  src={row.img} alt=''></img> 
-                                </PhotoView>
-                            </PhotoProvider> <div className='-mt-8 cursor-pointer '><BiZoomIn></BiZoomIn> </div>
-                </div> ,
+        // {
+        //     name: "Image",
+        //     selector: (row)=>  <div >
+        //          <PhotoProvider>
+        //                         <PhotoView src={row.img}>
+        //                      <img className='h-20 w-16 cursor-pointer'  src={row.img} alt=''></img> 
+        //                         </PhotoView>
+        //                     </PhotoProvider> <div className='-mt-8 cursor-pointer '><BiZoomIn></BiZoomIn> </div>
+        //         </div> ,
                 
-            sortable: true
-        },
+        //     sortable: true
+        // },
         {
-            name: "name",
-            selector: (row) => row.name,
+            name: "department",
+            selector: (row) => row.department,
             sortable: true
         },
         
         
           {
-            name: "department",
-            selector: (row) => row.department,
+            name: "serviceName",
+            selector: (row) => row.serviceName,
             sortable: true
           },
         {
              name: "slot",
-             selector: (row) => row.designation, 
+             selector: (row) => row.slot, 
              sortable: true,
 
            },
             {
              name: "fee",
-             selector: (row) => row.designation, 
+             selector: (row) => row.fee, 
              sortable: true,
 
            },
@@ -127,8 +134,8 @@ const WorkingSchedule = () => {
 
            },
             {
-             name: "schedule",
-             selector: (row) => row.schedule, 
+             name: "patientEmail",
+             selector: (row) => row.patientEmail, 
              sortable: true,
 
            },
@@ -142,9 +149,8 @@ const WorkingSchedule = () => {
     useEffect(()=>{
        getStuffData();
     },[reload])
-
     return (
-         <div className='w-full'>
+        <div className='w-full'>
             <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Total Login user</span>  {stuffData.length}</h2>
             
             <DataTable
@@ -162,4 +168,4 @@ const WorkingSchedule = () => {
     );
 };
 
-export default WorkingSchedule;
+export default AllAppointment;

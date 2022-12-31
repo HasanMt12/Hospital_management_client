@@ -20,18 +20,18 @@ const NoticeShow = () => {
         }
     });
 
-     //delete seller 
-        const handleDeleteNotice = notice =>{
-      fetch(`http://localhost:5000/notice/${notice._id}`, {
+    
+        const handleDeleteNotice = (id) =>{
+      fetch(`http://localhost:5000/notice/${id}`, {
         method: 'DELETE', 
       })
       .then(res => res.json())
       .then(data => {
-        if(data.deletedCount > 0){
-          refetch()
+        // if(data.deletedCount > 0){
+          
+        // }
+        refetch()
           toast.success('notice deleted successfully')
-        }
-        
       })
     }
     return (
@@ -79,10 +79,10 @@ const NoticeShow = () => {
 
 {isAdmin &&<div class="flex justify-end">
     <strong
-      class="-mr-[2px] -mb-[2px] inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-teal-600 py-1.5 px-3 text-white"
+      class="-mr-[2px] -mb-[2px] cursor-pointer inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-red-700 py-1.5 px-3 text-white"
     >
      
-                    <div onClick={() => handleDeleteNotice(notice)} className='flex '> <span class="text-[10px] mr-4 font-medium sm:text-xs">Delete</span><AiTwotoneDelete></AiTwotoneDelete>
+                    <div  onClick={() => handleDeleteNotice(n._id)} className='flex '> <span class="text-[10px] mr-4 font-medium sm:text-xs">Delete</span> <span className='text-gray-50'><AiTwotoneDelete></AiTwotoneDelete></span>
      </div>
     </strong>
   </div>}

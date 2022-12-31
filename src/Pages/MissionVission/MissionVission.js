@@ -19,11 +19,7 @@ const MissionVission = ()=>{
          <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
            Mission Vission & Values
          </h1>
-         {/* <img
-           className=" h-96 w-full hover:grayscale-0  grayscale  object-cover"
-           src={logo}
-           alt=""
-         /> */}
+       
        </div>
        <div className="w-5/6 mx-auto mt-20 mb-52 space-y-5 text-slate-500">
          <p className="text-xl font-medium text-teal-600">

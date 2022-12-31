@@ -64,35 +64,47 @@ const Header = () => {
                 />
               </div>
             </div>
-            
-            {user?.uid ? ( <li className=" text-gray-50">
-              <Link to="/noticeShow"><IoNotifications></IoNotifications> </Link>
-              </li>):""}
-         
-         
 
-            <div> 
+            {user?.uid ? (
+              <li className=" text-gray-50">
+                <Link to="/noticeShow">
+                  <IoNotifications></IoNotifications>{" "}
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
+
+            <div>
               <nav aria-label="Main Nav" className="flex flex-col space-y-1">
-                
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary
                     onClick={() => setLogmenu(!logmenu)}
                     className="flex items-center px-4 py-2 text-white rounded-lg group "
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 "
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    {user?.uid ? (
+                      <img 
+                      className="w-10 h-10 rounded-full object-cover"
+                        src="https://i.pinimg.com/474x/ec/7f/95/ec7f9575d98970b8ea32beca3e802ea3.jpg"
+                        alt=""
                       />
-                    </svg>
+                    ) : (
+                     
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 "
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                    )}
 
                     <span className="ml-auto shrink-0 ">
                       <svg
@@ -343,10 +355,11 @@ const Header = () => {
                                   Medical Travel Guides
                                 </Link>
 
-                                <Link  to="/medicalTourism" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  
-                                    Medical Tourism
-                                  
+                                <Link
+                                  to="/medicalTourism"
+                                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                                >
+                                  Medical Tourism
                                 </Link>
                               </nav>
                             </details>
@@ -447,13 +460,16 @@ const Header = () => {
                           </div>
                           <div className="">
                             <Link
-                              to="/doctors"
+                              to="/alldoctors"
                               className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
                               Doctors
                             </Link>
 
-                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                            <Link
+                              to="/services"
+                              className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                            >
                               Book Appointment
                             </Link>
                             <Link
@@ -463,7 +479,7 @@ const Header = () => {
                               Blogs
                             </Link>
                             <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                              Clinic & Centers
+                              Blood Doners
                             </Link>
                             <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Conditions & Terms
@@ -613,7 +629,10 @@ const Header = () => {
                       Medical Travel Guides
                     </Link>
 
-                    <Link  to="/medicalTourism" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                    <Link
+                      to="/medicalTourism"
+                      className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                    >
                       Medical Tourism
                     </Link>
                   </nav>
@@ -713,13 +732,16 @@ const Header = () => {
               <hr />
               <div className="flex justify-between mt-5">
                 <Link
-                  to="/doctors"
+                  to="/alldoctors"
                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   Doctors
                 </Link>
 
-                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <Link
+                  to="/services"
+                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                >
                   Book Appointment
                 </Link>
                 <Link
@@ -729,7 +751,7 @@ const Header = () => {
                   Blogs
                 </Link>
                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                  Clinic & Centers
+                  Blood Doners
                 </Link>
                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700" to='/chat'>
                   Chat

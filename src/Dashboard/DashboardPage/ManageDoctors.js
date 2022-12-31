@@ -76,6 +76,7 @@ const { data: doctors = [], refetch ,isLoading } = useQuery({
     rows: {
       style: {
         // minWidth: "-7px", // override the row height
+         minHeight: '72px',
       },
     },
     headCells: {
