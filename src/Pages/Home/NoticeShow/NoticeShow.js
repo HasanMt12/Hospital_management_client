@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import useAdmin from '../../../hooks/useAdminSecurity';
 import { AiTwotoneDelete } from "react-icons/ai";
+import { toast } from 'react-hot-toast';
 const NoticeShow = () => {
       const {user}= useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
@@ -18,6 +19,21 @@ const NoticeShow = () => {
             
         }
     });
+
+     //delete seller 
+        const handleDeleteNotice = notice =>{
+      fetch(`http://localhost:5000/notice/${notice._id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.deletedCount > 0){
+          refetch()
+          toast.success('notice deleted successfully')
+        }
+        
+      })
+    }
     return (
         <div>
             <h2>{notice.length}</h2>
@@ -66,7 +82,7 @@ const NoticeShow = () => {
       class="-mr-[2px] -mb-[2px] inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-teal-600 py-1.5 px-3 text-white"
     >
      
-                    <div className='flex '> <span class="text-[10px] mr-4 font-medium sm:text-xs">Delete</span><AiTwotoneDelete></AiTwotoneDelete>
+                    <div onClick={() => handleDeleteNotice(notice)} className='flex '> <span class="text-[10px] mr-4 font-medium sm:text-xs">Delete</span><AiTwotoneDelete></AiTwotoneDelete>
      </div>
     </strong>
   </div>}
