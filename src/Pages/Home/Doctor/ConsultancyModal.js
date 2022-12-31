@@ -6,8 +6,9 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { bookingAction } from "../../../stateManagement/bookingSlice";
 
 // import { format } from "date-fns";
 // import { DayPicker } from "react-day-picker";
@@ -27,6 +28,7 @@ const style = {
 };
 
 const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -42,6 +44,8 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
   const bookedAppointments = useSelector(
     (state) => state.bookedAppointments.bookedAppointments
   );
+  const reload = useSelector((state) => state.bookedAppointments.reload);
+  console.log(reload);
   const date = new Date();
   const year = date.getFullYear();
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -80,6 +84,7 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        dispatch(bookingAction.setReload());
         alert("posted");
       });
 

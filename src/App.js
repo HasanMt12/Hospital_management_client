@@ -18,16 +18,18 @@ function App() {
     AOS.init();
     AOS.refresh();
   }, []);
+  const reload = useSelector((state) => state.bookedAppointments.reload);
+  console.log(reload);
   useEffect(() => {
     const getbooked = async () => {
       const res = await fetch(
-        `http://localhost:5000/appointment/patient?email=${email}`
+        `http://localhost:5000/appointment?email=${email}`
       );
       const data = await res.json();
       dispatch(bookingAction.setBookedAppointments(data));
     };
     getbooked();
-  }, [email, dispatch]);
+  }, [email, dispatch, reload]);
   const bookedData = useSelector(
     (state) => state.bookedAppointments.bookedAppointments
   );
