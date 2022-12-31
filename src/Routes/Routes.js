@@ -28,7 +28,9 @@ import Appointment from "../Dashboard/DashboardPage/Appointment";
 import AddStuff from "../Dashboard/AddStuff/AddStuff";
 import AmbulanceService from "../Pages/Contact/AmbulanceService";
 import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
-import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
+
+
+
 
 import MedicalTourism from "../Pages/MedicalTourism/MedicalTourism";
 
@@ -36,6 +38,7 @@ import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
 import Notice from "../Dashboard/DashboardPage/Notice";
 import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
+import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
 
 
 
@@ -154,7 +157,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageDoctors",
-        element: <ManageDoctor></ManageDoctor>
+        element:
+        <ManageDoctors></ManageDoctors>
 
       },
 
