@@ -32,6 +32,7 @@ const ManageDoctors = () => {
     rows: {
       style: {
         // minWidth: "-7px", // override the row height
+         minHeight: '72px',
       },
     },
     headCells: {

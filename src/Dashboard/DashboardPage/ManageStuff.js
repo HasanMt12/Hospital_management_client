@@ -3,9 +3,30 @@ import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { BiZoomIn } from "react-icons/bi";
+import { toast } from 'react-hot-toast';
+import { AiFillDelete } from "react-icons/ai";
 
 const ManageStuff = () => {
-    const [stuffData, setStuffData] = useState([]);
+   
+     const [stuffData, setStuffData] = useState([]);
+    const [ reload , setReload]= useState(true)
+
+
+       const handleDeleteStuff = (id) =>{
+      fetch(`http://localhost:5000/addStuff/${id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        setReload(!reload)
+             toast.success('deleted successfully')
+        
+      })
+    }
+   
+    
+
+
    
   const [perPage, setPage] = useState(10);
 
@@ -61,15 +82,30 @@ const ManageStuff = () => {
         },
     },
 };
-    const getStuffData = async ()=> {
+
+
+
+
+       
+ const getStuffData = async ()=> {
         try{
             const response = await axios.get('http://localhost:5000/addStuff');
             setStuffData(response.data)
+
+
         }catch(error){
                 console.log(error);
         }
-    }
+        
+      
+    }  
+  
+
+//data get
+   
     console.log(stuffData);
+
+
     const columns = [
         {
             name: "id",
@@ -146,12 +182,18 @@ const ManageStuff = () => {
              selector: (row) => row.Address,
              sortable: true
          },
+           {
+               name: "Delete",
+               selector: (row) =>  <div className='cursor-pointer' onClick={()=>handleDeleteStuff(row._id)}><AiFillDelete></AiFillDelete>{row.delete}</div>,
+               sortable: true
+           },
        
     ]
     
     useEffect(()=>{
        getStuffData();
-    },[])
+
+    },[reload])
 
     return (
         

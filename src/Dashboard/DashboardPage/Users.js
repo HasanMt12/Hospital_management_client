@@ -146,30 +146,6 @@ const ManageStuff = () => {
 		],
 	
            },
-      
-        //  {
-        //      name: "schedule",
-        //      selector: (row) => row.schedule,
-        //      sortable: true
-        //  },
-        //  {
-        //      name: "shift",
-        //      selector: (row) => row.shift,
-        //      sortable: true
-        //  },
-
-        
-        //  {
-        //      name: "Salary",
-        //      selector: (row) => row.salary,
-        //      sortable: true
-        //  },
-
-        //   {
-        //      name: "Address",
-        //      selector: (row) => row.Address,
-        //      sortable: true
-        //  },
        
     ]
     
