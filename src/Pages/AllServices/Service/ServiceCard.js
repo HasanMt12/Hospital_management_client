@@ -14,6 +14,7 @@ const ServiceCard = ({ treatment }) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { picture, balance, name, doctorName,_id } = treatment;
+  console.log(treatment)
   return (
     <div>
       <div className="block rounded-lg p-4 shadow-xl shadow-teal-100 md:max-w-[350px] mx-auto">
