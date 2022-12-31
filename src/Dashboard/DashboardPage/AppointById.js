@@ -157,7 +157,7 @@ console.log(stuffData);
     },[reload])
     return (
         <div className='w-full'>
-            <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Total Login user</span>  {stuffData.length}</h2>
+            <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Your total Appointment</span>  {stuffData.length}</h2>
             
             <DataTable
           
