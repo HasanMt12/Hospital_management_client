@@ -1,71 +1,201 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import DataTable from 'react-data-table-component';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { BiZoomIn } from "react-icons/bi";
 
-const Users = () => {
-     const {data: user = [] , refetch } = useQuery({
-        queryKey: ['user'],
-        queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/user');
-            const data = await res.json();
-            console.log(data);
-            return data;
+const ManageStuff = () => {
+    const [stuffData, setStuffData] = useState([]);
+   
+  const [perPage, setPage] = useState(10);
+
+  const caseInsensitiveSort = (rowA, rowB) => {
+    const a = rowA.first_name.toLowerCase();
+    const b = rowB.last_name.toLowerCase();
+
+    if (a > b) {
+      return 1;
+    }
+
+    if (b > a) {
+      return -1;
+    }
+
+    return 0;
+  };
+    // useEffect(()=>{
+    //     fetch('data.json')
+    //     .then((res)=>res.json())
+    //     .then((data) => setTables(data))
+    // },[])
+
+    const customStyles = {
+    rows: {
+        style: {
+            minHeight: '72px', // override the row height
             
+        },
+    },
+    headCells: {
+        style: {
+            paddingLeft: '8px', // override the cell padding for head cells
+            paddingRight: '8px',
+            margin: '2px',
+            backgroundColor: 'rgb(18, 126, 111)',
+            color: 'white',
+              borderRadius: '5px',
+              text: 'bold',
+              fontSize: '15px'
+        },
+    },
+    cells: {
+        style: {
+            paddingLeft: '25px', // override the cell padding for data cells
+            // paddingRight: '8px',
+            textAlign: 'center',
+             border: '1px dotted teal',
+            borderRadius: '5px',
+            color: 'black',
+            margin: '2px',
+         
+        },
+    },
+};
+    const getStuffData = async ()=> {
+        try{
+            const response = await axios.get('http://localhost:5000/user');
+            setStuffData(response.data)
+        }catch(error){
+                console.log(error);
         }
-    });
-    return (
+    }
+    console.log(stuffData);
+    const columns = [
+        {
+            name: "id",
+            selector: (row,i) => (i+1),
+            
+        },
+        // {
+        //     name: "Image",
+        //     selector: (row)=>  <div >
+        //          <PhotoProvider>
+        //                         <PhotoView src={row.img}>
+        //                      <img className='h-20 w-16 cursor-pointer'  src={row.img} alt=''></img> 
+        //                         </PhotoView>
+        //                     </PhotoProvider> <div className='-mt-8 cursor-pointer '><BiZoomIn></BiZoomIn> </div>
+        //         </div> ,
+                
+        //     sortable: true
+        // },
+        {
+            name: "Stuff Name",
+            selector: (row) => row.name,
+            sortable: true
+        },
+        
+        
+          {
+            name: "Email",
+            selector: (row) => row.email,
+            sortable: true
+          },
+        
+        {
+             name: "Role",
+             selector: (row) => row.role,
+             sortable: true,
+
+              	conditionalCellStyles: [
+			{
+				when: row => row.role === "nurse",
+				style: {
+					backgroundColor: 'rgb(111, 169, 224)',
+					
+				},
+			},
+			{
+				when: row => row.role === "stuff",
+				style: {
+					backgroundColor: 'rgba(96, 219, 172, 0.712)',
+					
+				},
+			},
+      	{
+				when: row => row.role === "doctor",
+				style: {
+					backgroundColor: 'rgb(101, 143, 165)',
+					
+				},
+			},
+      {
+        when: row => row.role === "admin",
+        style: {
+          backgroundColor: 'rgb(201, 128, 153)',
+
+        },
+      },
+       {
+        when: row => row.role === "",
+        style: {
+          backgroundColor: 'white',
+
+        },
+      },
+			
+		],
+	
+           },
+      
+        //  {
+        //      name: "schedule",
+        //      selector: (row) => row.schedule,
+        //      sortable: true
+        //  },
+        //  {
+        //      name: "shift",
+        //      selector: (row) => row.shift,
+        //      sortable: true
+        //  },
+
+        
+        //  {
+        //      name: "Salary",
+        //      selector: (row) => row.salary,
+        //      sortable: true
+        //  },
+
+        //   {
+        //      name: "Address",
+        //      selector: (row) => row.Address,
+        //      sortable: true
+        //  },
        
-           
+    ]
+    
+    useEffect(()=>{
+       getStuffData();
+    },[])
 
-
-         <div className='w-full mx-auto '>
-             <h3> {user.length} USERS here</h3>
- 
-<div classname="flex flex-col">
-  <div classname="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div classname="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div classname="overflow-hidden">
-        <table classname="min-w-full">
-          <thead classname="border-b">
-            <tr>
-              <th scope="col" classname="text-sm font-medium text-gray-900 px-4 py-4 text-center">
-                count
-              </th>
-              <th scope="col" classname="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Name
-              </th>
-              <th scope="col" classname="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Email
-              </th>
-               <th scope="col" classname="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                role
-              </th>
-             
-            </tr>
-          </thead>
-          <tbody>
-            {  user.map((u, i) =><tr classname="border-b" key={u._id}>
-
- <th>{i+1}</th>
- <td classname="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{u.name}</td>
-           <td td class = "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap" >
-               {u.email}
-          </td>
-            <td td class = "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap" >
-               {u.role}
-          </td>
-            </tr>
-            )}
-           
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
+    return (
+        
+           <div className='w-full'>
+            <h2 className='text-center text-teal-600 fw-bold text-2xl my-8 '> <span className='text-gray-900'>Total Login user</span>  {stuffData.length}</h2>
+            
+            <DataTable
+          
+            columns={columns}
+            data={stuffData}
+            fixedHeader
+            pagination
+            caseInsensitiveSort={caseInsensitiveSort}
+            selectableRows
+            selectableRowsHighlight
+            customStyles={customStyles}
+        />
+        </div>  
+        
     );
 };
 
-export default Users;
+export default ManageStuff;
