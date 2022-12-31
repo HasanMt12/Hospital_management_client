@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { BiZoomIn } from "react-icons/bi";
+import { toast } from 'react-hot-toast';
+import { AiFillDelete } from 'react-icons/ai';
 
 const ManageStuff = () => {
     const [stuffData, setStuffData] = useState([]);
-   
+      const [reload, setReload] = useState(true)
   const [perPage, setPage] = useState(10);
 
   const caseInsensitiveSort = (rowA, rowB) => {
@@ -70,6 +72,20 @@ const ManageStuff = () => {
         }
     }
     console.log(stuffData);
+
+
+    
+       const handleDeleteUser = (id) =>{
+      fetch(`http://localhost:5000/user/${id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        setReload(!reload)
+             toast.success('deleted successfully')
+        
+      })
+    }
     const columns = [
         {
             name: "id",
@@ -142,16 +158,21 @@ const ManageStuff = () => {
 
         },
       },
+      
 			
 		],
 	
            },
-       
+        {
+               name: "Delete",
+               selector: (row) =>  <div className='cursor-pointer' onClick={()=>handleDeleteUser(row._id)}><AiFillDelete></AiFillDelete>{row.delete}</div>,
+               sortable: true
+           },
     ]
     
     useEffect(()=>{
        getStuffData();
-    },[])
+    },[reload])
 
     return (
         
