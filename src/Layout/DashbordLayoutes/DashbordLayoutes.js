@@ -100,7 +100,7 @@ const DashbordLayoutes = () => {
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/notice">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> ADD Notice</span>
+                    <span className="text-sm font-bold text-gray-900 ml-2"> ADD NOTICE</span>
                   </Link>
                 </div>
               </li>
@@ -109,7 +109,7 @@ const DashbordLayoutes = () => {
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/manageStuff">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> Manage Stuff</span>
+                    <span className="text-sm font-bold text-gray-900 ml-2"> MANAGE STUFF</span>
                   </Link>
                 </div>
               </li>
@@ -136,7 +136,7 @@ const DashbordLayoutes = () => {
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/appointments">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> All Appointment.</span>
+                    <span className="text-sm font-bold text-gray-900 ml-2"> All APPOINTMENT.</span>
                   </Link>
                 </div>
               </li>
@@ -151,7 +151,7 @@ const DashbordLayoutes = () => {
                   <FaAmericanSignLanguageInterpreting />
 
                   <Link to="/dashboard/workingSchedule">
-                    <span className="text-sm font-bold text-gray-900 ml-2"> Working Schedule</span>
+                    <span className="text-sm font-bold text-gray-900 ml-2"> WORKING SCHEDULE</span>
                   </Link>
                 </div>
               </li>

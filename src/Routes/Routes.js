@@ -39,9 +39,10 @@ import Notice from "../Dashboard/DashboardPage/Notice";
 import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
-import Chat from "../Pages/JoinChatRoom/Chat";
+
 import JoinChatRoom from "../Pages/JoinChatRoom/JoinChatRoom";
-import { Payment } from "@mui/icons-material";
+import Payment from "../Dashboard/Payment/Payment";
+
 
 
 

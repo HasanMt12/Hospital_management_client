@@ -192,14 +192,14 @@ const Login = ({ closePopup }) => {
 
             <div className="flex items-center  space-x-1">
               <p
-                // className="text-lg text-gray-400 my-1"
+                className="text-lg text-teal-400 my-1"
                   style={{
-                  fontStyle: "font-medium",
-                  marginTop: "10px",
-                  paddingBottom: "10px",
-                  fontSize: "17px",
-                 color:'teal',
-                  margin:'auto'
+                    fontStyle: "font-medium",
+                    marginTop: "10px",
+                    paddingBottom: "10px",
+                    fontSize: "18px",
+                    textAlign: "center",
+                    margin:'auto'
                 }}
               >
                 Signup with social account
@@ -238,7 +238,7 @@ const Login = ({ closePopup }) => {
           </form>
         </Paper>
       </Grid>
-      :
+      
       <Popup
         title="SignUp Form"
         openPopup={openPopup}
