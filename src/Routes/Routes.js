@@ -29,6 +29,7 @@ import AddStuff from "../Dashboard/AddStuff/AddStuff";
 import AmbulanceService from "../Pages/Contact/AmbulanceService";
 import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
 import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
+import MDoctors from "../Dashboard/DashboardPage/MDoctors";
 import MedicalTourism from "../Pages/MedicalTourism/MedicalTourism";
 
 
@@ -135,7 +136,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageDoctors",
-        element: <ManageDoctor></ManageDoctor>
+        element: <MDoctors></MDoctors>
+        // <ManageDoctor></ManageDoctor>
 
       },
      
