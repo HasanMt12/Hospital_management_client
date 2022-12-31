@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 
 import { useQuery } from "@tanstack/react-query";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,12 +15,22 @@ import "swiper/css/pagination";
 import "./doctor.css";
 
 // import required modules
-import {  IconButton, Tooltip } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Navigation, Pagination } from "swiper";
 import ServiceTitile from "../Services/ServiceTitle";
+import ConsultancyModal from "./ConsultancyModal";
 
 const DoctorInHome = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [doctor, setDoctor] = useState("");
+  const bookedData = useSelector(
+    (state) => state.bookedAppointments.bookedAppointments
+  );
+  console.log(bookedData);
   const {
     data: doctors = [],
     isLoading,
@@ -51,7 +61,7 @@ const DoctorInHome = () => {
           color: "#0f8383",
         }}
       />
-      <Swiper 
+      <Swiper
         //   slidesPerView={3}
         breakpoints={{
           300: {
@@ -83,54 +93,55 @@ const DoctorInHome = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper swiper "
       >
-        {doctors.map((doctor) => (
+        <>
+          {doctors.map((doctor) => (
+            <SwiperSlide className="swipersSlider customWidth mb-10">
+              <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative">
+                <img
+                  className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
+                  src={doctor.img}
+                  alt=""
+                />
 
-          <SwiperSlide className="swipersSlider customWidth -mb-32" >
-            <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative" 
-            
-            >
+                <h1 className="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
+                  {doctor.doctorName}
+                </h1>
 
-              <img
-                className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
-                src={doctor.img}
-                alt=""
-              />
+                <p class="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
+                  {doctor.degree}
+                </p>
+                <p className="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
+                  {doctor.department}
+                </p>
 
-              <h1 className="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
-                {doctor.doctorName}
-              </h1>
-
-
-              <p className="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
-                {doctor.degree}
-              </p>
-              <p className="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
-                {doctor.department}
-              </p>
-
-
-              <div className="flex  mt-3 -mx-2 absolute bottom-10">
-
-
-                <Link to={`doctor/${doctor?._id}`}>
-                  <Tooltip title="Details">
-                    <IconButton>
-                      <RiArrowRightCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
-                    </IconButton>
-                  </Tooltip>
-                </Link>
-                <Link>
-                  <Tooltip title="Book Appointment">
-                    <IconButton>
-                      <RiAddCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
-                    </IconButton>
-                  </Tooltip>
-                </Link>
+                <div className="flex  mt-3 -mx-2 absolute bottom-10">
+                  <Link to={`doctor/${doctor?._id}`}>
+                    <Tooltip title="Details">
+                      <IconButton>
+                        <RiArrowRightCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
+                      </IconButton>
+                    </Tooltip>
+                  </Link>
+                  <Link onClick={() => setDoctor(doctor)}>
+                    <Tooltip title="Book Appointment">
+                      <IconButton onClick={handleOpen}>
+                        <RiAddCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
+                      </IconButton>
+                    </Tooltip>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
+        </>
       </Swiper>
+      <ConsultancyModal
+        doctor={doctor}
+        // treatment={treatment}
+        open={open}
+        handleClose={handleClose}
+        setOpen={setOpen}
+      />
     </>
   );
 };

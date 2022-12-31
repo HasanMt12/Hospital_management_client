@@ -1,12 +1,14 @@
+import { StyledEngineProvider } from "@mui/material";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import { ProSidebarProvider } from "react-pro-sidebar";
-import reportWebVitals from "./reportWebVitals";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from "react-redux";
+import App from "./App";
 import AuthProvider from "./contexts/AuthProvider";
-import { StyledEngineProvider } from "@mui/material";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { store } from "./stateManagement/stateManagement";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -16,13 +18,13 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        {" "}
-        <ProSidebarProvider>
-          <StyledEngineProvider injectFirst>
-            <App />
-          </StyledEngineProvider>
-        </ProSidebarProvider>
-        ;
+        <Provider store={store}>
+          <ProSidebarProvider>
+            <StyledEngineProvider injectFirst>
+              <App />
+            </StyledEngineProvider>
+          </ProSidebarProvider>
+        </Provider>
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>

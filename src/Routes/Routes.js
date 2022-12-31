@@ -28,9 +28,18 @@ import Appointment from "../Dashboard/DashboardPage/Appointment";
 import AddStuff from "../Dashboard/AddStuff/AddStuff";
 import AmbulanceService from "../Pages/Contact/AmbulanceService";
 import WorkingSchedule from "../Dashboard/DashboardPage/WorkingSchedule";
-import ManageDoctor from "../Dashboard/DashboardPage/ManageDoctor";
-import MDoctors from "../Dashboard/DashboardPage/MDoctors";
+
+
+
+
 import MedicalTourism from "../Pages/MedicalTourism/MedicalTourism";
+
+import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
+import Notice from "../Dashboard/DashboardPage/Notice";
+import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
+import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
+import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
+
 
 
 
@@ -101,6 +110,18 @@ const router = createBrowserRouter([
         path: "/ambulanceService",
         element: <AmbulanceService></AmbulanceService>
       },
+       {
+        path: "/medicalGuide",
+        element: <MedicalTravel></MedicalTravel>
+      },
+       {
+        path: "/noticeShow",
+        element: <NoticeShow></NoticeShow>
+      },
+      {
+        path: "/manageStuff",
+        element: <ManageStuff></ManageStuff>
+      },
     ],
   },
 
@@ -136,9 +157,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/manageDoctors",
-        element: <MDoctors></MDoctors>
-        // <ManageDoctor></ManageDoctor>
+        element:
+        <ManageDoctors></ManageDoctors>
 
+      },
+
+      {
+        path: "/dashboard/notice",
+        element: <Notice></Notice>
+
+      },
+      {
+        path: "/dashboard/manageStuff",
+        element: <ManageStuff></ManageStuff>
       },
      
     ]
