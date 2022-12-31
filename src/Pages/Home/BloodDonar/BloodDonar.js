@@ -21,7 +21,7 @@ const {user} = useContext(AuthContext);
      console.log(donation);
     return (
         <div>
-            
+            <h2>this is donar pager</h2>
         </div>
     );
 };
