@@ -35,6 +35,8 @@ import MedicalTourism from "../Pages/MedicalTourism/MedicalTourism";
 import MedicalTravel from "../Pages/AllServices/MadicalTravel/MedicalTravel";
 import Notice from "../Dashboard/DashboardPage/Notice";
 import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
+import ServiceDetails from "../Pages/AllServices/Service/ServiceDetails";
+import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 
 
 
@@ -72,10 +74,21 @@ const router = createBrowserRouter([
         element: <ServiceByCategory />,
       },
       {
+        path: "/departments/treatments/:singleservice",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/treatment/${params.singleservice}`),
+        element: <ServiceDetails />,
+      },
+      {
         path: "/dash",
         element: <Dashform></Dashform>,
       },
-
+      {
+        path: "/alldoctors",
+        loader: () =>
+          fetch("http://localhost:5000/doctor"),
+        element: <AllDoctors />,
+      },
       {
         path: "/blogs",
         element: <Blogs />,
@@ -102,17 +115,17 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/doctor/${params.id}`),
         element: <DoctorDetails />,
       },
-       {
+      {
         path: "/ambulanceService",
-        element: <AmbulanceService></AmbulanceService>
+        element: <AmbulanceService></AmbulanceService>,
       },
-       {
+      {
         path: "/medicalGuide",
-        element: <MedicalTravel></MedicalTravel>
+        element: <MedicalTravel></MedicalTravel>,
       },
-       {
+      {
         path: "/noticeShow",
-        element: <NoticeShow></NoticeShow>
+        element: <NoticeShow></NoticeShow>,
       },
     ],
   },
@@ -124,43 +137,39 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/users",
 
-        element:  <AdminRoutes><Users /></AdminRoutes>
-
+        element: (
+          <AdminRoutes>
+            <Users />
+          </AdminRoutes>
+        ),
       },
       {
         path: "/dashboard/addDoctors",
         element: <AddDoctor />,
       },
 
-
-       {
+      {
         path: "/dashboard/appointments",
-        element: <Appointment></Appointment>
-       },
+        element: <Appointment></Appointment>,
+      },
       {
         path: "/dashboard/addStuff",
-        element: <AddStuff />
-
+        element: <AddStuff />,
       },
       {
         path: "/dashboard/workingSchedule",
-        element: <WorkingSchedule></WorkingSchedule>
-
+        element: <WorkingSchedule></WorkingSchedule>,
       },
       {
         path: "/dashboard/manageDoctors",
-        element: <ManageDoctor></ManageDoctor>
-
+        element: <ManageDoctor></ManageDoctor>,
       },
 
       {
         path: "/dashboard/notice",
-        element: <Notice></Notice>
-
+        element: <Notice></Notice>,
       },
-     
-    ]
-  }
-
+    ],
+  },
 ]);
 export default router;

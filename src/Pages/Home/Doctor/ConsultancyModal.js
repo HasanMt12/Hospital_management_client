@@ -59,11 +59,12 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
       )
   );
 
-  const { department, doctorCode, name } = doctor;
+  const { department, doctorCode, name, doctorEmail } = doctor;
   const handleBooking = (data) => {
     // e.preventDefault()
     const bookedService = {
       department,
+      doctorEmail,
       doctorCode: parseInt(doctorCode),
       serviceName: "Consultancy",
       patientName: data.patientName,
@@ -123,29 +124,13 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
             </Typography>
 
             <form onSubmit={handleSubmit(handleBooking)} action="">
-              {/* <DayPicker
-                mode="single"
-                selectedDate={selectedDate}
-                onSelect={setSelectedDate}
-              />
-              <p
-                style={{
-                  marginLeft: 20,
-                  width: "100%",
-                  color: "#0E877D",
-                  fontWeight:"bold"
-                }}
-              >
-                Date: {format(selectedDate, "PP")}
-              </p> */}
+            
               <input
                 required
                 {...register("date")}
                 min={new Date().toISOString().split("T")[0]}
                 type="date"
-                //  value={format(date, "PP")}
-                // disabled
-                // value={new Date()}
+                
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
               />
               {doctor?.workingDays ? (
@@ -178,7 +163,6 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
               <input
                 {...register("patientName")}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
-                // name="name"
                 type="text"
                 defaultValue={user?.displayName}
                 readOnly
@@ -188,7 +172,6 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
               <input
                 {...register("patientEmail")}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
-                // name="email"
                 type="email"
                 readOnly
                 required
@@ -199,8 +182,7 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
                 {...register("patientPhone")}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
                 type="tel"
-                // readOnly
-                // disabled
+               
                 required
                 placeholder="Phone"
               />
