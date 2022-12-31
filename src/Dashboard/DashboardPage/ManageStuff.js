@@ -164,7 +164,7 @@ const ManageStuff = () => {
             data={stuffData}
             fixedHeader
             pagination
-             caseInsensitiveSort={caseInsensitiveSort}
+            caseInsensitiveSort={caseInsensitiveSort}
             selectableRows
             selectableRowsHighlight
             customStyles={customStyles}
