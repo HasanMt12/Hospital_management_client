@@ -51,6 +51,7 @@ import Payment from "../Dashboard/Payment/Payment";
 import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
 import AppointById from "../Dashboard/DashboardPage/AppointById";
 import BloodDonar from "../Pages/Home/BloodDonar/BloodDonar";
+import DonationForm from "../Pages/Home/Donate/DonationForm";
 
 
 
@@ -156,6 +157,10 @@ const router = createBrowserRouter([
         path: "/bloodDonar",
         element: <BloodDonar></BloodDonar>
       },
+      {
+        path: "/donation",
+        element: <DonationForm/>
+      },
     ],
   },
 
@@ -216,8 +221,8 @@ const router = createBrowserRouter([
           
             <Payment></Payment>
           
-        ),
-
+        )},
+{
         path: "/dashboard/allAppointment",
         element: <AllAppointment></AllAppointment>
       },

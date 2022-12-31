@@ -2,9 +2,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import CheckoutFrom from "./CheckoutFrom";
-import Loading from "../../../Shared/Loading/Loading";
-import { useNavigation } from "react-day-picker";
+import CheckoutFrom from "./Checkouts";
+
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
