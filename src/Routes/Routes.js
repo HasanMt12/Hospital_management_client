@@ -43,6 +43,7 @@ import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
+import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
 
 
 
@@ -186,6 +187,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageStuff",
         element: <ManageStuff></ManageStuff>
+      },
+      {
+        path: "/dashboard/allAppointment",
+        element: <AllAppointment></AllAppointment>
       },
      
     ]
