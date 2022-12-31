@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/AuthProvider";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import { bookingAction } from "../../../stateManagement/bookingSlice";
 
 // import { format } from "date-fns";
 // import { DayPicker } from "react-day-picker";
@@ -36,14 +37,30 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
   // const [selectedDate, setSelectedDate] = useState(new Date());
 
   const { user } = useContext(AuthContext);
+  const dispatch = useDispatch();
   //  console.log(user)
   // console.log(treatment);
   const { department, doctorCode, name } = treatment;
+  const bookedAppointments = useSelector(
+    (state) => state.bookedAppointments.bookedAppointments
+  );
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
+  const day = ("0" + date.getDate()).slice(-2);
+  const formattedDate = `${year}-${month}-${day}`;
+
+  const remaningSlots = treatment?.timeSlot.filter(
+    (rem) =>
+      !bookedAppointments.some(
+        (booked) => booked.slot === rem && formattedDate === booked.bookedDate
+      )
+  );
   const handleBooking = (data) => {
     // e.preventDefault()
     const bookedService = {
       department,
-      doctorCode:parseInt(doctorCode),
+      doctorCode: parseInt(doctorCode),
       serviceName: name,
       patientName: data.patientName,
       bookedDate: data.date,
@@ -51,7 +68,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
       patientPhone: data.patientPhone,
       slot: data.slot,
       fee: data.fee,
-      bookingDate: new Date().toISOString().split('T')[0],
+      bookingDate: new Date().toISOString().split("T")[0],
     };
     fetch("http://localhost:5000/appointment", {
       method: "POST",
@@ -60,11 +77,11 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
       },
       body: JSON.stringify(bookedService),
     })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-      alert('posted')
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(bookingAction.setReload());
+        alert("posted");
+      });
 
     console.log(bookedService);
     setOpen(false);
@@ -131,7 +148,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
                   style={{ marginTop: 20, width: "100%", padding: 4 }}
                   name="slot"
                 >
-                  {treatment?.timeSlot?.map((slot, i) => (
+                  {remaningSlots.map((slot, i) => (
                     <option value={slot} key={i}>
                       {slot}
                     </option>
