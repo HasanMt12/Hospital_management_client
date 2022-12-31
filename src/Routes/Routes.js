@@ -39,6 +39,9 @@ import Notice from "../Dashboard/DashboardPage/Notice";
 import NoticeShow from "../Pages/Home/NoticeShow/NoticeShow";
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
+import Chat from "../Pages/JoinChatRoom/Chat";
+import JoinChatRoom from "../Pages/JoinChatRoom/JoinChatRoom";
+import { Payment } from "@mui/icons-material";
 
 
 
@@ -64,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/chat",
+        element: <JoinChatRoom></JoinChatRoom>,
       },
       {
         path: "/services",
@@ -170,6 +177,18 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageStuff",
         element: <ManageStuff></ManageStuff>
+      },
+      {
+        path: "/dashboard/payment/:id",
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/appointment/${params.id}`
+          ),
+        element: (
+          
+            <Payment></Payment>
+          
+        ),
       },
      
     ]

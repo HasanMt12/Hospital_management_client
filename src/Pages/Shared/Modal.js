@@ -37,6 +37,7 @@ export default function Popup(props) {
             {title}
           </Typography>
           <Controls.Button
+            style={{backgroundColor:'teal'}}
             color="secondary"
             text="X"
             onClick={() => {

@@ -32,6 +32,7 @@ const DoctorDetails = () => {
       return data;
     },
   });
+  console.log(services)
   if (isLoading) {
     return <h1>Loading</h1>;
   }
@@ -68,7 +69,7 @@ const DoctorDetails = () => {
                 <p className="block mb-10 text-2xl font-semibold text-green-700 hover:underline text-center  md:text-3xl">
                   Services available
                 </p>
-                {services.map((treatment) => (
+                {services?.map((treatment) => (
                   <ServiceCard treatment={treatment}></ServiceCard>
                   // <>
                   //   <div className="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-72 ">

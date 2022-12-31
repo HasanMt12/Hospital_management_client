@@ -1,15 +1,18 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import { useContext, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { RouterProvider } from "react-router-dom";
+
 import "swiper/css/bundle";
 import "./App.css";
 import { AuthContext } from "./contexts/AuthProvider";
 import router from "./Routes/Routes";
 import { bookingAction } from "./stateManagement/bookingSlice";
 import 'react-photo-view/dist/react-photo-view.css';
+
 function App() {
   const { user } = useContext(AuthContext);
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddDoctor = () => {
   const {
@@ -9,7 +10,7 @@ const AddDoctor = () => {
 
     formState: { errors },
   } = useForm();
-
+  const navigate = useNavigate();
   const workingDays= [
     "08.00 AM - 08.30 AM",
     "08.30 AM - 09.00 AM",
@@ -32,7 +33,7 @@ const AddDoctor = () => {
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   // console.log(imageHostKey);
   const onSubmit = (data,e) => {
-    // const workingDays= e.target.workingDays.value.split(",");
+    const workingTime= e.target.workingDays.split(",");
     const img = data.img[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -48,6 +49,7 @@ const AddDoctor = () => {
             name: data.doctorName,
             title: data.title,
             department: data.department,
+            workingTime,
             workingDays: data.workingDays,
             degree: data.degree,
             doctorCode: data.doctorCode,
@@ -69,6 +71,7 @@ const AddDoctor = () => {
             .then((result) => {
               console.log(result);
               toast.success(`${data.doctorName} is added successfully`);
+              navigate("/dashboard/manageDoctors")
             });
         }
       });
