@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 
-const CheckoutForm = ({ booking }) => {
+const CheckoutForm = ({booking}) => {
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -11,7 +11,7 @@ const CheckoutForm = ({ booking }) => {
 
   const stripe = useStripe();
   const elements = useElements();
-  const { price, email, patient, _id } = booking;
+  const { fee, patientEmail, serviceName, _id } =booking;
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -21,14 +21,14 @@ const CheckoutForm = ({ booking }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          // authorization: `bearer ${localStorage.getItem("accessToken")}`,
         },
-        body: JSON.stringify({ price }),
+        body: JSON.stringify({ fee }),
       }
     )
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, [price]);
+  }, [fee]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,8 +61,8 @@ const CheckoutForm = ({ booking }) => {
         payment_method: {
           card: card,
           billing_details: {
-            name: patient,
-            email: email,
+            name: serviceName,
+            email: patientEmail,
           },
         },
       });
@@ -77,16 +77,16 @@ const CheckoutForm = ({ booking }) => {
       console.log("card info", card);
       // store payment info in the database
       const payment = {
-        price,
+        fee,
         transactionId: paymentIntent.id,
-        email,
+        patientEmail,
         bookingId: _id,
       };
-      fetch("https://doctors-portal-server-ebon.vercel.app/payments", {
+      fetch("http://localhost:5000/payments", {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          // authorization: `bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(payment),
       })
@@ -122,7 +122,7 @@ const CheckoutForm = ({ booking }) => {
           }}
         />
         <button
-          className="btn w-3/4 btn-sm my-10 mx-12"
+          className="btn w-3/4 btn-sm my-10 mx-12 bg-teal-600 text-white py-3 rounded-lg px-3 font-medium text-xl"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >

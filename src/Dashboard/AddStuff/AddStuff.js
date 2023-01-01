@@ -53,7 +53,7 @@ const AddStuff = () => {
               console.log(result);
               toast.success(`${data.name} is added successfully`);
               // setLoading(true)
-              //   navigate("/dashboard/manageProducts");
+              navigate("/dashboard/manageStuff");
             //   refetch()
             });
         }

@@ -40,7 +40,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
   const dispatch = useDispatch();
   //  console.log(user)
   // console.log(treatment);
-  const { department, doctorCode, name } = treatment;
+  const { department, doctorCode, name,doctorEmail } = treatment;
   const bookedAppointments = useSelector(
     (state) => state.bookedAppointments.bookedAppointments
   );
@@ -57,9 +57,9 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
       )
   );
   const handleBooking = (data) => {
-    // e.preventDefault()
     const bookedService = {
       department,
+      doctorEmail,
       doctorCode: parseInt(doctorCode),
       serviceName: name,
       patientName: data.patientName,
@@ -118,28 +118,12 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
             </Typography>
 
             <form onSubmit={handleSubmit(handleBooking)} action="">
-              {/* <DayPicker
-                mode="single"
-                selectedDate={selectedDate}
-                onSelect={setSelectedDate}
-              />
-              <p
-                style={{
-                  marginLeft: 20,
-                  width: "100%",
-                  color: "#0E877D",
-                  fontWeight:"bold"
-                }}
-              >
-                Date: {format(selectedDate, "PP")}
-              </p> */}
+          
               <input
                 {...register("date")}
                 min={new Date().toISOString().split("T")[0]}
                 type="date"
-                //  value={format(date, "PP")}
-                // disabled
-                // value={new Date()}
+                
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
               />
               {treatment?.timeSlot ? (
@@ -182,7 +166,6 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
               <input
                 {...register("patientEmail")}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
-                // name="email"
                 type="email"
                 readOnly
                 required
@@ -193,8 +176,7 @@ const BookAppointmentModal = ({ setOpen, open, handleClose, treatment }) => {
                 {...register("patientPhone")}
                 style={{ marginTop: 20, width: "100%", padding: 4 }}
                 type="tel"
-                // readOnly
-                // disabled
+                
                 required
                 placeholder="Phone"
               />

@@ -9,13 +9,24 @@ import toast from "react-hot-toast";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Button } from "@mui/material";
 import Loading from "../../Pages/Shared/Loading";
-
+import { AiFillDelete } from "react-icons/ai";
 const ManageDoctors = () => {
   const [doctorData, setDoctorData] = useState([]);
- 
-  const [loading, setLoading] = useState(true);
-  const [pending, setPending] = React.useState(false);
-  const [user, setUser] = useState([]);
+    const [ reload , setReload]= useState(true)
+
+
+       const handleDeleteDoctor = (id) =>{
+      fetch(`http://localhost:5000/doctor/${id}`, {
+        method: 'DELETE', 
+      })
+      .then(res => res.json())
+      .then(data => {
+        setReload(!reload)
+             toast.success('deleted successfully')
+        
+      })
+    }
+   
   const caseInsensitiveSort = (rowA, rowB) => {
     const a = rowA.first_name.toLowerCase();
     const b = rowB.last_name.toLowerCase();
@@ -30,52 +41,29 @@ const ManageDoctors = () => {
 
     return 0;
   };
- 
-
-const { data: doctors = [], refetch ,isLoading } = useQuery({
-    queryKey: ["doctors"],
-    queryFn: async () => {
-      const res = await fetch("http://localhost:5000/doctor");
-      const data = await res.json();
-      return data;
-    },
-  });
+ const getDoctorData = async ()=> {
+        try{
+            const response = await axios.get('http://localhost:5000/doctor');
+            setDoctorData(response.data)
 
 
-  // Deleting:
-  const handleDeleteUser = (id) => {
-    console.log(id);
-    fetch(`http://localhost:5000/doctor/${id}`, {
-      method: "DELETE",
-      // headers: {
-      //   authorization: `bearer ${localStorage.getItem("token")}`,
-      // },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.deletedCount) {
-          toast.success(`Doctor ${doctors.name} deleted successfully`);
-          const remaining = user.filter((user) => user._id !== id);
-          setUser(remaining);
-          setPending(false)
-          refetch();
+        }catch(error){
+                console.log(error);
         }
-      });
-  };
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
-//   useEffect(()=>{
-//       fetch('http://localhost:5000/doctor')
-//       .then((res)=>res.json())
-//     //   .then((data) => setDoctorData(data))
-//   },[])
+        
+      
+    }  
+//  useEffect(()=>{
+//        getDoctorData();
+
+//     },[reload])
+
 
   const customStyles = {
     rows: {
       style: {
         // minWidth: "-7px", // override the row height
+         minHeight: '72px',
       },
     },
     headCells: {
@@ -173,49 +161,33 @@ const { data: doctors = [], refetch ,isLoading } = useQuery({
       sortable: true,
     },
     {
-      name: "Delete",
-      selector: (row) => ( <Button
-        onClick={() => handleDeleteUser(row._id)}
-        className="btn btn-xs btn-error text-white"
-      >
-        <DeleteIcon className="text-red-500 cursor-pointer"></DeleteIcon>
-      </Button>),
-      sortable: true,
-    },
+               name: "Delete",
+               selector: (row) =>  <div className='cursor-pointer text-red-400 text-xl' onClick={()=>handleDeleteDoctor(row._id)}><AiFillDelete></AiFillDelete>{row.delete}</div>,
+               sortable: true
+           },
   ];
 
-//   useEffect(() => {
-//     getDoctorData();
+ useEffect(() => {
+   getDoctorData();
 
-//   }, []);
- /* useEffect(() => {
-    fetchTableData();
-  }, []);
-  async function fetchTableData() {
-    setLoading(true);
-    const URL = "http://localhost:5000/doctor";
-    const response = await fetch(URL);
-    const users = await response.json();
-    setDoctorData(users);
-    setLoading(false);
-  } */
+ }, [reload])
 
   return (
     <div className="w-full">
       <h2 className="text-center text-teal-600 fw-bold text-2xl my-8 ">
         {" "}
         <span className="text-gray-900">Total Doctor :</span>{" "}
-        {doctors.length}
+        {doctorData.length}
       </h2>
 
       <DataTable
         columns={columns}
-        data={doctors}
+        data={doctorData}
         fixedHeader
         pagination
         caseInsensitiveSort={caseInsensitiveSort}
         // progressPending={loading}
-        progressPending={pending}
+        // progressPending={pending}
 		
         selectableRows
         selectableRowsHighlight

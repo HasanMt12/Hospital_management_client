@@ -1,12 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import DataTable from "react-data-table-component";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import { BiZoomIn } from "react-icons/bi";
 import { toast } from "react-hot-toast";
-import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
-const ManageStuff = () => {
+const AppointById = () => {
   const [stuffData, setStuffData] = useState([]);
   const [reload, setReload] = useState(true);
   const [perPage, setPage] = useState(10);
@@ -25,11 +28,6 @@ const ManageStuff = () => {
 
     return 0;
   };
-  // useEffect(()=>{
-  //     fetch('data.json')
-  //     .then((res)=>res.json())
-  //     .then((data) => setTables(data))
-  // },[])
 
   const customStyles = {
     rows: {
@@ -61,9 +59,13 @@ const ManageStuff = () => {
       },
     },
   };
+  const { user } = useContext(AuthContext);
+
   const getStuffData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/user");
+      const response = await axios.get(
+        `http://localhost:5000/appointment?email=${user?.email}`
+      );
       setStuffData(response.data);
     } catch (error) {
       console.log(error);
@@ -71,16 +73,17 @@ const ManageStuff = () => {
   };
   console.log(stuffData);
 
-  const handleDeleteUser = (id) => {
-    fetch(`http://localhost:5000/user/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setReload(!reload);
-        toast.success("deleted successfully");
-      });
-  };
+  //    const handleDeleteUser = (id) =>{
+  //   fetch(`http://localhost:5000/user/${id}`, {
+  //     method: 'DELETE',
+  //   })
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     setReload(!reload)
+  //          toast.success('deleted successfully')
+
+  //   })
+  // }
   const columns = [
     {
       name: "id",
@@ -99,64 +102,58 @@ const ManageStuff = () => {
     //     sortable: true
     // },
     {
-      name: "Stuff Name",
-      selector: (row) => row.name,
+      name: "department",
+      selector: (row) => row.department,
       sortable: true,
     },
 
     {
-      name: "Email",
-      selector: (row) => row.email,
+      name: "serviceName",
+      selector: (row) => row.serviceName,
       sortable: true,
     },
-
     {
-      name: "Role",
-      selector: (row) => row.role,
+      name: "slot",
+      selector: (row) => row.slot,
       sortable: true,
-
-      conditionalCellStyles: [
-        {
-          when: (row) => row.role === "nurse",
-          style: {
-            backgroundColor: "rgb(111, 169, 224)",
-          },
-        },
-        {
-          when: (row) => row.role === "stuff",
-          style: {
-            backgroundColor: "rgba(96, 219, 172, 0.712)",
-          },
-        },
-        {
-          when: (row) => row.role === "doctor",
-          style: {
-            backgroundColor: "rgb(101, 143, 165)",
-          },
-        },
-        {
-          when: (row) => row.role === "admin",
-          style: {
-            backgroundColor: "rgb(201, 128, 153)",
-          },
-        },
-        {
-          when: (row) => row.role === "",
-          style: {
-            backgroundColor: "white",
-          },
-        },
-      ],
     },
     {
-      name: "Delete",
+      name: "fee",
+      selector: (row) => row.fee,
+      sortable: true,
+    },
+    {
+      name: "bookingDate",
+      selector: (row) => row.bookingDate,
+      sortable: true,
+    },
+    {
+      name: "patientPhone",
+      selector: (row) => row.patientPhone,
+      sortable: true,
+    },
+    {
+      name: "patientEmail",
+      selector: (row) => row.patientEmail,
+      sortable: true,
+    },
+    {
+      name: "Pay",
       selector: (row) => (
-        <div
-          className="cursor-pointer"
-          onClick={() => handleDeleteUser(row._id)}
-        >
-          <AiFillDelete></AiFillDelete>
-          {row.delete}
+        <div>
+          {row.fee && !row.paid && (
+            <Link
+              to={`/dashboard/payment/${row._id}`}
+              className="btn btn-xs btn-secondary text-teal-600 font-bold"
+            >
+              Pay
+            </Link>
+          )}
+          {row.fee && row.paid && (
+            <button className="btn btn-xs text-white font-medium p-1 rounded-md  bg-green-600">
+              Paid
+            </button>
+          )}
         </div>
       ),
       sortable: true,
@@ -165,13 +162,12 @@ const ManageStuff = () => {
 
   useEffect(() => {
     getStuffData();
-  }, [reload]);
-
+  }, []);
   return (
     <div className="w-full">
       <h2 className="text-center text-teal-600 fw-bold text-2xl my-8 ">
         {" "}
-        <span className="text-gray-900">Total Login user</span>{" "}
+        <span className="text-gray-900">Your total Appointment</span>{" "}
         {stuffData.length}
       </h2>
 
@@ -189,4 +185,4 @@ const ManageStuff = () => {
   );
 };
 
-export default ManageStuff;
+export default AppointById;
