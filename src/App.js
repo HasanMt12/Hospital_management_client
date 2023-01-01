@@ -9,7 +9,7 @@ import { RouterProvider } from "react-router-dom";
 import "swiper/css/bundle";
 import "./App.css";
 import { AuthContext } from "./contexts/AuthProvider";
-import router from "./Routes/Routes";
+import router from "./Route/Routes";
 import { bookingAction } from "./stateManagement/bookingSlice";
 import 'react-photo-view/dist/react-photo-view.css';
 

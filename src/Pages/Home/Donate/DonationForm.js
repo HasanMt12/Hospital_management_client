@@ -29,6 +29,7 @@ import Popup from "../../Shared/Popup";
 import Modal from "../../Shared/Modal";
 import Login from "../../Register/Login/Login";
 import SignUp from "../../Register/SignUp/SignUp";
+import { toast } from "react-hot-toast";
 
 const useStyles = makeStyles((theme) => ({
   inputField: {
@@ -64,6 +65,7 @@ const DonationForm = () => {
       donerEmail:data.email,
     };
     console.log(bloodDoner);
+
     fetch("http://localhost:5000/donner",{
       method:"post",
       headers:{
@@ -71,6 +73,8 @@ const DonationForm = () => {
       },body:JSON.stringify(bloodDoner)
     }).then(res=>res.json())
     .then(data=>console.log(data))
+
+    toast.success('form submitted')
   };
 
   return (

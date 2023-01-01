@@ -95,8 +95,8 @@ const DoctorInHome = () => {
       >
         <>
           {doctors?.map((doctor) => (
-            <SwiperSlide className="swipersSlider customWidth mb-10">
-              <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative">
+            <SwiperSlide className="swipersSlider cs customWidth ">
+              <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative">
                 <img
                   className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
                   src={doctor.img}

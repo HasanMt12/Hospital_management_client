@@ -22,7 +22,9 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import useDoctor from "../../hooks/useDoctorsSecurity";
 import useNurse from "../../hooks/userNurseSecurity";
 import { MdPeopleAlt } from "react-icons/md";
+import useTitle from "../../hooks/useTitle";
 const DashbordLayoutes = () => {
+  useTitle('Dashboard')
   const {user}= useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
   const [isNurse] = useNurse(user?.email)

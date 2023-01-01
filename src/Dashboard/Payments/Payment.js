@@ -2,7 +2,11 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import CheckoutForm from "./CheckoutForm";
+
+import CheckoutForm from "../AddStuff/CheckoutForm";
+
+
+
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid

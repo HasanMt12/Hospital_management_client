@@ -478,8 +478,8 @@ const Header = () => {
                             >
                               Blogs
                             </Link>
-                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                              Blood Doners
+                            <Link TO="/bloodDonar" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                              Blood Donar
                             </Link>
                             <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Conditions & Terms
@@ -750,8 +750,8 @@ const Header = () => {
                 >
                   Blogs
                 </Link>
-                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                  Blood Doners
+                <Link to="bloodDonar" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                  Blood Donar
                 </Link>
                 <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700" to='/chat'>
                   Chat

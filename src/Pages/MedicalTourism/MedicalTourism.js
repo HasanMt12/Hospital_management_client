@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../hooks/useTitle";
 
 const MedicalTourism = () => {
+  useTitle('Medical Tourism')
   return (
     <div>
       <div>

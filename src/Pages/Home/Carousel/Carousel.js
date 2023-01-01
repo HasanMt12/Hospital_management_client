@@ -68,7 +68,7 @@ const Carousel = () => {
           className="mySwiper"
         >
           {sliders.map((slider) => (
-            <SwiperSlide className="h-full w-full">
+            <SwiperSlide className="h-full w-full swiperSlide">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}

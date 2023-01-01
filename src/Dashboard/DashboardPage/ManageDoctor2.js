@@ -162,7 +162,11 @@ const ManageDoctors = () => {
     },
     {
                name: "Delete",
+
                selector: (row) =>  <div className='cursor-pointer text-red-400 text-xl' onClick={()=>handleDeleteDoctor(row._id)}><AiFillDelete></AiFillDelete>{row.delete}</div>,
+
+            
+
                sortable: true
            },
   ];

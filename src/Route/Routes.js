@@ -42,18 +42,23 @@ import ServiceDetails from "../Pages/AllServices/Service/ServiceDetails";
 import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 
 import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
-import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
+
 
 
 import JoinChatRoom from "../Pages/JoinChatRoom/JoinChatRoom";
-import Payment from "../Dashboard/Payment/Payment";
+import Payment from "../Dashboard/Payments/Payment";
 
 
 
 import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
 import AppointById from "../Dashboard/DashboardPage/AppointById";
 import BloodDonar from "../Pages/Home/BloodDonar/BloodDonar";
+
 // import MyAppointment from "../Dashboard/DashboardPage/MyAppointment";
+
+
+import DonationForm from "../Pages/Home/Donate/DonationForm";
+import ManageDoctors2 from "../Dashboard/DashboardPage/ManageDoctor2";
 
 
 
@@ -160,6 +165,10 @@ const router = createBrowserRouter([
         path: "/bloodDonar",
         element: <BloodDonar></BloodDonar>
       },
+      {
+        path: "/donation",
+        element: <DonationForm/>
+      },
     ],
   },
 
@@ -196,7 +205,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageDoctors",
         element:
-        <ManageDoctors></ManageDoctors>,
+        <ManageDoctors2></ManageDoctors2>,
 
       },
 
@@ -221,7 +230,11 @@ const router = createBrowserRouter([
             <Payment></Payment>
           
         )},
+
         {
+
+
+
         path: "/dashboard/allAppointment",
         element: <AllAppointment></AllAppointment>
       },

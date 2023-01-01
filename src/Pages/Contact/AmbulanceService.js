@@ -6,7 +6,9 @@ import insta from "../../assets/About/Icons/instagram.png";
 import line from "../../assets/About/Icons/line.png";
 import twitter from "../../assets/About/Icons/twitter.png";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 const AmbulanceService = () => {
+  useTitle('Ambulance Service')
   return (
     <section>
       <div className="ambulanceServiceCover">

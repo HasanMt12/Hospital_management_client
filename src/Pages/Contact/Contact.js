@@ -2,11 +2,12 @@ import { useForm, ValidationError } from "@formspree/react";
 import React from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 // import "./Contact.css";
 const Contact = () => {
   const [state, handleSubmit] = useForm("mgebwrqb");
-
+useTitle('Contact')
   const handleContactMsg = (e) => {
     const form = e.target;
     handleSubmit(e);
