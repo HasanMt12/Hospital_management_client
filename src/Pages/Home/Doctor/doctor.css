@@ -14,17 +14,16 @@ body {
   padding: 0;
 } */
 
-.swiper {
+.swipers {
   width: 75%;
-  padding-bottom: -26px ;
-  height: 20%;
+  /* height: 100%; */
 }
 
 .swipersSlider {
  text-align: center;
   font-size: 18px;
   background: #fff;
-  height: 445px;
+  height: 500px;
   
 
   display: -webkit-box;

@@ -2,8 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const BloodDonar = () => {
+	useTitle('Donation')
 const {user} = useContext(AuthContext);
 
      const url = `http://localHost/reservation?email=${user?.email}`;
@@ -47,7 +49,7 @@ const {user} = useContext(AuthContext);
 <section className="p-4 lg:p-8 w-9/12 mx-auto shadow-lg  bg-teal-50  mt-8 text-teal-800">
 	<div className="container mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-			<img className="rounded-lg" src="https://i.ibb.co/JvZ3FSC/istockphoto-587229722-612x612.jpg" alt="" className="h-80   bg-teal-200 aspect-video" />
+			<img src="https://i.ibb.co/JvZ3FSC/istockphoto-587229722-612x612.jpg" alt="" className="h-80 bg-teal-200 aspect-video rounded-lg" />
 			<div className="flex flex-col ml-4 justify-center flex-1 p-6   bg-slate-200">
 				
 				<h3 className="text-3xl font-bold">Platelet Donation</h3>

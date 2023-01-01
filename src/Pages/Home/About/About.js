@@ -14,7 +14,9 @@ import line from "../../../assets/About/Icons/line.png";
 import twitter from "../../../assets/About/Icons/twitter.png";
 
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 const About = () => {
+  useTitle('About')
   return (
     <div className="my-8 mx-10">
       <nav aria-label="Breadcrumb my-10">

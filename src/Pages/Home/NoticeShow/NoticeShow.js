@@ -5,7 +5,9 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import useAdmin from '../../../hooks/useAdminSecurity';
 import { AiTwotoneDelete } from "react-icons/ai";
 import { toast } from 'react-hot-toast';
+import useTitle from '../../../hooks/useTitle';
 const NoticeShow = () => {
+  useTitle('Notice')
       const {user}= useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
 

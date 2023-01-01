@@ -9,10 +9,12 @@ import img4 from "../../assets/missionVission/3.jpg";
 import img5 from "../../assets/missionVission/7.jpg";
 import img6 from "../../assets/missionVission/4.jpg";
 import './MissionVission.css'
+import useTitle from '../../hooks/useTitle';
 
 
 
 const MissionVission = ()=>{
+  useTitle('Mission Vission')
    return (
      <section>
        <div className="missionCover">

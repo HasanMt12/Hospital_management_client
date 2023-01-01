@@ -7,10 +7,12 @@ import DoctorInHome from "./Doctor/DoctorInHome";
 import Carousel from "./Carousel/Carousel";
 import DonationForm from "./Donate/DonationForm";
 import WorkingFlow from "../WorkingFlow/WorkingFlow";
+import useTitle from "../../hooks/useTitle";
 
 // import Departments from './Department/Departments';
 
 const Home = () => {
+   useTitle('Home')
   return (
     <div className="w-11/12 mx-auto ">
       <Carousel></Carousel>

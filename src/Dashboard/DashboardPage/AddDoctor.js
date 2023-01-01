@@ -33,7 +33,7 @@ const AddDoctor = () => {
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   // console.log(imageHostKey);
   const onSubmit = (data,e) => {
-    const workingTime= e.target.workingDays.split(",");
+    // const workingTime= e.target.workingTime.split(",");
     const img = data.img[0];
     const formData = new FormData();
     formData.append("image", img);
@@ -46,15 +46,15 @@ const AddDoctor = () => {
       .then((imgData) => {
         if (imgData.success) {
           const doctors = {
-            name: data.doctorName,
+            doctorName: data.doctorName,
             title: data.title,
             department: data.department,
-            workingTime,
-            workingDays: data.workingDays,
+            workingDays,
+            // workingDays: data.workingDays,
             degree: data.degree,
             doctorCode: data.doctorCode,
             age: data.age,
-            contact: data.contact,
+            appointNumber: data.appointNumber,
             address: data.address,
             img: imgData.data.url,
           };
@@ -246,18 +246,18 @@ const AddDoctor = () => {
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="contact" className="text-sm">
-                  Contact
+                 Doctor Number
                 </label>
                 <input
                   type="contact"
                   placeholder="Contact"
-                  {...register("contact", {
+                  {...register("appointNumber", {
                     required: true,
                   })}
                   className="w-full rounded-md  py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-900"
                 />
-                {errors.contact && (
-                  <p className="text-red-500">{errors.contact.message}</p>
+                {errors.appointNumber && (
+                  <p className="text-red-500">{errors.appointNumber.message}</p>
                 )}
               </div>
 

@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import '../Shared/AllServices.css'
 import DepartmentCategory from "./DepartmentCategory";
 import SideBar from "../Shared/SideBar";
+import useTitle from "../../../hooks/useTitle";
 
 const Departments = () => {
+  useTitle('Department')
 
   const {
     data: departments = [],
