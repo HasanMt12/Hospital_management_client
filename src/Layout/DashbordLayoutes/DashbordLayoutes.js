@@ -317,6 +317,7 @@ console.log(user);
             className={`w-full h-full rounded  `}
 
           >
+            ;;;
             <Outlet></Outlet>
           </div>
         </div>
