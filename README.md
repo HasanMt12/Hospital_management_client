@@ -47,7 +47,7 @@ Hosted in FireBase ->[Doctor's Planet](https://hospital-management83.web.app/)
 
 **Extra tools ** 
 - Hero Icon
-- Sweeper js
+- Swiper js
 - hooks form
 - react query
 - Axios 
