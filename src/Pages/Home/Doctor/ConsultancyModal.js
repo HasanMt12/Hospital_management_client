@@ -75,7 +75,7 @@ const ConsultancyModal = ({ setOpen, open, handleClose, doctor }) => {
       fee: parseInt(data.fee),
       bookingDate: new Date().toISOString().split("T")[0],
     };
-    fetch("http://localhost:5000/appointment", {
+    fetch("https://hospital-management-server-one.vercel.app/appointment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -17,10 +17,11 @@ const JoinChatRoom = () => {
       }
     };
     return (
-        <div>
+      <div className='flex justify-center border border-teal-600 items-center h-screen -mt-32'>
+        <div >
              {!showChat ? (
         <div className="joinChatContainer">
-          <h3>Join A Chat</h3>
+          <h3 className='text-teal-600 '>Join A Chat</h3>
           <input
             type="text"
             placeholder="John..."
@@ -40,7 +41,7 @@ const JoinChatRoom = () => {
       ) : (
         <Chat socket={socket} username={username} room={room} />
       )}
-        </div>
+        </div></div>
     );
 };
 

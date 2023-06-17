@@ -23,6 +23,7 @@ import useDoctor from "../../hooks/useDoctorsSecurity";
 import useNurse from "../../hooks/userNurseSecurity";
 import { MdPeopleAlt } from "react-icons/md";
 import useTitle from "../../hooks/useTitle";
+import Navbar from '../../Pages/Shared/Navbar/Navbar'
 const DashbordLayoutes = () => {
   useTitle('Dashboard')
   const {user}= useContext(AuthContext);
@@ -34,8 +35,8 @@ console.log(user);
   return (
     <div>
       
-      <Header></Header>
-
+      {/* <Header></Header> */}
+<Navbar></Navbar>
       <div className="flex flex-no-wrap mt-2">
         {/* Sidebar starts */}
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}

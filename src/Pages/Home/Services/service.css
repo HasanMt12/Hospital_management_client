@@ -1,6 +1,6 @@
 .card {
   --color: #2e947e; /* the border color */
-  --border: 10px;   /* the border thickness*/
+  --border: 5px;   /* the border thickness*/
   --color: #2ca087e8; /* the border color */
   --border: 6px;   /* the border thickness*/
   --offset:10px;   /* control the offset*/
@@ -28,7 +28,11 @@
   background-position: 0px 0px;
   background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
   filter: grayscale(0);
-  transition: .2s ease-in-out all;
+  transition: .2.5s ease-in-out all;
+  -webkit-transition: .2.5s ease-in-out all;
+  -moz-transition: .2.5s ease-in-out all;
+  -ms-transition: .2.5s ease-in-out all;
+  -o-transition: .2.5s ease-in-out all;
 }
 
 .textColor{

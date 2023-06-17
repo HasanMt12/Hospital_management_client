@@ -8,7 +8,7 @@ const useNurse = email => {
     const [isNurseLoading, setIsNurseLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/user/Nurse/${email}`)
+            fetch(`https://hospital-management-server-one.vercel.app/user/Nurse/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

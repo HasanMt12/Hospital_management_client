@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import {
   Autoplay,
   Navigation,
-  Pagination,
+
  
   Keyboard,
   EffectFade,
@@ -54,21 +54,19 @@ const Carousel = () => {
             enabled: true,
           }}
         
-          pagination={{
-            type: "progressbar",
-          }}
+        
           modules={[
             EffectFade,
             Autoplay,
-            Navigation,
-            Pagination,
+           
+       
         
             Keyboard,
           ]}
           className="mySwiper"
         >
           {sliders.map((slider) => (
-            <SwiperSlide className="h-full w-full swiperSlide">
+            <SwiperSlide className="h-[60%] w-full">
               <div className="absolute inset-x-0 bottom-62 h-16 z-20">
                 <p className="lg:text-4xl sm:text-3xl font-bold p-2 m-2 text-white title">
                   {slider.title}

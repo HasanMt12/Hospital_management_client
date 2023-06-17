@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const getbooked = async () => {
       const res = await fetch(
-        `http://localhost:5000/appointment?email=${email}`
+        `https://hospital-management-server-one.vercel.app/appointment?email=${email}`
       );
       const data = await res.json();
       dispatch(bookingAction.setBookedAppointments(data));

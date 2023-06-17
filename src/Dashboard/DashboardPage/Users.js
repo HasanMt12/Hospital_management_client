@@ -65,7 +65,7 @@ const ManageStuff = () => {
 };
     const getStuffData = async ()=> {
         try{
-            const response = await axios.get('http://localhost:5000/user');
+            const response = await axios.get('https://hospital-management-server-one.vercel.app/user');
             setStuffData(response.data)
         }catch(error){
                 console.log(error);
@@ -76,7 +76,7 @@ const ManageStuff = () => {
 
     
        const handleDeleteUser = (id) =>{
-      fetch(`http://localhost:5000/user/${id}`, {
+      fetch(`https://hospital-management-server-one.vercel.app/user/${id}`, {
         method: 'DELETE', 
       })
       .then(res => res.json())

@@ -92,7 +92,7 @@ const Dashform = () => {
      address: data.address,
      time,
    };
-   fetch("http://localhost:5000/doctors",{
+   fetch("https://hospital-management-server-one.vercel.app/doctors",{
       method:"POST",
       headers:{
          'content-type':"application/json",

@@ -40,7 +40,7 @@ const AddStuff = () => {
           };
           console.log(stuff);
           //   save product information to the database
-          fetch("http://localhost:5000/addStuff", {
+          fetch("https://hospital-management-server-one.vercel.app/addStuff", {
             method: "POST",
             headers: {
               "content-type": "application/json",

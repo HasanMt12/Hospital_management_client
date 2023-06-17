@@ -13,7 +13,7 @@ const ManageStuff = () => {
 
 
        const handleDeleteStuff = (id) =>{
-      fetch(`http://localhost:5000/addStuff/${id}`, {
+      fetch(`https://hospital-management-server-one.vercel.app/addStuff/${id}`, {
         method: 'DELETE', 
       })
       .then(res => res.json())
@@ -44,11 +44,7 @@ const ManageStuff = () => {
 
     return 0;
   };
-    // useEffect(()=>{
-    //     fetch('data.json')
-    //     .then((res)=>res.json())
-    //     .then((data) => setTables(data))
-    // },[])
+  
 
     const customStyles = {
     rows: {
@@ -89,7 +85,7 @@ const ManageStuff = () => {
        
  const getStuffData = async ()=> {
         try{
-            const response = await axios.get('http://localhost:5000/addStuff');
+            const response = await axios.get('https://hospital-management-server-one.vercel.app/addStuff');
             setStuffData(response.data)
 
 

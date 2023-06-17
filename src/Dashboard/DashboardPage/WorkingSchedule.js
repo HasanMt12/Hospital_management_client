@@ -61,7 +61,7 @@ const WorkingSchedule = () => {
 };
     const getStuffData = async ()=> {
         try{
-            const response = await axios.get('http://localhost:5000/appointment/all');
+            const response = await axios.get('https://hospital-management-server-one.vercel.app/appointment/all');
             setStuffData(response.data)
         }catch(error){
                 console.log(error);

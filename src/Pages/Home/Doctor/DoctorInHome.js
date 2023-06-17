@@ -38,7 +38,7 @@ const DoctorInHome = () => {
   } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/doctor/featured");
+      const res = await fetch("https://hospital-management-server-one.vercel.app/doctor/featured");
       const data = await res.json();
       return data;
     },
@@ -65,20 +65,20 @@ const DoctorInHome = () => {
         //   slidesPerView={3}
         breakpoints={{
           300: {
-            slidesPerView: 1,
-            spaceBetween: 0,
+            slidesPerView: 2,
+            spaceBetween: 10,
           },
           788: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           1170: {
-            slidesPerView: 3,
-            spaceBetween: 50,
+            slidesPerView: 4,
+            spaceBetween: 40,
           },
           1600: {
-            slidesPerView: 3,
-            spaceBetween: 50,
+            slidesPerView: 4,
+            spaceBetween: 40,
           },
         }}
         //   spaceBetween={30}
@@ -86,35 +86,32 @@ const DoctorInHome = () => {
         grabCursor={true}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
-        //   navigation={true}
+         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper swiper "
       >
         <>
           {doctors?.map((doctor) => (
-            <SwiperSlide className="swipersSlider cs customWidth ">
-              <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-full h-full relative">
+            <SwiperSlide className="swipersSlider cs customWidth mt-8">
+              <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-400/50 w-full h-full relative">
                 <img
-                  className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300"
+                  className=" md:w-32 md:h-32 inline-block sm:w-12 sm:h-12 rounded-full ring-4 ring-gray-300"
                   src={doctor.img}
                   alt=""
                 />
 
-                <h1 className="mt-4 text-lg font-semibold text-teal-800 capitalize group-hover:text-white">
+                <h1 className="mt-4 lg:text-lg md:text-md sm:text-sm font-semibold text-teal-800 capitalize group-hover:text-white">
                   {doctor.doctorName}
                 </h1>
 
-                <p class="mt-2  capitalize text-sm text-gray-600 group-hover:text-white ">
+                <p class="mt-2 hidden md:block capitalize lg:text-sm md:text-xs sm:text-[10px] text-gray-600 group-hover:text-white ">
                   {doctor.degree}
                 </p>
-                <p className="mt-2  capitalize text-gray-600 group-hover:text-white font-bold">
+                <p className="mt-2 lg:text-md md:text-sm sm:text-xs capitalize text-gray-600 group-hover:text-white font-bold">
                   {doctor.department}
                 </p>
 
-                <div className="flex  mt-3 -mx-2 absolute bottom-10">
+                <div className="flex  mt-3 -mx-2 absolute bottom-1">
                   <Link to={`doctor/${doctor?._id}`}>
                     <Tooltip title="Details">
                       <IconButton>

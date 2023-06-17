@@ -58,7 +58,7 @@ const AllAppointment = () => {
 };
     const getStuffData = async ()=> {
         try{
-            const response = await axios.get('http://localhost:5000/appointment/all');
+            const response = await axios.get('https://hospital-management-server-one.vercel.app/appointment/all');
             setStuffData(response.data)
         }catch(error){
                 console.log(error);
@@ -69,7 +69,7 @@ const AllAppointment = () => {
 
     
        const handleDeleteUser = (id) =>{
-      fetch(`http://localhost:5000/user/${id}`, {
+      fetch(`https://hospital-management-server-one.vercel.app/user/${id}`, {
         method: 'DELETE', 
       })
       .then(res => res.json())

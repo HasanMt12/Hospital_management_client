@@ -51,7 +51,7 @@ const Services = () => {
   ];
 
   return (
-    <Container className="customService"
+    <Container className="customService lg:-mt-52 md:-mt-[350px] -mt-52"
       data-aos="zoom-in-up" data-aos-duration="2500">
       <Box>
         <ServiceTitle

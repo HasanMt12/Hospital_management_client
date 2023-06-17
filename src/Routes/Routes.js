@@ -92,13 +92,13 @@ const router = createBrowserRouter([
       {
         path: "/departments/:treatment",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/departments/${params.treatment}`),
+          fetch(`https://hospital-management-server-one.vercel.app/departments/${params.treatment}`),
         element: <ServiceByCategory />,
       },
       {
         path: "/departments/treatments/:singleservice",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/treatment/${params.singleservice}`),
+          fetch(`https://hospital-management-server-one.vercel.app/treatment/${params.singleservice}`),
         element: <ServiceDetails />,
       },
       {
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
       {
         path: "/alldoctors",
         loader: () =>
-          fetch("http://localhost:5000/doctor"),
+          fetch("https://hospital-management-server-one.vercel.app/doctor"),
         element: <AllDoctors />,
       },
       {
@@ -134,7 +134,7 @@ const router = createBrowserRouter([
       {
         path: "/doctor/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/doctor/${params.id}`),
+          fetch(`https://hospital-management-server-one.vercel.app/doctor/${params.id}`),
         element: <DoctorDetails />,
       },
       {
@@ -215,7 +215,7 @@ const router = createBrowserRouter([
         path: "/dashboard/payment/:id",
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/appointment/${params.id}`
+            `https://hospital-management-server-one.vercel.app/appointment/${params.id}`
           ),
         element: (
           

@@ -47,13 +47,13 @@ const Notice = () => {
           const stuff = {
             notice: data.notice,
             time,
-            noticeCategory: data.noticeCategory,
+            blogCategory: data.blogCategory,
            
             img: imgData.data.url,
           };
           console.log(stuff);
           //   save product information to the database
-          fetch("http://localhost:5000/notice", {
+          fetch("https://hospital-management-server-one.vercel.app/notice", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -115,57 +115,26 @@ const Notice = () => {
                 <p className="text-red-500">{errors.img.message}</p>
               )}
             </div>
-            {/* <div className="col-span-full sm:col-span-3">
-              <label htmlFor="date" className="text-md text-teal-800 font-semibold">
-                Date
-              </label>
-              <input
-               
-             type="date"
-               required
-                {...register("date")}
-                min={new Date().toISOString().split("T")[0]}
-                
-                className="w-full pl-4 border-2 border-teal-600 rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
-              />
-              {errors.date && (
-                <p className="text-red-500">{errors.date.message}</p>
-              )}
-            </div> */}
+          
           
 
             
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="select"
               className="text-md text-teal-800 font-semibold">
-                Notice Category
+                Blog Category
               </label>
-              <select
-                {...register("noticeCategory", {
-                  required: true,
+                      <textarea 
+                type="text" rows="4" cols="full"
+                placeholder="Blog category "
+                {...register("blogCategory", {
+                  required: "Blog is Required",
                 })}
-                className="select pl-4 select-bordered py-1 border-2 border-teal-600  focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800 w-full rounded-md "
-              >
-                <option value="doctorNotice" className="text-teal-800">
-                  Doctor Notice
-                </option>
-                <option value="nurseNotice" className="text-teal-800">
-                  Nurse Notice
-                </option>
-                <option value="patient Notice" className="text-teal-800">
-                  Patient Notice
-                </option>
-                <option value="stuff Notice" className="text-teal-800">
-                  Stuff Notice
-                </option>
-                <option value="lab Notice" className="text-teal-800">
-                  Lab Notice
-                </option>
-                <option value="General Notice" className="text-teal-800">
-                  General Notice
-                </option>
-               
-              </select>
+                className="w-full border-2 pl-4 border-teal-600 rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
+              />
+              {errors.name && (
+                <p className="text-red-500">{errors.name.message}</p>
+              )}
 
   
             </div>

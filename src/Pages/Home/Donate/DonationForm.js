@@ -66,7 +66,7 @@ const DonationForm = () => {
     };
     console.log(bloodDoner);
 
-    fetch("http://localhost:5000/donner",{
+    fetch("https://hospital-management-server-one.vercel.app/donner",{
       method:"post",
       headers:{
         'content-type':'application/json'
@@ -78,7 +78,7 @@ const DonationForm = () => {
   };
 
   return (
-    <div className="my-16 w-11/12 mx-auto h-2/5">
+    <div className="my-8 w-11/12 mx-auto ">
       <h1 className="text-4xl font-bold text-center mt-5 text-red-500 font-sans">
         <span className="text-teal-600">Donate</span> Blood
       </h1>
@@ -88,20 +88,21 @@ const DonationForm = () => {
       <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
         Please Fill the form below
       </p>
-      <div className="box grid lg:grid-cols-2  md:grid-cols-2 grid-cols-1 lg:gap-10  gap-3  ">
+      <div className="box grid lg:grid-cols-2  md:grid-cols-1 grid-cols-1 lg:gap-10  gap-3  ">
         <div className="box-primary">
           <img
             src={hero}
-            className="lg:h-[300px] rounded-lg lg:ml-32 lg:mt-24 h-[320px] lg:w-[300px] w-[280px]"
+            className="w-[80%]"
             data-aos="zoom-in-up"
             data-aos-duration="2500"
             alt=""
           />
         </div>
-        <div className="box-secondary">
+        <div className="box-secondary mx-auto">
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* 1) TextField */}
-            <div className="form-control">
+         <div className="flex justify-start mx-auto items-center gap-0">
+           <div className="form-control w-[44%]">
               <TextField
                 placeholder="Enter Your  Name"
                 label=" Name"
@@ -118,7 +119,7 @@ const DonationForm = () => {
               )}
             </div>
             {/* 3) TextField */}
-            <div className="form-control">
+            <div className="form-control  w-[44%]">
               <TextField
                 placeholder="Enter Your  Email"
                 label=" Email"
@@ -134,26 +135,14 @@ const DonationForm = () => {
                 <p className="text-red-500">{errors.email.message}</p>
               )}
             </div>
+         </div>
+           
 
             {/* 3) TextField */}
-            <div className="form-control">
-              <TextField
-                placeholder="Enter Your Address"
-                label="Address"
-                variant="outlined"
-                fullWidth
-                className={classes.inputField}
-                {...register("address", {
-                  required: "address is Required",
-                })}
-              />
-              {errors.address && (
-                <p className="text-red-500">{errors.address.message}</p>
-              )}
-            </div>
-
-            {/* 4) TextField */}
-            <div className="form-control ">
+            
+                 <div className="flex justify-start items-center"> 
+                 
+                 <div className="form-control w-[44%]">
               <TextField
                 sx={{
                   borderColor: "teal",
@@ -174,7 +163,7 @@ const DonationForm = () => {
                 <p className="text-red-500">{errors.phone.message}</p>
               )}
             </div>
-            <div className="form-control">
+            <div className="form-control w-[44%]">
               <TextField
                 placeholder="Your age"
                 label="Age"
@@ -190,7 +179,27 @@ const DonationForm = () => {
                 <p className="text-red-500">{errors.age.message}</p>
               )}
             </div>
-            <div className="form-control">
+                  </div>
+            {/* 4) TextField */}
+      <div className="form-control w-full">
+              <TextField
+                placeholder="Enter Your Address"
+                label="Address"
+                variant="outlined"
+                fullWidth
+                className={classes.inputField}
+                {...register("address", {
+                  required: "address is Required",
+                })}
+              />
+              {errors.address && (
+                <p className="text-red-500">{errors.address.message}</p>
+              )}
+            </div>
+
+            
+            <div className="flex justify-start items-center">  
+              <div className="form-control">
               <p className="text-gray-500">Date of Birth</p>
               <TextField
                 type="date"
@@ -204,24 +213,26 @@ const DonationForm = () => {
               {errors.date && (
                 <p className="text-red-500">{errors.date.message}</p>
               )}
-            </div>
-            <div className="form-control">
-              <p className="text-gray-500">Last Donate Date</p>
-              <TextField
-                margin="normal"
-                required
-                defaultValue="Hello World"
-                type="date"
-                fullWidth
-                className={classes.inputField}
-                {...register("lastDonateDate", {
-                  required: "last donate date is Required",
-                })}
-              />
-              {errors.date && (
-                <p className="text-red-500">{errors.date.message}</p>
-              )}
-            </div>
+              </div>
+              <div className="form-control">
+                <p className="text-gray-500">Last Donate Date</p>
+                <TextField
+                  margin="normal"
+                  required
+                  defaultValue="Hello World"
+                  type="date"
+                  fullWidth
+                  className={classes.inputField}
+                  {...register("lastDonateDate", {
+                    required: "last donate date is Required",
+                  })}
+                />
+                {errors.date && (
+                  <p className="text-red-500">{errors.date.message}</p>
+                )}
+              </div>
+              </div>
+            
 
             {/* Radio Buttons */}
             <FormControl className={classes.inputField}>

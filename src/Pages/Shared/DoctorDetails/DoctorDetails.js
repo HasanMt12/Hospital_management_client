@@ -26,7 +26,7 @@ const DoctorDetails = () => {
     queryKey: ["services"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/doctors/${doctor.doctorCode}`
+        `https://hospital-management-server-one.vercel.app/doctors/${doctor.doctorCode}`
       );
       const data = await res.json();
       return data;

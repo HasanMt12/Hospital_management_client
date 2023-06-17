@@ -14,7 +14,7 @@ const NoticeShow = () => {
     const {data: notice = [] , refetch } = useQuery({
         queryKey: ['notice'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/notice');
+            const res = await fetch('https://hospital-management-server-one.vercel.app/notice');
             const data = await res.json();
             console.log(data);
             return data;
@@ -24,7 +24,7 @@ const NoticeShow = () => {
 
     
         const handleDeleteNotice = (id) =>{
-      fetch(`http://localhost:5000/notice/${id}`, {
+      fetch(`https://hospital-management-server-one.vercel.app/notice/${id}`, {
         method: 'DELETE', 
       })
       .then(res => res.json())

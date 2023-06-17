@@ -15,7 +15,7 @@ const Home = () => {
    useTitle('Home')
   return (
     <div className="w-11/12 mx-auto ">
-      <Carousel></Carousel>
+     <Carousel></Carousel> 
       <Services></Services>
       <DoctorInHome></DoctorInHome>
       <WorkingFlow></WorkingFlow>

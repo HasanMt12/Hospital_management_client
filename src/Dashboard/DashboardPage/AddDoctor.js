@@ -60,7 +60,7 @@ const AddDoctor = () => {
           };
           
 
-          fetch("http://localhost:5000/doctor", {
+          fetch("https://hospital-management-server-one.vercel.app/doctor", {
             method: "POST",
             headers: {
               "content-type": "application/json",

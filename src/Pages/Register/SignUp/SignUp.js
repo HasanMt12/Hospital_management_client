@@ -78,7 +78,7 @@ const SignUp = ({ closePopup }) => {
     const saveUser = (name, email,phone, Gender) => {
       const user = { name, email, phone, Gender };
       console.log(user);
-      fetch("http://localhost:5000/user", {
+      fetch("https://hospital-management-server-one.vercel.app/user", {
         method: "POST",
         headers: {
           "content-type": "application/json",
