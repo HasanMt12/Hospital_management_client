@@ -1,6 +1,6 @@
 ## Features Overview:
 ## Live Link
-Hosted in FireBase ->[Doctor's Planet](https://hospital-management83.web.app/)
+Hosted in FireBase ->[Doctor's Planet](https://doctors-planet.netlify.app/)
 
 - Here we have tried to implement all the possible functionalities to run a hospital in an efficient way.
 - Every organization is run by their beloved customer, in our case a patient, so a patient can book their appointment online in two ways, they can book for      consultancy and for a specific service
