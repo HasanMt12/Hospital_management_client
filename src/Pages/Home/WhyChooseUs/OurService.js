@@ -3,13 +3,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import './service.css'
+import './OurService.css'
 
-const Service = ({ serv }) => {
+const OurService = ({ serv }) => {
   const { img, title, details } = serv;
   console.log(serv);
   return (
-    <Card className="card mt-6 md:mt-4"
+    <Card className="card mt-6 md:mt-4 bg-[#E8F3F4] lg:h-[250px] md:h-[220px] h-[200px]"
       sx={{
         maxWidth: 345,
         marginTop: "20px",
@@ -51,4 +51,4 @@ const Service = ({ serv }) => {
   );
 };
 
-export default Service;
+export default OurService;

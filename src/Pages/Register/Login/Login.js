@@ -172,7 +172,7 @@ const Login = ({ closePopup , openModal}) => {
                 onClick={toggleForm}
                 
                 close
-                className="text-teal-600 font-medium"
+                className="text-[#13A2B7] font-medium"
                 style={{
                   color: "teal",
                   fontWeight: "medium",

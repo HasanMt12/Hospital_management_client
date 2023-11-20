@@ -72,7 +72,7 @@ const DoctorDetails = () => {
                 {services?.map((treatment) => (
                   <ServiceCard treatment={treatment}></ServiceCard>
                   // <>
-                  //   <div className="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-600 w-72 ">
+                  //   <div className="flex flex-col items-center transition-colors duration-300 transform border-teal-700 border-2 shadow-2xl cursor-pointer rounded-xl hover:border-transparent group hover:bg-[#13A2B7] w-72 ">
                   //     <img
                   //       className="object-cover  w-full h-52 rounded-xl  p-2"
                   //       src={service.picture}

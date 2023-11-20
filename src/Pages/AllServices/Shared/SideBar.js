@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SideBar = ({ departments }) => {
   return (
-    <div className="space-y-20 bg-gradient-to-t from-teal-700 via-teal-600 to-teal-400 p-10 rounded-lg sm:mt-10 xl:mt-0 sticky top-0">
+    <div className="space-y-20 bg-gradient-to-t from-teal-700 via-[#13A2B7] to-teal-400 p-10 rounded-lg sm:mt-10 xl:mt-0 sticky top-0">
       <div className="space-y-5 ">
         <h1 className="text-2xl font-bold text-white">Our Departments</h1>
         <ul className="space-y-3 text-white text-base">

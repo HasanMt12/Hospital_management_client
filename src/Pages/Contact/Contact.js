@@ -22,7 +22,7 @@ useTitle('Contact')
       <div className="container px-6 py-10 mx-auto">
         <div className="lg:flex lg:items-center lg:-mx-10 border-y-2 border-teal-300 border-t-2 py-10">
           <div className="lg:w-1/2 lg:mx-10">
-            <h1 className="text-3xl font-medium text-teal-600 capitalize  lg:text-4xl">
+            <h1 className="text-3xl font-medium text-[#13A2B7] capitalize  lg:text-4xl">
               Let’s talk
             </h1>
 

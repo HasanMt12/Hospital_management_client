@@ -1,15 +1,13 @@
 import connect from "../../../assets/HomeCarousel/doctorConnect.jpg";
-import doctors from "../../../assets/HomeCarousel/doctors.jpg";
+import care from "../../../assets/HomeCarousel/care.jpg";
 import ambulance from "../../../assets/HomeCarousel/diabetics.jpg";
-import pregnancy from "../../../assets/HomeCarousel/pregnancy.jpg";
-import blood from "../../../assets/HomeCarousel/blood.jpeg";
+import blood from "../../../assets/HomeCarousel/blood.jpg";
 import volunter from "../../../assets/HomeCarousel/volunter.jpg";
-import { Link } from "react-router-dom";
 export const CarouselInfo = [
 
   
   {
-    img: doctors,
+    img: care,
     imgClass: "animate__animated animate__slideInRight",
     id: 1,
     title1:"Feel better about",

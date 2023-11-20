@@ -44,7 +44,7 @@ const NoticeShow = () => {
                 n={n}
                 key={n._id}
                 >
-                    <article class="rounded-xl border-2 mb-4  bg-white w-10/12 mx-auto  border-teal-600">
+                    <article class="rounded-xl border-2 mb-4  bg-white w-10/12 mx-auto  border-[#13A2B7]">
   <div class="flex items-start p-6">
     <a href="#" class="block shrink-0">
       <img

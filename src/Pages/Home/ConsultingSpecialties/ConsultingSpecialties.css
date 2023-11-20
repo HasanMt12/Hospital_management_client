@@ -1,0 +1,5 @@
+@media screen and (max-width:390px) {
+    .speConsultation {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -164,7 +164,7 @@ const MedicalTourism = () => {
 <section className="py-6 dark:bg-gray-800 dark:text-gray-100">
 	<div className="container p-4 mx-auto space-y-16 sm:p-10">
 		<div className="space-y-4">
-			<h3 className="text-5xl font-bold leading-none sm:text-4xl text-teal-600">Featured Medical Centers</h3>
+			<h3 className="text-5xl font-bold leading-none sm:text-4xl text-[#13A2B7]">Featured Medical Centers</h3>
 			<p className="max-w-2xl dark:text-gray-400">Discover now the Most Searched and Clicked Medical Centers.</p>
 		</div>
 		<div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,7 +241,7 @@ Sher-e-Bangla Medical College </h4>
 <section>
   <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
     <div class="text-center">
-      <h2 class="text-5xl font-bold text-teal-600 sm:text-3xl text-center">
+      <h2 class="text-5xl font-bold text-[#13A2B7] sm:text-3xl text-center">
       Featured Destinations
       </h2>
 

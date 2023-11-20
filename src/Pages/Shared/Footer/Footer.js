@@ -1,180 +1,170 @@
 
 import React from "react";
-
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import AttachmentIcon from "@mui/icons-material/Attachment";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
-import AddLocationIcon from "@mui/icons-material/AddLocation";
+
 import logo from '../../../assets/logo.png'
 
-
+import './Footer.css'
 const Footer = () => {
-  const footerInfos = [
-    {
-      name: "Our Offerings",
-      offers: [
-        "Classes and Events",
-        "COVID-19 Info",
-        "Virtual Care",
-        "Doctor Directory",
-        "Location Directory",
-        "Specialties Directory",
-        "MyBSWHealth Mobile App",
-      ],
-    },
-    {
-      name: "Tools and Resources",
-      offers: [
-        "Pay Your Bill",
-        "Medical Records",
-        "Insurance Accepted",
-        "Financial Assistance",
-        "Advance Directives",
-        "Surgery Pre-Registration",
-        "Contact Us",
-      ],
-    },
-    {
-      name: "About Us",
-      offers: [
-        "Mission Vision and Values",
-        "Leadership",
-        "Achievements",
-        "Community Impact",
-        "Provider Partner",
-        "Quality Alliance",
-        "Newsroom",
-        "Blog",
-      ],
-    },
-    {
-      name: "Get Involved",
-      offers: ["Volunteer", "Donate", "Give Blood"],
-    },
-    {
-      name: "Our Offerings",
-      offers: [
-        "Classes and Events",
-        "COVID-19 Info",
-        "Virtual Care",
-        "Doctor Directory",
-        "Location Directory",
-        "Specialties Directory",
-        "MyBSWHealth Mobile App",
-      ],
-    },
-    {
-      name: "For Medical Professional",
-      offers: [
-        "Refer a Patient",
-        "Careers",
-        "Graduate Medical Education",
-        "Undergraduate Education",
-        "Allied Health Education",
-        "Nursing Education",
-        "Research Areas",
-        "Clinical Trials",
-      ],
-    },
-  ];
+ 
   return (
     <footer
       footer
-      className=" bg-sky-500/50 shadow-lg rounded-2 text-white"
+      className=" bg-[#E7F6F3] shadow-lg rounded-2 text-white"
     >
       <div className="container p-6 mx-auto">
-        <div className="lg:flex gap-10">
-          <div className="w-full text-white lg:w-1/5">
-            <div className="px-6">
-              <div>
-                <Link className="text-2xl font-bold ">
-                  <img src={logo} alt=""></img>
-                </Link>
-              </div>
-
-              <p className="max-w-sm mt-2">
-                Join 31,000+ other and never miss out on new tips, tutorials,
-                and more.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 lg:mt-0 lg:flex-1">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-              {footerInfos.map((footer) => (
-                <div>
-                  <h3 className="uppercase ">{footer?.name}</h3>
-                  {footer.offers.map((offer) => (
-                    <Link
-                      href="#"
-                      className="block mt-2 text-sm hover:underline"
-                    >
-                      {offer}
-                    </Link>
-                  ))}
+        <div className="">
+          
+          <div className="mt-6 lg:mt-0 px-20">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 ">
+            <div>
+                <div className="">
+                  <img
+                    className="img-fluid bg-[#13A2B7]/75 p-1 rounded-sm shadow-lg"
+                    src={logo}
+                    alt="doctor Planet"
+                  />
                 </div>
-              ))}
+                <div className="footer-text text-[#333333]">
+                  <h2>Newsletter</h2>
+                 
+                </div>
+                <div className="footer-form">
+                  <form>
+                    <div className="form-cover d-flex justify-content-between ">
+                      <input
+                        type="email"
+                        className="border-[#13A2B7] border-[1px]"
+                      placeholder="Email Adress"
+                      />
+
+                      <button type="submit" value="sign up">
+                        <FaPaperPlane  />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+             </div>
+             <div className="lg:px-20 md:px-10 px-0 ml-2">
+               <div className="footer-menu-heading ">
+              <h3 className="text-[#0C5D69] text-lg">Useful Links</h3>
+            </div>
+            <ul className="footer-menu">
+              <Link className="footer-item" to="/about">
+                About Us
+              </Link>
+              <Link className="footer-item" to="/appointment">
+                Appointment
+              </Link>
+              <Link className="footer-item" to="/Service">
+                Service
+              </Link>
+              <Link className="footer-item" to="/contact">
+                Contact Us
+              </Link>
+              <Link className="footer-item" to="/adminLogin">
+                Admin Login
+              </Link>
+            </ul>
+             </div>
+
+           
+             <div>
+                <div className="footer-menu-heading">
+                <h3 className="text-[#0C5D69] text-lg">Working Day</h3>
+              </div>
+                <ul className="working">
+                  <li>
+                    <span>Weekdays</span>
+                    <span>9:00 - 20:00</span>
+                  </li>
+                  <li>
+                    <span>Friday</span>
+                    <span>9:00 - 20:00</span>
+                  </li>
+                  <li>
+                    <span>Saturday</span>
+                    <span>10:00 - 18:00</span>
+                  </li>
+                  <li>
+                    <span>Sunday</span>
+                    <span>Closed</span>
+                  </li>
+                </ul>
+             </div>
+             
+              <div className=" lg:ml-10 md:ml-6 ml-0">
+               <div className="footer-menu-heading">
+              <h3 className="text-[#0C5D69] text-lg">Reach Us</h3>
+            </div>
+            <ul className="reach-us">
+              <li className="flex justify-start items-center">
+                <FaPhone className="text-[#13A2B7]" />
+                <a rel="noreferrer" target="_blank" href="tell:01629094984">
+                  {" "}
+                  
+                  +8801602848424
+                </a>
+              </li>
+              <li className="flex justify-start items-center">
+                <FaEnvelope className="text-[#13A2B7]" />
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="mailto:support@gmail.com"
+                >
+                  
+                  support@gmail.com
+                </a>
+              </li>
+              <li className="flex justify-start items-center">
+                {" "}
+                <FaMapMarkerAlt className="text-[#13A2B7]" />
+                <h2>Azimpur, Dhaka</h2>
+              </li>
+              <li className="flex justify-start items-center gap-4">
+                <a
+                  href="https://www.facebook.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FaFacebookF className="text-[#121C1D]" />
+                </a>
+                <a
+                  href="https://www.twitter.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <FaTwitter className="text-[#121C1D]" />
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {" "}
+                  <FaInstagram className="text-[#121C1D]" />
+                </a>
+              </li>
+            </ul>
+            </div>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between mt-24 ">
-          <p>Stay Connected With us</p>
-          <div>
-            <FacebookIcon />
-            <LinkedInIcon />
-            <WhatsAppIcon />
-          </div>
-        </div>
-
-        <hr className="h-px my-6 bg-gray-200 border-none" />
-
-        <div className="flex justify-between items-center lg:flex-col xl:flex-row">
-          <p className="text-center text-gray-400 ">
-            © Brand 2020 - All rights reserved
+        <hr className="h-px my-6 bg-gray-600 border-none" />
+          <p className="text-center  text-[#333333]">
+            © Brand 2020 - All rights reserved <span className="text-[#13A2B7]"></span>
           </p>
-          <div className="">
-            <div className="container flex items-center px-6 py-4 mx-auto overflow-x-auto whitespace-nowrap sm:flex-col xl:flex-row">
-              <Link href="#" className="text-gray-400 ">
-                <AttachmentIcon />
-                <span className="mx-2">Terms of Use</span>
-              </Link>
-
-              <span className="mx-5 text-gray-500  rtl:-scale-x-100">
-                <NavigateNextIcon />
-              </span>
-              <Link href="#" className="text-gray-400 ">
-                <CalendarMonthIcon />
-                <span className="mx-2">Notice of Non-Discrimination</span>
-              </Link>
-
-              <span className="mx-5 text-gray-400  rtl:-scale-x-100">
-                <NavigateNextIcon />
-              </span>
-              <Link href="#" className="text-gray-400  ">
-                <PrivacyTipIcon />
-                <span className="mx-2">Privacy and Patient Rights</span>
-              </Link>
-
-              <span className="mx-5 text-gray-400  rtl:-scale-x-100">
-                <NavigateNextIcon />
-              </span>
-              <Link href="#" className="text-gray-400 ">
-                <AddLocationIcon />
-                <span className="mx-2">Mohammdpur Dhaka</span>
-              </Link>
-
-              <span className="mx-5 text-gray-400 rtl:-scale-x-100">
-                <NavigateNextIcon />
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
     </footer>
   );

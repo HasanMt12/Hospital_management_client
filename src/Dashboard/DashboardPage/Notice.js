@@ -94,7 +94,7 @@ const Notice = () => {
                 {...register("notice", {
                   required: "Notice is Required",
                 })}
-                className="w-full border-2 pl-4 border-teal-600 rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
+                className="w-full border-2 pl-4 border-[#13A2B7] rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
               />
               {errors.name && (
                 <p className="text-red-500">{errors.name.message}</p>
@@ -109,7 +109,7 @@ const Notice = () => {
                 {...register("img", {
                   required: "Photo is Required",
                 })}
-                className="w-full border-2 border-teal-600 py-4 pl-6 rounded-md   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-90"
+                className="w-full border-2 border-[#13A2B7] py-4 pl-6 rounded-md   focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-gray-90"
               />
               {errors.img && (
                 <p className="text-red-500">{errors.img.message}</p>
@@ -130,7 +130,7 @@ const Notice = () => {
                 {...register("blogCategory", {
                   required: "Blog is Required",
                 })}
-                className="w-full border-2 pl-4 border-teal-600 rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
+                className="w-full border-2 pl-4 border-[#13A2B7] rounded-md py-1 focus:ring-opacity-75 focus:ring-violet-400  border-gray-700  text-teal-800"
               />
               {errors.name && (
                 <p className="text-red-500">{errors.name.message}</p>

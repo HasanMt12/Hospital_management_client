@@ -1,28 +1,25 @@
 import React, { useState } from "react";
-// Import Swiper React components
-
 import { useQuery } from "@tanstack/react-query";
 import { RiAddCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-// import "./styles.css";
-// import './styles.css'
 import "./doctor.css";
+import { IoIosArrowRoundForward , IoIosArrowRoundBack } from "react-icons/io";
 
 // import required modules
 import { IconButton, Tooltip } from "@mui/material";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Navigation, Pagination } from "swiper";
-import ServiceTitile from "../Services/ServiceTitle";
 import ConsultancyModal from "./ConsultancyModal";
 
-const DoctorInHome = () => {
+
+// Import Swiper core and required modules
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.css';
+import SwiperCore, { Navigation } from 'swiper';
+import { useRef } from "react";
+SwiperCore.use([Navigation]);
+
+const DoctorInHome = () => { 
+  const swiperRef = useRef();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -30,7 +27,7 @@ const DoctorInHome = () => {
   const bookedData = useSelector(
     (state) => state.bookedAppointments.bookedAppointments
   );
-  console.log(bookedData);
+  // console.log(bookedData);
   const {
     data: doctors = [],
     isLoading,
@@ -47,25 +44,40 @@ const DoctorInHome = () => {
     return <h1>Loading</h1>;
   }
   refetch();
-  console.log(doctors);
+  
+
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
 
   return (
-    <>
-      <ServiceTitile
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        title="Featured Doctors"
-        colored="Services"
-        sx={{
-          mb: 10,
-          color: "#0f8383",
-        }}
-      />
+    <div className="lg:px-20 md:px-10 px-5 lg:my-30 md:my-20 my-10">
+         <div className="outer-why-content row">
+        <div className="why-content lg:w-[500px] md:w-[400px] w-[320px]">
+            <p className="why-choose-pragraph lg:text-lg md:text-md text-sm">Our doctors</p>
+            <h1 className="Turst-people lg:text-5xl md:text-3xl text-2xl">Qualified Doctors</h1>
+            <h4 className="Treatment">Doctors Planet Care</h4>
+            <p className="planet-text lg:text-md md:text-sm text-xs">
+             Handle directly by general doctors and professional and experience specialist doctors.
+            </p>
+          </div>
+        </div>
       <Swiper
-        //   slidesPerView={3}
+           ref={(swiper) => {
+          if (swiper) swiperRef.current = swiper;
+        }}
         breakpoints={{
           300: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           788: {
@@ -74,38 +86,37 @@ const DoctorInHome = () => {
           },
           1170: {
             slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1600: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            spaceBetween: 30,
           },
         }}
-        //   spaceBetween={30}
         slidesPerGroup={1}
         grabCursor={true}
         loop={true}
         loopFillGroupWithBlank={true}
-         navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper swiper px-8"
+        navigation={{
+          nextEl: '.custom-next-button',
+          prevEl: '.custom-prev-button',
+        }}
+       
       >
         <>
           {doctors?.map((doctor) => (
-            <SwiperSlide className="swipersSlider cs customWidth mt-8 ">
-              <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-400/50 w-full h-full relative">
+            <SwiperSlide className="swipersSlider mt-8 ">
+              <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-[#13A2B7] cursor-pointer rounded-xl hover:border-transparent group hover:bg-[#0C5D69] w-full lg:-h-[420px] md:h-[350px] h-[300px] relative">
                 <img
-                  className=" md:w-32 md:h-32 inline-block sm:w-12 sm:h-12 rounded-full ring-4 ring-gray-300"
+                  className=" md:w-24 md:h-24 inline-block lg:w-30 lg:h-30 w-20 h-20 object-cover rounded-full ring-4 ring-gray-300"
                   src={doctor.img}
                   alt=""
                 />
 
-                <h1 className="mt-4 lg:text-lg md:text-md sm:text-sm font-semibold text-teal-800 capitalize group-hover:text-white">
+                <h1 className="mt-4 lg:text-lg md:text-md sm:text-sm font-semibold text-[#0C5D69] capitalize group-hover:text-white">
                   {doctor.doctorName}
                 </h1>
 
                 <p class="mt-2 hidden md:block capitalize lg:text-sm md:text-xs sm:text-[10px] text-gray-600 group-hover:text-white ">
-                  {doctor.degree}
+                    {doctor.degree.length > 30
+                    ? `${doctor.degree.substring(0, 30)}...`
+                    : doctor.degree}
                 </p>
                 <p className="mt-2 lg:text-md md:text-sm sm:text-xs capitalize text-gray-600 group-hover:text-white font-bold">
                   {doctor.department}
@@ -115,14 +126,14 @@ const DoctorInHome = () => {
                   <Link to={`doctor/${doctor?._id}`}>
                     <Tooltip title="Details">
                       <IconButton>
-                        <RiArrowRightCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
+                        <RiArrowRightCircleFill className="group-hover:text-white text-[#13A2B7] text-4xl" />
                       </IconButton>
                     </Tooltip>
                   </Link>
                   <Link onClick={() => setDoctor(doctor)}>
                     <Tooltip title="Book Appointment">
                       <IconButton onClick={handleOpen}>
-                        <RiAddCircleFill className="group-hover:text-white text-teal-600 text-4xl" />
+                        <RiAddCircleFill className="group-hover:text-white text-[#13A2B7] text-4xl" />
                       </IconButton>
                     </Tooltip>
                   </Link>
@@ -131,7 +142,23 @@ const DoctorInHome = () => {
             </SwiperSlide>
           ))}
         </>
+
+
+      {/* custom navigation buttons */}
+      <div className="flex justify-between items-center group ">
+        <button onClick={handlePrev} className="  shadow-md custom custom-prev-button hover:text-white text-[#13A2B7] text-xl hover:bg-[#13A2B7#13A2B7] mt-2 px-3 py-1 border-[1px] hover:border-[0E7D87] bg-white rounded-sm group ">
+         <IoIosArrowRoundBack className="icon text-white font-medium text-[20px]" />
+        </button>
+
+        <button onClick={handleNext} className="custom-next-button custom  shadow-md hover:text-white text-[#13A2B7] text-xl hover:bg-[#13A2B7] mt-2 px-3 py-1 border-[1px] hover:border-[0E7D87] bg-white rounded-sm  ">
+          <IoIosArrowRoundForward  className="icon text-white font-medium text-xl" />
+        </button>
+      </div>
+     
+
       </Swiper>
+   
+      
       <ConsultancyModal
         doctor={doctor}
         // treatment={treatment}
@@ -139,7 +166,7 @@ const DoctorInHome = () => {
         handleClose={handleClose}
         setOpen={setOpen}
       />
-    </>
+    </div>
   );
 };
 

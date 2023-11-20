@@ -23,7 +23,7 @@ const AllDoctor = ({ doctor, setDoctor, handleOpen }) => {
           </p>
           <p className="text-slate-500">{title}</p>
           <Link to={`/doctor/${_id}`}>
-            <p className="bg-teal-600 text-center text-white font-bold py-4 my-5">
+            <p className="bg-[#13A2B7] text-center text-white font-bold py-4 my-5">
               View Profile
             </p>
           </Link>

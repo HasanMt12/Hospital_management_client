@@ -80,7 +80,7 @@ const DonationForm = () => {
   return (
     <div className="my-8 w-11/12 mx-auto mb-10 py-20">
       <h1 className="text-4xl font-bold text-center mt-5 text-red-500 font-sans">
-        <span className="text-teal-600">Donate</span> Blood
+        <span className="text-[#13A2B7]">Donate</span> Blood
       </h1>
       <h1 className="text-2xl font-bold text-center my-1 text-teal-700 font-sans">
         Save a Life

@@ -1,0 +1,15 @@
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #13A2B7;
+    /* Replace with your custom color */
+    margin: 0 4px;
+    /* Adjust the margin as needed */
+}
+
+.swiper-pagination-bullet-active {
+    width: 16px;
+    /* Adjust the active bullet size if needed */
+    background-color: #13A2B7;
+    /* Replace with your custom active color */
+}

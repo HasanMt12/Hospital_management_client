@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <div>
       {/* upper nav item */}
-      <div className="shadow-2xl bg-[#0E7D87]/70 transparent">
+      <div className="shadow-2xl bg-[#0C5D69] transparent">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-6 lg:px-8 ">
         
           <div className="relative flex items-center justify-between">

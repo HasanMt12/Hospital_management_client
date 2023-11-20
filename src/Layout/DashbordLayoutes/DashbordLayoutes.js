@@ -208,7 +208,7 @@ console.log(user);
              
 
             </ul>
-            <div className="flex justify-center rounded border border-teal-600 mt-48 mb-4 w-full">
+            <div className="flex justify-center rounded border border-[#13A2B7] mt-48 mb-4 w-full">
               <div className="relative ">
                 <div className="text-gray-500  absolute ml-4 inset-0 m-auto w-4 h-4">
                   <svg

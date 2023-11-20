@@ -44,13 +44,13 @@ const InsuranceWeAccept = () => {
   return (
     <section className="mb-32">
       <div className=" cover">
-        <h1 className=" text-teal-600 flex justify-center items-center h-full  lg:text-6xl sm:text-4xl font-bold hover:skew-y-3 uppercase">
+        <h1 className=" text-[#13A2B7] flex justify-center items-center h-full  lg:text-6xl sm:text-4xl font-bold hover:skew-y-3 uppercase">
           Insurance
         </h1>
       </div>
       <div className="space-y-4 w-4/6 mx-auto">
         <details
-          className="group border-l-4  border-teal-600  p-6 [&_summary::-webkit-details-marker]:hidden"
+          className="group border-l-4  border-[#13A2B7]  p-6 [&_summary::-webkit-details-marker]:hidden"
           open
         >
           <summary className="flex items-center justify-between cursor-pointer ">
@@ -87,7 +87,7 @@ const InsuranceWeAccept = () => {
             ))}
           </div>
         </details>
-        <details className="group border-l-4 border-teal-600 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="group border-l-4 border-[#13A2B7] bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 uppercase">
               international visitors (intentional, accidental,complication
@@ -137,7 +137,7 @@ const InsuranceWeAccept = () => {
           </div>
         </details>
 
-        <details className="group border-l-4 border-teal-600 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="group border-l-4 border-[#13A2B7] bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 uppercase">
               "Intentional" Medical Travel Patients
@@ -174,7 +174,7 @@ const InsuranceWeAccept = () => {
           </div>
         </details>
 
-        <details className="group border-l-4 border-teal-600 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="group border-l-4 border-[#13A2B7] bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 uppercase">
               “Accidental” Medical Travel Coverage
@@ -231,7 +231,7 @@ const InsuranceWeAccept = () => {
             </ul>
           </div>
         </details>
-        <details className="group border-l-4 border-teal-600 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="group border-l-4 border-[#13A2B7] bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 uppercase">
               Complication Insurance

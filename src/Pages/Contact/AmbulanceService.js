@@ -23,7 +23,7 @@ const AmbulanceService = () => {
       </div>
       <div className="w-5/6 mx-auto mt-20 mb-52  space-y-5 text-slate-500">
         <div className="border border-teal-500 rounded px-8 py-16">
-          <p className="text-xl font-medium  text-teal-600">
+          <p className="text-xl font-medium  text-[#13A2B7]">
             To refer a patient to our facility please contact us:
           </p>
 

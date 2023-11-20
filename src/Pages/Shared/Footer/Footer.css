@@ -1,0 +1,160 @@
+:root {
+    --footer-bg: #eff1fe;
+    --primary-color: #13A2B7;
+    --body-color: #6e7990;
+    --second-color: #121C1D;
+}
+
+footer {
+    background-color: var(--footer-bg);
+}
+
+footer .container .row:first-child {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.footer-text p {
+    color: var(--body-color);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.footer-text h2 {
+    margin-top: 15px;
+}
+
+.form-cover input {
+    border: 1px solid var(--primary-color);
+    padding: 15px 46px 15px 15px;
+    background: transparent;
+    width: 100%;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.3s all ease-in-out;
+}
+
+.form-cover input:hover,
+.form-cover input:focus {
+    opacity: 1;
+}
+
+.form-cover input:focus {
+    outline: none;
+}
+
+.form-cover button {
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #ffffff;
+}
+
+.footer-menu-heading {
+    margin-bottom: 20px;
+}
+
+
+.footer-menu .footer-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--body-color);
+    font-weight: 400;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+.footer-menu .footer-item:hover {
+    color: var(--primary-color);
+}
+
+.footer-menu,
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.working li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(82, 95, 129, 0.09);
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-top: 3px;
+}
+
+.working li:last-child {
+    border-bottom: none;
+}
+
+.working li span:first-child {
+    color: var(--body-color);
+}
+
+.working li span:last-child {
+    color: var(--second-color);
+}
+
+.reach-us li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: var(--body-color);
+    font-weight: 400;
+}
+
+.spical {
+    margin-top: 20px;
+}
+
+.reach-us li a {
+    text-decoration: none;
+    transition: 0.3s all ease-in-out;
+    color: var(--body-color);
+}
+
+.reach-us li a svg,
+.reach-us li svg {
+    margin-right: 10px;
+}
+
+.reach-us li a:hover {
+    color: var(--primary-color);
+}
+
+.spical a {
+    width: 35px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    text-align: center;
+    transition: 0.3s all linear;
+    border-radius: 3px;
+}
+
+.spical a:hover {
+    transform: translateY(-8px);
+    background-color: var(--second-color);
+}
+
+.spical a svg {
+    text-align: center;
+    margin-right: 0 !important;
+    color: #ffffff;
+}
+
+.foot-note {
+    text-align: center;
+    font-weight: 400;
+    color: var(--body-color);
+    margin-bottom: 10px;
+}
+
+hr {
+    color: var(--primary-color);
+}

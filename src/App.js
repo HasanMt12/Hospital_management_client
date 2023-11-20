@@ -38,7 +38,7 @@ function App() {
   );
   console.log(bookedData);
   return (
-    <div className="bg-gradient-to-r from-slate-50 via-slate-50 to-slate-50 shadow-lg rounded-2">
+    <div className="bg-[#FFFFFF] shadow-lg rounded-2">
       <div className="max-w-[1140]">
         <RouterProvider router={router}></RouterProvider>
         <Toaster position="top-center" reverseOrder={false}></Toaster>

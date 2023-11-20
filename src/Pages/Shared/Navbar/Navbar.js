@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="">
-      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-teal-500 to-teal-600 ">
+      <div className="shadow-2xl bg-gradient-to-r from-teal-500 via-teal-500 to-[#13A2B7] ">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div>
             <div className="relative flex items-center justify-between">
@@ -85,7 +85,7 @@ const Navbar = () => {
                 </button>
                 {isMenuOpen && (
                   <div className="absolute z-10 top-0 left-0 w-full">
-                    <div className="p-5 bg-teal-600 border rounded shadow-lg">
+                    <div className="p-5 bg-[#13A2B7] border rounded shadow-lg">
                       <div className="flex items-center justify-between mb-4">
                         <div>
                           <a

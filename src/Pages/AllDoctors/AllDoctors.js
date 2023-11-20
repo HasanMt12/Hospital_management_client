@@ -14,7 +14,7 @@ const AllDoctors = () => {
    return (
      <section className="w-9/12 mx-auto bg-slate-100 shadow-2xl p-10">
        <div className="missionCover mb-10">
-         <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
+         <h1 className=" text-[#13A2B7] lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
            Our Specialist
          </h1>
        </div>

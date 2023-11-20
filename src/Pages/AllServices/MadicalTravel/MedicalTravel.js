@@ -11,7 +11,7 @@ const MedicalTravel = () => {
     return (
            <section>
        <div className="medicalGuideCover">
-         <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
+         <h1 className=" text-[#13A2B7] lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
            medical office administration
          </h1>
          {/* <img

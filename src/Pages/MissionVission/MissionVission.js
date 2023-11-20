@@ -18,13 +18,13 @@ const MissionVission = ()=>{
    return (
      <section>
        <div className="missionCover">
-         <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
+         <h1 className=" text-[#13A2B7] lg:text-6xl sm:text-4xl font-bold flex justify-center items-center h-full">
            Mission Vission & Values
          </h1>
        
        </div>
        <div className="w-5/6 mx-auto mt-20 mb-52 space-y-5 text-slate-500">
-         <p className="text-xl font-medium text-teal-600">
+         <p className="text-xl font-medium text-[#13A2B7]">
            Our Vission/Mission and values
          </p>
          <hr />
@@ -51,7 +51,7 @@ const MissionVission = ()=>{
            <li>Caring</li>
          </ul>
          <div className="space-y-2">
-           <p className="text-xl font-medium text-teal-600 mb-5">
+           <p className="text-xl font-medium text-[#13A2B7] mb-5">
              Patients and Staff Safety Statement
            </p>
            <p>
@@ -80,7 +80,7 @@ const MissionVission = ()=>{
            <img className="w-96 h-52 object-cover" src={img3} alt="" />
          </div>
          <div className="space-y-5">
-           <p className="text-xl font-medium text-teal-600 mt-14">
+           <p className="text-xl font-medium text-[#13A2B7] mt-14">
              Quality Statement
            </p>
            <p>
@@ -93,7 +93,7 @@ const MissionVission = ()=>{
              Accreditation (A-HA) and The College of American Pathologists (CAP)
              for Safety & Quality towards patient care excellence.
            </p>
-           <p className="text-xl font-medium text-teal-600">
+           <p className="text-xl font-medium text-[#13A2B7]">
              Environment Statement
            </p>
            <p>
@@ -104,7 +104,7 @@ const MissionVission = ()=>{
            </p>
 
            <div className="space-y-5 ">
-             <p className="text-xl font-medium text-teal-600">
+             <p className="text-xl font-medium text-[#13A2B7]">
                Environmental Statement Guiding Principles
              </p>
              <p>

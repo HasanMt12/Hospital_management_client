@@ -220,7 +220,7 @@ const SignUp = ({ closePopup, closeLogin }) => {
               <Button
                 //  onClick={() => setOpenPopup(true)}
                 onClick={toggleForm}
-                // className="text-teal-600 font-medium"
+                // className="text-[#13A2B7] font-medium"
                 style={{ color: "teal",   fontWeight: "medium", }}
               >
                   Login

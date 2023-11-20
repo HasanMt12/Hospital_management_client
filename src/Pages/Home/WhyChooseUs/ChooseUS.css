@@ -1,0 +1,167 @@
+
+.why-content {
+    padding-top: 21px;
+}
+
+.why-choose-pragraph {
+    text-transform: uppercase;
+    color: #13A2B7;
+    letter-spacing: 2px;
+}
+
+.Turst-people {
+    margin: 0px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.Treatment {
+    font-size: 33px;
+    font-weight: 300;
+}
+
+.planet-text {
+    margin-top: 15px;
+    color: #00000094;
+    margin-bottom: 25px;
+}
+
+.paper-item {
+    background-color: white;
+    text-align: center;
+    transition: 0.5s all linear;
+    height: 100%;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.paper-hover {
+    transition: 0.5s all linear;
+}
+
+.paper-item:hover {
+    transform: translateY(-5px);
+    height: calc(100% - 30px);
+}
+
+.paper-item:hover .paper-hover {
+    transform: translateY(-25px);
+}
+
+.paper-item p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.image-icon {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    margin-top: -23px;
+}
+
+.read-btn {
+    color: #7093e5;
+    border: navajowhite;
+    background-color: white;
+    margin-bottom: 20px;
+    transition: 0.3s all linear;
+}
+
+.read-btn:hover {
+    color: #f68685;
+}
+
+.content-pragraph {
+    font-size: 12px;
+    color: #00000094;
+}
+
+.chooseUs-Fild h2 {
+    top: 60px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .peaper {
+        margin-left: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        padding-bottom: 76px;
+    }
+
+    .outer-why-content {
+        margin: 0 auto;
+    }
+
+    .why-content {
+        width: 500px;
+        padding-top: 21px;
+    }
+
+    .peaper-one {
+        width: 80%;
+    }
+
+    .peaper-two {
+        width: 80%;
+    }
+
+    .peaper-three {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .peaper {
+        margin-left: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        padding-bottom: 76px;
+    }
+
+    .why-content {
+        max-width: 350px;
+        margin-left: 10px;
+        padding-top: 21px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .peaper-one {
+        width: 80%;
+    }
+
+    .peaper-two {
+        width: 80%;
+    }
+
+    .peaper-three {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .peaper {
+        margin-left: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        padding-bottom: 76px;
+    }
+
+    .peaper-one {
+        width: 87%;
+    }
+
+    .peaper-two {
+        width: 87%;
+    }
+
+    .peaper-three {
+        width: 87%;
+    }
+}

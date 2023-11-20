@@ -30,7 +30,7 @@ const Departments = () => {
   return (
     <div>
       <div className="serviceCard">
-        <h1 className=" text-teal-600 lg:text-6xl sm:text-4xl font-bold uppercase flex justify-center items-center h-full">
+        <h1 className=" text-[#13A2B7] lg:text-6xl sm:text-4xl font-bold uppercase flex justify-center items-center h-full">
           Departments & Services
         </h1>
       </div>

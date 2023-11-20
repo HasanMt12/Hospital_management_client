@@ -12,7 +12,7 @@ const DepartmentCategory = ({ department }) => {
         <div className="px-8 p-8 transition-opacity group-hover:absolute group-hover:opacity-0">
           <img className="w-24" src={icon} alt="" />
 
-          <h2 className="mt-4 text-2xl text-teal-600 font-medium">
+          <h2 className="mt-4 text-2xl text-[#13A2B7] font-medium">
             {department.name}
           </h2>
         </div>
@@ -22,7 +22,7 @@ const DepartmentCategory = ({ department }) => {
 
           <p className="mt-4">L{details.slice(0, 100)}...</p>
 
-          <Link className="mt-8 font-bold text-teal-600">See More</Link>
+          <Link className="mt-8 font-bold text-[#13A2B7]">See More</Link>
         </div>
       </div>
     </div>

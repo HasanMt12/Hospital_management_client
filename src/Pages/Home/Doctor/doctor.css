@@ -1,29 +1,7 @@
-/* #app { height: 100% }
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-} */
-
-.swipers {
-  width: 75%;
-  /* height: 100%; */
-}
-
 .swipersSlider {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  height: 400px;
   width: 60%;
 
   display: -webkit-box;
@@ -40,9 +18,14 @@ body {
   align-items: center;
 }
 
-.swipersSlider img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.custom {
+  border: 1px solid #0E7D87;
+}
+
+.custom .icon {
+  color: #0E7D87 !important;
+}
+
+.custom:hover .icon {
+  color: white !important;
 }

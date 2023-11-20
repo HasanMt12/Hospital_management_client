@@ -1,6 +1,5 @@
 import React from "react";
 import { experimentalStyled as styled } from "@mui/material/styles";
-import Services from "./Services/Services";
 import DoctorInHome from "./Doctor/DoctorInHome";
 
 // import { CssBaseline } from "@material-ui/core";
@@ -8,6 +7,8 @@ import Carousel from "./Carousel/Carousel";
 import DonationForm from "./Donate/DonationForm";
 import WorkingFlow from "../WorkingFlow/WorkingFlow";
 import useTitle from "../../hooks/useTitle";
+import ChooseUs from "./WhyChooseUs/ChooseUs";
+import ConsultingSpecialties from "./ConsultingSpecialties/ConsultingSpecialties";
 
 // import Departments from './Department/Departments';
 
@@ -16,8 +17,9 @@ const Home = () => {
   return (
     <div>
      <Carousel></Carousel> 
-      <Services></Services>
+      <ChooseUs></ChooseUs>
       <DoctorInHome></DoctorInHome>
+      <ConsultingSpecialties></ConsultingSpecialties>
       <WorkingFlow></WorkingFlow>
       <DonationForm></DonationForm>
 

@@ -144,7 +144,7 @@ const AppointById = () => {
     //       {row.fee && !row.paid && (
     //         <Link
     //           to={`/dashboard/payment/${row._id}`}
-    //           className="btn btn-xs btn-secondary text-teal-600 font-bold"
+    //           className="btn btn-xs btn-secondary text-[#13A2B7] font-bold"
     //         >
     //           Pay
     //         </Link>
@@ -165,7 +165,7 @@ const AppointById = () => {
   }, []);
   return (
     <div className="w-full">
-      <h2 className="text-center text-teal-600 fw-bold text-2xl my-8 ">
+      <h2 className="text-center text-[#13A2B7] fw-bold text-2xl my-8 ">
         {" "}
         <span className="text-gray-900">Your total Appointment</span>{" "}
         {stuffData.length}

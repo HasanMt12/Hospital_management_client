@@ -17,11 +17,11 @@ const JoinChatRoom = () => {
       }
     };
     return (
-      <div className='flex justify-center border border-teal-600 items-center h-screen -mt-32'>
+      <div className='flex justify-center border border-[#13A2B7] items-center h-screen -mt-32'>
         <div >
              {!showChat ? (
         <div className="joinChatContainer">
-          <h3 className='text-teal-600 '>Join A Chat</h3>
+          <h3 className='text-[#13A2B7] '>Join A Chat</h3>
           <input
             type="text"
             placeholder="John..."
