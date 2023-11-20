@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , NavLink } from "react-router-dom";
 import { IoNotifications } from "react-icons/io5";
 import { AuthContext } from "../../../contexts/AuthProvider";
 // import { ThemeContext, themes } from "../../../contexts/ThemeContext";
@@ -11,14 +11,26 @@ import Popup from "../Popup";
 import logo from "../../../assets/logo.png";
 import SignUp from "../../Register/SignUp/SignUp";
 import "./Header.css";
-
+import {
+  TbUserPlus,
+  
+  TbLayoutDashboard,
+} from "react-icons/tb";
+import {
+  FaSignInAlt,
+  FaRegUserCircle,
+  FaAngleDown,
+  FaAngleUp,
+} from "react-icons/fa";
+import { useRef } from "react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logmenu, setLogmenu] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const [openPopup, setOpenPopup] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
+  const [userOpen, setUserOpen] = useState(false);
+  const userMenuRef = useRef(null)
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -28,14 +40,15 @@ const Header = () => {
   return (
     <div>
       {/* upper nav item */}
-      <div className="shadow-2xl bg-gradient-to-r from-teal-600 via-teal-600 to-teal-700 transparent">
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+      <div className="shadow-2xl bg-[#0E7D87]/70 transparent">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-6 lg:px-8 ">
+        
           <div className="relative flex items-center justify-between">
             <Link
               to="/"
               aria-label="Company"
               title="Company"
-              className="inline-flex items-center"
+              className="inline-flex items-center "
             >
               <img src={logo} alt=""></img>
             </Link>
@@ -65,107 +78,69 @@ const Header = () => {
               </div>
             </div>
 
-            {user?.uid ? (
+          
               <li className=" text-gray-50">
                 <Link to="/noticeShow">
                   <IoNotifications></IoNotifications>{" "}
                 </Link>
               </li>
-            ) : (
-              ""
-            )}
-
-            <div>
-              <nav aria-label="Main Nav" className="flex flex-col space-y-1">
-                <details className="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary
-                    onClick={() => setLogmenu(!logmenu)}
-                    className="flex items-center px-4 py-2 text-white rounded-lg group "
-                  >
-                    {user?.uid ? (
+          
+            <div className="cursor-pointer relative">
+        <div
+          ref={userMenuRef}
+          onClick={() => setUserOpen((prevUserOpen) => !prevUserOpen)}
+          className="flex items-center gap-2 "
+        >
+           {user?.uid ? (
                       <img 
-                      className="w-10 h-10 rounded-full object-cover"
+                      className="w-8 h-8 rounded-full object-cover cursor-pointer"
                         src="https://i.pinimg.com/474x/ec/7f/95/ec7f9575d98970b8ea32beca3e802ea3.jpg"
                         alt=""
                       />
                     ) : (
                      
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5 "
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
+                      <TbUserPlus className="text-2xl text-white relative " />
                     )}
-
-                    <span className="ml-auto shrink-0 ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                </details>
-              </nav>
-              {logmenu && (
-                <div className="absolute z-10 right-10">
-                  <div className="p-5 bg-teal-800 border rounded shadow-lg">
-                    <nav>
-                      <ul className="space-y-4 w-32 text-gray-100 font-bold bg-teal-600 header_class">
-                        {user?.uid ? (
-                          <>
-                            <>
-                              <li className="w-full px-4 py-2 text-sm font-medium">
-                                <Link to="/dashboard">Dashboard</Link>
-                              </li>
-
-                              <li className="w-full px-4 py-2 text-sm font-medium">
-                                <Link onClick={handleLogOut}>log out</Link>
-                              </li>
-                            </>
-                          </>
-                        ) : (
-                          <>
-                            <li>
-                              <Link
-                                onClick={() => setOpenPopup(true)}
-                                className=" px-4 py-2 text-sm font-medium  rounded-l"
-                              >
-                                Login
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                className=" px-4 py-2 text-sm font-medium"
-                                onClick={() => setOpenModal(true)}
-                              >
-                                SignUp
-                              </Link>
-                            </li>
-                          </>
-                        )}
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              )}
-            </div>
+          {userOpen ? <FaAngleUp className="text-white"/> : <FaAngleDown className="text-white"/>}
+        </div>
+        <ul
+          className={` duration-700 ease-in-out border-2 border-green font-bold text-[#0E7D87] bg-white absolute right-0 px-4 py-2 space-y-4 ${
+            !userOpen ? " z-0 opacity-0 pointer-events-none	" : "  z-50 "
+          }`}
+        >
+          {user?.uid?(
+            <>
+            <li>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                `text-sm font-bold flex items-center gap-2 ${
+                  isActive ? "text-brown" : "text-green"
+                }`
+              }
+            >
+              <TbLayoutDashboard /> Dashboard
+            </NavLink>
+          </li>
+          <li  onClick={handleLogOut} className="flex items-center gap-2">
+            <FaSignInAlt />
+           Logout
+          </li>
+            </>
+          ):(<>
+          <li  onClick={() => setOpenPopup(true)} className="flex items-center gap-2">
+            <FaSignInAlt />
+           Login
+          </li>
+          <li onClick={() => setOpenModal(true)} className="flex items-center gap-2">
+            <FaRegUserCircle />
+            <span>Register</span>
+          </li>
+          </>)}
+          
+          
+        </ul>
+      </div>
 
             {/* for small device */}
 
@@ -193,7 +168,7 @@ const Header = () => {
               </button>
 
               {isMenuOpen && (
-                <div className="absolute z-10 top-0 left-0 w-full bg-teal-600">
+                <div className="absolute z-30 top-0 left-0 w-full bg-[#0E7D87]">
                   <div className="p-5  border rounded shadow-lg">
                     <div className="flex items-center justify-between mb-4">
                       <div>
@@ -310,15 +285,7 @@ const Header = () => {
                                 >
                                   Insurance We Accept
                                 </Link>
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Payment Options
-                                </Link>
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Health Care to your home
-                                </Link>
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Tele Consultaionwith Doctor
-                                </Link>
+                                
                               </nav>
                             </details>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
@@ -396,12 +363,7 @@ const Header = () => {
                                   Insurance We Accept
                                 </Link>
 
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Insurance Good Vibes
-                                </Link>
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Insurance Packages
-                                </Link>
+                             
                               </nav>
                             </details>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
@@ -435,13 +397,6 @@ const Header = () => {
                                   Hospital Contact Information
                                 </Link>
 
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Hopital Location
-                                </Link>
-                                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                                  Telemedicine
-                                </Link>
-
                                 <Link
                                   to="ambulanceService"
                                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
@@ -450,17 +405,10 @@ const Header = () => {
                                 </Link>
                               </nav>
                             </details>
-
-                            <a
-                              href="tel:+880 15100000"
-                              className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                            >
-                              +880 15100000
-                            </a>
                           </div>
                           <div className="">
                             <Link
-                              to="/alldoctors"
+                              to="/doctors"
                               className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                             >
                               Doctors
@@ -481,9 +429,6 @@ const Header = () => {
                             <Link TO="/bloodDonar" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                               Blood Donar
                             </Link>
-                            <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                              Conditions & Terms
-                            </Link>
                           </div>
                         </nav>
                       </div>
@@ -496,7 +441,7 @@ const Header = () => {
           <hr className="my-5  sm:hidden xl:block" />
 
           {/* down navbar item */}
-          <div className=" text-sm sm:hidden xl:block">
+          <div className=" text-sm hidden md:block">
             <nav
               aria-label="Main Nav"
               className="flex flex-col space-y-1 text-white"
@@ -584,15 +529,7 @@ const Header = () => {
                     >
                       Insurance We Accept
                     </Link>
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Payment Options
-                    </Link>
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Health Care to your home
-                    </Link>
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Tele Consultaionwith Doctor
-                    </Link>
+                    
                   </nav>
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
@@ -667,13 +604,6 @@ const Header = () => {
                     >
                       Insurance We Accept
                     </Link>
-
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Insurance Good Vibes
-                    </Link>
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Insurance Packages
-                    </Link>
                   </nav>
                 </details>
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
@@ -706,13 +636,6 @@ const Header = () => {
                     >
                       Hospital Contact Information
                     </Link>
-
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Hopital Location
-                    </Link>
-                    <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                      Telemedicine
-                    </Link>
                     <Link
                       to="ambulanceService"
                       className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
@@ -722,17 +645,11 @@ const Header = () => {
                   </nav>
                 </details>
 
-                <a
-                  href="tel:+880 15100000"
-                  className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                >
-                  +880 15100000
-                </a>
               </div>
               <hr />
               <div className="flex justify-between mt-5">
                 <Link
-                  to="/alldoctors"
+                  to="/doctors"
                   className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
                 >
                   Doctors
@@ -753,9 +670,6 @@ const Header = () => {
                 <Link to="bloodDonar" className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700">
                   Blood Donar
                 </Link>
-                <Link className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700" to='/chat'>
-                  Chat
-                </Link>
                 {user?.uid && (
                   <Link
                     className="block px-4 py-2 text-sm font-medium  rounded-lg hover:bg-gray-100 hover:text-gray-700"
@@ -772,18 +686,16 @@ const Header = () => {
 
       {/* login signup */}
       <Popup
-        title="Login Form"
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
-        <Login closePopup={setOpenPopup}></Login>
+        <Login closePopup={setOpenPopup} openModal={setOpenModal}></Login>
       </Popup>
-      <Modal
-        title="SignUp Form"
+      <Modal className="min-h-[90dvh] p-0"
         openModal={openModal}
         setOpenModal={setOpenModal}
       >
-        <SignUp closePopup={setOpenModal}></SignUp>
+        <SignUp closePopup={setOpenModal} closeLogin={setOpenPopup}></SignUp>
       </Modal>
     </div>
   );

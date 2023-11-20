@@ -88,11 +88,11 @@ const DoctorInHome = () => {
         loopFillGroupWithBlank={true}
          navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper swiper "
+        className="mySwiper swiper px-8"
       >
         <>
           {doctors?.map((doctor) => (
-            <SwiperSlide className="swipersSlider cs customWidth mt-8">
+            <SwiperSlide className="swipersSlider cs customWidth mt-8 ">
               <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-teal-600 cursor-pointer rounded-xl hover:border-transparent group hover:bg-teal-400/50 w-full h-full relative">
                 <img
                   className=" md:w-32 md:h-32 inline-block sm:w-12 sm:h-12 rounded-full ring-4 ring-gray-300"

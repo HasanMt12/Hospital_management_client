@@ -15,7 +15,7 @@ import img9 from "../../assets/Workflow/patient.png";
 import img10 from "../../assets/Workflow/schedule.png";
 const WorkingFlow = () => {
   return (
-    <div className="w-11/12 mx-auto lg:-mt-72 md:-mt-[680px] sm:-mt-[900px]">
+    <div className="w-11/12 mx-auto">
       <div className="my-5 text-center">
         <h1 className="text-3xl my-2 font-bold font-sans">
           Working Flow of <span className="text-teal-600">HMS Software</span>

@@ -12,9 +12,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import Controls from "./Controls/Controls";
 const useStyles = makeStyles((theme) => ({
   dialogWrapper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(0),
     position: "absolute",
-    top: theme.spacing(5),
+    top: theme.spacing(0),
     bottom: theme.spacing(0)
   },
   dialogTitle: {
@@ -27,24 +27,23 @@ export default function Popup(props) {
 
   return (
     <Dialog
+      sx={{maxHeight: 550,}}
       open={openPopup}
       maxWidth="md"
       classes={{ paper: classes.dialogWrapper }}
     >
       <DialogTitle className={classes.dialogTitle}>
-        <div style={{ display: "flex" }}  >
-          <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
-            {title}
-          </Typography>
+        <div style={{ display: "flex", justifyContent:"end" ,}}  >
+      
           <Controls.Button
             
-            style={{backgroundColor:'teal'}}
+            style={{backgroundColor:'teal' , height: '26px', width:"24px" }}
             text='X'
             onClick={() => {
               setOpenPopup(false);
             }}
           >
-            <CloseIcon />
+            <CloseIcon  />
           </Controls.Button>
         </div>
       </DialogTitle>

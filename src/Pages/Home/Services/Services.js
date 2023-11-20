@@ -12,28 +12,28 @@ const Services = () => {
       id: 1,
       img: "https://img.freepik.com/premium-vector/doctor-medical-emergency-hurrying-help-patient-cartoon_251661-95.jpg?w=2000 ",
       title: "Emergency Care",
-      details: "Emergency medicine doctors assess and treat patients in the emergency department, regardless of their illness or injury type. Their main focus is to stabilize patients as quickly as possible and determine the next best",
+      details: "Emergency medicine doctors quickly stabilize and treat patients in the emergency department, regardless of their condition, focusing on determining the best course of action.",
     },
     {
       id: 2,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_tQFTNscskfpAXYJ1w0HRFlwdxEeeIz1JF2pPyDioGAkJ-TfwCdxGKVz1ZMVaX712rio&usqp=CAU",
       title: "Call Center 24/7",
       details:
-        "alk to a doctor within minutes. Our qualified network of doctors is available 24/7. You can get a consultation and prescription whenever you need. Patients and doctors can keep their previous consultation history and view online prescriptions.",
+      "Connect with a doctor 24/7 for quick consultations and prescriptions. Easily access and review your consultation history and online prescriptions.",
     },
     {
       id: 3,
       img: "https://media.istockphoto.com/id/1296931945/vector/neworganset.jpg?s=612x612&w=0&k=20&c=3kC1j87wSx2NblNiAEDmTmsRtSXqeqpXjUWlXRVjYbE=",
       title: "Heart disease",
       details:
-        "Specialist Qualification 2015, Masters of Surgery (MS), Cardio Vascular and Thoracic Surgery, National Institute of Cardiovascular Diseases (NICVD),",
+        "Achieved Specialist Qualification in 2015 with a Master of Surgery (MS) in Cardiovascular and Thoracic Surgery from the National Institute of Cardiovascular Diseases (NICVD).",
     },
     {
       id: 4,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiEdoGdeThfMDkxbgIOjYcu6oRbLf0RV10Hg&usqp=CAU",
       title: "Blood Test",
       details:
-        "Lab tests can also help you assess if treatments are working or failing, and help you monitor any side effects.  Lab tests can be done on various specimens including stool, urine, blood, and other body tissues or fluids.",
+        "Lab tests assess treatment progress, detect failures, and monitor side effects using specimens like stool, urine, blood, and other body fluids.",
     },
     {
       id: 5,
@@ -45,13 +45,13 @@ const Services = () => {
       id: 2,
       img: "https://t3.ftcdn.net/jpg/01/19/75/26/360_F_119752602_gm4OfWfuBRw8rOKaXqMgSSjNPjgyhNPE.jpg",
       title: "Ophthalmology",
-      details: "Comprehensive diagnostic services provided include evaluation of visual acuity, refraction, slit lamp evaluation, ophthalmoscopy, tonometry, pachymetry, gonioscopy, fundus photography, and visual field testing.",
+      details: "Diagnostic services include assessing visual acuity, refraction, slit lamp, ophthalmoscopy, tonometry, pachymetry, gonioscopy, fundus photography, and visual field testing.",
 
     },
   ];
 
   return (
-    <Container className="customService lg:-mt-52 md:-mt-[350px] -mt-52"
+    <Container className="customService "
       data-aos="zoom-in-up" data-aos-duration="2500">
       <Box>
         <ServiceTitle

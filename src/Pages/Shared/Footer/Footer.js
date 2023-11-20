@@ -85,7 +85,7 @@ const Footer = () => {
   return (
     <footer
       footer
-      className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-600 shadow-lg rounded-2 text-white"
+      className=" bg-sky-500/50 shadow-lg rounded-2 text-white"
     >
       <div className="container p-6 mx-auto">
         <div className="lg:flex gap-10">

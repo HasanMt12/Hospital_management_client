@@ -78,7 +78,7 @@ const DonationForm = () => {
   };
 
   return (
-    <div className="my-8 w-11/12 mx-auto ">
+    <div className="my-8 w-11/12 mx-auto mb-10 py-20">
       <h1 className="text-4xl font-bold text-center mt-5 text-red-500 font-sans">
         <span className="text-teal-600">Donate</span> Blood
       </h1>
@@ -88,7 +88,7 @@ const DonationForm = () => {
       <p className="text-sm font-bold text-center my-1 mb-12 text-gray-500 font-sans">
         Please Fill the form below
       </p>
-      <div className="box grid lg:grid-cols-2  md:grid-cols-1 grid-cols-1 lg:gap-10  gap-3  ">
+      <div className="box grid lg:grid-cols-2  md:grid-cols-1 grid-cols-1 lg:gap-4  gap-2  py-20">
         <div className="box-primary">
           <img
             src={hero}
@@ -98,11 +98,11 @@ const DonationForm = () => {
             alt=""
           />
         </div>
-        <div className="box-secondary mx-auto">
+        <div className=" mx-auto">
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* 1) TextField */}
          <div className="flex justify-start mx-auto items-center gap-0">
-           <div className="form-control w-[44%]">
+           <div className="form-control w-[100%]">
               <TextField
                 placeholder="Enter Your  Name"
                 label=" Name"
@@ -119,7 +119,7 @@ const DonationForm = () => {
               )}
             </div>
             {/* 3) TextField */}
-            <div className="form-control  w-[44%]">
+            <div className="form-control  w-[100%]">
               <TextField
                 placeholder="Enter Your  Email"
                 label=" Email"
@@ -142,7 +142,7 @@ const DonationForm = () => {
             
                  <div className="flex justify-start items-center"> 
                  
-                 <div className="form-control w-[44%]">
+                 <div className="form-control w-[100%]">
               <TextField
                 sx={{
                   borderColor: "teal",
@@ -163,7 +163,7 @@ const DonationForm = () => {
                 <p className="text-red-500">{errors.phone.message}</p>
               )}
             </div>
-            <div className="form-control w-[44%]">
+            <div className="form-control w-[100%]">
               <TextField
                 placeholder="Your age"
                 label="Age"
@@ -181,7 +181,7 @@ const DonationForm = () => {
             </div>
                   </div>
             {/* 4) TextField */}
-      <div className="form-control w-full">
+      <div className="form-control w-[100%]">
               <TextField
                 placeholder="Enter Your Address"
                 label="Address"

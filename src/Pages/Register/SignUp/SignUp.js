@@ -21,7 +21,7 @@ import toast from "react-hot-toast";
 import Login from "../Login/Login";
 import Popup from "../../Shared/Popup";
 
-const SignUp = ({ closePopup }) => {
+const SignUp = ({ closePopup, closeLogin }) => {
   const {
     register,
     handleSubmit,
@@ -38,15 +38,22 @@ const SignUp = ({ closePopup }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const paperStyle = {
-    padding: "40px 20px",
-    width: 430,
-    margin: "20px auto",
+    padding: "6px 10px",
+    width: 420,
+    width: 420,
+    margin: "auto auto",
     border: "rounded",
   };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "teal" };
   const marginTop = { marginTop: 5 };
   const btnStyle = { margin: "8px 2px", backgroundColor: "teal" };
+  const btn1Style = {
+    width: "16px",
+    height: "16px",
+    color: "teal",
+    marginLeft:"5px",marginRight:"1px"
+  };
   // const onSubmit = (data) => console.log(data);
 
   const handleSignUp = (data) => {
@@ -66,7 +73,7 @@ const SignUp = ({ closePopup }) => {
         };
         updateUserProfile(userInfo)
           .then(() => {
-            saveUser(data.name, data.email,data.phone,data.Gender);
+            saveUser(data.name, data.email,data.Gender);
           })
           .catch((err) => console.log(err));
       })
@@ -75,8 +82,8 @@ const SignUp = ({ closePopup }) => {
         setSignUPError(error.message);
       });
 
-    const saveUser = (name, email,phone, Gender) => {
-      const user = { name, email, phone, Gender };
+    const saveUser = (name, email, Gender) => {
+      const user = { name, email, Gender };
       console.log(user);
       fetch("https://hospital-management-server-one.vercel.app/user", {
         method: "POST",
@@ -107,10 +114,14 @@ const SignUp = ({ closePopup }) => {
         toast.error(error.message);
       });
   };
+
+  const toggleForm = () => {
+    closePopup(false)
+    closeLogin(true)
+  };
   return (
-    <div className="my-32">
-      <Grid>
-        <Paper elevation={20} style={paperStyle}>
+    <>
+        <Paper elevation={3} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <AddCircleOutlineOutlinedIcon />
@@ -168,17 +179,7 @@ const SignUp = ({ closePopup }) => {
                 />
               </RadioGroup>
             </FormControl>
-            <TextField
-              fullWidth
-              label="Phone Number"
-              placeholder="Enter your phone number"
-              {...register("phone", {
-                required: "phone number is Required",
-              })}
-            />
-            {errors.phone && (
-              <p style={{ color: "red" }}>{errors.phone.message}</p>
-            )}
+            
             <TextField
               fullWidth
               label="Password"
@@ -200,31 +201,7 @@ const SignUp = ({ closePopup }) => {
             {errors.password && (
               <p style={{ color: "red" }}>{errors.password.message}</p>
             )}
-            {/*   <TextField
-              fullWidth
-              label="Confirm Password"
-              type="password"
-              placeholder="Confirm your password"
-              {...register("confirm", {
-                required: "please,confirm your password",
-              })}
-            />
-            {errors.confirm && (
-              <p style={{ color: "red" }}>{errors.confirm.message}</p>
-            )}  */}
-           {/*  <FormControlLabel
-              control={
-                <Checkbox
-                required
-                  color="primary"
-                  name="checked"
-                  {...register("checkbox",{
-                    required: "please,accept our terms & conditions",
-                  })}
-                />
-              }
-              label="I accept the terms and conditions."
-            /> */}
+           
             <Button
               onClick={() => closePopup(false)}
               type="submit"
@@ -242,11 +219,11 @@ const SignUp = ({ closePopup }) => {
               Do you have already an account ?
               <Button
                 //  onClick={() => setOpenPopup(true)}
-                onClick={() => closePopup(false)}
+                onClick={toggleForm}
                 // className="text-teal-600 font-medium"
                 style={{ color: "teal",   fontWeight: "medium", }}
               >
-                <Link to="/login">Login</Link>
+                  Login
               </Button>
             </Typography>
             <div
@@ -255,22 +232,6 @@ const SignUp = ({ closePopup }) => {
               style={{ textAlign: "center" }}
             >
               OR
-            </div>
-
-            <div className="flex items-center ">
-              <p
-                className="px-3 text-lg text-teal-800 my-1"
-                style={{
-                  fontStyle: "font-medium",
-                  marginTop: "10px",
-                  paddingBottom: "10px",
-                  fontSize: "18px",
-                  textAlign: "center",
-                  margin:'auto'
-                }}
-              >
-                Signup with social account
-              </p>
             </div>
             <div
               className="flex justify-center "
@@ -283,15 +244,17 @@ const SignUp = ({ closePopup }) => {
                 onClick={handleGoogleSignIn}
                 aria-label="Log in with Google"
                 className="p-3 rounded-sm text-xl "
+              > Continue with
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                className="w-4 4-5 fill-current btn pl-4 bg-teal-500"
+
+                // style={{ width: "23px", height: "23px" }}
+                style={btn1Style}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 32 32"
-                  className="w-5 h-5 fill-current btn text-teal-500"
-                  style={{ width: "23px", height: "23px" }}
-                >
-                  <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
-                </svg>
+                <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
+              </svg> oogle 
               </Button>
             </div>
           </form>
@@ -303,8 +266,7 @@ const SignUp = ({ closePopup }) => {
         >
           <Login></Login>
         </Popup>
-      </Grid>
-    </div>
+    </>
   );
 };
 

@@ -12,7 +12,6 @@ const Service = ({ serv }) => {
     <Card className="card mt-6 md:mt-4"
       sx={{
         maxWidth: 345,
-        boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px white",
         marginTop: "20px",
         pt: 2,
         mx: "auto",
@@ -38,13 +37,13 @@ const Service = ({ serv }) => {
 
         <Typography
           gutterBottom
-          variant="h5"
+          variant="56"
           component="div"
           sx={{
             fontWeight: "bold",
           }}
         ></Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography className="text-start ml-2" variant="body2" color="text.secondary">
           {details}
         </Typography>
       </CardContent>

@@ -106,7 +106,7 @@ const router = createBrowserRouter([
         element: <Dashform></Dashform>,
       },
       {
-        path: "/alldoctors",
+        path: "/doctors",
         loader: () =>
           fetch("https://hospital-management-server-one.vercel.app/doctor"),
         element: <AllDoctors />,
