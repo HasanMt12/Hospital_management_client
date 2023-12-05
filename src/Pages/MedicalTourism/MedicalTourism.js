@@ -239,33 +239,33 @@ Sher-e-Bangla Medical College </h4>
 </section>
 {/* New tourist place */}
 <section>
-  <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-5xl font-bold text-[#13A2B7] sm:text-3xl text-center">
+  <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+    <div className="text-center">
+      <h2 className="text-5xl font-bold text-[#13A2B7] sm:text-3xl text-center">
       Featured Destinations
       </h2>
 
-      <p class="max-w-md mx-auto mt-4 text-gray-500 text-base text-center">
+      <p className="max-w-md mx-auto mt-4 text-gray-500 text-base text-center">
       Discover now the most Searched and Clicked Destinations.
       </p>
     </div>
 
-    <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
       <li>
-        <a href="#" class="relative block group">
+        <a href="#" className="relative block group">
           <img
             src="https://www.health-tourism.com/_resources/Photos/Countries/003_002_000099.Jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">India</h3>
+            <h3 className="text-2xl font-medium text-white">India</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
               44 Medical Centers
             </span>
@@ -274,20 +274,20 @@ Sher-e-Bangla Medical College </h4>
       </li>
 
       <li>
-        <a href="#" class="relative block group">
+        <a href="#" className="relative block group">
           <img
             src="https://www.health-tourism.com/_resources/Photos/Countries/003_003_000205.Jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">Thailand</h3>
+            <h3 className="text-2xl font-medium text-white">Thailand</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
            52 Medical Centers
             </span>
@@ -295,20 +295,20 @@ Sher-e-Bangla Medical College </h4>
         </a>
       </li>
       <li>
-        <a href="#" class="relative block group">
+        <a href="#" className="relative block group">
           <img
             src="https://www.health-tourism.com/_resources/Photos/Countries/003_002_000187.Jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">Singapore</h3>
+            <h3 className="text-2xl font-medium text-white">Singapore</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
            9 Medical Centers
             </span>
@@ -316,21 +316,21 @@ Sher-e-Bangla Medical College </h4>
         </a>
       </li>
 
-      <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-        <a href="#" class="relative block group">
+      <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <a href="#" className="relative block group">
           <img
             src="https://a.cdn-hotels.com/gdcs/production144/d1579/2e0afb81-72eb-4e20-8853-3c98c7643135.jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">Mexico</h3>
+            <h3 className="text-2xl font-medium text-white">Mexico</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
               57 Medical Centers
             </span>
@@ -338,20 +338,20 @@ Sher-e-Bangla Medical College </h4>
         </a>
       </li>
 	  <li>
-        <a href="#" class="relative block group">
+        <a href="#" className="relative block group">
           <img
             src="https://www.health-tourism.com/_resources/Photos/Countries/003_002_000098.Jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">Israel</h3>
+            <h3 className="text-2xl font-medium text-white">Israel</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
            9 Medical Centers
             </span>
@@ -359,20 +359,20 @@ Sher-e-Bangla Medical College </h4>
         </a>
       </li>
 	  <li>
-        <a href="#" class="relative block group">
+        <a href="#" className="relative block group">
           <img
             src="https://www.health-tourism.com/_resources/Photos/Countries/003_002_000064.Jpg"
             alt=""
-            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+            className="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
           />
 
           <div
-            class="absolute inset-0 flex flex-col items-start justify-end p-6"
+            className="absolute inset-0 flex flex-col items-start justify-end p-6"
           >
-            <h3 class="text-2xl font-medium text-white">Spain</h3>
+            <h3 className="text-2xl font-medium text-white">Spain</h3>
 
             <span
-              class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+              className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
             >
            52 Medical Centers
             </span>
@@ -396,56 +396,56 @@ Medication Tour to Buy Authentic, Safe & Affordable <br />
  
 
 
-<div class="overflow-hidden overflow-x-auto rounded-lg border border-teal-700  w-1/2 mx-auto ">
-  <table class="min-w-full divide-y divide-teal-700 text-sm">
-    <thead class="bg-teal-500 text-white">
+<div className="overflow-hidden overflow-x-auto rounded-lg border border-teal-700  w-1/2 mx-auto ">
+  <table className="min-w-full divide-y divide-teal-700 text-sm">
+    <thead className="bg-teal-500 text-white">
       <tr>
         
         <th
-          class="whitespace-nowrap px-4 py-2  font-medium  text-white text-center"
+          className="whitespace-nowrap px-4 py-2  font-medium  text-white text-center"
         >
        Drug
         </th>
         
         <th
-          class="whitespace-nowrap px-4 py-2 font-medium  text-white text-center"
+          className="whitespace-nowrap px-4 py-2 font-medium  text-white text-center"
         >
           Savings
         </th>
       </tr>
     </thead>
 
-    <tbody class="divide-y divide-gray-300 text-center">
+    <tbody className="divide-y divide-gray-300 text-center">
       <tr>
      
-        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
           Hep C
         </td>
-		<td class="whitespace-nowrap px-4 py-2 text-gray-700">93%</td>
+		<td className="whitespace-nowrap px-4 py-2 text-gray-700">93%</td>
       </tr>
 
       <tr>
         
-        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
 		Multiple Sclerosis
         </td>
-		<td class="whitespace-nowrap px-4 py-2 text-gray-700">67%</td>
+		<td className="whitespace-nowrap px-4 py-2 text-gray-700">67%</td>
    
       </tr>
 
       <tr>
        
-        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
 		Rheumatoid Arthritis
         </td>
-		<td class="whitespace-nowrap px-4 py-2 text-gray-700">77%</td>
+		<td className="whitespace-nowrap px-4 py-2 text-gray-700">77%</td>
       </tr>
       <tr>
        
-        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+        <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
 		Osteoporosis
         </td>
-		<td class="whitespace-nowrap px-4 py-2 text-gray-700">85%</td>
+		<td className="whitespace-nowrap px-4 py-2 text-gray-700">85%</td>
       </tr>
     </tbody>
   </table>

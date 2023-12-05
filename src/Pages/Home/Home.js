@@ -9,6 +9,7 @@ import WorkingFlow from "../WorkingFlow/WorkingFlow";
 import useTitle from "../../hooks/useTitle";
 import ChooseUs from "./WhyChooseUs/ChooseUs";
 import ConsultingSpecialties from "./ConsultingSpecialties/ConsultingSpecialties";
+import Testimonial from "./Testimonial/Testimonial";
 
 // import Departments from './Department/Departments';
 
@@ -21,6 +22,7 @@ const Home = () => {
       <DoctorInHome></DoctorInHome>
       <ConsultingSpecialties></ConsultingSpecialties>
       <WorkingFlow></WorkingFlow>
+      <Testimonial></Testimonial>
       <DonationForm></DonationForm>
 
       {/* <CssBaseline /> */}

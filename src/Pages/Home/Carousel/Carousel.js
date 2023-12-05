@@ -29,16 +29,16 @@ const Carousel = () => {
             index === currentImageIndex ? "active" : ""
           }`}>
              <div class={`z-10 absolute top-10  xl:top-32 left-16 sm:left-20 space-y-3 lg:space-y-10 2xl:w-4/12 sm:p-4  ${info.imgClass}`}>
-              <p class=" font-bold  text-2xl xl:text-4xl text-[#333333]">
+              <p className=" font-bold  text-2xl xl:text-4xl text-[#333333]">
        <p> {info.title1?info.title1:""} <br/>{info.title2?info.title2:""}</p> 
        </p>
-       <p class=" hidden md:block text-green lg:text-md">
+       <p className=" hidden md:block text-green lg:text-md">
        {info.details1?info.details1:""}<br/> {info.details2?info.details2:""}
        </p>
        <div class='flex gap-3 sm:gap-5 flex-col sm:flex-row'>
        <Link to={info.link}>
         
-          <button class="text-xs bg-[#0E7D87]/70 btn w-52 md:px-6 border-[1px] hover:border-[0E7D87] hover:bg-white py-2 rounded-lg hover:text-[#0E7D87] text-white/70 font-medium">
+          <button className="text-xs bg-[#0E7D87]/70 btn w-52 md:px-6 border-[1px] hover:border-[0E7D87] hover:bg-white py-2 rounded-lg hover:text-[#0E7D87] text-white/70 font-medium">
           {info.buttonText1? info.buttonText1 : ""} <br/>{info.buttonText2 ? info.buttonText2 :""} 
           </button>
         </Link>

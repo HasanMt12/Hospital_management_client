@@ -87,7 +87,6 @@ const WorkingFlow = () => {
       details:"Observation on Patient",
     },
   ];
-  console.log(workingFlows)
   return (
     <div className="w-11/12 mx-auto">
       <div className="my-5 text-center">
@@ -106,12 +105,12 @@ const WorkingFlow = () => {
         </Typography>
       </div>
       
-     
+    
       <Swiper 
       
-      ref={(swiper) => {
-    if (swiper) swiperRef.current = swiper;
-  }}
+        ref={(swiper) => {
+          if (swiper) swiperRef.current = swiper;
+        }}
         breakpoints={{
           300: {
             slidesPerView: 1,
@@ -150,7 +149,7 @@ const WorkingFlow = () => {
               background-color: ${index < 4 ? '#13A2B7' : '#9ac3c9'};
               margin: 0 8px; 
             `;
-            return `<span class="${className}" style="${customStyles}"></span>`;
+            return `<span className="${className}" style="${customStyles}"></span>`;
           },
         }}
       >

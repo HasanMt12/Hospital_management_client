@@ -44,34 +44,34 @@ const NoticeShow = () => {
                 n={n}
                 key={n._id}
                 >
-                    <article class="rounded-xl border-2 mb-4  bg-white w-10/12 mx-auto  border-[#13A2B7]">
-  <div class="flex items-start p-6">
-    <a href="#" class="block shrink-0">
+                    <article className="rounded-xl border-2 mb-4  bg-white w-10/12 mx-auto  border-[#13A2B7]">
+  <div className="flex items-start p-6">
+    <a href="#" className="block shrink-0">
       <img
         alt="Speaker"
         src={n.img}
-        class="h-36 mr-16 w-36 rounded-lg object-cover"
+        className="h-36 mr-16 w-36 rounded-lg object-cover"
       />
     </a>
 
-    <div class="ml-4">
-      <h3 class="font-medium sm:text-lg">
-        <a href="#" class="hover:underline">
+    <div className="ml-4">
+      <h3 className="font-medium sm:text-lg">
+        <a href="#" className="hover:underline">
          {n.noticeCategory}
         </a>
       </h3>
        <hr/>
 
-      <p class="text-sm text-gray-700 line-clamp-2">
+      <p className="text-sm text-gray-700 line-clamp-2">
         {n.notice}
       </p>
      
 
-      <div class="mt-8 justify-end sm:flex sm:items-center sm:gap-2">
-        <div class="flex items-center text-gray-500">
+      <div className="mt-8 justify-end sm:flex sm:items-center sm:gap-2">
+        <div className="flex items-center text-gray-500">
          
           
-          <p class="ml-1 text-md">{n.time}</p>
+          <p className="ml-1 text-md">{n.time}</p>
         </div>
 
 
@@ -79,12 +79,12 @@ const NoticeShow = () => {
     </div>
   </div>
 
-{isAdmin &&<div class="flex justify-end">
+{isAdmin &&<div className="flex justify-end">
     <strong
-      class="-mr-[2px] -mb-[2px] cursor-pointer inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-red-700 py-1.5 px-3 text-white"
+      className="-mr-[2px] -mb-[2px] cursor-pointer inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-red-700 py-1.5 px-3 text-white"
     >
      
-                    <div  onClick={() => handleDeleteNotice(n._id)} className='flex '> <span class="text-[10px] mr-4 font-medium sm:text-xs">Delete</span> <span className='text-gray-50'><AiTwotoneDelete></AiTwotoneDelete></span>
+                    <div  onClick={() => handleDeleteNotice(n._id)} className='flex '> <span className="text-[10px] mr-4 font-medium sm:text-xs">Delete</span> <span className='text-gray-50'><AiTwotoneDelete></AiTwotoneDelete></span>
      </div>
     </strong>
   </div>}

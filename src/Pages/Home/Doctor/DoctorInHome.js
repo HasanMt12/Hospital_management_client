@@ -101,7 +101,7 @@ const DoctorInHome = () => {
       >
         <>
           {doctors?.map((doctor) => (
-            <SwiperSlide className="swipersSlider mt-8 ">
+            <SwiperSlide key={doctor._id} className="swipersSlider mt-8 ">
               <div className="flex flex-col  items-center p-8 transition-colors duration-300 transform border border-[#13A2B7] cursor-pointer rounded-xl hover:border-transparent group hover:bg-[#0C5D69] w-full lg:-h-[420px] md:h-[350px] h-[300px] relative">
                 <img
                   className=" md:w-24 md:h-24 inline-block lg:w-30 lg:h-30 w-20 h-20 object-cover rounded-full ring-4 ring-gray-300"
@@ -113,7 +113,7 @@ const DoctorInHome = () => {
                   {doctor.doctorName}
                 </h1>
 
-                <p class="mt-2 hidden md:block capitalize lg:text-sm md:text-xs sm:text-[10px] text-gray-600 group-hover:text-white ">
+                <p className="mt-2 hidden md:block capitalize lg:text-sm md:text-xs sm:text-[10px] text-gray-600 group-hover:text-white ">
                     {doctor.degree.length > 30
                     ? `${doctor.degree.substring(0, 30)}...`
                     : doctor.degree}

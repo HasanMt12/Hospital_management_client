@@ -21,8 +21,9 @@ function App() {
     AOS.init();
     AOS.refresh();
   }, []);
+
   const reload = useSelector((state) => state.bookedAppointments.reload);
-  console.log(reload);
+  // console.log(reload);
   useEffect(() => {
     const getbooked = async () => {
       const res = await fetch(
@@ -33,10 +34,12 @@ function App() {
     };
     getbooked();
   }, [email, dispatch, reload]);
+  
   const bookedData = useSelector(
     (state) => state.bookedAppointments.bookedAppointments
   );
-  console.log(bookedData);
+  // console.log(bookedData);
+
   return (
     <div className="bg-[#FFFFFF] shadow-lg rounded-2">
       <div className="max-w-[1140]">

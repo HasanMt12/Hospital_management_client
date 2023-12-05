@@ -21,10 +21,10 @@ const Footer = () => {
       footer
       className=" bg-[#E7F6F3] shadow-lg rounded-2 text-white"
     >
-      <div className="container p-6 mx-auto">
+      <div className="container lg:p-6 md:p-4 p-2 mx-auto">
         <div className="">
           
-          <div className="mt-6 lg:mt-0 px-20">
+          <div className="mt-6 lg:mt-0 lg:px-20 md:px-10 px-4">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 ">
             <div>
                 <div className="">

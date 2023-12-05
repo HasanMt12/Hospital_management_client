@@ -7,7 +7,7 @@ import './OurService.css'
 
 const OurService = ({ serv }) => {
   const { img, title, details } = serv;
-  console.log(serv);
+  // console.log(serv);
   return (
     <Card className="card mt-6 md:mt-4 bg-[#E8F3F4] lg:h-[250px] md:h-[220px] h-[200px]"
       sx={{
