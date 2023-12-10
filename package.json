@@ -54,7 +54,6 @@
     "react-scroll-to-bottom": "^4.2.0",
     "reactstrap": "^9.1.5",
     "sass": "^1.56.2",
-    "socket.io-client": "^4.5.4",
     "swiper": "^8.4.5",
     "typescript": "latest",
     "web-vitals": "^2.1.4",
