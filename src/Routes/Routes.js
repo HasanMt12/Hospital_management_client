@@ -45,7 +45,6 @@ import ManageStuff from "../Dashboard/DashboardPage/ManageStuff";
 import ManageDoctors from "../Dashboard/DashboardPage/ManageDoctors";
 
 
-import JoinChatRoom from "../Pages/JoinChatRoom/JoinChatRoom";
 import Payment from "../Dashboard/Payment/Payment";
 
 import AllAppointment from "../Dashboard/DashboardPage/AllAppointment";
@@ -80,10 +79,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
-      },
-      {
-        path: "/chat",
-        element: <JoinChatRoom></JoinChatRoom>,
       },
       {
         path: "/services",
