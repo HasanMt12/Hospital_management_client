@@ -31,26 +31,26 @@ const DashbordLayoutes = () => {
   const [isNurse] = useNurse(user?.email)
   const [isDoctor] = useDoctor(user?.email)
   const [toggle, setToggle] = useState(false);
-console.log(user);
+// console.log(user);
   return (
     <div>
       
       {/* <Header></Header> */}
-<Navbar></Navbar>
-      <div className="flex flex-no-wrap mt-2">
+<Navbar toggle={toggle} setToggle={setToggle}></Navbar>
+      <div className="flex flex-no-wrap mt-2 min-h-screen">
         {/* Sidebar starts */}
         {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
 
         <div
 
-          className={`w-66 ml-1  sm:relative rounded-2xl border-t-8 border-teal-200 border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
+          className={`w-66 ml-1  sm:relative rounded-2xl border-b-8 border-[#13A2B7] border-2 shadow-lg md:h-full flex-col justify-between  mt-10 md:block 
 
              ${
             toggle ? "hidden" : ""
           } sidebar-container `}
         >
           <div className="px-8 ">
-            <div className="flex   bg-white my-8 rounded-2xl px-1 gap-1 border-teal-300 border-2 py-2 border- shadow-sm">
+            <div className="flex   bg-white my-8 rounded-2xl px-1 gap-1 border-[#13A2B7] border-2 py-2 border- shadow-sm">
               <div className=" w-12 ">
               {user?.uid ? (
                       <img 
@@ -84,7 +84,7 @@ console.log(user);
               {isAdmin && <>
 
 
-              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
                   <MdPeopleAlt className=""></MdPeopleAlt>
                   <Link to="/dashboard/users">
@@ -93,7 +93,7 @@ console.log(user);
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center text-2xl  p-2  rounded-xl  ">
                   <FcBusinessman className=""></FcBusinessman>
                   <Link to="/dashboard/addDoctors">
@@ -103,7 +103,7 @@ console.log(user);
               </li>
 
 
-              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
 
                 <div className="flex items-center text-xl p-2  rounded-xl ">
                   <MdOutlineNotificationsActive></MdOutlineNotificationsActive>
@@ -113,7 +113,7 @@ console.log(user);
                 </div>
               </li>
 
-              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FcManager />
 
@@ -123,7 +123,7 @@ console.log(user);
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <MdOutlineNotificationsActive />
 
@@ -132,7 +132,7 @@ console.log(user);
                   </Link>
                 </div>
               </li>
-                <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -142,7 +142,7 @@ console.log(user);
                 </div>
               </li>
               
-                <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+                <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -159,7 +159,7 @@ console.log(user);
 
               {isDoctor && <>
               
-               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -169,7 +169,7 @@ console.log(user);
                 </div>
               </li>
 
-               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -185,7 +185,7 @@ console.log(user);
 
               { isNurse && <>
               
-               <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+               <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -196,7 +196,7 @@ console.log(user);
               </li>
               </>}
 
-              <li className="flex w-full justify-between text-teal-700  cursor-pointer items-center mb-6 hover:shadow-xl hover:border-t-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 hover:border-teal-200">
+              <li className="flex w-full justify-between text-[#13A2B7]  cursor-pointer items-center mb-6 hover:shadow-xl border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 border-[#13A2B7]">
                 <div className="flex items-center p-2">
                   <FaAmericanSignLanguageInterpreting />
 
@@ -236,16 +236,16 @@ console.log(user);
               </div>
             </div>
           </div>
-          <div className="px-8 border-t border-gray-700">
+          <div className="px-8 border-b border-gray-700">
             <ul className="w-full flex items-center justify-between ">
-              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
+              <li className="cursor-pointer text-[#13A2B7] pt-5 pb-3">
                 <FaSign />
               </li>
-              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
+              <li className="cursor-pointer text-[#13A2B7] pt-5 pb-3">
                 <FaHome />
               </li>
 
-              <li className="cursor-pointer text-teal-700 pt-5 pb-3">
+              <li className="cursor-pointer text-[#13A2B7] pt-5 pb-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-archive"
@@ -275,7 +275,7 @@ console.log(user);
 
           <div className="container mx-auto hidden lg:block ">
             <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300   ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-[#13A2B7]   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300   ">
                 <div className="text-sm font-medium text-gray-500 truncate    ">
                   Total Doctors
                 </div>
@@ -283,7 +283,7 @@ console.log(user);
                   450
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg  shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg  shadow-lg  border-x-8 border-[#13A2B7]   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Nurse
                 </div>
@@ -291,7 +291,7 @@ console.log(user);
                   1000
                 </div>
               </div>
-              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-teal-200   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="w-full px-4 py-5 bg-white rounded-lg shadow-lg  border-x-8 border-[#13A2B7]   transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <div className="text-sm font-medium text-gray-500 truncate">
                   Total Stuff
                 </div>
@@ -302,19 +302,7 @@ console.log(user);
             </div>
           </div>
 
-          <div
-            className="absolute md:hidden block  left-16 top-24 w-10 h-10 bg-glass rounded-full cursor-pointer"
-            onClick={() => {
-              setToggle(!toggle);
-            }}
-          >
-            Open{" "}
-            <FaArrowAltCircleLeft
-              className={`${
-                toggle ? "rotate-180" : ""
-              } text-3xl  transition-all duration-300`}
-            />
-          </div>
+        
           <div
 
             className={`w-full h-full rounded  `}

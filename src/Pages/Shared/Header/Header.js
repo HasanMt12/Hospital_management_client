@@ -53,7 +53,7 @@ const Header = () => {
               <img src={logo} alt=""></img>
             </Link>
             <div>
-              <div className="relative mt-4 lg:mt-0 lg:mx-4 ">
+              <div className="relative mt-4 lg:mt-0 lg:mx-4 lg:block md:block hidden">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
                     className="w-4 h-4 sm:text-white lg:text-gray-600 dark:text-gray-300"
@@ -684,13 +684,15 @@ const Header = () => {
         </div>
       </div>
 
-      {/* login signup */}
+      {/* login */}
       <Popup
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
         <Login closePopup={setOpenPopup} openModal={setOpenModal}></Login>
       </Popup>
+
+      {/* signup */}
       <Modal className="min-h-[90dvh] p-0"
         openModal={openModal}
         setOpenModal={setOpenModal}

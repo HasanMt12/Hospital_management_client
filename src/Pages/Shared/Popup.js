@@ -27,7 +27,7 @@ export default function Popup(props) {
 
   return (
     <Dialog
-      sx={{maxHeight: 550,}}
+      
       open={openPopup}
       maxWidth="md"
       classes={{ paper: classes.dialogWrapper }}
@@ -47,7 +47,7 @@ export default function Popup(props) {
           </Controls.Button>
         </div>
       </DialogTitle>
-      <DialogContent dividers>{children}</DialogContent>
+      <DialogContent sx={{maxHeight: 350,}} dividers>{children}</DialogContent>
     </Dialog>
   );
 }
